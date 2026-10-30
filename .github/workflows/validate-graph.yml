@@ -5,6 +5,7 @@ on:
       - "data/**"
       - "schemas/**"
       - "tools/validate_graph.py"
+      - "tools/validate_poland.mjs"
       - ".github/workflows/validate-graph.yml"
   pull_request:
     paths:
@@ -28,3 +29,4 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_open_apis.py'
       - run: node tools/check_board.mjs
       - run: node tools/check_research_board.mjs
+      - run: node tools/validate_poland.mjs

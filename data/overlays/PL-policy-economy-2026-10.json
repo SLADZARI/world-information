@@ -18,13 +18,16 @@
     "pl-migrant-eligibility",
     "pl-labor-demand",
     "pl-future-labor",
-    "pl-future-rights"
+    "pl-future-rights",
+    "pl-tk-appointments"
   ],
   "base_relation_ids": [
     "rel-pl-visa-2022-2026",
     "rel-pl-appointments-gridlock",
     "rel-pl-bill-rights",
-    "rel-pl-visa-labor"
+    "rel-pl-visa-labor",
+    "rel-pl-dispute-suspension",
+    "rel-pl-tusk-appointments"
   ],
   "layout_overrides": {
     "pl-country": {
@@ -70,6 +73,10 @@
     "pl-tusk": {
       "x": 25,
       "y": 525
+    },
+    "pl-tk-appointments": {
+      "x": 25,
+      "y": 120
     }
   },
   "sources": [
@@ -341,7 +348,7 @@
       "description": "NBP: 125,7 млрд zł годового притока прямых иностранных инвестиций (directional). Исторический фон до событий 2026 года.",
       "layout": {
         "x": 560,
-        "y": 560
+        "y": 510
       },
       "indicator": {
         "metric": "Annual foreign direct investment inflow (directional basis)",
@@ -369,7 +376,7 @@
       "description": "NBP: 56,5 млрд zł, снижение на ~55,1% г/г. Это произошло задолго до политического кризиса октября 2026 года.",
       "layout": {
         "x": 795,
-        "y": 560
+        "y": 510
       },
       "indicator": {
         "metric": "Annual foreign direct investment inflow (directional basis)",

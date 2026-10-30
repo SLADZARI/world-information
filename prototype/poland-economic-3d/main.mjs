@@ -205,7 +205,7 @@ async function start3D(){
       else if(n.type==="impact")geom=new THREE.OctahedronGeometry(.33);
       else geom=new THREE.IcosahedronGeometry(.25,0);
       const chosen=selected?.id===n.id;
-      const mat=new THREE.MeshStandardMaterial({color,emissive:color,emissiveIntensity:chosen?.8:.18,roughness:.52});
+      const mat=new THREE.MeshStandardMaterial({color,emissive:color,emissiveIntensity:chosen ? 0.8 : 0.18,roughness:.52});
       const mesh=new THREE.Mesh(geom,mat);mesh.position.copy(pos(n));
       mesh.userData={kind:"node",id:n.id};clickable.push(mesh);group.add(mesh);
       const lab=createText(n.label);lab.position.copy(mesh.position).add(new THREE.Vector3(0,.62,0));group.add(lab);

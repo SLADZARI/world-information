@@ -17,7 +17,7 @@
       "id": "source-imo-redsea-incidents",
       "url": "https://www.imo.org/en/mediacentre/hottopics/pages/red-sea.aspx",
       "publisher": "International Maritime Organization (IMO)",
-      "published_at": "2026-10-30T00:00:00Z",
+      "published_at": null,
       "retrieved_at": "2026-10-30T12:00:00Z",
       "rights": "Link-only: latest IMO incident reporting page is updated over time; publication timestamp not reliably available; use retrieved_at as snapshot date."
     }

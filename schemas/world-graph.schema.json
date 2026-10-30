@@ -135,6 +135,42 @@
               },
               "population_scope": {
                 "type": "string"
+              },
+              "value": {
+                "type": "number",
+                "description": "Published numerical value; preserve declared unit and period"
+              },
+              "comparison_value": {
+                "type": "number",
+                "description": "Explicitly documented baseline; optional"
+              },
+              "comparison_period": {
+                "type": "string"
+              },
+              "comparison_basis": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "series": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "period",
+                    "value"
+                  ],
+                  "properties": {
+                    "period": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "number"
+                    }
+                  }
+                }
               }
             }
           },
@@ -468,6 +504,13 @@
           }
         }
       }
+    },
+    "case_id": {
+      "type": "string",
+      "description": "Stable thematic graph slug"
+    },
+    "case_title": {
+      "type": "string"
     }
   }
 }

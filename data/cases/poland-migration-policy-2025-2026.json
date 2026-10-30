@@ -1,0 +1,766 @@
+{
+  "schema_version": "0.1.0",
+  "synthetic": false,
+  "case_id": "poland-migration-policy-2025-2026",
+  "case_title": "Польша: миграционная политика и права разных групп, 2025–2026",
+  "description": "Срез на 30 октября 2026 года. Действующие законы, предложения президента и официальные статистические ряды разделены. Иностранцы разных правовых статусов не представлены одной однородной группой; влияние на экономику и конкретного человека требует отдельной проверки.",
+  "sources": [
+    {
+      "id": "src-pl-mswia-visa-2026",
+      "url": "https://www.gov.pl/web/mswia/osiem-razy-mniej-wiz-do-polski-dla-obcokrajowcow---odzyskalismy-kontrole-nad-imigracja-polityka-migracyjna-rzadu-przynosi-efekty",
+      "publisher": "MSWiA, work visas official figures",
+      "published_at": "2026-06-09T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Attribution and URL only. Daily publication precision where time is unavailable; legal status must be independently checked before individual decisions."
+    },
+    {
+      "id": "src-pl-president-citizenship-2025",
+      "url": "https://www.prezydent.pl/prawo/inicjatywy-ustawodawcze/prezydencki-projekt-zmiany-ustawy-o-obywatelstwie-polskim-,107997",
+      "publisher": "Office of President: citizenship bill 3→10 years",
+      "published_at": "2025-09-29T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Attribution and URL only. Daily publication precision where time is unavailable; legal status must be independently checked before individual decisions."
+    },
+    {
+      "id": "src-pl-mswia-pact-2026",
+      "url": "https://www.gov.pl/web/mswia/polska-nie-bedzie-przyjmowac-migrantow-z-innych-panstw-ani-ponosic-kosztow-z-tym-zwiazanych-wchodzi-w-zycie-pakt-migracyjny",
+      "publisher": "MSWiA position on EU Pact",
+      "published_at": "2026-06-12T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Attribution and URL only. Daily publication precision where time is unavailable; legal status must be independently checked before individual decisions."
+    },
+    {
+      "id": "src-eu-pact-2026",
+      "url": "https://home-affairs.ec.europa.eu/news/new-migration-and-asylum-rules-enter-application-what-changing-2026-06-12_en",
+      "publisher": "European Commission: EU Migration and Asylum Pact application",
+      "published_at": "2026-06-12T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Attribution and URL only. Daily publication precision where time is unavailable; legal status must be independently checked before individual decisions."
+    },
+    {
+      "id": "src-pl-sejm-solidarity-2026",
+      "url": "https://www.sejm.gov.pl/sejm10.nsf/InterpelacjaTresc.xsp?key=DSHJL5",
+      "publisher": "Polish Interior Ministry answer to Sejm interpellation 14173",
+      "published_at": "2026-03-24T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Attribution and URL only. Daily publication precision where time is unavailable; legal status must be independently checked before individual decisions."
+    },
+    {
+      "id": "src-pl-udsc-border-2026",
+      "url": "https://www.gov.pl/web/udsc/ograniczenie-prawa-do-zlozenia-wniosku-o-ochrone-miedzynarodowa",
+      "publisher": "Urząd do Spraw Cudzoziemców: Belarus border asylum restrictions",
+      "published_at": "2026-09-21T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Attribution and URL only. Daily publication precision where time is unavailable; legal status must be independently checked before individual decisions."
+    },
+    {
+      "id": "src-pl-gov-800-2026",
+      "url": "https://www.gov.pl/web/rodzina/nowe-zasady-przyznawania-swiadczenia-wychowawczego-cudzoziemcom",
+      "publisher": "Polish Ministry of Family: 800+ eligibility",
+      "published_at": "2026-01-30T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Government guidance updated over time; date approximate unless source body declares a precise update time; access date recorded separately."
+    },
+    {
+      "id": "src-pl-gov-uk-2026",
+      "url": "https://www.gov.pl/web/rodzina/co-sie-zmienia-w-pomocy-dla-obywateli-ukrainy-w-2026-r",
+      "publisher": "Polish Ministry of Family: Ukrainian temporary protection to March 2027",
+      "published_at": "2026-03-26T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Attribution and URL only. Daily publication precision where time is unavailable; legal status must be independently checked before individual decisions."
+    },
+    {
+      "id": "src-pl-president-uk-law-2026",
+      "url": "https://www.prezydent.pl/aktualnosci/wydarzenia/prezydent-rp-podpisal-dwie-ustawy-dwie-zawetowal,115305",
+      "publisher": "President's Office: law signed 19 February 2026",
+      "published_at": "2026-02-19T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Attribution and URL only. Daily publication precision where time is unavailable; legal status must be independently checked before individual decisions."
+    },
+    {
+      "id": "src-pl-hrw-report-2026",
+      "url": "https://www.hrw.org/world-report/2026/country-chapters/poland",
+      "publisher": "Human Rights Watch: Poland rights critique, events of 2025",
+      "published_at": "2026-02-04T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Attribution and URL only. Daily publication precision where time is unavailable; legal status must be independently checked before individual decisions."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "pl-migration-government",
+      "type": "actor",
+      "label": "Правительство Туска",
+      "layer": "factors",
+      "category": "politics",
+      "subcategories": [
+        "politics.actor.government"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2023-12-13T00:00:00Z",
+      "description": "Правительство проводит избирательную миграционную политику и заявляет об усилении контроля. Политическая риторика не подменяет действующее право.",
+      "layout": {
+        "x": 25,
+        "y": 55
+      }
+    },
+    {
+      "id": "pl-migration-president",
+      "type": "actor",
+      "label": "Президент Навроцкий",
+      "layer": "factors",
+      "category": "politics",
+      "subcategories": [
+        "politics.actor.president"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2025-08-06T00:00:00Z",
+      "description": "Предлагает дополнительные требования по гражданству; участие в принятии законодательства через подпись и вето.",
+      "layout": {
+        "x": 25,
+        "y": 320
+      }
+    },
+    {
+      "id": "pl-eu-pact",
+      "type": "event",
+      "label": "12.06.2026: Пакт ЕС применяется",
+      "layer": "events",
+      "category": "politics",
+      "subcategories": [
+        "politics.migration.eu_pact"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-06-12T00:00:00Z",
+      "description": "Начало применения 10 актов Пакта ЕС. Это НЕ тождественно обязанности Польши принимать переселяемых мигрантов за 2026 год.",
+      "layout": {
+        "x": 285,
+        "y": 40
+      }
+    },
+    {
+      "id": "pl-eu-solidarity-exempt",
+      "type": "event",
+      "label": "2026: исключение из взносов солидарности",
+      "layer": "events",
+      "category": "politics",
+      "subcategories": [
+        "politics.migration.eu_solidarity"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-01-01T00:00:00Z",
+      "description": "В ежегодном механизме солидарности на 2026 год Польше не требуется декларировать и реализовывать вклады. Не автоматическая постоянная отмена всего Пакта.",
+      "layout": {
+        "x": 530,
+        "y": 50
+      }
+    },
+    {
+      "id": "pl-border-asylum",
+      "type": "event",
+      "label": "18.09: продлены ограничения на границе",
+      "layer": "events",
+      "category": "society",
+      "subcategories": [
+        "society.asylum.border_access"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-09-18T00:00:00Z",
+      "description": "Продление временного ограничения возможности подать заявление о международной защите на границе с Беларусью на 60 дней; предусмотрены законные исключения, ситуация оспаривается правозащитниками.",
+      "layout": {
+        "x": 285,
+        "y": 190
+      }
+    },
+    {
+      "id": "pl-hrw-rights",
+      "type": "factor",
+      "label": "Критика правозащитных организаций",
+      "layer": "factors",
+      "category": "society",
+      "subcategories": [
+        "society.human_rights.asylum"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-02-04T00:00:00Z",
+      "description": "HRW выражает обеспокоенность правами просителей убежища и выдворениями на границе; это позиция правозащитного института, противоположная правительственному обоснованию безопасности.",
+      "layout": {
+        "x": 530,
+        "y": 195
+      }
+    },
+    {
+      "id": "pl-visa-2022",
+      "type": "indicator",
+      "label": "Рабочие визы Q1'22: 123 тыс.",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.migration.work_visas"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2022-03-31T00:00:00Z",
+      "description": "МВД приводит данные 123 000 рабочих виз за I квартал 2022. Число по административному реестру, не общее число въехавших мигрантов.",
+      "layout": {
+        "x": 285,
+        "y": 340
+      },
+      "indicator": {
+        "metric": "Work visas issued, foreign nationals",
+        "unit": "visas",
+        "period": "2022-Q1",
+        "value": 123000,
+        "source_id": "src-pl-mswia-visa-2026",
+        "population_scope": "All foreign nationals, work visa category, Poland",
+        "method": "MSWiA report, same Q1 before/after series; not migration stock."
+      }
+    },
+    {
+      "id": "pl-visa-2026",
+      "type": "indicator",
+      "label": "Рабочие визы Q1'26: 16 тыс.",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.migration.work_visas"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-03-31T00:00:00Z",
+      "description": "МВД сообщает 16 000 рабочих виз в I квартале 2026 года. Снижение само по себе не идентифицирует действие конкретного закона.",
+      "layout": {
+        "x": 530,
+        "y": 330
+      },
+      "indicator": {
+        "metric": "Work visas issued, foreign nationals",
+        "unit": "visas",
+        "period": "2026-Q1",
+        "value": 16000,
+        "source_id": "src-pl-mswia-visa-2026",
+        "population_scope": "All foreign nationals, work visa category, Poland",
+        "method": "MSWiA; comparison Q1 2022: 123,000."
+      }
+    },
+    {
+      "id": "pl-ukr-800",
+      "type": "event",
+      "label": "01.02.2026: новые условия 800+",
+      "layer": "events",
+      "category": "society",
+      "subcategories": [
+        "society.social_support.eligibility"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-02-01T00:00:00Z",
+      "description": "Для ряда иностранных групп, включая украинцев со статусом UKR, введён критерий профессиональной активности с исключениями; нельзя считать его универсальным запретом выплат.",
+      "layout": {
+        "x": 285,
+        "y": 485
+      }
+    },
+    {
+      "id": "pl-ukr-protection",
+      "type": "event",
+      "label": "05.03.2026: новая помощь украинцам",
+      "layer": "events",
+      "category": "society",
+      "subcategories": [
+        "society.migration.temporary_protection"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-03-05T00:00:00Z",
+      "description": "После подписания президентом 19 февраля закон вступил в силу 5 марта; временная защита для соответствующих групп сохраняется до 4 марта 2027 года.",
+      "layout": {
+        "x": 530,
+        "y": 480
+      }
+    },
+    {
+      "id": "pl-citizenship-bill",
+      "type": "event",
+      "label": "Законопроект: 3 → 10 лет",
+      "layer": "events",
+      "category": "politics",
+      "subcategories": [
+        "politics.migration.citizenship_bill"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2025-09-29T00:00:00Z",
+      "description": "Президент направил в Сейм проект увеличения с 3 до 10 лет минимального срока непрерывного пребывания на ПМЖ/долгосрочном резидентстве ЕС или основании постоянного пребывания для отдельного пути признания гражданином. Не действующее правило для всех.",
+      "layout": {
+        "x": 785,
+        "y": 50
+      }
+    },
+    {
+      "id": "pl-migrant-eligibility",
+      "type": "impact",
+      "label": "Права зависят от правового статуса",
+      "layer": "impacts",
+      "category": "society",
+      "subcategories": [
+        "society.migration.status_rights"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Разные условия для граждан Польши, граждан ЕС, работников по визам, обладателей ПМЖ, долгосрочных резидентов, UKR и просителей убежища. Индивидуальные права не выводятся из общей политической позиции.",
+      "layout": {
+        "x": 785,
+        "y": 210
+      }
+    },
+    {
+      "id": "pl-labor-demand",
+      "type": "factor",
+      "label": "Рынок труда и спрос работодателей",
+      "layer": "factors",
+      "category": "economy",
+      "subcategories": [
+        "economy.labor.demand"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-03-31T00:00:00Z",
+      "description": "Спрос на рабочую силу, сезонность и изменение процедур выдачи документов — конкурирующие объяснения снижения числа виз; влияние доли каждого не измерено.",
+      "layout": {
+        "x": 785,
+        "y": 350
+      }
+    },
+    {
+      "id": "pl-future-labor",
+      "type": "impact",
+      "label": "Может меняться доступность труда",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.labor.supply"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Возможное воздействие ограничений миграции на предприятия зависит от отрасли, спроса и возможности найма граждан/резидентов. На этой схеме не рассчитано.",
+      "layout": {
+        "x": 1035,
+        "y": 305
+      }
+    },
+    {
+      "id": "pl-future-rights",
+      "type": "impact",
+      "label": "Риски и возможности резидентов",
+      "layer": "impacts",
+      "category": "society",
+      "subcategories": [
+        "society.migration.residence_rights"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Для переезжающего важнее конкретное основание въезда/проживания, порядок подачи, условия 800+, трудовые права и проекты изменений, чем партийная символика.",
+      "layout": {
+        "x": 1035,
+        "y": 130
+      }
+    },
+    {
+      "id": "pl-mig-scenario-selective",
+      "type": "scenario",
+      "label": "Вариант: селективный приём",
+      "layer": "scenarios",
+      "category": "politics",
+      "subcategories": [
+        "politics.scenario.selective_migration"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Условный сценарий: дальнейшее ужесточение процедур с сохранением отдельных каналов трудовой миграции. Без численного прогноза.",
+      "layout": {
+        "x": 1255,
+        "y": 100
+      }
+    },
+    {
+      "id": "pl-mig-scenario-labor",
+      "type": "scenario",
+      "label": "Вариант: расширение каналов труда",
+      "layer": "scenarios",
+      "category": "economy",
+      "subcategories": [
+        "economy.scenario.labor_shortages"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Условный сценарий: дефицит кадров вызывает точечное смягчение найма при сохранении миграционного контроля. Не утверждается принятие закона.",
+      "layout": {
+        "x": 1255,
+        "y": 305
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-pl-visa-drivers",
+      "statement": "Снижение выдачи рабочих виз не доказывает, что это полностью эффект правительства Туска.",
+      "mechanism": "Выданные визы меняются под действием спроса работодателей, визовой практики, правового режима, геополитики и других факторов.",
+      "alternatives": [
+        "Сокращение реальной потребности в иностранной рабочей силе.",
+        "Изменение стран происхождения и статистических категорий."
+      ],
+      "falsification": "Сопоставить отраслевой спрос, заявки/отказы, число рабочих разрешений и альтернативные основания пребывания в сопоставимых кварталах.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-pl-mswia-visa-2026"
+      ],
+      "author": "World Information research review"
+    },
+    {
+      "id": "claim-pl-citizen-bill-only",
+      "statement": "Предложение 10 лет относится к определённому способу признания гражданства и не означает, что закон уже действует.",
+      "mechanism": "Раздельные статусы: внесённый законопроект против опубликованного действующего закона.",
+      "alternatives": [
+        "Параллельные законодательные инициативы могут менять окончательную редакцию."
+      ],
+      "falsification": "Проверить движение проекта по Сейму, публикацию в Dziennik Ustaw, дату вступления в силу и переходные положения.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-pl-president-citizenship-2025"
+      ],
+      "author": "World Information research review"
+    },
+    {
+      "id": "claim-pl-migration-rights",
+      "statement": "Воздействие миграционных правил зависит от конкретной категории резидента, а не только от страны.",
+      "mechanism": "Правовые основания и категории допуска/соцзащиты различаются.",
+      "alternatives": [
+        "Индивидуальные исключения, гражданство, семейные и международные основания."
+      ],
+      "falsification": "Сопоставить применимые статьи законов, актуальные инструкции UdSC и правовой статус заявителя.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-pl-gov-800-2026",
+        "src-pl-gov-uk-2026",
+        "src-pl-udsc-border-2026"
+      ],
+      "author": "World Information research review"
+    },
+    {
+      "id": "claim-pl-labor-shortage",
+      "statement": "Избирательная миграционная политика может создавать отраслевые дефициты труда или снижать административные злоупотребления; знак эффекта зависит от спроса.",
+      "mechanism": "Изменение доступности иностранной рабочей силы и состава вакансий влияет на зарплаты, инвестиции и выпуск.",
+      "alternatives": [
+        "Автоматизация, внутренняя миграция, безработица и снижение спроса могут компенсировать ограничения."
+      ],
+      "falsification": "Оценить реальные вакансии, зарегистрированные занятости иностранцев и отраслевые показатели, отдельно по юридическим категориям.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-pl-mswia-visa-2026"
+      ],
+      "author": "World Information research review"
+    },
+    {
+      "id": "claim-pl-eu-exemption-2026",
+      "statement": "Польша освобождена от вкладов в механизм солидарности в 2026 году, но общий Пакт ЕС всё равно применяется.",
+      "mechanism": "Действие обязательств различается между актами Пакта и ежегодным солидарным механизмом.",
+      "alternatives": [
+        "В дальнейшем условия очередного годового цикла могут измениться."
+      ],
+      "falsification": "Сверить юридический акт Совета, решения на 2027 год и национальное исполнение по каждому акту.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-pl-sejm-solidarity-2026",
+        "src-eu-pact-2026",
+        "src-pl-mswia-pact-2026"
+      ],
+      "author": "World Information research review"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-pl-gov-pact",
+      "from": "pl-migration-government",
+      "to": "pl-eu-pact",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Правительство описало национальную реализацию общеевропейского Пакта.",
+      "evidence_source_ids": [
+        "src-pl-mswia-pact-2026",
+        "src-eu-pact-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-pact-exempt",
+      "from": "pl-eu-pact",
+      "to": "pl-eu-solidarity-exempt",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Применение Пакта и специальное исключение по солидарности на 2026 год сосуществуют.",
+      "evidence_source_ids": [
+        "src-pl-sejm-solidarity-2026",
+        "src-eu-pact-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-gov-border",
+      "from": "pl-migration-government",
+      "to": "pl-border-asylum",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Продление введено решением государственных органов, опубликованы условия ограничений.",
+      "evidence_source_ids": [
+        "src-pl-udsc-border-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-border-hrw",
+      "from": "pl-border-asylum",
+      "to": "pl-hrw-rights",
+      "relation": "associated_with",
+      "status": "disputed",
+      "mechanism": "HRW критикует ограничения с точки зрения прав человека, власти заявляют о защите границы.",
+      "evidence_source_ids": [
+        "src-pl-hrw-report-2026",
+        "src-pl-udsc-border-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-visa-2022-2026",
+      "from": "pl-visa-2022",
+      "to": "pl-visa-2026",
+      "relation": "precedes",
+      "status": "supported",
+      "mechanism": "Официальное сопоставление Q1 2022 и Q1 2026: 123 тыс. против 16 тыс., не идентифицирует причины.",
+      "evidence_source_ids": [
+        "src-pl-mswia-visa-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-government-visas",
+      "from": "pl-migration-government",
+      "to": "pl-visa-2026",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Правительство относит сокращение виз к контролю, но количественный вклад политики не изолирован.",
+      "evidence_source_ids": [
+        "src-pl-mswia-visa-2026"
+      ],
+      "claim_ids": [
+        "claim-pl-visa-drivers"
+      ],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-employment-visas",
+      "from": "pl-labor-demand",
+      "to": "pl-visa-2026",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Спрос работодателей — возможное альтернативное объяснение визового ряда.",
+      "evidence_source_ids": [],
+      "claim_ids": [
+        "claim-pl-visa-drivers"
+      ],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-visa-labor",
+      "from": "pl-visa-2026",
+      "to": "pl-future-labor",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Сокращение выдачи отдельных категорий документов может менять доступную рабочую силу, но это не миграционный баланс.",
+      "evidence_source_ids": [
+        "src-pl-mswia-visa-2026"
+      ],
+      "claim_ids": [
+        "claim-pl-labor-shortage"
+      ],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-president-bill",
+      "from": "pl-migration-president",
+      "to": "pl-citizenship-bill",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Проект внесён президентом 29 сентября 2025.",
+      "evidence_source_ids": [
+        "src-pl-president-citizenship-2025"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-bill-rights",
+      "from": "pl-citizenship-bill",
+      "to": "pl-future-rights",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Только при принятии и применимости к соответствующей группе изменения коснутся пути получения гражданства.",
+      "evidence_source_ids": [
+        "src-pl-president-citizenship-2025"
+      ],
+      "claim_ids": [
+        "claim-pl-citizen-bill-only"
+      ],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-800-rights",
+      "from": "pl-ukr-800",
+      "to": "pl-migrant-eligibility",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Действующее правило 800+ требует проверки трудовой активности и статуса, с исключениями.",
+      "evidence_source_ids": [
+        "src-pl-gov-800-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-ukr-rights",
+      "from": "pl-ukr-protection",
+      "to": "pl-migrant-eligibility",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Временная защита сохраняется до 04.03.2027 для соответствующих лиц с установленными условиями.",
+      "evidence_source_ids": [
+        "src-pl-gov-uk-2026",
+        "src-pl-president-uk-law-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-eligibility-rights",
+      "from": "pl-migrant-eligibility",
+      "to": "pl-future-rights",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Разный юридический статус влияет на применимые правила; не является автоматическим индивидуальным решением.",
+      "evidence_source_ids": [
+        "src-pl-gov-800-2026",
+        "src-pl-gov-uk-2026",
+        "src-pl-udsc-border-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-policy-selective",
+      "from": "pl-future-rights",
+      "to": "pl-mig-scenario-selective",
+      "relation": "depends_on",
+      "status": "hypothesized",
+      "mechanism": "Сценарий зависит от будущих законопроектов, принятия и подписания.",
+      "evidence_source_ids": [],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-labor-scenario",
+      "from": "pl-future-labor",
+      "to": "pl-mig-scenario-labor",
+      "relation": "depends_on",
+      "status": "hypothesized",
+      "mechanism": "Сценарий допускает точечные реформы найма при наличии подтверждённого дефицита.",
+      "evidence_source_ids": [],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-president-uk",
+      "from": "pl-migration-president",
+      "to": "pl-ukr-protection",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Президент подписал закон 19.02.2026; вступление 05.03.2026.",
+      "evidence_source_ids": [
+        "src-pl-president-uk-law-2026",
+        "src-pl-gov-uk-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-government-800",
+      "from": "pl-migration-government",
+      "to": "pl-ukr-800",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Мера реализуется законодательными и административными решениями; не персональное мнение одного чиновника.",
+      "evidence_source_ids": [
+        "src-pl-gov-800-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario-pl-migration-selective",
+      "label": "Дальнейший избирательный контроль",
+      "base_as_of": "2026-10-30T22:30:00Z",
+      "assumptions": [
+        "Парламент принимает дополнительные процедуры допуска.",
+        "Существующие статусы оцениваются по тексту и переходным положениям новых законов."
+      ],
+      "time_horizon": "2027-12-31",
+      "is_forecast": false
+    },
+    {
+      "id": "scenario-pl-labor-targeted",
+      "label": "Точечная либерализация труда",
+      "base_as_of": "2026-10-30T22:30:00Z",
+      "assumptions": [
+        "Дефицит работников подтверждается отраслевыми данными.",
+        "Власти открывают отдельные каналы трудового въезда при сохранении контроля."
+      ],
+      "time_horizon": "2027-12-31",
+      "is_forecast": false
+    }
+  ],
+  "forecasts": []
+}

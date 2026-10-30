@@ -5,12 +5,16 @@ on:
       - "data/**"
       - "schemas/**"
       - "tools/validate_graph.py"
+      - "tools/detect_market_events.mjs"
+      - "tests/detect-market-events.test.mjs"
       - ".github/workflows/validate-graph.yml"
   pull_request:
     paths:
       - "data/**"
       - "schemas/**"
       - "tools/validate_graph.py"
+      - "tools/detect_market_events.mjs"
+      - "tests/detect-market-events.test.mjs"
       - ".github/workflows/validate-graph.yml"
 
 jobs:
@@ -28,3 +32,5 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_open_apis.py'
       - run: node tools/check_board.mjs
       - run: node tools/check_research_board.mjs
+      - run: node --check tools/detect_market_events.mjs
+      - run: node --test tests/detect-market-events.test.mjs

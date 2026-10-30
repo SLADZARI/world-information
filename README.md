@@ -4,6 +4,26 @@
 
 Status: **concept + working synthetic HTML prototype**. No live country data, forecasts or prediction markets are connected. Dementor Tab is an existing separate game and is **not** the name of this platform.
 
+## Poland: linked political and economic graph (GUS / MSWiA / NBP)
+
+The country case is now a **real evidence-linked cross-domain graph**, not only a narrative:
+
+- [**3D Three.js graph**](prototype/poland-economic-3d/index.html) — interactive politics → migration → labour / vacancies → investment paths. Use the server instructions below; every node and edge opens its underlying source / falsification record.
+- [**2D research board**](prototype/research-board.html?case=poland-policy-economy-2026-10) — same reviewed graph, static HTML snapshot; download the board HTML for standalone browsing.
+- [Economic investigation](stories/2026/poland-economy-causal-links-2026-10.md) · [derived graph JSON](data/cases/poland-policy-economy-2026-10.json) · [source overlay](data/overlays/PL-policy-economy-2026-10.json).
+- [Graph composer](tools/build_poland_economy.mjs) deterministic versioned merge of the judicial dispute and migration case nodes with GUS/NBP indicators; [tests](tests/poland-economic-links.test.mjs).
+
+**Observed (not caused by 30 Oct political events):** GUS workers 1,067.0k (Mar 2025) → 1,152.7k (Mar 2026); vacancies 100.2k Q1 → 98.7k Q2; H1 2026 business investment PLN 100.2bn, +13.7% YoY constant prices; NBP FDI 2023 PLN 125.7bn → 2024 PLN 56.5bn (historical series). Visa **issuances** are a different statistic from workers already working. All prospective influence is tagged as hypothesis, not measured effect.
+
+**3D local start** from repository root (Three.js CDN + WebGL needed):
+
+```sh
+python3 -m http.server 8000
+# open http://localhost:8000/prototype/poland-economic-3d/
+```
+
+**Source/logic validation:** `node tools/build_poland_economy.mjs --check` and `node --test tests/poland-economic-links.test.mjs`. GitHub CI also checks the exact JSON snapshot on the 2D board.
+
 ## Poland: country environment, legal status and contested political events (30 October 2026)
 
 - [Country environment (source-linked country overview)](data/countries/PL/overview-2026-10-30.json) — institution, migration and court-proceedings layers with future follow-ups.

@@ -3,7 +3,7 @@
 **State:** integration candidate, not a production causal engine. Source branch: `feat/local-first-demo-integration` (until reviewed). Owner/reviewer and browser QA are required before publishing.
 
 ## G3: model boundaries
-- **Evidence graph**: documented observations, claims, alternatives and typed directed relations under `data/cases/*.json`; `data/cases/manifest.json` is the case registry.
+- **Evidence graph**: documented observations, claims, alternatives and typed directed relations under `data/cases/*.json`; `data/case-registry.json` is the case registry.
 - **2D viewer**: `prototype/research-board.html` embeds an exact, deterministic, **offline** snapshot of the 7 reviewed cases. Update snapshots with `node tools/sync_research_board.mjs`.
 - **3D evidence viewer**: `prototype/poland-economic-3d/` reads one checked Poland graph from the local same-origin JSON. Three.js is a *projection*, not a data authority.
 - **3D Economy Lab**: `prototype/economy-lab/` computes a deterministic but **fictional** PL–DE–NO economic scenario. It does **not** calibrate itself from current country indicators. Never imply that policy news caused historical investments.

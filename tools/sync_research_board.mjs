@@ -3,7 +3,7 @@
 // Canonical JSON in data/cases/ is authoritative; this file contains no facts.
 import fs from "node:fs";
 const root=new URL("../",import.meta.url);
-const manifest=JSON.parse(fs.readFileSync(new URL("data/cases/manifest.json",root),"utf8"));
+const manifest=JSON.parse(fs.readFileSync(new URL("data/case-registry.json",root),"utf8"));
 const ids=manifest.cases;
 if(!Array.isArray(ids)||!ids.length||new Set(ids).size!==ids.length)throw Error("Invalid/duplicate case IDs");
 const cases=ids.map(id=>{

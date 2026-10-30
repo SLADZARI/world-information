@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 const repo=fileURLToPath(new URL("../",import.meta.url));
 const site=path.join(repo,process.argv[2]||".");
 const html=fs.readFileSync(path.join(site,"index.html"),"utf8");
-const ids=JSON.parse(fs.readFileSync(path.join(repo,"data/cases/manifest.json"),"utf8")).cases;
+const ids=JSON.parse(fs.readFileSync(path.join(repo,"data/case-registry.json"),"utf8")).cases;
 assert.equal(ids.length,7,"Unexpected launch case count");
 const board=fs.readFileSync(path.join(site,"prototype/research-board.html"),"utf8");
 const embedded=board.match(/<script type="application\/json" id="cases-data">([\s\S]*?)<\/script>/);

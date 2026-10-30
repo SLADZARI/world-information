@@ -7,7 +7,7 @@ const html=fs.readFileSync(new URL("prototype/research-board.html",root),"utf8")
 const match=html.match(/<script type="application\/json" id="cases-data">([\s\S]*?)<\/script>/);
 assert(match,"Missing embedded research cases");
 const cases=JSON.parse(match[1]);
-const ids=JSON.parse(fs.readFileSync(new URL("data/cases/manifest.json",root),"utf8")).cases;
+const ids=JSON.parse(fs.readFileSync(new URL("data/case-registry.json",root),"utf8")).cases;
 assert.deepEqual(cases.map(x=>x.case_id),ids,"Board case order does not match manifest");
 for(const id of ids){
   const canonical=JSON.parse(fs.readFileSync(new URL("data/cases/"+id+".json",root),"utf8"));

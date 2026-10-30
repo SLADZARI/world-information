@@ -4,6 +4,17 @@
 
 Status: **concept + working synthetic HTML prototype**. No live country data, forecasts or prediction markets are connected. Dementor Tab is an existing separate game and is **not** the name of this platform.
 
+## Первые реальные графы — исторические исследования
+
+- **[Открыть исследовательский борд](prototype/research-board.html)** — две документированные истории; для взаимодействия скачайте HTML и откройте локально.
+- [Газовая перестройка ЕС, 2021–2026](stories/2026/eu-gas-transition-2021-2026.md) · [JSON graph](data/cases/eu-gas-transition-2021-2026.json)
+- [Красное море / Суэц / Панама, 2023–2024](stories/2026/maritime-corridors-2023-2024.md) · [JSON graph](data/cases/maritime-corridors-2023-2024.json)
+- [Проверенный каталог бесплатных API](docs/API_CATALOG_2026.md) — доступ, квоты, ограничения и порядок интеграции.
+
+**Это не live-мониторинг:** документированные показатели сосуществуют с явно отмеченными гипотезами; причинные эффекты и рыночные прогнозы не выдумываются. События за 2023–2024 годы — исторические, несмотря на дату исследовательского обзора 2026.
+
+**Сбор сигналов в staging:** `python tools/ingest_open_apis.py --source eonet --limit 15` или `--source usgs`, `--source worldbank`. Результаты попадают в исключённую из Git папку `data/incoming/` со статусом `review_required`; автоматической публикации причинных стрелок нет.
+
 ## Try the graph board
 
 Open [prototype/board.html](prototype/board.html) as a raw/downloaded HTML file in your browser. No build, dependencies, login or network needed. Switch between Poland/Germany, audience lenses, time, categories, layered views and alternative scenarios. Click a node or arrow to inspect its explanation. **All example events and relations are fictional, not empirical findings.**

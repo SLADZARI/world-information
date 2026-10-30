@@ -1,6 +1,6 @@
 # Inspiration from Dementor Lab's existing Brain (concept transfer, not code transfer)
 
-Reference examined (private): `SLADZARI/dementor_lab` (`src/core/graph.mjs`, `src/core/model.mjs`, `src/ui/brain-layout.mjs`, `src/ui/brain-constructor.mjs`). **Do not copy private source files into this public repository without a separate permission and licensing decision.**
+Inspiration: a pre-existing, non-public game Brain built by the project authors. **This open repository does not contain or import its private source.** Reusing code requires a separate permission and licensing decision.
 
 ## Reusable design principles
 - Typed node families and explicit edge contracts.

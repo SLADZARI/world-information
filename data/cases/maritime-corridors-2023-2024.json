@@ -1,0 +1,471 @@
+{
+  "schema_version": "0.1.0",
+  "synthetic": false,
+  "case_id": "maritime-corridors-2023-2024",
+  "case_title": "Красное море и Панамский канал: шоки логистики 2023–2024",
+  "description": "Сопоставление независимых шоков в двух транспортных коридорах на основании UNCTAD 22 февраля 2024. Исторический кейс, не текущая ситуация 2026.",
+  "sources": [
+    {
+      "id": "source-unctad-shipping-2024",
+      "url": "https://unctad.org/news/unprecedented-shipping-disruptions-raise-risk-global-trade-unctad-warns",
+      "publisher": "UN Trade and Development (UNCTAD)",
+      "published_at": "2024-02-22T00:00:00Z",
+      "retrieved_at": "2026-10-30T12:00:00Z",
+      "rights": "Metadata and short factual observations linked for verification; do not republish full copyrighted content without license review."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "country-eg",
+      "type": "country",
+      "label": "Египет · Суэцкий канал",
+      "layer": "geography",
+      "category": "logistics",
+      "subcategories": [
+        "logistics.corridor.suez"
+      ],
+      "countries": [
+        "EG"
+      ],
+      "at": "2023-01-01T00:00:00Z",
+      "description": "Географическая привязка Суэцкого канала к Египту.",
+      "layout": {
+        "x": 25,
+        "y": 70
+      }
+    },
+    {
+      "id": "country-pa",
+      "type": "country",
+      "label": "Панама · Панамский канал",
+      "layer": "geography",
+      "category": "logistics",
+      "subcategories": [
+        "logistics.corridor.panama"
+      ],
+      "countries": [
+        "PA"
+      ],
+      "at": "2023-01-01T00:00:00Z",
+      "description": "Географическая привязка Панамского канала к Панаме.",
+      "layout": {
+        "x": 25,
+        "y": 265
+      }
+    },
+    {
+      "id": "event-redsea-shipping",
+      "type": "event",
+      "label": "Атаки на суда в Красном море",
+      "layer": "events",
+      "category": "security",
+      "subcategories": [
+        "security.maritime.attacks"
+      ],
+      "countries": [
+        "YE",
+        "EG"
+      ],
+      "at": "2023-12-01T00:00:00Z",
+      "description": "UNCTAD сообщает о нападениях на коммерческие суда в Красном море в конце 2023 — начале 2024 года.",
+      "layout": {
+        "x": 280,
+        "y": 70
+      }
+    },
+    {
+      "id": "event-panama-drought",
+      "type": "event",
+      "label": "Маловодье Панамского канала",
+      "layer": "events",
+      "category": "environment",
+      "subcategories": [
+        "environment.water.drought"
+      ],
+      "countries": [
+        "PA"
+      ],
+      "at": "2023-12-01T00:00:00Z",
+      "description": "UNCTAD связывает ограничения работы Панамского канала с низким уровнем воды; точная дата начала не задана.",
+      "layout": {
+        "x": 280,
+        "y": 270
+      }
+    },
+    {
+      "id": "factor-route-avoidance",
+      "type": "factor",
+      "label": "Изменение маршрутов судов",
+      "layer": "factors",
+      "category": "logistics",
+      "subcategories": [
+        "logistics.maritime.rerouting"
+      ],
+      "countries": [
+        "EG",
+        "YE"
+      ],
+      "at": "2024-01-01T00:00:00Z",
+      "description": "Крупные перевозчики приостанавливали транзит через Суэц и использовали альтернативные пути через мыс Доброй Надежды.",
+      "layout": {
+        "x": 545,
+        "y": 65
+      }
+    },
+    {
+      "id": "factor-canal-capacity",
+      "type": "factor",
+      "label": "Ограничение пропускной способности",
+      "layer": "factors",
+      "category": "logistics",
+      "subcategories": [
+        "logistics.canal.capacity"
+      ],
+      "countries": [
+        "PA"
+      ],
+      "at": "2024-01-01T00:00:00Z",
+      "description": "Ограничения проходов — реакция логистической системы на водные условия.",
+      "layout": {
+        "x": 545,
+        "y": 270
+      }
+    },
+    {
+      "id": "indicator-suez-transits",
+      "type": "indicator",
+      "label": "Суэц: −42% транзитов",
+      "layer": "impacts",
+      "category": "logistics",
+      "subcategories": [
+        "logistics.maritime.transits"
+      ],
+      "countries": [
+        "EG",
+        "YE"
+      ],
+      "at": "2024-01-31T00:00:00Z",
+      "description": "UNCTAD: число проходов через Суэцкий канал упало на 42% по сравнению с пиковым уровнем, оценка к январю 2024 года.",
+      "layout": {
+        "x": 810,
+        "y": 65
+      },
+      "indicator": {
+        "metric": "Change in Suez Canal transits relative to peak",
+        "unit": "percent",
+        "period": "2024-01",
+        "value": -42,
+        "comparison_basis": "Peak period used by UNCTAD, not previous month",
+        "source_id": "source-unctad-shipping-2024",
+        "population_scope": "All Suez Canal transits",
+        "method": "UNCTAD estimates using maritime industry data."
+      }
+    },
+    {
+      "id": "indicator-suez-containers",
+      "type": "indicator",
+      "label": "Суэц: −67% контейнерных судов",
+      "layer": "impacts",
+      "category": "logistics",
+      "subcategories": [
+        "logistics.maritime.container_transits"
+      ],
+      "countries": [
+        "EG",
+        "YE"
+      ],
+      "at": "2024-02-22T00:00:00Z",
+      "description": "UNCTAD: число еженедельных проходов контейнерных судов упало на 67%; показатель не равен потере общего объёма мировой торговли.",
+      "layout": {
+        "x": 810,
+        "y": 210
+      },
+      "indicator": {
+        "metric": "Change in weekly container ship transits",
+        "unit": "percent",
+        "period": "2024-02",
+        "value": -67,
+        "comparison_basis": "Source-stated pre-disruption benchmark",
+        "source_id": "source-unctad-shipping-2024",
+        "population_scope": "Weekly container ship transits via Suez Canal",
+        "method": "UNCTAD February 2024 notice."
+      }
+    },
+    {
+      "id": "indicator-panama-transits",
+      "type": "indicator",
+      "label": "Панама: −49% транзитов",
+      "layer": "impacts",
+      "category": "logistics",
+      "subcategories": [
+        "logistics.maritime.transits"
+      ],
+      "countries": [
+        "PA"
+      ],
+      "at": "2024-01-31T00:00:00Z",
+      "description": "UNCTAD: транзиты Панамского канала упали на 49% относительно пикового значения.",
+      "layout": {
+        "x": 810,
+        "y": 350
+      },
+      "indicator": {
+        "metric": "Change in Panama Canal transits relative to peak",
+        "unit": "percent",
+        "period": "2024-01",
+        "value": -49,
+        "comparison_basis": "Peak period used by UNCTAD",
+        "source_id": "source-unctad-shipping-2024",
+        "population_scope": "All Panama Canal transits",
+        "method": "UNCTAD estimates using maritime industry data."
+      }
+    },
+    {
+      "id": "factor-global-inflation",
+      "type": "factor",
+      "label": "Другие причины инфляции",
+      "layer": "factors",
+      "category": "economy",
+      "subcategories": [
+        "economy.inflation.confounders"
+      ],
+      "countries": [
+        "EG",
+        "PA"
+      ],
+      "at": "2024-01-01T00:00:00Z",
+      "description": "Курсы валют, энергорынок и глобальный спрос — конкурирующие возможные факторы, не оценённые в этом кейсе.",
+      "layout": {
+        "x": 1045,
+        "y": 345
+      }
+    },
+    {
+      "id": "impact-transport-cost",
+      "type": "impact",
+      "label": "Стоимость морской перевозки?",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.trade.freight_costs"
+      ],
+      "countries": [
+        "EG",
+        "PA"
+      ],
+      "at": "2024-02-22T00:00:00Z",
+      "description": "UNCTAD предупреждает о рисках для издержек и инфляции. Количественный причинный эффект в этом графе НЕ оценён.",
+      "layout": {
+        "x": 1045,
+        "y": 110
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-redsea-reroute",
+      "statement": "Атаки на коммерческие суда способствовали обходу Красного моря и сокращению проходов через Суэц",
+      "mechanism": "Безопасность перевозок → изменение судоходного маршрута → снижение проходов Суэцкого канала",
+      "alternatives": [
+        "Регулярная сезонность",
+        "Изменение транспортного спроса",
+        "Изменение состава флота"
+      ],
+      "falsification": "Оценить AIS-маршруты по перевозчикам и сопоставить до и после нападений и с контрольными маршрутами.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "source-unctad-shipping-2024"
+      ],
+      "author": "World Information initial research"
+    },
+    {
+      "id": "claim-panama-water",
+      "statement": "Маловодье могло ограничить пропускную способность Панамского канала",
+      "mechanism": "Гидрологические ограничения → сокращение разрешённых проходов",
+      "alternatives": [
+        "Плановые ограничения на ремонт",
+        "Изменение мирового спроса"
+      ],
+      "falsification": "Сопоставить официальные данные о глубине воды, регламент проходов и реальные транзиты.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "source-unctad-shipping-2024"
+      ],
+      "author": "World Information initial research"
+    },
+    {
+      "id": "claim-freight-inflation",
+      "statement": "Транспортные нарушения могли увеличить стоимость морских перевозок и потребительские цены",
+      "mechanism": "Рерутинг увеличивает длину плеча/время, что меняет фрахт и потенциально инфляцию",
+      "alternatives": [
+        "Состояние спроса",
+        "Топливные цены",
+        "Валютные колебания"
+      ],
+      "falsification": "Использовать реальные ставки перевозок и ценовые индексы с сопоставимыми контрольными торговыми маршрутами.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "source-unctad-shipping-2024"
+      ],
+      "author": "World Information initial research"
+    }
+  ],
+  "relations": [
+    {
+      "id": "sea-rel-eg-redsea",
+      "from": "country-eg",
+      "to": "event-redsea-shipping",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Суэц расположен в Египте, а перебои в Красном море повлияли на его использование.",
+      "evidence_source_ids": [
+        "source-unctad-shipping-2024"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "sea-rel-pa-drought",
+      "from": "country-pa",
+      "to": "event-panama-drought",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Маловодье затрагивало Панамский канал.",
+      "evidence_source_ids": [
+        "source-unctad-shipping-2024"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "sea-rel-attack-route",
+      "from": "event-redsea-shipping",
+      "to": "factor-route-avoidance",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Повышенные угрозы безопасности стимулировали изменение маршрутов.",
+      "evidence_source_ids": [
+        "source-unctad-shipping-2024"
+      ],
+      "claim_ids": [
+        "claim-redsea-reroute"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "sea-rel-route-suez",
+      "from": "factor-route-avoidance",
+      "to": "indicator-suez-transits",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Изменение маршрутов связано со снижением числа проходов.",
+      "evidence_source_ids": [
+        "source-unctad-shipping-2024"
+      ],
+      "claim_ids": [
+        "claim-redsea-reroute"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "sea-rel-route-container",
+      "from": "factor-route-avoidance",
+      "to": "indicator-suez-containers",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Часть контейнерных судов пошла в обход Суэца.",
+      "evidence_source_ids": [
+        "source-unctad-shipping-2024"
+      ],
+      "claim_ids": [
+        "claim-redsea-reroute"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "sea-rel-drought-capacity",
+      "from": "event-panama-drought",
+      "to": "factor-canal-capacity",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Уровень воды может ограничить пропускную способность канала.",
+      "evidence_source_ids": [
+        "source-unctad-shipping-2024"
+      ],
+      "claim_ids": [
+        "claim-panama-water"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "sea-rel-capacity-panama",
+      "from": "factor-canal-capacity",
+      "to": "indicator-panama-transits",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Ограниченные проходы отражаются на объёме транзита.",
+      "evidence_source_ids": [
+        "source-unctad-shipping-2024"
+      ],
+      "claim_ids": [
+        "claim-panama-water"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "sea-rel-suez-freight",
+      "from": "indicator-suez-transits",
+      "to": "impact-transport-cost",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Меньше проходов через Суэц может изменить фрахт, но величина не измерена.",
+      "evidence_source_ids": [
+        "source-unctad-shipping-2024"
+      ],
+      "claim_ids": [
+        "claim-freight-inflation"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "sea-rel-panama-freight",
+      "from": "indicator-panama-transits",
+      "to": "impact-transport-cost",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Меньше проходов через Панаму может воздействовать на стоимость перевозки.",
+      "evidence_source_ids": [
+        "source-unctad-shipping-2024"
+      ],
+      "claim_ids": [
+        "claim-freight-inflation"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "sea-rel-factors-freight",
+      "from": "factor-global-inflation",
+      "to": "impact-transport-cost",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Внешние факторы способны объяснять часть ценовых изменений независимо от каналов.",
+      "evidence_source_ids": [],
+      "claim_ids": [
+        "claim-freight-inflation"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    }
+  ],
+  "scenarios": [],
+  "forecasts": []
+}

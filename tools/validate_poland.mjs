@@ -3,6 +3,8 @@
  * Complements Graph JSON Schema; does NOT determine legal truth or cause.
  */
 import fs from "node:fs";
+import { fileURLToPath } from "node:url";
+import { resolve } from "node:path";
 import assert from "node:assert/strict";
 const get=path=>JSON.parse(fs.readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 export const graphs=Object.fromEntries(
@@ -62,7 +64,7 @@ export function validatePoland(policyData, countryData, allGraphs) {
    "Unsupported direct court scandal–Tribunal causality");
  return true;
 }
-if(import.meta.url===new URL("file://"+process.argv[1]).href) {
+if(process.argv[1] && fileURLToPath(import.meta.url)===resolve(process.argv[1])) {
  validatePoland(policies,profile,graphs);
  console.log("PASS: Poland political and migration graphs, legal status, affected groups, country profile");
 }

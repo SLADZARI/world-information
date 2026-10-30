@@ -4,6 +4,14 @@
 
 Status: **concept + working synthetic HTML prototype**. No live country data, forecasts or prediction markets are connected. Dementor Tab is an existing separate game and is **not** the name of this platform.
 
+## 3D Economy Lab — визуальный симулятор стран (Three.js)
+
+- **[Открыть исходный HTML прототипа](prototype/economy-lab/index.html)** · [инструкция запуска](prototype/economy-lab/README.md) · [экономические правила и границы применимости](docs/ECONOMY_ENGINE_THREEJS.md)
+- Синтетические страны PL / DE / NO: производство, потребление, торговые маршруты, резерв, бюджет, налоговые поступления, инвестиции в эффективность и внешние события.
+- Объёмный граф с направленными торговыми дугами, слоями показателей, переключением квартала и моделируемыми сценариями, выбором узлов и сравнением с базой.
+- **Все числа и коэффициенты этого эксперимента вымышлены.** Это тест балансового моделирования, не реальный макроэкономический прогноз, не перенос закрытого кода Dementor Live. Three.js загружается с закреплённой версией CDN. Запуск: `python3 -m http.server 8000` в корне репозитория, затем `http://localhost:8000/prototype/economy-lab/`.
+- Модель тестируется отдельно: `node --test tests/economy-lab.test.mjs`.
+
 ## Первые реальные графы — исторические исследования
 
 - **[Открыть исследовательский борд](prototype/research-board.html)** — три исследовательских истории; для взаимодействия скачайте HTML и откройте локально.

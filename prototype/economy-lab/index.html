@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>World Information — 3D Economy Lab</title>
+<!-- Official Three.js CDN import-map pattern. Same pinned version for core and addons. -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+  }
+}
+</script>
+<style>
+:root{--bg:#080e19;--panel:#101d30;--panel2:#192a40;--border:#31465b;--text:#eaf3ff;--muted:#9eb3cb;--cyan:#65d4ee;--green:#79dbb0;--amber:#ffc57a;--red:#fa9185}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.48 system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:#99d6ff}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 22px;background:linear-gradient(110deg,#111e32,#0c1525);border-bottom:1px solid var(--border)}
+h1{font-size:21px;margin:2px 0 3px}h2{font-size:16px;margin:0 0 9px}h3{font-size:13px;margin:14px 0 8px}.overline{color:var(--cyan);font-size:11px;letter-spacing:.1em;font-weight:700}.quiet{color:var(--muted);font-size:12px}
+.warn{border:1px solid #a36b36;background:#382a22;color:#ffe2ad;padding:6px 9px;border-radius:8px;font-size:12px;max-width:440px}
+.shell{display:grid;grid-template-columns:266px minmax(450px,1fr) 325px;gap:12px;padding:12px}
+.panel{border:1px solid var(--border);border-radius:13px;background:var(--panel);padding:15px;min-width:0}
+.control{display:grid;gap:6px;margin:15px 0}.control label{color:var(--muted);font-size:12px;display:flex;justify-content:space-between}.control input[type=range]{width:100%;accent-color:var(--cyan)}
+button,select{font:inherit;background:#1d3047;border:1px solid #48627d;color:var(--text);border-radius:8px;padding:9px 11px}
+button{cursor:pointer}button:hover,select:hover{border-color:#97dbe9}
+select{width:100%}.buttons{display:flex;gap:7px;flex-wrap:wrap}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
+.chip{display:flex;gap:6px;align-items:center;padding:7px;background:#14253a;border-radius:8px;font-size:12px}.chip input{accent-color:#7edacc}
+.notice{font-size:12px;color:var(--muted);background:var(--panel2);border-radius:9px;padding:10px;margin:12px 0}
+.canvas{min-width:0;overflow:hidden;padding:0;position:relative;min-height:650px;display:flex;flex-direction:column;background:#0a1422}
+.canvashead{z-index:1;display:flex;gap:8px;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid var(--border);flex-wrap:wrap;background:#101d30}
+#viewport{position:relative;flex:1;min-height:540px;touch-action:none}#viewport canvas{display:block;width:100%;height:100%}
+#fallback{position:absolute;inset:15px;display:none;place-items:center;text-align:center;color:var(--muted);background:rgba(20,31,49,.95);border:1px dashed #63829b;border-radius:12px;padding:18px}
+.hud{position:absolute;left:12px;bottom:12px;display:flex;flex-wrap:wrap;gap:8px;pointer-events:none}
+.hud span{padding:5px 8px;background:#162c43db;border:1px solid #36536b;border-radius:7px;font-size:11px;color:#c3d5e8}
+#countryButtons{display:flex;gap:6px;flex-wrap:wrap}
+#countryButtons button[aria-pressed=true]{border-color:#83f0dc;background:#234444}
+#detail{min-height:225px}
+.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.metric{background:#192b40;padding:9px;border:1px solid #2b4664;border-radius:9px}
+.metric small{display:block;color:var(--muted);font-size:11px}
+.metric strong{display:block;font-size:19px;margin:3px 0}
+.delta{color:var(--amber);font-size:12px}
+.row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #294058;padding:6px 0;font-size:12px}
+.row .value{text-align:right;font-variant-numeric:tabular-nums}
+.trace{background:#1a2c41;border:1px solid #2c4964;border-radius:8px;padding:10px;margin-top:12px;font-size:12px}
+#chart{height:146px;width:100%;display:block;background:#0b1726;border:1px solid #34485c;border-radius:9px;margin:10px 0}
+.tablewrap{overflow-x:auto;margin-top:10px}table{border-collapse:collapse;width:100%;font-size:12px}td,th{padding:6px;border-bottom:1px solid #293e52;text-align:left;white-space:nowrap}th{color:#aac0d7;font-weight:500}
+.chartlegend{font-size:11px;color:var(--muted)}
+#graphDescription{padding:12px 14px;border-top:1px solid var(--border);background:#102034;font-size:12px;color:#c7d9ec}
+footer{padding:12px 20px;font-size:12px;color:var(--muted)}
+@media(max-width:1180px){.shell{grid-template-columns:250px minmax(390px,1fr)}.detailpanel{grid-column:1/-1}.canvas{min-height:600px}}
+@media(max-width:740px){.shell{display:block;padding:8px}.shell>.panel{margin-bottom:10px}.canvas{min-height:560px}#viewport{min-height:480px}header{padding:12px 15px}.warn{max-width:100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="overline">WORLD INFORMATION · EXPERIMENTAL ECONOMY ENGINE</div>
+    <h1>Трёхмерная экономика: страны и цепочки воздействия</h1>
+    <div class="quiet">Ресурсы → торговля → производство → бюджет → инвестиции следующего периода</div>
+  </div>
+  <div class="warn">МОДЕЛЬНЫЙ ЭКСПЕРИМЕНТ. Все численные параметры вымышлены, а результаты не являются прогнозами реальных стран.</div>
+</header>
+<div class="shell">
+  <aside class="panel" aria-label="Управление моделью">
+    <h2>Управление сценарием</h2>
+    <div class="control"><label for="scenario">Событие / внешний шок</label><select id="scenario"></select></div>
+    <div class="control"><label for="policy">Инвестиции в эффективность <output id="policyLabel">0% налоговых поступлений</output></label><input id="policy" type="range" min="0" max="100" step="5" value="30"></div>
+    <div class="control"><label for="quarter">Период <output id="quarterLabel">Q1 / Q8</output></label><input id="quarter" type="range" min="1" max="8" step="1" value="1"></div>
+    <div class="buttons"><button id="prev" type="button">← Назад</button><button id="play" type="button" aria-pressed="false">▶ Прогнать</button><button id="next" type="button">Дальше →</button></div>
+    <div class="control"><label for="focus">Страна для анализа</label><select id="focus"></select></div>
+    <h3>Слои графа</h3>
+    <div class="chips">
+      <label class="chip"><input type="checkbox" id="show-energy" checked> Энергия</label>
+      <label class="chip"><input type="checkbox" id="show-output" checked> Производство</label>
+      <label class="chip"><input type="checkbox" id="show-budget" checked> Бюджет</label>
+      <label class="chip"><input type="checkbox" id="show-flows" checked> Потоки</label>
+      <label class="chip"><input type="checkbox" id="show-shocks" checked> События</label>
+      <label class="chip"><input type="checkbox" id="show-reserves" checked> Резервы</label>
+    </div>
+    <div class="notice">
+      <strong>Что переносим из концепции Dementor Live:</strong>
+      <p>Физические запасы и потоки должны сходиться. В бюджете нельзя потратить несуществующие деньги. Событие влияет на доступность ресурса, затем на выпуск и поступления.</p>
+      <p>Все формулы — допущения тестовой модели, а не закон поведения экономик.</p>
+    </div>
+    <button id="reset" type="button">Сбросить эксперимент</button>
+  </aside>
+  <section class="panel canvas" aria-label="Трёхмерная визуализация">
+    <div class="canvashead"><div><strong id="caseTitle">Базовая экономическая модель</strong><div id="caseDescription" class="quiet"></div></div><div id="countryButtons" aria-label="Выбор страны"></div></div>
+    <div id="viewport" aria-label="3D граф стран: можно вращать, масштабировать и выбирать узлы">
+      <div id="fallback" role="status">3D-движок недоступен: проверьте WebGL или доступ к CDN. Показатели и сравнение сценариев справа продолжают работать.</div>
+      <div class="hud"><span>Мышь: вращать · колёсико: приблизить</span><span>Выберите узел — сведения справа</span></div>
+    </div>
+    <div id="graphDescription" aria-live="polite">Рассматриваются три страны и направленные торговые маршруты. Выделите страну в панели управления для чтения данных без 3D.</div>
+  </section>
+  <aside class="panel detailpanel" aria-label="Результаты и доказательства">
+    <h2>Состояние экономики</h2>
+    <div id="detail" aria-live="polite"></div>
+    <h3>Базовый вариант ↔ выбранный сценарий</h3>
+    <svg id="chart" viewBox="0 0 310 145" role="img" aria-label="Индексы выпуска по кварталам, базовый и выбранный сценарий"></svg>
+    <div class="chartlegend">— <span style="color:#63d9ea">Базовый</span> · — <span style="color:#ffba79">Сценарий</span>. Индексы условные.</div>
+    <h3>Денежные и ресурсные проводки</h3>
+    <div id="ledger" class="tablewrap"></div>
+    <h3>Исследовательский контекст</h3>
+    <div class="notice">
+      <a href="../../stories/2026/eu-gas-transition-2021-2026.md" target="_blank" rel="noopener">Исторический граф перестройки газа ЕС</a>.
+      Числа оттуда <strong>не используются</strong> для настройки этой модели. Перед реальным прогнозированием нужны параметры на основе Eurostat, ENTSO-E, IMF и других измерений.
+    </div>
+  </aside>
+</div>
+<footer>Проект World Information · отдельная макроэкономическая модель, независимая от игрового репозитория. Источники модели и тесты открыты в GitHub. Версия Three.js закреплена; для 3D необходим интернет к CDN и браузер с WebGL.</footer>
+<script type="module" src="./main.mjs"></script>
+</body>
+</html>

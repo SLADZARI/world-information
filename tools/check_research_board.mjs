@@ -7,7 +7,7 @@ const html=fs.readFileSync(new URL('prototype/research-board.html',root),'utf8')
 const fixture=html.match(/<script type="application\/json" id="cases-data">([\s\S]*?)<\/script>/);
 assert(fixture,'Missing embedded research cases');
 const cases=JSON.parse(fixture[1]);
-const names=['eu-gas-transition-2021-2026','maritime-corridors-2023-2024','binance-incident-2026-10'];
+const names=['eu-gas-transition-2021-2026','maritime-corridors-2023-2024','binance-incident-2026-10','poland-institutional-crisis-2026-10','poland-migration-policy-2025-2026'];
 assert.equal(cases.length,names.length,'Unexpected dataset count');
 for(const name of names){
  const canonical=JSON.parse(fs.readFileSync(new URL('data/cases/'+name+'.json',root),'utf8'));

@@ -6,12 +6,19 @@ on:
       - "schemas/**"
       - "tools/validate_graph.py"
       - "tools/validate_poland.mjs"
+      - "tools/build_poland_economy.mjs"
+      - "tests/poland-economic-links.test.mjs"
+      - "prototype/poland-economic-3d/**"
       - ".github/workflows/validate-graph.yml"
   pull_request:
     paths:
       - "data/**"
       - "schemas/**"
       - "tools/validate_graph.py"
+      - "tools/validate_poland.mjs"
+      - "tools/build_poland_economy.mjs"
+      - "tests/poland-economic-links.test.mjs"
+      - "prototype/poland-economic-3d/**"
       - ".github/workflows/validate-graph.yml"
 
 jobs:
@@ -30,3 +37,6 @@ jobs:
       - run: node tools/check_board.mjs
       - run: node tools/check_research_board.mjs
       - run: node tools/validate_poland.mjs
+      - run: node --check prototype/poland-economic-3d/main.mjs
+      - run: node tools/build_poland_economy.mjs --check
+      - run: node --test tests/poland-economic-links.test.mjs

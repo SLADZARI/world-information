@@ -6,7 +6,8 @@ Status: **concept + working synthetic HTML prototype**. No live country data, fo
 
 ## Первые реальные графы — исторические исследования
 
-- **[Открыть исследовательский борд](prototype/research-board.html)** — две документированные истории; для взаимодействия скачайте HTML и откройте локально.
+- **[Открыть исследовательский борд](prototype/research-board.html)** — три исследовательских истории; для взаимодействия скачайте HTML и откройте локально.
+- [Binance 29–30 октября 2026: расследование и реакция рынков](stories/2026/binance-incident-2026-10.md) · [JSON graph](data/cases/binance-incident-2026-10.json)
 - [Газовая перестройка ЕС, 2021–2026](stories/2026/eu-gas-transition-2021-2026.md) · [JSON graph](data/cases/eu-gas-transition-2021-2026.json)
 - [Красное море / Суэц / Панама, 2023–2024](stories/2026/maritime-corridors-2023-2024.md) · [JSON graph](data/cases/maritime-corridors-2023-2024.json)
 - [Проверенный каталог бесплатных API](docs/API_CATALOG_2026.md) — доступ, квоты, ограничения и порядок интеграции.

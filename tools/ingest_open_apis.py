@@ -52,7 +52,10 @@ def build_url(a):
         if not re.fullmatch(r"[A-Z0-9.]+",a.indicator):
             raise ValueError("invalid World Bank indicator code")
         path="/v2/country/"+urllib.parse.quote(";".join(countries),safe=";")+"/indicator/"+urllib.parse.quote(a.indicator)
-        query=urllib.parse.urlencode({"format":"json","date":str(a.start) +":"+str(a.end),"per_page":min(250,a.limit)})
+        start_year=str(a.start)[:4]; end_year=str(a.end)[:4]
+        if not (start_year.isdigit() and end_year.isdigit() and start_year <= end_year):
+            raise ValueError("World Bank dates must specify valid ascending years")
+        query=urllib.parse.urlencode({"format":"json","date":start_year+":"+end_year,"per_page":min(250,a.limit)})
         return "https://api.worldbank.org"+path+"?"+query
     if a.source=="usgs":
         if a.end<a.start: raise ValueError("End must not precede start")

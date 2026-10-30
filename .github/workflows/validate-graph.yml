@@ -24,4 +24,6 @@ jobs:
         with:
           python-version: "3.12"
       - run: python tools/validate_graph.py
+      - run: python tools/validate_research.py
       - run: node tools/check_board.mjs
+      - run: node tools/check_research_board.mjs

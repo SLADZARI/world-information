@@ -4,9 +4,16 @@
 
 Status: **concept + working synthetic HTML prototype**. No live country data, forecasts or prediction markets are connected. Dementor Tab is an existing separate game and is **not** the name of this platform.
 
+## Automated *candidate* market signal detection (experimental)
+
+- [Source-based event detection specification](docs/EVENT_DETECTION.md) — news and disclosures are split into observations, unverified claims, competing explanations and falsification tests.
+- [30 October 2026 AI/tech selloff case](stories/2026/ai-tech-selloff-2026-10-30.md) · [causal investigation graph](data/cases/ai-tech-multimarket-2026-10-30.json).
+- [Deterministic market signal detector](tools/detect_market_events.mjs) + [reviewable sourced EOD fixture](data/examples/market-selloff-observations-2026-10-30.json). Run: `node tools/detect_market_events.mjs data/examples/market-selloff-observations-2026-10-30.json`. Alerts are **not** automatic causal proofs or trading advice.
+- Existing [research board](prototype/research-board.html) offers this story as a fourth selectable case.
+
 ## Первые реальные графы — исторические исследования
 
-- **[Открыть исследовательский борд](prototype/research-board.html)** — три исследовательских истории; для взаимодействия скачайте HTML и откройте локально.
+- **[Открыть исследовательский борд](prototype/research-board.html)** — четыре исследовательские истории; для взаимодействия скачайте HTML и откройте локально.
 - [Binance 29–30 октября 2026: расследование и реакция рынков](stories/2026/binance-incident-2026-10.md) · [JSON graph](data/cases/binance-incident-2026-10.json)
 - [Газовая перестройка ЕС, 2021–2026](stories/2026/eu-gas-transition-2021-2026.md) · [JSON graph](data/cases/eu-gas-transition-2021-2026.json)
 - [Красное море / Суэц / Панама, 2023–2024](stories/2026/maritime-corridors-2023-2024.md) · [JSON graph](data/cases/maritime-corridors-2023-2024.json)

@@ -68,3 +68,29 @@ Grand Hotel/Onet civil case → Jan 18 2027 scheduled hearing
 
 ## Not yet implemented
 Live Polish legal gazette/Sejm adapters; structured official bill workflow updates; user residency profile (privacy preserving); social discussions; independent law review; automated cross-case simulation; alerting and dated forecast resolution. The **existing HTML research board** displays the two graphs from canonical static files embedded as snapshots.
+
+
+## Economic measurement bridge, delivered 2026-10-30
+
+The previous institutional and migration graphs now have a **derived empirical view**, not a speculative immediate GDP prediction.
+
+- [Cross-domain graph](../data/cases/poland-policy-economy-2026-10.json) (23 traceable nodes, 20 edges, 11 original source records).
+- [Underlying economic measurements and proposed paths](../data/overlays/PL-policy-economy-2026-10.json) (GUS, MSWiA, NBP, preserved quarterly or annual grains).
+- [Three.js viewer](../prototype/poland-economic-3d/index.html) with source/claim inspection and epistemic filters.
+- [2D alternative](../prototype/research-board.html?case=poland-policy-economy-2026-10); as-of fixed to research snapshot.
+- [Reproducible projection script](../tools/build_poland_economy.mjs) and tests.
+
+**What changed:** stock of working foreigners in March 2026 **+8.0% YoY**, even as work-visa issuances in Q1 2026 were lower relative to Q1 2022. Vacancies Q1 2026 **100.2k** → Q2 2026 **98.7k**. Real enterprise investment outlays H1 2026 **+13.7% YoY**, total nominal **PLN 100.2bn**. NBP's FDI series **2023 → 2024** is a separate **lagged historical** baseline, not 2026 investment activity.
+
+**Unsupported / prohibited links:** the Tribunal escalation on 2026-10-30 cannot cause financial or labour measurements dated March, June or earlier years. The derived graph contains only *prospective hypothetical* paths from political instability to future decisions, with explicit alternatives and falsification tests.
+
+### Added requirement traceability
+
+| Requirement ID | User-facing task | Output record | Verified in |
+|---|---|---|---|
+| PL-REQ-08 | Country overview shows measured foreign employment | `pl-foreign-workers-2025-03`, `pl-foreign-workers-2026-03` | `tests/poland-economic-links.test.mjs` |
+| PL-REQ-09 | Show work visas without misleading decline in total foreign workers | `rel-pl-visa-vs-workers` association only | unit tests + source method |
+| PL-REQ-10 | Show labour demand and vacancy rate with correct units | `pl-job-vacancies-2026-q1/q2` and `pl-vacancy-rate-2026-q2` | unit tests + source detail |
+| PL-REQ-11 | Keep enterprise investment outlays separate from FDI | `pl-enterprise-investment-h1-2026`, `pl-fdi-inflow-2024` | explicit method + tests |
+| PL-REQ-12 | No retroactive politics→old economy causality | `rel-pl-legal-uncertainty-investment` ends at **prospective factor** | builder invariant + tests |
+| PL-REQ-13 | Source-backed 3D/2D graph for each claim | derived JSON case, click source/claim | 3D DOM / graph CI snapshot (full browser QA still required) |

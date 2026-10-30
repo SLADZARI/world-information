@@ -47,9 +47,9 @@
     },
     {
       "id": "src-pl-udsc-border-2026",
-      "url": "https://www.gov.pl/web/udsc/ograniczenie-prawa-do-zlozenia-wniosku-o-ochrone-miedzynarodowa",
-      "publisher": "Urząd do Spraw Cudzoziemców: Belarus border asylum restrictions",
-      "published_at": "2026-09-21T00:00:00Z",
+      "url": "https://eli.gov.pl/eli/DU/2026/1217/ogl/pol",
+      "publisher": "ELI Dziennik Ustaw 2026 poz.1217: Regulation of 15 September 2026",
+      "published_at": "2026-09-16T00:00:00Z",
       "retrieved_at": "2026-10-31T00:00:00Z",
       "rights": "Attribution and URL only. Daily publication precision where time is unavailable; legal status must be independently checked before individual decisions."
     },
@@ -57,7 +57,7 @@
       "id": "src-pl-gov-800-2026",
       "url": "https://www.gov.pl/web/rodzina/nowe-zasady-przyznawania-swiadczenia-wychowawczego-cudzoziemcom",
       "publisher": "Polish Ministry of Family: 800+ eligibility",
-      "published_at": "2026-01-30T00:00:00Z",
+      "published_at": null,
       "retrieved_at": "2026-10-31T00:00:00Z",
       "rights": "Government guidance updated over time; date approximate unless source body declares a precise update time; access date recorded separately."
     },
@@ -81,7 +81,7 @@
       "id": "src-pl-hrw-report-2026",
       "url": "https://www.hrw.org/world-report/2026/country-chapters/poland",
       "publisher": "Human Rights Watch: Poland rights critique, events of 2025",
-      "published_at": "2026-02-04T00:00:00Z",
+      "published_at": null,
       "retrieved_at": "2026-10-31T00:00:00Z",
       "rights": "Attribution and URL only. Daily publication precision where time is unavailable; legal status must be independently checked before individual decisions."
     }
@@ -270,7 +270,7 @@
         "PL"
       ],
       "at": "2026-02-01T00:00:00Z",
-      "description": "Для ряда иностранных групп, включая украинцев со статусом UKR, введён критерий профессиональной активности с исключениями; нельзя считать его универсальным запретом выплат.",
+      "description": "Действующие условия 800+: для украинцев UKR с 01.02.2026, для остальных подпадающих граждан третьих стран с 01.06.2026; условия трудовой активности, легальности проживания, обучения детей и исключения зависят от статуса.",
       "layout": {
         "x": 285,
         "y": 485

@@ -1,0 +1,584 @@
+{
+  "schema_version": "0.1.0",
+  "synthetic": false,
+  "case_id": "poland-institutional-crisis-2026-10",
+  "case_title": "Польша: Туск, Навроцкий и конфликт вокруг Конституционного трибунала",
+  "description": "Срез по состоянию на 30 октября 2026 года. Отдельное судебное разбирательство о публикации Onet не имеет подтверждённой причинной связи с кризисом Конституционного трибунала. Указания о приостановлении главы TK оспариваются; полномочия сторон не объявляются установленными редакцией.",
+  "sources": [
+    {
+      "id": "src-pl-tk-reuters-1030",
+      "url": "https://www.reuters.com/world/africa/polish-president-turns-back-senegal-trip-top-court-chief-suspended-2026-10-30/",
+      "publisher": "Reuters 2026-10-30",
+      "published_at": "2026-10-30T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Factual excerpt and URL only; ownership remains with original publisher. Publication date is day precision unless source provides an hour."
+    },
+    {
+      "id": "src-pl-tk-ap-1030",
+      "url": "https://apnews.com/article/67eda2e3a151e00038d85a5e894a2a72",
+      "publisher": "Associated Press 2026-10-30",
+      "published_at": "2026-10-30T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Factual excerpt and URL only; ownership remains with original publisher. Publication date is day precision unless source provides an hour."
+    },
+    {
+      "id": "src-pl-tk-notes-1030",
+      "url": "https://notesfrompoland.com/2026/10/30/chaos-at-polands-constitutional-court-as-government-backed-judges-seek-to-oust-chief-justice/",
+      "publisher": "Notes from Poland 2026-10-30",
+      "published_at": "2026-10-30T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Factual excerpt and URL only; ownership remains with original publisher. Publication date is day precision unless source provides an hour."
+    },
+    {
+      "id": "src-pl-pkw-2025",
+      "url": "https://prezydent2025.pkw.gov.pl/prezydent2025/pl/2/wynik/pl",
+      "publisher": "Państwowa Komisja Wyborcza (PKW)",
+      "published_at": "2025-06-02T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Factual excerpt and URL only; ownership remains with original publisher. Publication date is day precision unless source provides an hour."
+    },
+    {
+      "id": "src-pl-court-tvp-1027",
+      "url": "https://www.tvp.info/96150916/przesluchanie-prezydenta-karola-nawrockiego-chodzi-o-proces-jak-wytoczyl-onetowi-po-publikacji-o-jego-przeszlosci-i-pracy-w-grand-hotelu",
+      "publisher": "TVP Info / PAP 2026-10-27",
+      "published_at": "2026-10-27T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Factual excerpt and URL only; ownership remains with original publisher. Publication date is day precision unless source provides an hour."
+    },
+    {
+      "id": "src-pl-court-wp-1027",
+      "url": "https://wiadomosci.wp.pl/karol-nawrocki-bedzie-zeznawal-w-sadzie-jest-termin-7344550661990496a",
+      "publisher": "Wirtualna Polska 2026-10-27",
+      "published_at": "2026-10-27T00:00:00Z",
+      "retrieved_at": "2026-10-31T00:00:00Z",
+      "rights": "Factual excerpt and URL only; ownership remains with original publisher. Publication date is day precision unless source provides an hour."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "pl-country",
+      "type": "country",
+      "label": "Польша",
+      "layer": "geography",
+      "category": "politics",
+      "subcategories": [
+        "politics.country.governance"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2025-01-01T00:00:00Z",
+      "description": "Институциональная обстановка страны, правовая и политическая неопределённость не сводятся к одному индексу.",
+      "layout": {
+        "x": 25,
+        "y": 190
+      }
+    },
+    {
+      "id": "pl-tusk",
+      "type": "actor",
+      "label": "Премьер Дональд Туск",
+      "layer": "factors",
+      "category": "politics",
+      "subcategories": [
+        "politics.actor.executive"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2023-12-13T00:00:00Z",
+      "description": "Руководит коалиционным правительством; заявляет, что необходимо восстановить верховенство права после правления PiS.",
+      "layout": {
+        "x": 275,
+        "y": 55
+      }
+    },
+    {
+      "id": "pl-nawrocki",
+      "type": "actor",
+      "label": "Президент Кароль Навроцкий",
+      "layer": "factors",
+      "category": "politics",
+      "subcategories": [
+        "politics.actor.president"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2025-08-06T00:00:00Z",
+      "description": "Президент, поддержанный PiS; выступает против части шагов правительства по судебным назначениям.",
+      "layout": {
+        "x": 275,
+        "y": 330
+      }
+    },
+    {
+      "id": "pl-election",
+      "type": "indicator",
+      "label": "Навроцкий: 50,89% (2025)",
+      "layer": "impacts",
+      "category": "politics",
+      "subcategories": [
+        "politics.election.result"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2025-06-01T20:00:00Z",
+      "description": "Официальные итоги второго тура выборов PKW: Навроцкий 50,89%, Тшасковский 49,11%. Данные прошлого года — политический контекст, не сегодняшнее голосование.",
+      "layout": {
+        "x": 520,
+        "y": 485
+      },
+      "indicator": {
+        "metric": "Share of votes for Karol Nawrocki, presidential runoff",
+        "unit": "percent",
+        "period": "2025-06-01",
+        "value": 50.89,
+        "source_id": "src-pl-pkw-2025",
+        "population_scope": "valid runoff ballots nationally",
+        "method": "PKW final results. Opponent Rafał Trzaskowski: 49.11%."
+      }
+    },
+    {
+      "id": "pl-tk-appointments",
+      "type": "event",
+      "label": "Спор о присяге судей TK",
+      "layer": "events",
+      "category": "politics",
+      "subcategories": [
+        "politics.judiciary.appointments"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-03-01T00:00:00Z",
+      "description": "Длительный спор о судьях, избранных парламентом, и приведении их к присяге. Число затронутых назначений менялось; не фиксировать без отдельного датированного списка.",
+      "layout": {
+        "x": 520,
+        "y": 90
+      }
+    },
+    {
+      "id": "pl-tk-suspension",
+      "type": "event",
+      "label": "30.10: объявлена приостановка главы TK",
+      "layer": "events",
+      "category": "politics",
+      "subcategories": [
+        "politics.judiciary.tribunal"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T18:00:00Z",
+      "description": "Вечером 30 октября сообщалось о приостановлении Богдана Свенчковского; юридическая сила и порядок оспариваются. AP не смогла сразу самостоятельно проверить официальное основание из-за недоступности сайта.",
+      "layout": {
+        "x": 775,
+        "y": 65
+      }
+    },
+    {
+      "id": "pl-tk-protests",
+      "type": "event",
+      "label": "30.10: протесты и полиция",
+      "layer": "events",
+      "category": "society",
+      "subcategories": [
+        "society.civil_protest"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T17:00:00Z",
+      "description": "Охрана территории Конституционного трибунала, протесты и столкновения; Reuters и AP сообщают о вмешательстве полиции. Не трактовать действия полиции как автоматически законные или незаконные.",
+      "layout": {
+        "x": 1025,
+        "y": 75
+      }
+    },
+    {
+      "id": "pl-trip-return",
+      "type": "event",
+      "label": "30.10: президент прервал поездку",
+      "layer": "events",
+      "category": "politics",
+      "subcategories": [
+        "politics.diplomacy.travel"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T18:30:00Z",
+      "description": "Навроцкий сообщил о прерывании перелёта в Сенегал из-за событий в Польше. Речь о решении развернуть самолёт, не обязательно о подтверждённом моменте прибытия.",
+      "layout": {
+        "x": 1025,
+        "y": 215
+      }
+    },
+    {
+      "id": "pl-constitutional-legitimacy",
+      "type": "factor",
+      "label": "Разные трактовки полномочий",
+      "layer": "factors",
+      "category": "politics",
+      "subcategories": [
+        "politics.judiciary.legitimacy"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T18:00:00Z",
+      "description": "Правительство заявляет о необходимости восстановить законность; оппозиция и часть руководства TK обвиняют правительство в незаконном вмешательстве. Утверждение «переворот» здесь — политическая позиция, не установленный факт.",
+      "layout": {
+        "x": 775,
+        "y": 235
+      }
+    },
+    {
+      "id": "pl-reputation-case",
+      "type": "event",
+      "label": "27.10: процесс Навроцкий—Onet",
+      "layer": "events",
+      "category": "society",
+      "subcategories": [
+        "society.media.defamation_trial"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-27T10:00:00Z",
+      "description": "Гражданский иск президента к издателю Onet в связи с публикацией 2025 года о спорных утверждениях о его прошлом. Заслушаны свидетели обеих сторон; обвинения не установлены судом по существу.",
+      "layout": {
+        "x": 520,
+        "y": 320
+      }
+    },
+    {
+      "id": "pl-hearing-2027",
+      "type": "forecast",
+      "label": "18.01.2027: заседание суда",
+      "layer": "scenarios",
+      "category": "politics",
+      "subcategories": [
+        "politics.judiciary.hearing"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-27T13:00:00Z",
+      "description": "Плановое процессуальное событие: личные показания Навроцкого как стороны 18 января 2027 года, допускается дистанционное участие; не прогноз исхода дела.",
+      "layout": {
+        "x": 775,
+        "y": 470
+      }
+    },
+    {
+      "id": "pl-legislative-block",
+      "type": "impact",
+      "label": "Риск задержки реформ",
+      "layer": "impacts",
+      "category": "politics",
+      "subcategories": [
+        "politics.governance.reforms"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T19:00:00Z",
+      "description": "Гипотеза: ветирование законов и конфликт вокруг судов могут замедлить реформы. Не означает, что конкретные миграционные разрешения уже изменены.",
+      "layout": {
+        "x": 1025,
+        "y": 360
+      }
+    },
+    {
+      "id": "pl-inst-scenario-dialogue",
+      "type": "scenario",
+      "label": "Вариант: институциональный компромисс",
+      "layer": "scenarios",
+      "category": "politics",
+      "subcategories": [
+        "politics.scenario.compromise"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T20:00:00Z",
+      "description": "Условный вариант: юридическая процедура согласуется, споры переходят в судебную плоскость. Вероятность не рассчитана.",
+      "layout": {
+        "x": 1255,
+        "y": 90
+      }
+    },
+    {
+      "id": "pl-inst-scenario-gridlock",
+      "type": "scenario",
+      "label": "Вариант: затяжной тупик",
+      "layer": "scenarios",
+      "category": "politics",
+      "subcategories": [
+        "politics.scenario.gridlock"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T20:00:00Z",
+      "description": "Условный вариант: продолжение вето, споров о составе суда и задержек решений. Вероятность не рассчитана.",
+      "layout": {
+        "x": 1255,
+        "y": 310
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-pl-tk-authority",
+      "statement": "Спор об институциональных назначениях и признании судей TK стал частью эскалации 30 октября.",
+      "mechanism": "Решения о присяге и допуске судей к работе влияют на состав суда и степень признания его руководства.",
+      "alternatives": [
+        "Спор о полномочиях не единственный фактор; процессуальные решения и полицейский эпизод могли иметь самостоятельную динамику."
+      ],
+      "falsification": "Проверить последовательность официальных актов и процессуальных оснований, решения уполномоченных органов и независимые юридические оценки.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-pl-tk-reuters-1030",
+        "src-pl-tk-ap-1030"
+      ],
+      "author": "World Information editorial review"
+    },
+    {
+      "id": "claim-pl-nawrocki-return",
+      "statement": "Сообщение о конфликте вокруг TK способствовало решению Навроцкого прервать зарубежную поездку.",
+      "mechanism": "Публичное заявление президента и хронология подтверждают связанность, но не все личные мотивы.",
+      "alternatives": [
+        "Другие события внутренней политики."
+      ],
+      "falsification": "Сверить заявление президентской канцелярии, маршрут и точную временную последовательность.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-pl-tk-reuters-1030"
+      ],
+      "author": "World Information editorial review"
+    },
+    {
+      "id": "claim-pl-policy-gridlock",
+      "statement": "Конфликт правительства и президентства может замедлить новые законодательные реформы.",
+      "mechanism": "Президентское вето и разногласия о правовом статусе решений увеличивают транзакционные задержки.",
+      "alternatives": [
+        "Некоторые законы принимаются по компромиссу; разные вопросы не обязательно блокируются."
+      ],
+      "falsification": "Составить реестр законопроектов, вето, принятых законов и сроков принятия по каждой политике.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-pl-tk-reuters-1030"
+      ],
+      "author": "World Information editorial review"
+    },
+    {
+      "id": "claim-pl-court-separate",
+      "statement": "Процесс с Onet и кризис TK — разные правовые истории; связь координации не установлена.",
+      "mechanism": "Совпадение по времени и общая политическая среда не являются доказательством организации одного события ради другого.",
+      "alternatives": [
+        "Может быть рост общего общественного внимания к президенту, но без прямого следа причинной связи."
+      ],
+      "falsification": "Искать независимые документы о причинной координации; отсутствие доказательств не заменять догадками.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-pl-court-tvp-1027",
+        "src-pl-tk-reuters-1030"
+      ],
+      "author": "World Information editorial review"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-pl-tusk-appointments",
+      "from": "pl-tusk",
+      "to": "pl-tk-appointments",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Правительство и его коалиция спорят о восстановлении законности в TK.",
+      "evidence_source_ids": [
+        "src-pl-tk-reuters-1030"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-nawrocki-appointments",
+      "from": "pl-nawrocki",
+      "to": "pl-tk-appointments",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Президент отказался привести к присяге часть избранных судей, указывая на возражения к их избранию.",
+      "evidence_source_ids": [
+        "src-pl-tk-reuters-1030",
+        "src-pl-tk-notes-1030"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-dispute-suspension",
+      "from": "pl-tk-appointments",
+      "to": "pl-tk-suspension",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Кризис признания полномочий способствовал эскалации; юридический статус самого приостановления оспаривается.",
+      "evidence_source_ids": [
+        "src-pl-tk-ap-1030",
+        "src-pl-tk-notes-1030"
+      ],
+      "claim_ids": [
+        "claim-pl-tk-authority"
+      ],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-suspension-protests",
+      "from": "pl-tk-suspension",
+      "to": "pl-tk-protests",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "События сосуществуют 30 октября; полиция сообщала о нарушениях при протестах, юридическая причинная цепочка не доказана.",
+      "evidence_source_ids": [
+        "src-pl-tk-ap-1030"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-suspension-return",
+      "from": "pl-tk-suspension",
+      "to": "pl-trip-return",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Президент связал своё возвращение с ситуацией вокруг TK.",
+      "evidence_source_ids": [
+        "src-pl-tk-reuters-1030"
+      ],
+      "claim_ids": [
+        "claim-pl-nawrocki-return"
+      ],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-suspension-legitimacy",
+      "from": "pl-tk-suspension",
+      "to": "pl-constitutional-legitimacy",
+      "relation": "associated_with",
+      "status": "disputed",
+      "mechanism": "Стороны называют одни действия восстановлением права, другие — незаконным вмешательством.",
+      "evidence_source_ids": [
+        "src-pl-tk-ap-1030",
+        "src-pl-tk-reuters-1030"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-appointments-gridlock",
+      "from": "pl-tk-appointments",
+      "to": "pl-legislative-block",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Спор о легитимности института может осложнять реформы и согласование судебных решений.",
+      "evidence_source_ids": [
+        "src-pl-tk-reuters-1030"
+      ],
+      "claim_ids": [
+        "claim-pl-policy-gridlock"
+      ],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-nawrocki-court",
+      "from": "pl-nawrocki",
+      "to": "pl-reputation-case",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Навроцкий — истец по делу о защите репутации против издателя Onet. Спорные обвинения судом не установлены.",
+      "evidence_source_ids": [
+        "src-pl-court-tvp-1027",
+        "src-pl-court-wp-1027"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-hearing-date",
+      "from": "pl-reputation-case",
+      "to": "pl-hearing-2027",
+      "relation": "precedes",
+      "status": "supported",
+      "mechanism": "Суд назначил очередное заседание и показания стороны на 18 января 2027 года.",
+      "evidence_source_ids": [
+        "src-pl-court-tvp-1027",
+        "src-pl-court-wp-1027"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-gridlock-compromise",
+      "from": "pl-legislative-block",
+      "to": "pl-inst-scenario-dialogue",
+      "relation": "depends_on",
+      "status": "hypothesized",
+      "mechanism": "Сценарная развилка: процедурное согласование возможно при изменении действий сторон.",
+      "evidence_source_ids": [],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-gridlock-prolonged",
+      "from": "pl-legislative-block",
+      "to": "pl-inst-scenario-gridlock",
+      "relation": "depends_on",
+      "status": "hypothesized",
+      "mechanism": "Сценарная развилка: взаимные блокировки могут продолжиться.",
+      "evidence_source_ids": [],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-election-nawrocki",
+      "from": "pl-election",
+      "to": "pl-nawrocki",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Выборы 2025 привели Навроцкого к президентству; 50,89% официально подтверждены PKW.",
+      "evidence_source_ids": [
+        "src-pl-pkw-2025"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario-pl-institutional-compromise",
+      "label": "Процедурный компромисс",
+      "base_as_of": "2026-10-30T22:30:00Z",
+      "assumptions": [
+        "Стороны признают процедуру рассмотрения спорных назначений.",
+        "Продолжается независимый судебный контроль."
+      ],
+      "time_horizon": "through 2027 parliamentary elections",
+      "is_forecast": false
+    },
+    {
+      "id": "scenario-pl-institutional-gridlock",
+      "label": "Затяжной конфликт институтов",
+      "base_as_of": "2026-10-30T22:30:00Z",
+      "assumptions": [
+        "Президентские вето и судебные споры продолжаются.",
+        "Часть реформ сталкивается с институциональной блокировкой."
+      ],
+      "time_horizon": "through 2027 parliamentary elections",
+      "is_forecast": false
+    }
+  ],
+  "forecasts": []
+}

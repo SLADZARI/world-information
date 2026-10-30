@@ -1,0 +1,186 @@
+{
+  "schema_version": "0.1.0",
+  "country": "PL",
+  "as_of": "2026-10-30T22:30:00Z",
+  "description": "Policy state register; NOT legal advice. Status, affected population and exceptions cannot be inferred from headline; verify official law and date before acting.",
+  "records": [
+    {
+      "id": "pol-pl-citizenship-proposal",
+      "title": "Presidential bill: citizenship recognition residence 3→10 years",
+      "domain": "citizenship",
+      "status": "proposed",
+      "status_checked_from": "presidential_proposal_page_only",
+      "announced_at": "2025-09-29",
+      "effective_from": null,
+      "expires_at": null,
+      "applies_to": [
+        "Eligible applicants seeking recognition as Polish citizen under selected permanent/long-term residence path IF enacted"
+      ],
+      "does_not_automatically_apply_to": [
+        "Every foreigner",
+        "Existing legal residence",
+        "All citizenship pathways"
+      ],
+      "exceptions_and_transition": "Not established in proposal summary. Require Sejm status, enacted text and transition clauses.",
+      "source_ids": [
+        "src-pl-president-citizenship-2025"
+      ],
+      "source_urls": [
+        "https://www.prezydent.pl/prawo/inicjatywy-ustawodawcze/prezydencki-projekt-zmiany-ustawy-o-obywatelstwie-polskim-,107997"
+      ],
+      "graph_node_id": "pl-citizenship-bill",
+      "verification_required": "Check Sejm bill docket and Dziennik Ustaw before asserting any new requirement currently in force."
+    },
+    {
+      "id": "pol-pl-eu-pact",
+      "title": "EU Pact on Migration and Asylum enters application",
+      "domain": "asylum_eu",
+      "status": "enacted",
+      "status_checked_from": "European_Commission",
+      "announced_at": "2026-06-12",
+      "effective_from": "2026-06-12",
+      "expires_at": null,
+      "applies_to": [
+        "EU asylum and migration processes within scope of ten legislative acts"
+      ],
+      "does_not_automatically_apply_to": [
+        "EU solidarity relocation contributions for exempt Poland in 2026"
+      ],
+      "exceptions_and_transition": "Pact-wide scope differs from annual solidarity obligations and nationally implemented rules.",
+      "source_ids": [
+        "src-eu-pact-2026"
+      ],
+      "source_urls": [
+        "https://home-affairs.ec.europa.eu/news/new-migration-and-asylum-rules-enter-application-what-changing-2026-06-12_en"
+      ],
+      "graph_node_id": "pl-eu-pact"
+    },
+    {
+      "id": "pol-pl-solidarity-exemption-2026",
+      "title": "Poland exempted from 2026 annual solidarity contributions",
+      "domain": "eu_solidarity",
+      "status": "annual_exemption",
+      "status_checked_from": "Polish_official_reply_and_EU_decision_reference",
+      "announced_at": "2025-12-22",
+      "effective_from": "2026-01-01",
+      "expires_at": "2026-12-31",
+      "applies_to": [
+        "Poland annual solidarity pool obligations for 2026"
+      ],
+      "does_not_automatically_apply_to": [
+        "All EU Migration Pact requirements",
+        "Any future years"
+      ],
+      "exceptions_and_transition": "Subsequent cycles require fresh Council/EU decisions.",
+      "source_ids": [
+        "src-pl-sejm-solidarity-2026",
+        "src-pl-mswia-pact-2026"
+      ],
+      "source_urls": [
+        "https://www.sejm.gov.pl/sejm10.nsf/InterpelacjaTresc.xsp?key=DSHJL5"
+      ],
+      "graph_node_id": "pl-eu-solidarity-exempt"
+    },
+    {
+      "id": "pol-pl-border-asylum-extension-2026",
+      "title": "September 2026 extension of Belarus-border asylum application restriction",
+      "domain": "asylum_border",
+      "status": "time_limited",
+      "status_checked_from": "ELI_published_regulation",
+      "announced_at": "2026-09-15",
+      "effective_from": "2026-09-18",
+      "expires_at": null,
+      "applies_to": [
+        "Specific Polish-Belarus border applications under defined legal conditions"
+      ],
+      "does_not_automatically_apply_to": [
+        "All asylum applications anywhere in Poland",
+        "Unaccompanied minors/pregnant persons and other statutory exceptions"
+      ],
+      "exceptions_and_transition": "Duration: 60 days counting from 18 September. Need precise legal endpoint and further extension before displaying active flag beyond current snapshot.",
+      "source_ids": [
+        "src-pl-udsc-border-2026"
+      ],
+      "source_urls": [
+        "https://eli.gov.pl/eli/DU/2026/1217/ogl/pol",
+        "https://www.gov.pl/web/udsc/ograniczenie-prawa-do-zlozenia-wniosku-o-ochrone-miedzynarodowa"
+      ],
+      "graph_node_id": "pl-border-asylum"
+    },
+    {
+      "id": "pol-pl-benefit-800-ukr",
+      "title": "800+ professional activity condition for UKR temporary protection",
+      "domain": "social_protection",
+      "status": "enacted",
+      "status_checked_from": "Ministry_family_guidance",
+      "announced_at": null,
+      "effective_from": "2026-02-01",
+      "expires_at": null,
+      "applies_to": [
+        "Ukrainian war-displaced people with UKR status subject to eligibility criteria"
+      ],
+      "does_not_automatically_apply_to": [
+        "Every foreigner",
+        "EU citizens under distinct rules"
+      ],
+      "exceptions_and_transition": "Eligibility also subject to legal residence, education of children, and statutory exemptions; verify current rules and ZUS guidance.",
+      "source_ids": [
+        "src-pl-gov-800-2026"
+      ],
+      "source_urls": [
+        "https://www.gov.pl/web/rodzina/nowe-zasady-przyznawania-swiadczenia-wychowawczego-cudzoziemcom"
+      ],
+      "graph_node_id": "pl-ukr-800"
+    },
+    {
+      "id": "pol-pl-benefit-800-third-country",
+      "title": "800+ professional activity condition for other eligible third-country nationals",
+      "domain": "social_protection",
+      "status": "enacted",
+      "status_checked_from": "Ministry_family_guidance",
+      "announced_at": null,
+      "effective_from": "2026-06-01",
+      "expires_at": null,
+      "applies_to": [
+        "Other eligible third-country citizens with legal stay and labour market access"
+      ],
+      "does_not_automatically_apply_to": [
+        "All legal residents regardless of category"
+      ],
+      "exceptions_and_transition": "Implementation applies from the new benefit period; education and qualifying exemptions require assessment.",
+      "source_ids": [
+        "src-pl-gov-800-2026"
+      ],
+      "source_urls": [
+        "https://www.gov.pl/web/rodzina/nowe-zasady-przyznawania-swiadczenia-wychowawczego-cudzoziemcom"
+      ],
+      "graph_node_id": "pl-ukr-800"
+    },
+    {
+      "id": "pol-pl-ukr-march-2027",
+      "title": "Temporary protection and special measures for Ukrainians",
+      "domain": "temporary_protection",
+      "status": "enacted",
+      "status_checked_from": "Presidential_signature_and_ministry_guidance",
+      "announced_at": "2026-02-19",
+      "effective_from": "2026-03-05",
+      "expires_at": "2027-03-04",
+      "applies_to": [
+        "Eligible Ukrainian temporary protection beneficiaries, with status-specific obligations"
+      ],
+      "does_not_automatically_apply_to": [
+        "All Ukrainian citizens regardless of status",
+        "All migrants"
+      ],
+      "exceptions_and_transition": "Some PESEL UKR cases required identity-document updates by 31 August 2026; check current applicable categories.",
+      "source_ids": [
+        "src-pl-president-uk-law-2026",
+        "src-pl-gov-uk-2026"
+      ],
+      "source_urls": [
+        "https://www.gov.pl/web/rodzina/co-sie-zmienia-w-pomocy-dla-obywateli-ukrainy-w-2026-r"
+      ],
+      "graph_node_id": "pl-ukr-protection"
+    }
+  ]
+}

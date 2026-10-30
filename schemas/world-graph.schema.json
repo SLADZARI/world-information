@@ -380,8 +380,12 @@
             "type": "string"
           },
           "published_at": {
-            "type": "string",
-            "format": "date-time"
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time",
+            "description": "Null when a continuously updated source has no reliable publication timestamp; never substitute retrieval time."
           },
           "retrieved_at": {
             "type": "string",

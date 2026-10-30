@@ -4,9 +4,18 @@
 
 Status: **concept + working synthetic HTML prototype**. No live country data, forecasts or prediction markets are connected. Dementor Tab is an existing separate game and is **not** the name of this platform.
 
+## Poland: country environment, legal status and contested political events (30 October 2026)
+
+- [Country environment (source-linked country overview)](data/countries/PL/overview-2026-10-30.json) — institution, migration and court-proceedings layers with future follow-ups.
+- [Constitutional Tribunal crisis, Tusk and Nawrocki](stories/2026/poland-institutions-2026-10.md) · [graph](data/cases/poland-institutional-crisis-2026-10.json).
+- [Migration policy: enacted laws vs proposals](stories/2026/poland-migration-2026-10.md) · [graph](data/cases/poland-migration-policy-2025-2026.json).
+- [Policy status and affected populations](data/policies/PL-2026-10-30.json) · [policy schema](schemas/policy-register.schema.json) · [country product specification](docs/POLAND_COUNTRY_LAYERS.md).
+- [Interactive research board with both cases](prototype/research-board.html). Both cases are source-attributed snapshots, **not legally conclusive judgments or automated policy advice**.
+- `node tools/validate_poland.mjs` checks provenance, legal status and the absence of an invented causal link between the unrelated civil case and tribunal conflict.
+
 ## Первые реальные графы — исторические исследования
 
-- **[Открыть исследовательский борд](prototype/research-board.html)** — три исследовательских истории; для взаимодействия скачайте HTML и откройте локально.
+- **[Открыть исследовательский борд](prototype/research-board.html)** — пять исследовательских историй; для взаимодействия скачайте HTML и откройте локально.
 - [Binance 29–30 октября 2026: расследование и реакция рынков](stories/2026/binance-incident-2026-10.md) · [JSON graph](data/cases/binance-incident-2026-10.json)
 - [Газовая перестройка ЕС, 2021–2026](stories/2026/eu-gas-transition-2021-2026.md) · [JSON graph](data/cases/eu-gas-transition-2021-2026.json)
 - [Красное море / Суэц / Панама, 2023–2024](stories/2026/maritime-corridors-2023-2024.md) · [JSON graph](data/cases/maritime-corridors-2023-2024.json)

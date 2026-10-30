@@ -1,0 +1,487 @@
+{
+  "schema_version": "0.1.0",
+  "synthetic": false,
+  "case_id": "eu-gas-transition-2021-2026",
+  "case_title": "Газовая перестройка ЕС: 2021–2026",
+  "description": "Документированный сдвиг импорта газа в ЕС, реакция политики и альтернативные объяснения. Числа — исторические срезы из Совета ЕС; причинные ребра в основном гипотетические. Данные не являются текущими ценами.",
+  "sources": [
+    {
+      "id": "source-eu-council-gas-2026",
+      "url": "https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/",
+      "publisher": "Council of the European Union (last reviewed 2026-04-13)",
+      "published_at": "2026-04-13T00:00:00Z",
+      "retrieved_at": "2026-10-30T12:00:00Z",
+      "rights": "Metadata and short factual observations linked for verification; do not republish full copyrighted content without license review."
+    },
+    {
+      "id": "source-eu-commission-gas-2024",
+      "url": "https://energy.ec.europa.eu/news/focus-eu-energy-security-and-gas-supplies-2024-02-15_en",
+      "publisher": "European Commission, DG Energy",
+      "published_at": "2024-02-15T00:00:00Z",
+      "retrieved_at": "2026-10-30T12:00:00Z",
+      "rights": "Metadata and short factual observations linked for verification; do not republish full copyrighted content without license review."
+    },
+    {
+      "id": "source-eu-gas-regulation-2026",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/01/26/russian-gas-imports-council-gives-final-greenlight-to-a-stepwise-ban/",
+      "publisher": "Council of the European Union",
+      "published_at": "2026-01-26T10:17:00Z",
+      "retrieved_at": "2026-10-30T12:00:00Z",
+      "rights": "Linked primary legal press release; do not republish full text without permission review."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "country-de",
+      "type": "country",
+      "label": "Германия",
+      "layer": "geography",
+      "category": "politics",
+      "subcategories": [
+        "politics.country.identity"
+      ],
+      "countries": [
+        "DE"
+      ],
+      "at": "2021-01-01T00:00:00Z",
+      "description": "Страна для изучения трансграничных эффектов; граф показывает агрегаты ЕС, не национальные величины Германии.",
+      "layout": {
+        "x": 25,
+        "y": 85
+      }
+    },
+    {
+      "id": "country-pl",
+      "type": "country",
+      "label": "Польша",
+      "layer": "geography",
+      "category": "politics",
+      "subcategories": [
+        "politics.country.identity"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2021-01-01T00:00:00Z",
+      "description": "Страна для изучения трансграничных эффектов; изменения в ЕС нельзя автоматически переносить на польские показатели.",
+      "layout": {
+        "x": 25,
+        "y": 210
+      }
+    },
+    {
+      "id": "event-repowereu",
+      "type": "event",
+      "label": "REPowerEU (май 2022)",
+      "layer": "events",
+      "category": "politics",
+      "subcategories": [
+        "politics.policy.energy"
+      ],
+      "countries": [
+        "DE",
+        "PL"
+      ],
+      "at": "2022-05-18T00:00:00Z",
+      "description": "План REPowerEU представлен Еврокомиссией в мае 2022 года как ответ на энергетические и геополитические риски.",
+      "layout": {
+        "x": 285,
+        "y": 65
+      }
+    },
+    {
+      "id": "event-eu-gas-regulation",
+      "type": "event",
+      "label": "Регулирование газа, 2026",
+      "layer": "events",
+      "category": "politics",
+      "subcategories": [
+        "politics.policy.imports"
+      ],
+      "countries": [
+        "DE",
+        "PL"
+      ],
+      "at": "2026-01-26T00:00:00Z",
+      "description": "Совет ЕС 26 января 2026 принял регулирование постепенного запрета импорта российского газа; начало применения запрета 18 марта 2026 с исключениями для существующих договоров, полное прекращение по переходным срокам в 2027 году.",
+      "layout": {
+        "x": 285,
+        "y": 235
+      }
+    },
+    {
+      "id": "factor-lng-diversification",
+      "type": "factor",
+      "label": "Диверсификация импорта",
+      "layer": "factors",
+      "category": "energy",
+      "subcategories": [
+        "energy.gas.sourcing"
+      ],
+      "countries": [
+        "DE",
+        "PL",
+        "US",
+        "NO"
+      ],
+      "at": "2022-05-18T00:00:00Z",
+      "description": "Импорт из США и Норвегии и сокращение спроса указаны Советом ЕС как основные факторы изменения структуры поставок.",
+      "layout": {
+        "x": 550,
+        "y": 75
+      }
+    },
+    {
+      "id": "indicator-russia-gas-2021",
+      "type": "indicator",
+      "label": "Газ из РФ: 2021",
+      "layer": "impacts",
+      "category": "energy",
+      "subcategories": [
+        "energy.gas.imports"
+      ],
+      "countries": [
+        "DE",
+        "PL",
+        "RU"
+      ],
+      "at": "2021-12-31T00:00:00Z",
+      "description": "Общий объём газа из России в ЕС в 2021 году превышал 150 млрд м³; число округлено в источнике.",
+      "layout": {
+        "x": 550,
+        "y": 225
+      },
+      "indicator": {
+        "metric": "Russian-origin EU imports",
+        "unit": "bcm/year",
+        "period": "2021",
+        "source_id": "source-eu-council-gas-2026",
+        "population_scope": "EU aggregate, pipeline + LNG",
+        "method": "Совет ЕС сообщает более 150 bcm; точное число не задано в данном первоисточнике, поэтому числовое значение намеренно опущено."
+      }
+    },
+    {
+      "id": "indicator-russia-gas-2025",
+      "type": "indicator",
+      "label": "Газ из РФ: 2025",
+      "layer": "impacts",
+      "category": "energy",
+      "subcategories": [
+        "energy.gas.imports"
+      ],
+      "countries": [
+        "DE",
+        "PL",
+        "RU"
+      ],
+      "at": "2025-12-31T00:00:00Z",
+      "description": "Совет ЕС: 36 млрд м³, 12,5% совокупного импорта газа ЕС в 2025 году.",
+      "layout": {
+        "x": 815,
+        "y": 215
+      },
+      "indicator": {
+        "metric": "Russian-origin EU imports",
+        "unit": "bcm/year",
+        "period": "2025",
+        "value": 36,
+        "source_id": "source-eu-council-gas-2026",
+        "population_scope": "EU aggregate, pipeline + LNG",
+        "method": "Совет ЕС; European Commission calculations based on LSEG and ENTSOG."
+      }
+    },
+    {
+      "id": "indicator-us-imports",
+      "type": "indicator",
+      "label": "США → ЕС: 18,9 → 75,6",
+      "layer": "impacts",
+      "category": "energy",
+      "subcategories": [
+        "energy.gas.trade"
+      ],
+      "countries": [
+        "DE",
+        "PL",
+        "US"
+      ],
+      "at": "2025-12-31T00:00:00Z",
+      "description": "Поставки газа из США в ЕС выросли с 18,9 млрд м³ (2021) до 75,6 млрд м³ (2025); это не оценка вклада одной причины.",
+      "layout": {
+        "x": 815,
+        "y": 60
+      },
+      "indicator": {
+        "metric": "U.S.-origin natural gas imports to EU",
+        "unit": "bcm/year",
+        "period": "2025",
+        "value": 75.6,
+        "comparison_value": 18.9,
+        "comparison_period": "2021",
+        "comparison_basis": "Same report gas import volumes",
+        "source_id": "source-eu-council-gas-2026",
+        "population_scope": "EU aggregate",
+        "series": [
+          {
+            "period": "2021",
+            "value": 18.9
+          },
+          {
+            "period": "2025",
+            "value": 75.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "indicator-norway-imports",
+      "type": "indicator",
+      "label": "Норвегия → ЕС: 79,5 → 89,3",
+      "layer": "impacts",
+      "category": "energy",
+      "subcategories": [
+        "energy.gas.trade"
+      ],
+      "countries": [
+        "DE",
+        "PL",
+        "NO"
+      ],
+      "at": "2025-12-31T00:00:00Z",
+      "description": "Поставки из Норвегии в ЕС: 79,5 млрд м³ в 2021 и 89,3 в 2025.",
+      "layout": {
+        "x": 815,
+        "y": 360
+      },
+      "indicator": {
+        "metric": "Norwegian-origin natural gas imports to EU",
+        "unit": "bcm/year",
+        "period": "2025",
+        "value": 89.3,
+        "comparison_value": 79.5,
+        "comparison_period": "2021",
+        "comparison_basis": "Same report gas import volumes",
+        "source_id": "source-eu-council-gas-2026",
+        "population_scope": "EU aggregate",
+        "series": [
+          {
+            "period": "2021",
+            "value": 79.5
+          },
+          {
+            "period": "2025",
+            "value": 89.3
+          }
+        ]
+      }
+    },
+    {
+      "id": "factor-demand-reduction",
+      "type": "factor",
+      "label": "Сокращение спроса",
+      "layer": "factors",
+      "category": "economy",
+      "subcategories": [
+        "economy.energy.demand"
+      ],
+      "countries": [
+        "DE",
+        "PL"
+      ],
+      "at": "2024-12-31T00:00:00Z",
+      "description": "Совет ЕС: потребление природного газа в ЕС сократилось более чем на 19% в 2021–2024 годах.",
+      "layout": {
+        "x": 550,
+        "y": 370
+      }
+    },
+    {
+      "id": "impact-industry-prices",
+      "type": "impact",
+      "label": "Издержки промышленности?",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.industry.energy_costs"
+      ],
+      "countries": [
+        "DE",
+        "PL"
+      ],
+      "at": "2025-12-31T00:00:00Z",
+      "description": "Гипотеза для проверки национальными данными Германии и Польши. В первичном графе нет доказанного эффекта на цены промышленности.",
+      "layout": {
+        "x": 1080,
+        "y": 220
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-gas-diversify",
+      "statement": "REPowerEU и рыночная адаптация связаны с изменением структуры газовых поставок ЕС",
+      "mechanism": "Диверсификация источников, инфраструктура СПГ и снижение спроса",
+      "alternatives": [
+        "Ценовые сигналы",
+        "Сокращение поставок независимо от политики",
+        "Температурные условия"
+      ],
+      "falsification": "Сопоставить импорт по странам, спрос, цены, инфраструктурную доступность и даты решений; оценить вклад по эконометрической модели.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "source-eu-council-gas-2026",
+        "source-eu-commission-gas-2024"
+      ],
+      "author": "World Information initial research"
+    },
+    {
+      "id": "claim-gas-industry",
+      "statement": "Перестройка газового импорта могла менять издержки промышленности Германии и Польши",
+      "mechanism": "Изменение контрактов и региональных цен на энергию",
+      "alternatives": [
+        "Валютный курс",
+        "Структура промышленности",
+        "Другие налоги и субсидии"
+      ],
+      "falsification": "Сравнить TTF, промышленный PPI, энергоёмкость и разницу между странами в сопоставимых окнах.",
+      "review_status": "under_review",
+      "evidence_source_ids": [],
+      "author": "World Information initial research"
+    }
+  ],
+  "relations": [
+    {
+      "id": "gas-rel-de-repowereu",
+      "from": "country-de",
+      "to": "event-repowereu",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Германия входит в ЕС, к которому относится общеевропейский план.",
+      "evidence_source_ids": [
+        "source-eu-commission-gas-2024"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "gas-rel-pl-repowereu",
+      "from": "country-pl",
+      "to": "event-repowereu",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Польша входит в ЕС, к которому относится общеевропейский план.",
+      "evidence_source_ids": [
+        "source-eu-commission-gas-2024"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "gas-rel-repowereu-divers",
+      "from": "event-repowereu",
+      "to": "factor-lng-diversification",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Политика диверсификации вместе с рыночной адаптацией меняет структуру источников.",
+      "evidence_source_ids": [
+        "source-eu-council-gas-2026",
+        "source-eu-commission-gas-2024"
+      ],
+      "claim_ids": [
+        "claim-gas-diversify"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "gas-rel-divers-us",
+      "from": "factor-lng-diversification",
+      "to": "indicator-us-imports",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Зафиксировано изменение объёмов импорта; политика не признана единственной причиной.",
+      "evidence_source_ids": [
+        "source-eu-council-gas-2026"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "gas-rel-divers-norway",
+      "from": "factor-lng-diversification",
+      "to": "indicator-norway-imports",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Зафиксировано изменение объёмов импорта; причинный вклад не оценён.",
+      "evidence_source_ids": [
+        "source-eu-council-gas-2026"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "gas-rel-demand-divers",
+      "from": "factor-demand-reduction",
+      "to": "factor-lng-diversification",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Уменьшение общего спроса облегчает замену части источников энергии.",
+      "evidence_source_ids": [
+        "source-eu-council-gas-2026"
+      ],
+      "claim_ids": [
+        "claim-gas-diversify"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "gas-rel-2021-2025",
+      "from": "indicator-russia-gas-2021",
+      "to": "indicator-russia-gas-2025",
+      "relation": "precedes",
+      "status": "supported",
+      "mechanism": "Историческое сравнение объёма импорта из одного источника; не причинная стрелка.",
+      "evidence_source_ids": [
+        "source-eu-council-gas-2026"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "gas-rel-regulation-2025",
+      "from": "indicator-russia-gas-2025",
+      "to": "event-eu-gas-regulation",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Законодательный ответ и многолетняя тенденция сосуществуют; дата события 2026 позже результата 2025.",
+      "evidence_source_ids": [
+        "source-eu-council-gas-2026",
+        "source-eu-gas-regulation-2026"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "gas-rel-divers-industry",
+      "from": "factor-lng-diversification",
+      "to": "impact-industry-prices",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Стоимость энергоснабжения может влиять на промышленность, но знак и размер зависят от контрактов.",
+      "evidence_source_ids": [],
+      "claim_ids": [
+        "claim-gas-industry"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    }
+  ],
+  "scenarios": [],
+  "forecasts": []
+}

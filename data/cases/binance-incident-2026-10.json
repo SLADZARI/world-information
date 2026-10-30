@@ -1,0 +1,593 @@
+{
+  "schema_version": "0.1.0",
+  "synthetic": false,
+  "case_id": "binance-incident-2026-10",
+  "case_title": "Binance: инцидент, ликвидность и доверие, октябрь 2026",
+  "description": "Развивающееся расследование: официальные оценки Binance, независимая оценка Elliptic, реакция рынков по Reuters. Срез на 30 октября 2026, без вывода о виновных и без выдуманных прогнозов.",
+  "sources": [
+    {
+      "id": "source-binance-security-2026",
+      "url": "https://www.binance.com/en/support/announcement/detail/c5a8729a97ac486d963784d96c5642d7",
+      "publisher": "Binance official security statement, 2026-10-30",
+      "published_at": "2026-10-30T00:00:00Z",
+      "retrieved_at": "2026-10-30T12:00:00Z",
+      "rights": "Factual summary with linked source; no redistribution of original article text or on-chain private details."
+    },
+    {
+      "id": "source-elliptic-binance-2026",
+      "url": "https://www.elliptic.co/insights/binance-largest-hack-in-history/",
+      "publisher": "Elliptic: independent tracing, updated 2026-10-30 08:00 UTC",
+      "published_at": "2026-10-30T08:00:00Z",
+      "retrieved_at": "2026-10-30T12:00:00Z",
+      "rights": "Factual summary with linked source; no redistribution of original article text or on-chain private details."
+    },
+    {
+      "id": "source-ap-binance-2026",
+      "url": "https://apnews.com/article/39cda8ceb8095e036334a18549d3d20d",
+      "publisher": "Associated Press, independent reporting 2026-10-30",
+      "published_at": "2026-10-30T00:00:00Z",
+      "retrieved_at": "2026-10-30T12:00:00Z",
+      "rights": "Factual summary with linked source; no redistribution of original article text or on-chain private details."
+    },
+    {
+      "id": "source-reuters-binance-2026",
+      "url": "https://www.investing.com/news/economy-news/analysts-react-as-binance-freezes-assets-after-63-billion-security-breach-4985760",
+      "publisher": "Reuters, syndicated 2026-10-30",
+      "published_at": "2026-10-30T00:00:00Z",
+      "retrieved_at": "2026-10-30T12:00:00Z",
+      "rights": "Factual summary with linked source; no redistribution of original article text or on-chain private details."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "event-binance-breach",
+      "type": "event",
+      "label": "Binance: инцидент 29.10",
+      "layer": "events",
+      "category": "security",
+      "subcategories": [
+        "security.cyber.exchange"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-29T00:00:00Z",
+      "description": "Операции несанкционированного вывода активов; первоначальная публичная оценка около 6,3 млрд USD. Временной интервал конкретных транзакций требует блокчейн-верификации.",
+      "layout": {
+        "x": 25,
+        "y": 100
+      }
+    },
+    {
+      "id": "factor-compromised-infrastructure",
+      "type": "factor",
+      "label": "Версия: компрометация DevOps",
+      "layer": "factors",
+      "category": "security",
+      "subcategories": [
+        "security.cyber.access"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Binance указала на возможный взлом ноутбука инженера; Reuters/AFP сообщили о дополнительных точках проникновения. Механизм ещё расследуется.",
+      "layout": {
+        "x": 290,
+        "y": 35
+      }
+    },
+    {
+      "id": "event-suspended-withdrawals",
+      "type": "event",
+      "label": "Приостановка выводов",
+      "layer": "events",
+      "category": "finance",
+      "subcategories": [
+        "finance.exchange.withdrawals"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Binance сообщила о временной приостановке вводов и выводов в целях проверки безопасности; срок восстановления может изменяться.",
+      "layout": {
+        "x": 290,
+        "y": 175
+      }
+    },
+    {
+      "id": "indicator-loss-estimate",
+      "type": "indicator",
+      "label": "Оценка: около $6,3 млрд",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.security.loss_estimate"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Предварительная оценка масштаба затронутых активов от Binance; не окончательный аудит чистых невозмещённых потерь.",
+      "layout": {
+        "x": 530,
+        "y": 45
+      },
+      "indicator": {
+        "metric": "Estimated asset impact",
+        "unit": "USD billion",
+        "period": "2026-10-30 statement",
+        "value": 6.3,
+        "source_id": "source-binance-security-2026",
+        "population_scope": "Binance reported affected cryptoassets",
+        "method": "Preliminary corporate estimate; not net unrecovered losses."
+      }
+    },
+    {
+      "id": "indicator-freeze-binance",
+      "type": "indicator",
+      "label": "Binance: заморожено ~$3,0 млрд",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.crypto.frozen_assets"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Binance заявляет об оценке замороженных активов около 3 млрд USD; методика может отличаться от независимых.",
+      "layout": {
+        "x": 530,
+        "y": 185
+      },
+      "indicator": {
+        "metric": "Freeze amount reported by Binance",
+        "unit": "USD billion",
+        "period": "2026-10-30 statement",
+        "value": 3,
+        "source_id": "source-binance-security-2026",
+        "population_scope": "Reported affected assets frozen on-chain",
+        "method": "Corporate, rounded figure. Not returned to depositors."
+      }
+    },
+    {
+      "id": "indicator-freeze-elliptic",
+      "type": "indicator",
+      "label": "Elliptic: $2,84 млрд",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.crypto.frozen_assets"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-30T08:00:00Z",
+      "description": "Elliptic сообщила, что независимо установила заморозку 2,84 млрд USD по состоянию на время обновления. Не суммировать с Binance ~$3 млрд.",
+      "layout": {
+        "x": 530,
+        "y": 335
+      },
+      "indicator": {
+        "metric": "Frozen funds independently verified by Elliptic",
+        "unit": "USD billion",
+        "period": "2026-10-30 08:00 UTC update",
+        "value": 2.84,
+        "source_id": "source-elliptic-binance-2026",
+        "population_scope": "Identified frozen funds in affected assets",
+        "method": "Elliptic snapshot/method, may differ from Binance totals."
+      }
+    },
+    {
+      "id": "factor-asset-freeze",
+      "type": "factor",
+      "label": "Блокировки эмитентов токенов",
+      "layer": "factors",
+      "category": "finance",
+      "subcategories": [
+        "finance.crypto.issuer_controls"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Эмитенты стейблкоинов блокировали связанные активы. Право заморозки не означает физический возврат средств пользователям.",
+      "layout": {
+        "x": 780,
+        "y": 165
+      }
+    },
+    {
+      "id": "factor-sell-pressure",
+      "type": "factor",
+      "label": "Риск продажи незамороженных активов",
+      "layer": "factors",
+      "category": "finance",
+      "subcategories": [
+        "finance.crypto.selling_pressure"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Гипотетическая цепочка: перемещение активов → продажа → давление на ликвидность; нет доказанного причинного объёма продаж.",
+      "layout": {
+        "x": 780,
+        "y": 310
+      }
+    },
+    {
+      "id": "impact-btc-market",
+      "type": "impact",
+      "label": "BTC: около −3% в момент обзора",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.crypto.bitcoin_market"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Reuters фиксировал снижение BTC около 3% и котировку около 76 469 USD во время реакции на новости. Не текущая цена и не доказанный эффект только Binance.",
+      "layout": {
+        "x": 1025,
+        "y": 105
+      },
+      "indicator": {
+        "metric": "Reported short-term BTC price move in Reuters snapshot",
+        "unit": "percent",
+        "period": "2026-10-30 reporting window",
+        "value": -3,
+        "source_id": "source-reuters-binance-2026",
+        "population_scope": "BTC spot crypto market, approx as described by Reuters",
+        "method": "Approximate contemporaneous report; exogenous market drivers not controlled."
+      }
+    },
+    {
+      "id": "impact-us-equities",
+      "type": "impact",
+      "label": "Coinbase: −4,8% (after-hours)",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.equities.cryptosector"
+      ],
+      "countries": [
+        "US"
+      ],
+      "global_scope": false,
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Reuters сообщил, что акции Coinbase снизились на 4,8% на внебиржевых торгах в рассматриваемый период. Связь с новостью вероятна, но без контрольной оценки.",
+      "layout": {
+        "x": 1025,
+        "y": 245
+      },
+      "indicator": {
+        "metric": "Coinbase after-hours price move",
+        "unit": "percent",
+        "period": "2026-10-29 after-hours / Reuters 2026-10-30",
+        "value": -4.8,
+        "source_id": "source-reuters-binance-2026",
+        "population_scope": "Coinbase Global shares, U.S. after-hours trading",
+        "method": "Reported market move, not causal return."
+      }
+    },
+    {
+      "id": "impact-exchange-trust",
+      "type": "impact",
+      "label": "Риск доверия и резервов",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.exchange.counterparty_risk"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Возможное изменение оценок контрагентского риска; для измерения нужны публичные данные о резервах, ликвидности и выводах.",
+      "layout": {
+        "x": 1025,
+        "y": 380
+      }
+    },
+    {
+      "id": "scenario-restoration",
+      "type": "scenario",
+      "label": "Условие: выводы восстановлены",
+      "layer": "scenarios",
+      "category": "finance",
+      "subcategories": [
+        "finance.scenario.recovery"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Если выводы восстановлены и резервы доказуемы, напряжение может уменьшиться. Не количественный прогноз.",
+      "layout": {
+        "x": 1255,
+        "y": 70
+      }
+    },
+    {
+      "id": "scenario-liquidity-stress",
+      "type": "scenario",
+      "label": "Условие: затяжная остановка",
+      "layer": "scenarios",
+      "category": "finance",
+      "subcategories": [
+        "finance.scenario.stress"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-30T00:00:00Z",
+      "description": "Если выводы задерживаются и резервы не подтверждены, контрагентский риск может возрасти. Вероятность не оценена.",
+      "layout": {
+        "x": 1255,
+        "y": 320
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-breach-mechanism",
+      "statement": "Компрометация инженерного окружения могла обеспечить несанкционированные выводы",
+      "mechanism": "Доступ к сервисному контейнеру и полномочиям на обработку транзакций",
+      "alternatives": [
+        "Другие точки входа",
+        "Компрометация связанного сервиса",
+        "Ошибки в ранней атрибуции"
+      ],
+      "falsification": "Проверить финальный публичный post-mortem, журналы событий и независимый технический аудит.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "source-binance-security-2026"
+      ],
+      "author": "World Information initial research"
+    },
+    {
+      "id": "claim-breach-withdrawals",
+      "statement": "Инцидент стал поводом временной остановки выводов на Binance",
+      "mechanism": "Предосторожность и проверка операций",
+      "alternatives": [
+        "Обычное плановое обслуживание"
+      ],
+      "falsification": "Проверить таймлайн объявлений и фактическое время остановки/возобновления сервисов.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "source-binance-security-2026",
+        "source-ap-binance-2026"
+      ],
+      "author": "World Information initial research"
+    },
+    {
+      "id": "claim-asset-pressure",
+      "statement": "Незамороженные активы могут создавать давление на крипторынок",
+      "mechanism": "Продажа украденных активов и снижение глубины стаканов",
+      "alternatives": [
+        "Глобальное движение risk-off",
+        "Другие ликвидации и макрособытия"
+      ],
+      "falsification": "Сопоставить on-chain продажу, биржевые потоки, котировки и контрольные активы во временных интервалах.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "source-elliptic-binance-2026"
+      ],
+      "author": "World Information initial research"
+    },
+    {
+      "id": "claim-trust-risk",
+      "statement": "Приостановка выводов и неопределённость покрытия могут усилить контрагентский риск",
+      "mechanism": "Риск невозможности исполнить обязательства клиентам",
+      "alternatives": [
+        "Уже доступное корпоративное покрытие",
+        "Быстрое восстановление услуг"
+      ],
+      "falsification": "Проверить фактические выводы после открытия, независимый proof of reserves, юридические требования клиентов.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "source-binance-security-2026",
+        "source-ap-binance-2026"
+      ],
+      "author": "World Information initial research"
+    }
+  ],
+  "relations": [
+    {
+      "id": "bin-rel-mechanism",
+      "from": "factor-compromised-infrastructure",
+      "to": "event-binance-breach",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Предварительная техническая гипотеза от Binance, финальный post-mortem отсутствует.",
+      "evidence_source_ids": [
+        "source-binance-security-2026"
+      ],
+      "claim_ids": [
+        "claim-breach-mechanism"
+      ],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "bin-rel-breach-loss",
+      "from": "event-binance-breach",
+      "to": "indicator-loss-estimate",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Оценка масштаба инцидента по официальной компании, но величина предварительна.",
+      "evidence_source_ids": [
+        "source-binance-security-2026",
+        "source-ap-binance-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "bin-rel-breach-suspension",
+      "from": "event-binance-breach",
+      "to": "event-suspended-withdrawals",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Биржа называет остановку мерами защиты после инцидента.",
+      "evidence_source_ids": [
+        "source-binance-security-2026"
+      ],
+      "claim_ids": [
+        "claim-breach-withdrawals"
+      ],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "bin-rel-freeze-b",
+      "from": "event-binance-breach",
+      "to": "indicator-freeze-binance",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Оценка Binance на момент объявления, не сумма возмещения.",
+      "evidence_source_ids": [
+        "source-binance-security-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "bin-rel-freeze-ell",
+      "from": "event-binance-breach",
+      "to": "indicator-freeze-elliptic",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Независимая оценка заморозок, не отдельная часть суммы Binance.",
+      "evidence_source_ids": [
+        "source-elliptic-binance-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "bin-rel-issuers-freeze",
+      "from": "factor-asset-freeze",
+      "to": "indicator-freeze-binance",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Заморозка связана с действиями централизованных эмитентов.",
+      "evidence_source_ids": [
+        "source-binance-security-2026",
+        "source-ap-binance-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "bin-rel-issuers-independent",
+      "from": "factor-asset-freeze",
+      "to": "indicator-freeze-elliptic",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Elliptic подтверждает часть средств, замороженных в токенах.",
+      "evidence_source_ids": [
+        "source-elliptic-binance-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "bin-rel-loss-potential-sales",
+      "from": "indicator-loss-estimate",
+      "to": "factor-sell-pressure",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Не вся затронутая сумма подлежит немедленной продаже; это лишь возможный канал.",
+      "evidence_source_ids": [
+        "source-elliptic-binance-2026"
+      ],
+      "claim_ids": [
+        "claim-asset-pressure"
+      ],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "bin-rel-sales-btc",
+      "from": "factor-sell-pressure",
+      "to": "impact-btc-market",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Продажи могут влиять на BTC, но Reuters не измеряет каузальный вклад инцидента.",
+      "evidence_source_ids": [
+        "source-reuters-binance-2026"
+      ],
+      "claim_ids": [
+        "claim-asset-pressure"
+      ],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "bin-rel-breach-stocks",
+      "from": "event-binance-breach",
+      "to": "impact-us-equities",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Падение акций сообщалось одновременно с известиями; совпадение не равно причинной оценке.",
+      "evidence_source_ids": [
+        "source-reuters-binance-2026"
+      ],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "bin-rel-suspension-trust",
+      "from": "event-suspended-withdrawals",
+      "to": "impact-exchange-trust",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Временная остановка может повышать риск ликвидности и опасения клиентов.",
+      "evidence_source_ids": [
+        "source-binance-security-2026",
+        "source-ap-binance-2026"
+      ],
+      "claim_ids": [
+        "claim-trust-risk"
+      ],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "bin-rel-trust-recovery",
+      "from": "impact-exchange-trust",
+      "to": "scenario-restoration",
+      "relation": "depends_on",
+      "status": "hypothesized",
+      "mechanism": "Условный сценарий: независимое покрытие и быстрый вывод снижают неопределённость.",
+      "evidence_source_ids": [],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    },
+    {
+      "id": "bin-rel-trust-stress",
+      "from": "impact-exchange-trust",
+      "to": "scenario-liquidity-stress",
+      "relation": "depends_on",
+      "status": "hypothesized",
+      "mechanism": "Условный стресс: затяжная недоступность вывода и дефицит покрытия.",
+      "evidence_source_ids": [],
+      "claim_ids": [],
+      "reviewed_at": "2026-10-30T12:00:00Z"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario-restoration",
+      "label": "Восстановление",
+      "base_as_of": "2026-10-30T12:00:00Z",
+      "assumptions": [
+        "Депозиты и выводы восстановлены",
+        "Резервы независимо подтверждены"
+      ],
+      "time_horizon": "7 days",
+      "is_forecast": false
+    },
+    {
+      "id": "scenario-liquidity-stress",
+      "label": "Ликвидность под давлением",
+      "base_as_of": "2026-10-30T12:00:00Z",
+      "assumptions": [
+        "Задержки выводов сохраняются",
+        "Появляются верифицированные разрывы резервов"
+      ],
+      "time_horizon": "7 days",
+      "is_forecast": false
+    }
+  ],
+  "forecasts": []
+}

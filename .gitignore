@@ -1,0 +1,4 @@
+# Review-only API snapshots; do not version raw third-party responses by default.
+data/incoming/
+__pycache__/
+*.pyc

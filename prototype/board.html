@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Information — Country Causal Board (synthetic demo)</title>
+<style>
+:root{color-scheme:dark;--bg:#0a101b;--panel:#101a29;--panel2:#16243a;--line:#263a55;--fg:#ecf3fc;--muted:#a2b2c6;--accent:#63d6c2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--fg)}
+a{color:#78c7fa}button,select,input{font:inherit;color:inherit}button,select{background:#1b2b43;border:1px solid #40516b;border-radius:8px;padding:7px 10px}button{cursor:pointer}button:hover,select:hover{border-color:#8ce1d4}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #96e7cf;outline-offset:2px}
+header{padding:18px 24px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+h1{font-size:21px;line-height:1.2;margin:0}h2{font-size:15px;margin:0 0 14px}h3{font-size:15px;margin:0 0 8px}.sub{color:var(--muted);font-size:12px}
+.badge{background:#46331c;color:#ffdfa3;border:1px solid #8c5c29;border-radius:6px;padding:4px 8px;font-size:12px}
+.controls{display:flex;gap:12px;align-items:end;flex-wrap:wrap}.field{display:flex;flex-direction:column;gap:3px}.field label{font-size:11px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:222px minmax(400px,1fr) 300px;gap:12px;padding:14px;min-height:700px}
+aside,.main,.bottom{border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+aside{padding:17px}.main{overflow:hidden;position:relative;min-height:670px}
+.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;border-bottom:1px solid var(--line);font-weight:600}
+.toolgroup{margin:14px 0 22px}.group-label{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.toggle{display:flex;align-items:center;gap:9px;padding:5px 0;color:#d6e3f3;font-size:13px;cursor:pointer}.toggle input{accent-color:#62d3b9}
+.hint{border-top:1px solid var(--line);padding-top:12px;font-size:12px;color:var(--muted)}
+.scroll{overflow:auto;height:610px;scrollbar-color:#415777 transparent}
+#graph{display:block;min-width:950px;width:100%;height:610px;background:radial-gradient(ellipse at 55% 40%,#15273d,#0d1625 69%)}
+.node{cursor:pointer}.node rect{stroke-width:1.5;filter:drop-shadow(0 5px 6px rgba(0,0,0,.24))}.node text{fill:var(--fg);font-weight:600;font-size:15px;pointer-events:none}.node .caption{font-size:10px;font-weight:400;fill:#b0c3d9}.node.selected rect{stroke:#fff;stroke-width:3}.node:hover rect{stroke:#91e9df;stroke-width:3}
+.edge{cursor:pointer;fill:none;stroke:#87b0c6;stroke-width:2.4}.edge[data-status="disputed"]{stroke:#f5ad65;stroke-dasharray:7 5}.edge[data-status="hypothesized"]{stroke-dasharray:5 6}.edge.selected{stroke:#f9e794;stroke-width:5;stroke-dasharray:none}.edge-hit{fill:none;stroke:transparent;stroke-width:18;cursor:pointer}
+.rail-list{display:flex;flex-direction:column;gap:6px;margin:12px 0}.item{border:1px solid #29425c;background:#16243a;text-align:left;border-radius:7px;padding:9px;color:#e8f3fc;cursor:pointer}.item small{display:block;color:var(--muted)}
+.detail{white-space:normal;color:#cfdae9;font-size:13px}.detail strong{color:#fff}.meta{margin:8px 0;padding:8px;background:#192a3e;border-radius:6px;font-size:12px}
+.details-panel{max-height:590px;overflow:auto}.details-panel p{margin:8px 0}.scenario-note{background:#21321f;border:1px solid #466d40;color:#c5edbd;padding:8px;border-radius:8px;font-size:12px;margin-top:12px}
+.bottom{margin:0 14px 16px;padding:14px 18px}.legend{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12px}
+.line{display:inline-block;width:26px;border-top:2px dashed #85b1ce;vertical-align:middle;margin-right:4px}.line.disputed{border-color:#f5ad65}.chip{display:inline-block;padding:2px 7px;border-radius:4px;background:#28405b;color:#cdddef;margin:3px 2px 3px 0;font-size:11px}
+@media(max-width:1100px){.layout{grid-template-columns:210px minmax(350px,1fr)}.right{grid-column:1 / -1}.main{min-height:650px}.right .details-panel{max-height:none}}
+@media(max-width:670px){.layout{display:block;padding:8px}.layout > *{margin-bottom:10px}.main{min-height:570px}.scroll,#graph{height:540px}header{padding:14px}.controls{width:100%}aside{padding:12px}}
+</style></head>
+<body>
+<header>
+<div><div class="sub">DEMENTOR LAB · WORLD INFORMATION · RESEARCH EXPERIMENT</div><h1>Мир как система взаимосвязей</h1><div class="sub">Страна → события → факторы → последствия → варианты будущего</div></div>
+<div class="badge">СИНТЕТИЧЕСКИЙ ДЕМО-КЕЙС · НЕТ ЖИВЫХ ДАННЫХ</div>
+<div class="controls">
+<div class="field"><label for="country">Страна</label><select id="country"><option value="PL">Польша</option><option value="DE">Германия</option></select></div>
+<div class="field"><label for="lens">Кому интересно</label><select id="lens"><option value="all">Общий обзор</option><option value="investor">Инвестор</option><option value="migrant">Переезд</option><option value="resident">Житель</option><option value="analyst">Аналитик</option></select></div>
+<div class="field"><label for="asof">Известно на дату</label><input id="asof" type="date" value="2026-10-30" min="2026-10-01" max="2026-12-31" style="background:#1b2b43;border:1px solid #40516b;border-radius:7px;padding:7px"></div>
+</div>
+</header>
+<section class="layout">
+<aside aria-label="Фильтры графа">
+<h2>Слои наблюдения</h2>
+<div id="layerFilters" class="toolgroup"></div>
+<div class="group-label">Категория</div>
+<select id="domain" style="width:100%">
+<option value="all">Все категории</option><option value="energy">Энергия</option><option value="economy">Экономика</option><option value="logistics">Логистика</option><option value="politics">Политика</option><option value="society">Общество и права</option><option value="finance">Финансы</option>
+</select>
+<div class="toolgroup">
+<div class="group-label">Варианты развития</div>
+<label class="field" for="scenario">Показать условные ветки</label>
+<select id="scenario" style="width:100%"><option value="both">Оба сценария</option><option value="scenario-adapt">Адаптация</option><option value="scenario-stress">Стресс</option><option value="none">Скрыть сценарии</option></select>
+</div>
+<div class="hint"><strong>Смысл обозначений</strong><br>Пунктир — предположение.<br>Оранжевый пунктир — спорное объяснение.<br>Нажмите на стрелку, чтобы проверить её обоснование.</div>
+</aside>
+<div class="main">
+<div class="panel-heading"><div><span id="maptitle">Причинный граф · Польша</span><div class="sub" id="mapmeta">Факты и гипотезы не смешиваются</div></div><button id="reset" type="button">Сбросить</button></div>
+<div class="scroll"><svg id="graph" viewBox="0 0 1270 640" role="img" aria-label="Учебный причинный граф. Альтернативный список связей доступен ниже."><defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#87b0c6"/></marker></defs><g id="graphcontent"></g></svg></div>
+</div>
+<aside class="right" aria-label="Панель проверки источников">
+<h2>Разбор узла / связи</h2>
+<div class="details-panel" id="details" aria-live="polite"></div>
+<div class="scenario-note">Рынки прогнозов, комментарии и форумные аргументы — самостоятельные сигналы, но не доказательства истинности события.</div>
+</aside>
+</section>
+<section class="bottom"><div class="panel-heading" style="padding:0 0 8px;border:0"><span>Список связей · доступная текстовая альтернатива графу</span><span class="sub" id="counts"></span></div><div class="legend"><span><i class="line"></i>Гипотеза</span><span><i class="line disputed"></i>Оспаривается</span><span>Каждая связь проверяется отдельно, источник не выдумывается</span></div><div id="relationList" class="rail-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))"></div></section>
+<script id="fixture" type="application/json">{"schema_version":"0.1.0","synthetic":true,"description":"Synthetic interactive UI example. All events, connections, claims, scenarios and numbers are fabricated as demonstrations, not factual statements.","nodes":[{"id":"country-pl","type":"country","label":"Польша","layer":"geography","category":"politics","subcategories":["politics.country"],"countries":["PL"],"at":"2026-10-01T00:00:00Z","description":"Профиль государства (синтетические демонстрационные данные).","layout":{"x":35,"y":80}},{"id":"country-de","type":"country","label":"Германия","layer":"geography","category":"politics","subcategories":["politics.country"],"countries":["DE","PL"],"at":"2026-10-01T00:00:00Z","description":"Связанная страна, показана для демонстрации трансграничного воздействия.","layout":{"x":35,"y":220}},{"id":"event-energy","type":"event","label":"Учебный энергосбой","layer":"events","category":"energy","subcategories":["energy.electricity.grid"],"countries":["DE","PL"],"at":"2026-10-15T00:00:00Z","description":"Воображаемый энергосбой в соседней экономике. Это не реальная новость.","layout":{"x":300,"y":90}},{"id":"event-policy","type":"event","label":"Учебное решение","layer":"events","category":"politics","subcategories":["politics.regulation.trade"],"countries":["PL"],"at":"2026-10-20T00:00:00Z","description":"Воображаемая регуляторная реакция на изменения поставок.","layout":{"x":300,"y":280}},{"id":"factor-supply","type":"factor","label":"Дефицит поставок","layer":"factors","category":"energy","subcategories":["energy.supply.fuel"],"countries":["PL","DE"],"at":"2026-10-15T00:00:00Z","description":"Предполагаемый промежуточный механизм: изменение доступности сырья.","layout":{"x":565,"y":80}},{"id":"factor-global","type":"factor","label":"Мировой спрос","layer":"factors","category":"economy","subcategories":["economy.demand.global"],"countries":["PL","DE"],"at":"2026-10-01T00:00:00Z","description":"Конкурирующий внешний фактор: общий спрос может влиять на цены независимо от учебного события.","layout":{"x":565,"y":230}},{"id":"impact-logistics","type":"impact","label":"Цена перевозок","layer":"impacts","category":"logistics","subcategories":["logistics.transport.freight"],"countries":["PL","DE"],"at":"2026-10-20T00:00:00Z","description":"Демонстрационный индикатор, без фактического числового ряда.","layout":{"x":830,"y":65}},{"id":"impact-prices","type":"impact","label":"Стоимость жизни","layer":"impacts","category":"economy","subcategories":["economy.inflation.costs"],"countries":["PL"],"at":"2026-10-20T00:00:00Z","description":"Потенциальное последствие для домохозяйств; нужно исследование реальных рядов.","layout":{"x":830,"y":200}},{"id":"impact-rights","type":"impact","label":"Условия переезда","layer":"impacts","category":"society","subcategories":["society.migration.residency"],"countries":["PL"],"at":"2026-10-20T00:00:00Z","description":"Правила проживания зависят от статуса и времени. Здесь только пример категории.","layout":{"x":830,"y":350}},{"id":"scenario-adapt","type":"scenario","label":"Сценарий: адаптация","layer":"scenarios","category":"economy","subcategories":["economy.scenarios.adaptation"],"countries":["PL","DE"],"at":"2026-10-20T00:00:00Z","description":"Условно: быстрые меры адаптации снижают давление на логистику. Не прогноз.","layout":{"x":1040,"y":55}},{"id":"scenario-stress","type":"scenario","label":"Сценарий: стресс","layer":"scenarios","category":"energy","subcategories":["energy.scenarios.stress"],"countries":["PL","DE"],"at":"2026-10-20T00:00:00Z","description":"Условно: нарушение затягивается и усиливает инфляционный канал. Не прогноз.","layout":{"x":1040,"y":205}},{"id":"discussion-one","type":"discussion","label":"Аргументы сообщества","layer":"discussions","category":"politics","subcategories":["politics.discourse.discussion"],"countries":["PL"],"at":"2026-10-20T00:00:00Z","description":"Точка входа к комментариям с контраргументами, не подтверждение фактов.","layout":{"x":1040,"y":365}},{"id":"market-one","type":"market","label":"Рынок прогнозов","layer":"markets","category":"finance","subcategories":["finance.prediction.market"],"countries":["PL","DE"],"at":"2026-10-20T00:00:00Z","description":"В будущем: сторонняя карточка с вопросом, сроком, торговой ценой и статусом. Здесь нет реальных ставок.","layout":{"x":1040,"y":505}}],"relations":[{"id":"rel-country-event","from":"country-de","to":"event-energy","relation":"located_in","status":"hypothesized","mechanism":"Иллюстрация привязки события к стране.","evidence_source_ids":[],"claim_ids":[],"alternative_claim_ids":[]},{"id":"rel-event-factor","from":"event-energy","to":"factor-supply","relation":"hypothesized_to_affect","status":"hypothesized","mechanism":"Перебои могут сократить предложение.","evidence_source_ids":[],"claim_ids":["claim-supply"],"alternative_claim_ids":["claim-demand"]},{"id":"rel-global-logistics","from":"factor-global","to":"impact-logistics","relation":"hypothesized_to_affect","status":"disputed","mechanism":"Рост мирового спроса способен повышать стоимость перевозок без локального сбоя.","evidence_source_ids":[],"claim_ids":["claim-demand"],"alternative_claim_ids":[]},{"id":"rel-supply-logistics","from":"factor-supply","to":"impact-logistics","relation":"hypothesized_to_affect","status":"hypothesized","mechanism":"Изменение энергии может повышать издержки перевозчиков.","evidence_source_ids":[],"claim_ids":["claim-supply"],"alternative_claim_ids":["claim-demand"]},{"id":"rel-freight-prices","from":"impact-logistics","to":"impact-prices","relation":"hypothesized_to_affect","status":"hypothesized","mechanism":"Рост издержек перевозок может передаваться в потребительские цены.","evidence_source_ids":[],"claim_ids":["claim-inflation"],"alternative_claim_ids":[]},{"id":"rel-policy-rights","from":"event-policy","to":"impact-rights","relation":"hypothesized_to_affect","status":"disputed","mechanism":"Регулирование может менять доступ к услугам лишь для отдельных правовых статусов.","evidence_source_ids":[],"claim_ids":["claim-rights"],"alternative_claim_ids":[]},{"id":"rel-prices-adapt","from":"impact-prices","to":"scenario-adapt","relation":"depends_on","status":"hypothesized","mechanism":"В условном сценарии негативное воздействие частично компенсируется.","evidence_source_ids":[],"claim_ids":[],"alternative_claim_ids":[]},{"id":"rel-prices-stress","from":"impact-prices","to":"scenario-stress","relation":"depends_on","status":"hypothesized","mechanism":"В условном сценарии рост издержек сохраняется.","evidence_source_ids":[],"claim_ids":[],"alternative_claim_ids":[]},{"id":"rel-discussion","from":"discussion-one","to":"impact-prices","relation":"discusses","status":"hypothesized","mechanism":"Пользователи обсуждают интерпретацию изменения.","evidence_source_ids":[],"claim_ids":[],"alternative_claim_ids":[]},{"id":"rel-market","from":"market-one","to":"scenario-stress","relation":"prices_outcome","status":"hypothesized","mechanism":"Будущий внешний рынок может быть связан с формально сформулированным вопросом; данных сейчас нет.","evidence_source_ids":[],"claim_ids":[],"alternative_claim_ids":[]}],"claims":[{"id":"claim-supply","statement":"Учебный энергосбой может повысить стоимость логистики","mechanism":"Энергетические издержки влияют на перевозку","alternatives":["Общий мировой спрос","Валютный курс","Сезонность"],"falsification":"Проверить сопоставимые ряды фрахта и топливных затрат против контрольных коридоров.","review_status":"draft","evidence_source_ids":[]},{"id":"claim-demand","statement":"Мировой спрос мог быть более важным драйвером перевозок","mechanism":"Общий рост нагрузки на логистику","alternatives":["Локальный энергосбой"],"falsification":"Сравнить рост цен в независимых транспортных коридорах.","review_status":"draft","evidence_source_ids":[]},{"id":"claim-inflation","statement":"Рост логистических издержек может отразиться на расходах домохозяйств","mechanism":"Транспортная составляющая в конечных ценах","alternatives":["Другие компоненты инфляции"],"falsification":"Сопоставить лаги и вклад логистики в корзину CPI.","review_status":"draft","evidence_source_ids":[]},{"id":"claim-rights","statement":"Регуляторные решения неодинаково затрагивают правовые группы","mechanism":"Разные режимы доступа и разрешений","alternatives":["Иные национальные законы"],"falsification":"Проверить тексты действующего закона для каждого статуса.","review_status":"draft","evidence_source_ids":[]}],"sources":[],"scenarios":[{"id":"scenario-adapt","label":"Адаптация","base_as_of":"2026-10-20T00:00:00Z","assumptions":["Действия компаний сокращают издержки"],"time_horizon":"3 months","is_forecast":false},{"id":"scenario-stress","label":"Стресс","base_as_of":"2026-10-20T00:00:00Z","assumptions":["Дефицит сохраняется дольше"],"time_horizon":"3 months","is_forecast":false}],"forecasts":[]}</script>
+<script>
+'use strict';
+const data=JSON.parse(document.getElementById('fixture').textContent);
+const byId=new Map(data.nodes.map(n=>[n.id,n]));
+const el=id=>document.getElementById(id);
+const layers=[['geography','География'],['events','События'],['factors','Внешние факторы'],['impacts','Последствия'],['scenarios','Сценарии'],['discussions','Обсуждения'],['markets','Рынки прогнозов']];
+const categories={energy:'#4fa9f3',economy:'#f2bb66',logistics:'#bb94ff',politics:'#75d4c1',society:'#ec9aaa',finance:'#b6d275'};
+let selected=null;
+function xml(tag,attrs={},parent){const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));if(parent)parent.appendChild(e);return e;}
+function textNode(parent,x,y,content,cls){const e=xml('text',{x,y,class:cls||''},parent);e.textContent=content;return e;}
+function init(){el('layerFilters').innerHTML=layers.map(pair=>'<label class="toggle"><input type="checkbox" data-layer="'+pair[0]+'" checked><span>'+pair[1]+'</span></label>').join('');el('layerFilters').addEventListener('change',draw);
+['country','domain','asof','scenario'].forEach(id=>el(id).addEventListener('change',()=>{selected=null;draw();}));
+el('lens').addEventListener('change',()=>{const m={all:'all',investor:'economy',migrant:'society',resident:'society',analyst:'all'};el('domain').value=m[el('lens').value];selected=null;draw();});
+el('reset').addEventListener('click',()=>{el('country').value='PL';el('domain').value='all';el('lens').value='all';el('scenario').value='both';el('asof').value='2026-10-30';document.querySelectorAll('[data-layer]').forEach(e=>e.checked=true);selected=null;draw();});draw();}
+function getVisible(){
+ const c=el('country').value,date=el('asof').value,domain=el('domain').value,scenario=el('scenario').value;
+ const enabled=new Set([...document.querySelectorAll('[data-layer]:checked')].map(e=>e.getAttribute('data-layer')));
+ const ns=data.nodes.filter(n=>n.countries.includes(c)&&n.at.slice(0,10)<=date&&enabled.has(n.layer)&&(domain==='all'||n.category===domain||n.type==='country')&&(n.layer!=='scenarios'||scenario==='both'||n.id===scenario));
+ const ids=new Set(ns.map(n=>n.id));
+ return {ns,rs:data.relations.filter(r=>ids.has(r.from)&&ids.has(r.to))};
+}
+function show(type,id){
+ selected={type,id};draw();
+}
+function draw(){
+ const {ns,rs}=getVisible(), g=el('graphcontent');g.replaceChildren();
+ const active=new Set(ns.map(n=>n.id));if(selected && !(selected.type==='node'?active.has(selected.id):rs.some(r=>r.id===selected.id)))selected=null;
+ el('maptitle').textContent='Причинный граф · '+(el('country').value==='PL'?'Польша':'Германия');
+ el('mapmeta').textContent='Узлов: '+ns.length+' · связей: '+rs.length+' · на дату '+el('asof').value;
+ rs.forEach(r=>{const a=byId.get(r.from),b=byId.get(r.to);const x1=a.layout.x+192,y1=a.layout.y+35,x2=b.layout.x,y2=b.layout.y+35;
+ const d='M'+x1+' '+y1+' C'+(x1+38)+' '+y1+' '+(x2-38)+' '+y2+' '+x2+' '+y2;
+ const group=xml('g',{},g);const line=xml('path',{d,class:'edge'+(selected?.id===r.id?' selected':''),'data-status':r.status,'marker-end':'url(#arrow)'},group);
+ xml('path',{d,class:'edge-hit',tabindex:0,role:'button','aria-label':'Связь: '+a.label+' → '+b.label},group);
+ group.addEventListener('click',()=>show('relation',r.id));group.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();show('relation',r.id);}});
+ });
+ ns.forEach(n=>{const group=xml('g',{transform:'translate('+n.layout.x+' '+n.layout.y+')',class:'node'+(selected?.id===n.id?' selected':''),tabindex:0,role:'button','aria-label':n.label},g);
+ xml('rect',{x:0,y:0,width:194,height:72,rx:11,fill:'#17283b',stroke:categories[n.category]||'#7cd8c8'},group);
+ xml('rect',{x:0,y:0,width:5,height:72,rx:2,fill:categories[n.category]||'#7cd8c8',stroke:'none'},group);
+ const label=n.label.length>24?n.label.slice(0,22)+'…':n.label;
+ textNode(group,14,31,label,'');
+ textNode(group,14,54,n.subcategories[0].split('.').slice(0,2).join(' · '),'caption');
+ group.addEventListener('click',()=>show('node',n.id));group.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();show('node',n.id);}});
+ });
+ el('counts').textContent=rs.length+' записей';
+ el('relationList').replaceChildren();
+ rs.forEach(r=>{const b=document.createElement('button');b.type='button';b.className='item';b.textContent=byId.get(r.from).label+' → '+byId.get(r.to).label;const sm=document.createElement('small');sm.textContent=r.relation+' / '+r.status;b.appendChild(sm);b.addEventListener('click',()=>show('relation',r.id));el('relationList').appendChild(b);});
+ detail(ns,rs);
+}
+function p(parent,tag,content){const e=document.createElement(tag);e.textContent=content;parent.appendChild(e);return e;}
+function detail(ns,rs){
+ const target=el('details');target.replaceChildren();const info=selected||{type:'overview'};if(info.type==='overview'){
+ p(target,'h3','Обзор выбранной страны');p(target,'p','Это макет механики, а не оценка реальных стран. Выберите узел либо пунктирную стрелку, чтобы увидеть причинное утверждение, альтернативы и источники.');
+ p(target,'p','Слои событий можно скрывать по отдельности. У каждого объекта есть предметная категория и иерархическая подкатегория.');
+ p(target,'p','Переключите линзу «Переезд», «Инвестор», «Житель» или «Аналитик», чтобы начать с соответствующего контекста.');return;}
+ if(info.type==='node'){
+ const n=byId.get(info.id);p(target,'h3',n.label);p(target,'p',n.description);
+ p(target,'div','Категория: '+n.category+' · подкатегория: '+n.subcategories.join(', ')).className='meta';
+ p(target,'div','Тип: '+n.type+' · слой: '+n.layer+' · дата: '+n.at.slice(0,10)).className='meta';
+ const refs=data.relations.filter(r=>r.from===n.id||r.to===n.id);p(target,'h3','Связанные пути ('+refs.length+')');refs.forEach(r=>{const b=p(target,'button',byId.get(r.from).label+' → '+byId.get(r.to).label);b.style.display='block';b.style.margin='6px 0';b.addEventListener('click',()=>show('relation',r.id));});return;
+ }
+ const r=data.relations.find(x=>x.id===info.id);if(!r)return;
+ p(target,'h3',byId.get(r.from).label+' → '+byId.get(r.to).label);
+ p(target,'div','Тип: '+r.relation+' · статус: '+r.status).className='meta';
+ p(target,'p',r.mechanism);p(target,'h3','Проверяемая гипотеза / механизм');
+ if(r.claim_ids.length){for(const cid of r.claim_ids){const c=data.claims.find(x=>x.id===cid);if(!c)continue;p(target,'p',c.statement);p(target,'p','Механизм: '+c.mechanism);p(target,'p','Альтернативы: '+c.alternatives.join('; '));p(target,'p','Как опровергнуть: '+c.falsification);}}
+ else p(target,'p','Причинный механизм не утверждается: это контекстная связь.');
+ p(target,'h3','Источники и верификация');
+ p(target,'p',r.evidence_source_ids.length+' источников. В синтетическом примере первичные доказательства намеренно отсутствуют.');
+ p(target,'p','Для публикации реальной причинной связи требуются ссылки на источники, контроль внешних факторов и проверка контргипотез.');
+}
+init();
+</script></body></html>

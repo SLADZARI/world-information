@@ -1,0 +1,460 @@
+{
+  "schema_version": "0.1.0",
+  "synthetic": true,
+  "description": "Synthetic interactive UI example. All events, connections, claims, scenarios and numbers are fabricated as demonstrations, not factual statements.",
+  "nodes": [
+    {
+      "id": "country-pl",
+      "type": "country",
+      "label": "Польша",
+      "layer": "geography",
+      "category": "politics",
+      "subcategories": [
+        "politics.country"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-01T00:00:00Z",
+      "description": "Профиль государства (синтетические демонстрационные данные).",
+      "layout": {
+        "x": 35,
+        "y": 80
+      }
+    },
+    {
+      "id": "country-de",
+      "type": "country",
+      "label": "Германия",
+      "layer": "geography",
+      "category": "politics",
+      "subcategories": [
+        "politics.country"
+      ],
+      "countries": [
+        "DE",
+        "PL"
+      ],
+      "at": "2026-10-01T00:00:00Z",
+      "description": "Связанная страна, показана для демонстрации трансграничного воздействия.",
+      "layout": {
+        "x": 35,
+        "y": 220
+      }
+    },
+    {
+      "id": "event-energy",
+      "type": "event",
+      "label": "Учебный энергосбой",
+      "layer": "events",
+      "category": "energy",
+      "subcategories": [
+        "energy.electricity.grid"
+      ],
+      "countries": [
+        "DE",
+        "PL"
+      ],
+      "at": "2026-10-15T00:00:00Z",
+      "description": "Воображаемый энергосбой в соседней экономике. Это не реальная новость.",
+      "layout": {
+        "x": 300,
+        "y": 90
+      }
+    },
+    {
+      "id": "event-policy",
+      "type": "event",
+      "label": "Учебное решение",
+      "layer": "events",
+      "category": "politics",
+      "subcategories": [
+        "politics.regulation.trade"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-20T00:00:00Z",
+      "description": "Воображаемая регуляторная реакция на изменения поставок.",
+      "layout": {
+        "x": 300,
+        "y": 280
+      }
+    },
+    {
+      "id": "factor-supply",
+      "type": "factor",
+      "label": "Дефицит поставок",
+      "layer": "factors",
+      "category": "energy",
+      "subcategories": [
+        "energy.supply.fuel"
+      ],
+      "countries": [
+        "PL",
+        "DE"
+      ],
+      "at": "2026-10-15T00:00:00Z",
+      "description": "Предполагаемый промежуточный механизм: изменение доступности сырья.",
+      "layout": {
+        "x": 565,
+        "y": 80
+      }
+    },
+    {
+      "id": "factor-global",
+      "type": "factor",
+      "label": "Мировой спрос",
+      "layer": "factors",
+      "category": "economy",
+      "subcategories": [
+        "economy.demand.global"
+      ],
+      "countries": [
+        "PL",
+        "DE"
+      ],
+      "at": "2026-10-01T00:00:00Z",
+      "description": "Конкурирующий внешний фактор: общий спрос может влиять на цены независимо от учебного события.",
+      "layout": {
+        "x": 565,
+        "y": 230
+      }
+    },
+    {
+      "id": "impact-logistics",
+      "type": "impact",
+      "label": "Цена перевозок",
+      "layer": "impacts",
+      "category": "logistics",
+      "subcategories": [
+        "logistics.transport.freight"
+      ],
+      "countries": [
+        "PL",
+        "DE"
+      ],
+      "at": "2026-10-20T00:00:00Z",
+      "description": "Демонстрационный индикатор, без фактического числового ряда.",
+      "layout": {
+        "x": 830,
+        "y": 65
+      }
+    },
+    {
+      "id": "impact-prices",
+      "type": "impact",
+      "label": "Стоимость жизни",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.inflation.costs"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-20T00:00:00Z",
+      "description": "Потенциальное последствие для домохозяйств; нужно исследование реальных рядов.",
+      "layout": {
+        "x": 830,
+        "y": 200
+      }
+    },
+    {
+      "id": "impact-rights",
+      "type": "impact",
+      "label": "Условия переезда",
+      "layer": "impacts",
+      "category": "society",
+      "subcategories": [
+        "society.migration.residency"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-20T00:00:00Z",
+      "description": "Правила проживания зависят от статуса и времени. Здесь только пример категории.",
+      "layout": {
+        "x": 830,
+        "y": 350
+      }
+    },
+    {
+      "id": "scenario-adapt",
+      "type": "scenario",
+      "label": "Сценарий: адаптация",
+      "layer": "scenarios",
+      "category": "economy",
+      "subcategories": [
+        "economy.scenarios.adaptation"
+      ],
+      "countries": [
+        "PL",
+        "DE"
+      ],
+      "at": "2026-10-20T00:00:00Z",
+      "description": "Условно: быстрые меры адаптации снижают давление на логистику. Не прогноз.",
+      "layout": {
+        "x": 1040,
+        "y": 55
+      }
+    },
+    {
+      "id": "scenario-stress",
+      "type": "scenario",
+      "label": "Сценарий: стресс",
+      "layer": "scenarios",
+      "category": "energy",
+      "subcategories": [
+        "energy.scenarios.stress"
+      ],
+      "countries": [
+        "PL",
+        "DE"
+      ],
+      "at": "2026-10-20T00:00:00Z",
+      "description": "Условно: нарушение затягивается и усиливает инфляционный канал. Не прогноз.",
+      "layout": {
+        "x": 1040,
+        "y": 205
+      }
+    },
+    {
+      "id": "discussion-one",
+      "type": "discussion",
+      "label": "Аргументы сообщества",
+      "layer": "discussions",
+      "category": "politics",
+      "subcategories": [
+        "politics.discourse.discussion"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-20T00:00:00Z",
+      "description": "Точка входа к комментариям с контраргументами, не подтверждение фактов.",
+      "layout": {
+        "x": 1040,
+        "y": 365
+      }
+    },
+    {
+      "id": "market-one",
+      "type": "market",
+      "label": "Рынок прогнозов",
+      "layer": "markets",
+      "category": "finance",
+      "subcategories": [
+        "finance.prediction.market"
+      ],
+      "countries": [
+        "PL",
+        "DE"
+      ],
+      "at": "2026-10-20T00:00:00Z",
+      "description": "В будущем: сторонняя карточка с вопросом, сроком, торговой ценой и статусом. Здесь нет реальных ставок.",
+      "layout": {
+        "x": 1040,
+        "y": 505
+      }
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-country-event",
+      "from": "country-de",
+      "to": "event-energy",
+      "relation": "located_in",
+      "status": "hypothesized",
+      "mechanism": "Иллюстрация привязки события к стране.",
+      "evidence_source_ids": [],
+      "claim_ids": [],
+      "alternative_claim_ids": []
+    },
+    {
+      "id": "rel-event-factor",
+      "from": "event-energy",
+      "to": "factor-supply",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Перебои могут сократить предложение.",
+      "evidence_source_ids": [],
+      "claim_ids": [
+        "claim-supply"
+      ],
+      "alternative_claim_ids": [
+        "claim-demand"
+      ]
+    },
+    {
+      "id": "rel-global-logistics",
+      "from": "factor-global",
+      "to": "impact-logistics",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Рост мирового спроса способен повышать стоимость перевозок без локального сбоя.",
+      "evidence_source_ids": [],
+      "claim_ids": [
+        "claim-demand"
+      ],
+      "alternative_claim_ids": []
+    },
+    {
+      "id": "rel-supply-logistics",
+      "from": "factor-supply",
+      "to": "impact-logistics",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Изменение энергии может повышать издержки перевозчиков.",
+      "evidence_source_ids": [],
+      "claim_ids": [
+        "claim-supply"
+      ],
+      "alternative_claim_ids": [
+        "claim-demand"
+      ]
+    },
+    {
+      "id": "rel-freight-prices",
+      "from": "impact-logistics",
+      "to": "impact-prices",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Рост издержек перевозок может передаваться в потребительские цены.",
+      "evidence_source_ids": [],
+      "claim_ids": [
+        "claim-inflation"
+      ],
+      "alternative_claim_ids": []
+    },
+    {
+      "id": "rel-policy-rights",
+      "from": "event-policy",
+      "to": "impact-rights",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Регулирование может менять доступ к услугам лишь для отдельных правовых статусов.",
+      "evidence_source_ids": [],
+      "claim_ids": [
+        "claim-rights"
+      ],
+      "alternative_claim_ids": []
+    },
+    {
+      "id": "rel-prices-adapt",
+      "from": "impact-prices",
+      "to": "scenario-adapt",
+      "relation": "depends_on",
+      "status": "hypothesized",
+      "mechanism": "В условном сценарии негативное воздействие частично компенсируется.",
+      "evidence_source_ids": [],
+      "claim_ids": [],
+      "alternative_claim_ids": []
+    },
+    {
+      "id": "rel-prices-stress",
+      "from": "impact-prices",
+      "to": "scenario-stress",
+      "relation": "depends_on",
+      "status": "hypothesized",
+      "mechanism": "В условном сценарии рост издержек сохраняется.",
+      "evidence_source_ids": [],
+      "claim_ids": [],
+      "alternative_claim_ids": []
+    },
+    {
+      "id": "rel-discussion",
+      "from": "discussion-one",
+      "to": "impact-prices",
+      "relation": "discusses",
+      "status": "hypothesized",
+      "mechanism": "Пользователи обсуждают интерпретацию изменения.",
+      "evidence_source_ids": [],
+      "claim_ids": [],
+      "alternative_claim_ids": []
+    },
+    {
+      "id": "rel-market",
+      "from": "market-one",
+      "to": "scenario-stress",
+      "relation": "prices_outcome",
+      "status": "hypothesized",
+      "mechanism": "Будущий внешний рынок может быть связан с формально сформулированным вопросом; данных сейчас нет.",
+      "evidence_source_ids": [],
+      "claim_ids": [],
+      "alternative_claim_ids": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-supply",
+      "statement": "Учебный энергосбой может повысить стоимость логистики",
+      "mechanism": "Энергетические издержки влияют на перевозку",
+      "alternatives": [
+        "Общий мировой спрос",
+        "Валютный курс",
+        "Сезонность"
+      ],
+      "falsification": "Проверить сопоставимые ряды фрахта и топливных затрат против контрольных коридоров.",
+      "review_status": "draft",
+      "evidence_source_ids": []
+    },
+    {
+      "id": "claim-demand",
+      "statement": "Мировой спрос мог быть более важным драйвером перевозок",
+      "mechanism": "Общий рост нагрузки на логистику",
+      "alternatives": [
+        "Локальный энергосбой"
+      ],
+      "falsification": "Сравнить рост цен в независимых транспортных коридорах.",
+      "review_status": "draft",
+      "evidence_source_ids": []
+    },
+    {
+      "id": "claim-inflation",
+      "statement": "Рост логистических издержек может отразиться на расходах домохозяйств",
+      "mechanism": "Транспортная составляющая в конечных ценах",
+      "alternatives": [
+        "Другие компоненты инфляции"
+      ],
+      "falsification": "Сопоставить лаги и вклад логистики в корзину CPI.",
+      "review_status": "draft",
+      "evidence_source_ids": []
+    },
+    {
+      "id": "claim-rights",
+      "statement": "Регуляторные решения неодинаково затрагивают правовые группы",
+      "mechanism": "Разные режимы доступа и разрешений",
+      "alternatives": [
+        "Иные национальные законы"
+      ],
+      "falsification": "Проверить тексты действующего закона для каждого статуса.",
+      "review_status": "draft",
+      "evidence_source_ids": []
+    }
+  ],
+  "sources": [],
+  "scenarios": [
+    {
+      "id": "scenario-adapt",
+      "label": "Адаптация",
+      "base_as_of": "2026-10-20T00:00:00Z",
+      "assumptions": [
+        "Действия компаний сокращают издержки"
+      ],
+      "time_horizon": "3 months",
+      "is_forecast": false
+    },
+    {
+      "id": "scenario-stress",
+      "label": "Стресс",
+      "base_as_of": "2026-10-20T00:00:00Z",
+      "assumptions": [
+        "Дефицит сохраняется дольше"
+      ],
+      "time_horizon": "3 months",
+      "is_forecast": false
+    }
+  ],
+  "forecasts": []
+}

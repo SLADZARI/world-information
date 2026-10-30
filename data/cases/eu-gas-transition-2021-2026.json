@@ -20,6 +20,14 @@
       "published_at": "2024-02-15T00:00:00Z",
       "retrieved_at": "2026-10-30T12:00:00Z",
       "rights": "Metadata and short factual observations linked for verification; do not republish full copyrighted content without license review."
+    },
+    {
+      "id": "source-eu-gas-regulation-2026",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/01/26/russian-gas-imports-council-gives-final-greenlight-to-a-stepwise-ban/",
+      "publisher": "Council of the European Union",
+      "published_at": "2026-01-26T10:17:00Z",
+      "retrieved_at": "2026-10-30T12:00:00Z",
+      "rights": "Linked primary legal press release; do not republish full text without permission review."
     }
   ],
   "nodes": [
@@ -94,8 +102,8 @@
         "DE",
         "PL"
       ],
-      "at": "2026-01-01T00:00:00Z",
-      "description": "Совет ЕС сообщает: в январе 2026 принято регулирование запрета российского трубопроводного газа и СПГ с переходными периодами до конца 2027.",
+      "at": "2026-01-26T00:00:00Z",
+      "description": "Совет ЕС 26 января 2026 принял регулирование постепенного запрета импорта российского газа; начало применения запрета 18 марта 2026 с исключениями для существующих договоров, полное прекращение по переходным срокам в 2027 году.",
       "layout": {
         "x": 285,
         "y": 235
@@ -147,10 +155,9 @@
         "metric": "Russian-origin EU imports",
         "unit": "bcm/year",
         "period": "2021",
-        "value": 150,
         "source_id": "source-eu-council-gas-2026",
         "population_scope": "EU aggregate, pipeline + LNG",
-        "method": "Обозначено как >150 в источнике: значение 150 здесь нижняя ориентировочная отметка, не точная величина."
+        "method": "Совет ЕС сообщает более 150 bcm; точное число не задано в данном первоисточнике, поэтому числовое значение намеренно опущено."
       }
     },
     {
@@ -453,7 +460,8 @@
       "status": "associated",
       "mechanism": "Законодательный ответ и многолетняя тенденция сосуществуют; дата события 2026 позже результата 2025.",
       "evidence_source_ids": [
-        "source-eu-council-gas-2026"
+        "source-eu-council-gas-2026",
+        "source-eu-gas-regulation-2026"
       ],
       "claim_ids": [],
       "alternative_claim_ids": [],

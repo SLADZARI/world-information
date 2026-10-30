@@ -8,7 +8,7 @@ import { resolve } from "node:path";
 import assert from "node:assert/strict";
 const get=path=>JSON.parse(fs.readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 export const graphs=Object.fromEntries(
- ["poland-institutional-crisis-2026-10","poland-migration-policy-2025-2026"].map(name=>[name,get("data/cases/"+name+".json")]));
+ ["poland-institutional-crisis-2026-10","poland-migration-policy-2025-2026","poland-policy-economy-2026-10"].map(name=>[name,get("data/cases/"+name+".json")]));
 export const policies=get("data/policies/PL-2026-10-30.json");
 export const profile=get("data/countries/PL/overview-2026-10-30.json");
 export function validatePoland(policyData, countryData, allGraphs) {
@@ -34,7 +34,8 @@ export function validatePoland(policyData, countryData, allGraphs) {
   if(["enacted","annual_exemption","time_limited"].includes(p.status)) assert.ok(p.effective_from,p.id+" active policy needs start");
   if(p.effective_from && p.expires_at)assert.ok(p.effective_from<=p.expires_at,p.id+" expiry before start");
  }
- assert.equal(countryData.topic_clusters.length,3);
+ assert.equal(countryData.topic_clusters.length,4);
+ assert.ok(countryData.topic_clusters.some(t=>t.topic==="economic_conditions"),"Missing economic exposure layer");
  for(const topic of countryData.topic_clusters){
   const graph=allGraphs[topic.event_graph_id];
   assert.ok(graph,topic.topic+" missing canonical graph");
@@ -56,6 +57,17 @@ export function validatePoland(policyData, countryData, allGraphs) {
    if(edge.relation==="hypothesized_to_affect")assert.ok(edge.claim_ids.length,edge.id+" causal hypothesis without claim");
   }
  }
+ const integrated=allGraphs["poland-policy-economy-2026-10"];
+ const economicNodes=new Map(integrated.nodes.map(n=>[n.id,n]));
+ for(const id of ["pl-foreign-workers-2026-03","pl-job-vacancies-2026-q2","pl-enterprise-investment-h1-2026","pl-fdi-inflow-2024"])
+   assert.ok(economicNodes.get(id)?.indicator?.source_id,"Economic indicator must preserve original source: "+id);
+ const linkedSources=new Set(integrated.sources.map(s=>s.id));
+ for(const n of integrated.nodes)if(n.indicator?.source_id) assert.ok(linkedSources.has(n.indicator.source_id),n.id+" missing source");
+ for(const edge of integrated.relations)if(["hypothesized_to_affect","supported_causal_effect"].includes(edge.relation)){
+   assert.ok(Date.parse(economicNodes.get(edge.from).at)<=Date.parse(economicNodes.get(edge.to).at),edge.id+" claims backward causality");
+ }
+ assert.ok(!integrated.relations.some(e=>e.from==="pl-tk-suspension"&&e.to==="pl-enterprise-investment-h1-2026"),
+    "October event cannot cause previous H1 investment");
  const court=allGraphs["poland-institutional-crisis-2026-10"];
  const legalEvent="pl-reputation-case",tribunal="pl-tk-suspension";
  assert.ok(!court.relations.some(r=>

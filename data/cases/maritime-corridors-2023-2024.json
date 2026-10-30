@@ -12,6 +12,14 @@
       "published_at": "2024-02-22T00:00:00Z",
       "retrieved_at": "2026-10-30T12:00:00Z",
       "rights": "Metadata and short factual observations linked for verification; do not republish full copyrighted content without license review."
+    },
+    {
+      "id": "source-imo-redsea-incidents",
+      "url": "https://www.imo.org/en/mediacentre/hottopics/pages/red-sea.aspx",
+      "publisher": "International Maritime Organization (IMO)",
+      "published_at": "2026-10-30T00:00:00Z",
+      "retrieved_at": "2026-10-30T12:00:00Z",
+      "rights": "Link-only: latest IMO incident reporting page is updated over time; publication timestamp not reliably available; use retrieved_at as snapshot date."
     }
   ],
   "nodes": [
@@ -66,8 +74,8 @@
         "YE",
         "EG"
       ],
-      "at": "2023-12-01T00:00:00Z",
-      "description": "UNCTAD сообщает о нападениях на коммерческие суда в Красном море в конце 2023 — начале 2024 года.",
+      "at": "2023-11-01T00:00:00Z",
+      "description": "IMO ведёт учёт подтверждённых инцидентов в Красном море с ноября 2023; 17 инцидентов было зафиксировано за ноябрь 2023 — 9 января 2024. Дата 1 ноября является началом учётного периода, а не датой первой атаки.",
       "layout": {
         "x": 280,
         "y": 70

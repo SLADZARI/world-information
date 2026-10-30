@@ -49,7 +49,7 @@ def validate(file):
         stamp(n.get("at"),name+".at",e)
         if not n.get("subcategories") or not all(SUBCAT.fullmatch(s) for s in n["subcategories"]): e.append(name+": invalid subcategory path")
         if not n.get("category"): e.append(name+": missing category")
-        if not n.get("countries") or not all(COUNTRY.fullmatch(c) for c in n["countries"]): e.append(name+": invalid country codes")
+        if not isinstance(n.get("countries"),list) or (not n.get("countries") and not n.get("global_scope")) or not all(COUNTRY.fullmatch(c) for c in n.get("countries",[])): e.append(name+": invalid country codes or global scope")
         if n.get("type") == "indicator" and "indicator" in n:
             i=n["indicator"]
             for field in ("metric","unit","period","source_id","population_scope"):

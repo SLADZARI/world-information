@@ -1,0 +1,473 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "World Information graph document v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "synthetic",
+    "nodes",
+    "relations",
+    "claims",
+    "sources",
+    "scenarios",
+    "forecasts"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type",
+          "label",
+          "layer",
+          "category",
+          "subcategories",
+          "countries",
+          "at"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 3,
+            "pattern": "^[a-z][a-z0-9_-]+$"
+          },
+          "type": {
+            "enum": [
+              "country",
+              "region",
+              "actor",
+              "event",
+              "factor",
+              "indicator",
+              "impact",
+              "scenario",
+              "forecast",
+              "discussion",
+              "market"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "layer": {
+            "enum": [
+              "geography",
+              "events",
+              "factors",
+              "impacts",
+              "scenarios",
+              "discussions",
+              "markets"
+            ]
+          },
+          "category": {
+            "enum": [
+              "economy",
+              "politics",
+              "energy",
+              "logistics",
+              "environment",
+              "science",
+              "society",
+              "security",
+              "finance"
+            ]
+          },
+          "subcategories": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z]+(\\.[a-z_]+)+$"
+            }
+          },
+          "countries": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z]{2}$"
+            }
+          },
+          "at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": "string"
+          },
+          "indicator": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "metric",
+              "unit",
+              "period",
+              "source_id",
+              "population_scope"
+            ],
+            "properties": {
+              "metric": {
+                "type": "string"
+              },
+              "unit": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              },
+              "source_id": {
+                "type": "string"
+              },
+              "population_scope": {
+                "type": "string"
+              }
+            }
+          },
+          "layout": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "from",
+          "to",
+          "relation",
+          "status",
+          "mechanism",
+          "evidence_source_ids",
+          "claim_ids"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 3,
+            "pattern": "^[a-z][a-z0-9_-]+$"
+          },
+          "from": {
+            "type": "string",
+            "minLength": 3,
+            "pattern": "^[a-z][a-z0-9_-]+$"
+          },
+          "to": {
+            "type": "string",
+            "minLength": 3,
+            "pattern": "^[a-z][a-z0-9_-]+$"
+          },
+          "relation": {
+            "enum": [
+              "located_in",
+              "associated_with",
+              "precedes",
+              "hypothesized_to_affect",
+              "supported_causal_effect",
+              "depends_on",
+              "discusses",
+              "prices_outcome"
+            ]
+          },
+          "status": {
+            "enum": [
+              "hypothesized",
+              "associated",
+              "supported",
+              "disputed",
+              "rejected"
+            ]
+          },
+          "mechanism": {
+            "type": "string"
+          },
+          "evidence_source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 3,
+              "pattern": "^[a-z][a-z0-9_-]+$"
+            }
+          },
+          "claim_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 3,
+              "pattern": "^[a-z][a-z0-9_-]+$"
+            }
+          },
+          "alternative_claim_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 3,
+              "pattern": "^[a-z][a-z0-9_-]+$"
+            }
+          },
+          "time_lag_days": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "reviewed_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "statement",
+          "mechanism",
+          "alternatives",
+          "falsification",
+          "review_status",
+          "evidence_source_ids"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 3,
+            "pattern": "^[a-z][a-z0-9_-]+$"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "mechanism": {
+            "type": "string"
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "falsification": {
+            "type": "string"
+          },
+          "review_status": {
+            "enum": [
+              "draft",
+              "under_review",
+              "reviewed",
+              "rejected"
+            ]
+          },
+          "evidence_source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 3,
+              "pattern": "^[a-z][a-z0-9_-]+$"
+            }
+          },
+          "contradicting_source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 3,
+              "pattern": "^[a-z][a-z0-9_-]+$"
+            }
+          },
+          "author": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "url",
+          "publisher",
+          "published_at",
+          "retrieved_at",
+          "rights"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 3,
+            "pattern": "^[a-z][a-z0-9_-]+$"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "retrieved_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "rights": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "label",
+          "base_as_of",
+          "assumptions",
+          "time_horizon",
+          "is_forecast"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 3,
+            "pattern": "^[a-z][a-z0-9_-]+$"
+          },
+          "label": {
+            "type": "string"
+          },
+          "base_as_of": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "time_horizon": {
+            "type": "string"
+          },
+          "is_forecast": {
+            "type": "boolean"
+          },
+          "model_version": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "forecasts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "question",
+          "created_at",
+          "resolve_by",
+          "resolution_rule",
+          "resolution_source",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 3,
+            "pattern": "^[a-z][a-z0-9_-]+$"
+          },
+          "question": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resolve_by": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resolution_rule": {
+            "type": "string"
+          },
+          "resolution_source": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "open",
+              "resolved",
+              "void"
+            ]
+          },
+          "probability": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "resolution": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "resolved_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,673 @@
+{
+  "schema_version": "0.1.0",
+  "projection_id": "poland-policy-economy-2026-10",
+  "as_of": "2026-10-30T22:30:00Z",
+  "synthetic": false,
+  "base_cases": [
+    "poland-institutional-crisis-2026-10",
+    "poland-migration-policy-2025-2026"
+  ],
+  "base_node_ids": [
+    "pl-country",
+    "pl-tk-suspension",
+    "pl-legislative-block",
+    "pl-tusk",
+    "pl-citizenship-bill",
+    "pl-visa-2022",
+    "pl-visa-2026",
+    "pl-migrant-eligibility",
+    "pl-labor-demand",
+    "pl-future-labor",
+    "pl-future-rights"
+  ],
+  "base_relation_ids": [
+    "rel-pl-visa-2022-2026",
+    "rel-pl-appointments-gridlock",
+    "rel-pl-bill-rights",
+    "rel-pl-visa-labor"
+  ],
+  "layout_overrides": {
+    "pl-country": {
+      "x": 25,
+      "y": 200
+    },
+    "pl-tk-suspension": {
+      "x": 25,
+      "y": 40
+    },
+    "pl-legislative-block": {
+      "x": 285,
+      "y": 50
+    },
+    "pl-citizenship-bill": {
+      "x": 25,
+      "y": 380
+    },
+    "pl-visa-2022": {
+      "x": 285,
+      "y": 185
+    },
+    "pl-visa-2026": {
+      "x": 285,
+      "y": 275
+    },
+    "pl-migrant-eligibility": {
+      "x": 285,
+      "y": 385
+    },
+    "pl-labor-demand": {
+      "x": 285,
+      "y": 480
+    },
+    "pl-future-labor": {
+      "x": 560,
+      "y": 415
+    },
+    "pl-future-rights": {
+      "x": 560,
+      "y": 510
+    },
+    "pl-tusk": {
+      "x": 25,
+      "y": 525
+    }
+  },
+  "sources": [
+    {
+      "id": "src-gus-foreign-work-2025-03",
+      "url": "https://stat.gov.pl/statystyki-eksperymentalne/kapital-ludzki/cudzoziemcy-wykonujacy-prace-w-polsce-w-marcu-w-2025-r-,15,29.html",
+      "publisher": "Statistics Poland GUS, foreign nationals working March 2025",
+      "published_at": "2025-09-09T00:00:00Z",
+      "retrieved_at": "2026-10-30T22:30:00Z",
+      "rights": "Source-linked factual observations only; see publisher license before redistribution. 2025 worker scope includes certain farm operators; don't compare with pre-2025 series directly."
+    },
+    {
+      "id": "src-gus-foreign-work-2026-03",
+      "url": "https://stat.gov.pl/statystyki-eksperymentalne/kapital-ludzki/cudzoziemcy-wykonujacy-prace-w-polsce-w-marcu-2026-r-,15,41.html",
+      "publisher": "Statistics Poland GUS, foreign nationals working March 2026",
+      "published_at": "2026-09-08T00:00:00Z",
+      "retrieved_at": "2026-10-30T22:30:00Z",
+      "rights": "Source-linked factual observations only; see publisher license before redistribution. Snapshot of foreigners actually performing work, not visa issuances or entire migrant stock."
+    },
+    {
+      "id": "src-gus-vacancies-q1-2026",
+      "url": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/popyt-na-prace/popyt-na-prace-w-1-kwartale-2026-r-,2,62.html",
+      "publisher": "Statistics Poland GUS, demand for labour Q1 2026",
+      "published_at": "2026-06-10T00:00:00Z",
+      "retrieved_at": "2026-10-30T22:30:00Z",
+      "rights": "Source-linked factual observations only; see publisher license before redistribution. Survey coverage excludes some farm enterprises; local-unit 1+ employees."
+    },
+    {
+      "id": "src-gus-vacancies-q2-2026",
+      "url": "https://stat.gov.pl/obszary-tematyczne/rynek-pracy/popyt-na-prace/popyt-na-prace-w-2-kwartale-2026-r-,2,63.html",
+      "publisher": "Statistics Poland GUS, demand for labour Q2 2026",
+      "published_at": "2026-09-09T00:00:00Z",
+      "retrieved_at": "2026-10-30T22:30:00Z",
+      "rights": "Source-linked factual observations only; see publisher license before redistribution. Vacancies at quarter-end and share of occupied+vacant posts; not foreign-worker vacancies."
+    },
+    {
+      "id": "src-gus-investment-2026-h1",
+      "url": "https://ssgk.stat.gov.pl/Nak%C5%82ady_inwestycyjne_przedsi%C4%99biorstw_niefinansowych.html",
+      "publisher": "Statistics Poland GUS, non-financial enterprises investment H1 2026",
+      "published_at": "2026-08-25T00:00:00Z",
+      "retrieved_at": "2026-10-30T22:30:00Z",
+      "rights": "Source-linked factual observations only; see publisher license before redistribution. 100.2 bn PLN nominal level; +13.7% year-over-year is constant-price, not the same unit/metric."
+    },
+    {
+      "id": "src-nbp-fdi-report-2024",
+      "url": "https://nbp.pl/wp-content/uploads/2026/01/INWESTYCJE_ZAGRANICZNE_BEZPOSREDNIE_W_POLSCE_2024.pdf",
+      "publisher": "Narodowy Bank Polski, FDI in Poland 2024 report",
+      "published_at": null,
+      "retrieved_at": "2026-10-30T22:30:00Z",
+      "rights": "Source-linked factual observations only; see publisher license before redistribution. Historical 2023/2024 directional FDI inflow. Published in 2026; precise day unknown. Not 2026 contemporaneous FDI."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "pl-foreign-workers-2025-03",
+      "type": "indicator",
+      "label": "Работающие иностранцы: март 2025",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.labor.foreign_workers"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2025-03-31T00:00:00Z",
+      "description": "GUS: 1 067,0 тыс. иностранных граждан выполняли работу в Польше. Число людей на конец месяца, не количество новых виз.",
+      "layout": {
+        "x": 560,
+        "y": 42
+      },
+      "indicator": {
+        "metric": "Foreign nationals performing work at month-end",
+        "unit": "thousand persons",
+        "period": "2025-03",
+        "value": 1067,
+        "source_id": "src-gus-foreign-work-2025-03",
+        "population_scope": "All foreign nationals performing work in Poland at month-end",
+        "method": "GUS experimental statistics, administrative records, reporting coverage includes farm owners since Jan 2025"
+      }
+    },
+    {
+      "id": "pl-foreign-workers-2026-03",
+      "type": "indicator",
+      "label": "Работающие иностранцы: март 2026",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.labor.foreign_workers"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-03-31T00:00:00Z",
+      "description": "GUS: 1 152,7 тыс. (+8,0% к марту 2025), несмотря на уменьшение выдачи определённой категории рабочих виз.",
+      "layout": {
+        "x": 795,
+        "y": 42
+      },
+      "indicator": {
+        "metric": "Foreign nationals performing work at month-end",
+        "unit": "thousand persons",
+        "period": "2026-03",
+        "value": 1152.7,
+        "source_id": "src-gus-foreign-work-2026-03",
+        "population_scope": "All foreign nationals performing work in Poland at month-end",
+        "method": "GUS reported +8.0% y/y, +85.7k, stock of people performing work, not new inflow.",
+        "comparison_value": 1067,
+        "comparison_period": "2025-03",
+        "comparison_basis": "GUS same month, same administrative coverage"
+      }
+    },
+    {
+      "id": "pl-job-vacancies-2026-q1",
+      "type": "indicator",
+      "label": "Вакансии Q1 2026: 100,2 тыс.",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.labor.vacancies"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-03-31T00:00:00Z",
+      "description": "GUS: 100,2 тыс. свободных рабочих мест на конец Q1, уровень вакансий 0,81%.",
+      "layout": {
+        "x": 560,
+        "y": 225
+      },
+      "indicator": {
+        "metric": "Quarter-end job vacancies",
+        "unit": "thousand vacancies",
+        "period": "2026-Q1",
+        "value": 100.2,
+        "source_id": "src-gus-vacancies-q1-2026",
+        "population_scope": "All surveyed eligible local business units, national economy",
+        "method": "GUS job demand survey; 0.81% vacancies rate Q1; not migrant-specific."
+      }
+    },
+    {
+      "id": "pl-job-vacancies-2026-q2",
+      "type": "indicator",
+      "label": "Вакансии Q2 2026: 98,7 тыс.",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.labor.vacancies"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-06-30T00:00:00Z",
+      "description": "GUS: вакансий стало на 1,5 тыс. меньше, чем на конец Q1; на 2,9 тыс. больше, чем в Q2 2025.",
+      "layout": {
+        "x": 795,
+        "y": 225
+      },
+      "indicator": {
+        "metric": "Quarter-end job vacancies",
+        "unit": "thousand vacancies",
+        "period": "2026-Q2",
+        "value": 98.7,
+        "source_id": "src-gus-vacancies-q2-2026",
+        "population_scope": "All surveyed eligible local business units, national economy",
+        "method": "GUS job demand survey; Q1 100.2k, Q2 98.7k, Q2 2025 95.7k.",
+        "comparison_value": 100.2,
+        "comparison_period": "2026-Q1",
+        "comparison_basis": "GUS same vacancy survey series"
+      }
+    },
+    {
+      "id": "pl-vacancy-rate-2026-q2",
+      "type": "indicator",
+      "label": "Уровень вакансий Q2: 0,80%",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.labor.vacancy_rate"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-06-30T00:00:00Z",
+      "description": "GUS: доля вакантных рабочих мест в сумме занятых и вакантных = 0,80%, не доля безработных.",
+      "layout": {
+        "x": 1040,
+        "y": 225
+      },
+      "indicator": {
+        "metric": "Job vacancy rate",
+        "unit": "percent",
+        "period": "2026-Q2",
+        "value": 0.8,
+        "source_id": "src-gus-vacancies-q2-2026",
+        "population_scope": "National job demand survey, local business units with 1+ employees",
+        "method": "Vacancies / (occupied positions + vacant positions); Q1 0.81%."
+      }
+    },
+    {
+      "id": "pl-enterprise-investment-h1-2026",
+      "type": "indicator",
+      "label": "Инвестиции предприятий H1'26: 100,2 млрд zł",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.investment.enterprise_expenditure"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-06-30T00:00:00Z",
+      "description": "GUS: номинальные затраты на инвестиции нефинансовых предприятий за H1 2026 = 100,2 млрд zł; охват обследования ограничен.",
+      "layout": {
+        "x": 795,
+        "y": 420
+      },
+      "indicator": {
+        "metric": "Non-financial enterprise investment outlays",
+        "unit": "PLN billion, current prices",
+        "period": "2026-H1",
+        "value": 100.2,
+        "source_id": "src-gus-investment-2026-h1",
+        "population_scope": "GUS surveyed nonfinancial enterprises (enterprise-size threshold applies)",
+        "method": "Level at current prices; cannot be equated to net FDI or GDP gross capital formation."
+      }
+    },
+    {
+      "id": "pl-enterprise-investment-growth-h1-2026",
+      "type": "indicator",
+      "label": "Рост инвестиций H1'26: +13,7%",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.investment.real_growth"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-06-30T00:00:00Z",
+      "description": "GUS: инвестиционные затраты обследованных нефинансовых предприятий выросли на 13,7% г/г в постоянных ценах.",
+      "layout": {
+        "x": 1040,
+        "y": 420
+      },
+      "indicator": {
+        "metric": "Investment outlays real YoY growth",
+        "unit": "percent, constant prices",
+        "period": "2026-H1",
+        "value": 13.7,
+        "source_id": "src-gus-investment-2026-h1",
+        "population_scope": "GUS surveyed nonfinancial enterprises",
+        "method": "Rate at constant prices; distinct from nominal PLN 100.2bn level."
+      }
+    },
+    {
+      "id": "pl-fdi-inflow-2023",
+      "type": "indicator",
+      "label": "Прямые иностранные инвестиции: 2023",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.investment.fdi_inflow"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2023-12-31T00:00:00Z",
+      "description": "NBP: 125,7 млрд zł годового притока прямых иностранных инвестиций (directional). Исторический фон до событий 2026 года.",
+      "layout": {
+        "x": 560,
+        "y": 560
+      },
+      "indicator": {
+        "metric": "Annual foreign direct investment inflow (directional basis)",
+        "unit": "PLN billion",
+        "period": "2023",
+        "value": 125.7,
+        "source_id": "src-nbp-fdi-report-2024",
+        "population_scope": "All Polish resident direct investment enterprises, directional FDI",
+        "method": "NBP annual report on year 2024, historic comparison; different concept from GUS total investment."
+      }
+    },
+    {
+      "id": "pl-fdi-inflow-2024",
+      "type": "indicator",
+      "label": "Прямые иностранные инвестиции: 2024",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.investment.fdi_inflow"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2024-12-31T00:00:00Z",
+      "description": "NBP: 56,5 млрд zł, снижение на ~55,1% г/г. Это произошло задолго до политического кризиса октября 2026 года.",
+      "layout": {
+        "x": 795,
+        "y": 560
+      },
+      "indicator": {
+        "metric": "Annual foreign direct investment inflow (directional basis)",
+        "unit": "PLN billion",
+        "period": "2024",
+        "value": 56.5,
+        "source_id": "src-nbp-fdi-report-2024",
+        "population_scope": "All Polish resident direct investment enterprises, directional FDI",
+        "method": "NBP report published 2026; directional flow, not foreign-owned assets stock, not H1 enterprise investment.",
+        "comparison_value": 125.7,
+        "comparison_period": "2023",
+        "comparison_basis": "NBP same annual directional FDI transaction measure"
+      }
+    },
+    {
+      "id": "pl-future-sector-workforce",
+      "type": "impact",
+      "label": "Возможный дефицит труда: после Q4 2026",
+      "layer": "factors",
+      "category": "economy",
+      "subcategories": [
+        "economy.labor.future_access"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T20:00:00Z",
+      "description": "Только гипотеза: если нормы и административная практика сократят доступный найм при высоком спросе, могут возникнуть отраслевые ограничения. Не измеренный текущий дефицит.",
+      "layout": {
+        "x": 1040,
+        "y": 42
+      }
+    },
+    {
+      "id": "pl-future-investor-expectations",
+      "type": "impact",
+      "label": "Риск инвестпланов после 30.10.2026",
+      "layer": "factors",
+      "category": "finance",
+      "subcategories": [
+        "finance.investment.uncertainty"
+      ],
+      "countries": [
+        "PL"
+      ],
+      "at": "2026-10-30T20:00:00Z",
+      "description": "Только будущий канал: длительная юридическая неопределённость и задержка законов могут изменить планирование инвестиций. Никакая величина воздействия не рассчитана.",
+      "layout": {
+        "x": 1290,
+        "y": 450
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-pl-foreign-workers-counterexample",
+      "statement": "Меньшая выдача рабочих виз не доказывает уменьшения численности работающих иностранцев.",
+      "mechanism": "Рабочая виза — поток разрешительных документов, число работающих иностранцев — запас людей по многим основаниям; разные источники и месяцы.",
+      "alternatives": "Изменение иных правовых оснований, продолжающаяся занятость въехавших ранее, изменение спроса, программы временной защиты.",
+      "falsification": "Сопоставить разрешения, страхование ZUS, фактическую занятость иностранцев и даты изменений правил по одинаковым национальным и правовым группам.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-gus-foreign-work-2026-03"
+      ],
+      "author": "World Information country-economy pilot"
+    },
+    {
+      "id": "claim-pl-future-labour-impact",
+      "statement": "Будущие ограничения миграции могут создавать дефицит кадров в некоторых отраслях при неизменном спросе.",
+      "mechanism": "Меньшая доступность найма → рост вакантных рабочих мест или зарплат → возможные изменения выпуска.",
+      "alternatives": "Снижение спроса, изменение производительности, внутренняя мобильность, законные альтернативные каналы въезда.",
+      "falsification": "После изменения конкретного правила сравнить вакансии, занятость и заработную плату по затронутым и контрольным отраслям.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-gus-vacancies-q2-2026",
+        "src-gus-foreign-work-2026-03"
+      ],
+      "author": "World Information country-economy pilot"
+    },
+    {
+      "id": "claim-pl-institutions-investment-prospective",
+      "statement": "Институциональные конфликты могут повлиять на будущие инвестиционные решения компаний, но из существующих данных нельзя оценить эффект событий 30 октября.",
+      "mechanism": "Правовая предсказуемость и сроки разрешений могут влиять на планы капитальных вложений и премию за риск.",
+      "alternatives": "Ставки NBP, цены энергии, внешний спрос, доступность фондов ЕС, немецкий бизнес-цикл и базовая динамика компаний.",
+      "falsification": "Сравнить новые/отложенные проекты и опросы инвесторов после 30 октября 2026, используя контрольные страны и отрасли, а не старые данные FDI.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-gus-investment-2026-h1",
+        "src-nbp-fdi-report-2024"
+      ],
+      "author": "World Information country-economy pilot"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-pl-foreign-worker-trend",
+      "from": "pl-foreign-workers-2025-03",
+      "to": "pl-foreign-workers-2026-03",
+      "relation": "precedes",
+      "status": "supported",
+      "mechanism": "GUS: рост 1067,0 → 1152,7 тыс. по сопоставимой месячной статистике, +8,0% г/г, не причинный эффект.",
+      "evidence_source_ids": [
+        "src-gus-foreign-work-2025-03",
+        "src-gus-foreign-work-2026-03"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-visa-vs-workers",
+      "from": "pl-visa-2026",
+      "to": "pl-foreign-workers-2026-03",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Одновременное существование снижения выдачи виз и роста числа реально работающих иностранцев; разные меры и знаменатели. НЕ причинная связь.",
+      "evidence_source_ids": [
+        "src-gus-foreign-work-2026-03"
+      ],
+      "claim_ids": [
+        "claim-pl-foreign-workers-counterexample"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-vacancies-quarter",
+      "from": "pl-job-vacancies-2026-q1",
+      "to": "pl-job-vacancies-2026-q2",
+      "relation": "precedes",
+      "status": "supported",
+      "mechanism": "Вакансии на конец квартала: 100,2 тыс. Q1 → 98,7 тыс. Q2.",
+      "evidence_source_ids": [
+        "src-gus-vacancies-q1-2026",
+        "src-gus-vacancies-q2-2026"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-vacancy-count-rate",
+      "from": "pl-job-vacancies-2026-q2",
+      "to": "pl-vacancy-rate-2026-q2",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Одна публикация GUS, две разные метрики: количество 98,7 тыс. и доля 0,80%.",
+      "evidence_source_ids": [
+        "src-gus-vacancies-q2-2026"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-labor-demand-vacancies",
+      "from": "pl-labor-demand",
+      "to": "pl-job-vacancies-2026-q2",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Вакансии являются одним из показателей спроса на труд; общий спрос на работников не равен потребности в иностранцах.",
+      "evidence_source_ids": [
+        "src-gus-vacancies-q2-2026"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-bill-workforce-prospective",
+      "from": "pl-citizenship-bill",
+      "to": "pl-future-sector-workforce",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Только условный канал будущей интеграции/долгосрочного удержания работников, если проект будет принят; гражданство не является единственным основанием для работы.",
+      "evidence_source_ids": [],
+      "claim_ids": [
+        "claim-pl-future-labour-impact"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-labour-risk-prospective",
+      "from": "pl-future-labor",
+      "to": "pl-future-sector-workforce",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Гипотеза из миграционного графа; оценка требует данных о вакансиях, занятости и спросе по отраслям.",
+      "evidence_source_ids": [
+        "src-gus-vacancies-q2-2026",
+        "src-gus-foreign-work-2026-03"
+      ],
+      "claim_ids": [
+        "claim-pl-future-labour-impact"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-labour-vacancy-context",
+      "from": "pl-job-vacancies-2026-q2",
+      "to": "pl-future-sector-workforce",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "98,7 тыс. вакансий — исходная база до возможных будущих изменений; это НЕ эффект гражданства или TK.",
+      "evidence_source_ids": [
+        "src-gus-vacancies-q2-2026"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-investment-level-growth",
+      "from": "pl-enterprise-investment-h1-2026",
+      "to": "pl-enterprise-investment-growth-h1-2026",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "GUS публикует номинальный уровень 100,2 млрд zł и реальный прирост +13,7% г/г как разные величины одного периода.",
+      "evidence_source_ids": [
+        "src-gus-investment-2026-h1"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-fdi-change",
+      "from": "pl-fdi-inflow-2023",
+      "to": "pl-fdi-inflow-2024",
+      "relation": "precedes",
+      "status": "supported",
+      "mechanism": "NBP: снижение годового притока прямых иностранных инвестиций 125,7 → 56,5 млрд zł. Оба измерения задолго до октября 2026.",
+      "evidence_source_ids": [
+        "src-nbp-fdi-report-2024"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-fdi-vs-enterprise-investment",
+      "from": "pl-fdi-inflow-2024",
+      "to": "pl-enterprise-investment-h1-2026",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Два разных индикатора инвестиционного климата; NBP FDI включает транзакции инвесторов, GUS — инвестиционные затраты обследованных предприятий; нельзя складывать или сравнивать напрямую.",
+      "evidence_source_ids": [
+        "src-nbp-fdi-report-2024",
+        "src-gus-investment-2026-h1"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-legal-uncertainty-investment",
+      "from": "pl-legislative-block",
+      "to": "pl-future-investor-expectations",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Только потенциальный эффект ПОСЛЕ событий 30 октября 2026; показатели инвестиций H1 2026 и FDI 2024 не могли быть вызваны октябрьским кризисом.",
+      "evidence_source_ids": [],
+      "claim_ids": [
+        "claim-pl-institutions-investment-prospective"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-investment-prior-baseline",
+      "from": "pl-enterprise-investment-h1-2026",
+      "to": "pl-future-investor-expectations",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "H1 2026 инвестиции — наблюдаемый фон, относительно которого можно впоследствии измерять изменения; не следствие событий октября.",
+      "evidence_source_ids": [
+        "src-gus-investment-2026-h1"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    },
+    {
+      "id": "rel-pl-fdi-prior-baseline",
+      "from": "pl-fdi-inflow-2024",
+      "to": "pl-future-investor-expectations",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "FDI 2024 — запаздывающий структурный показатель, нужен актуальный ряд и контроль внешних причин, чтобы оценить будущие решения.",
+      "evidence_source_ids": [
+        "src-nbp-fdi-report-2024"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T22:30:00Z"
+    }
+  ],
+  "note": "As-of 2026-10-30. Derived projection. Existing case nodes retain canonical IDs; old measurements are baseline context, NEVER an outcome of Oct 2026 political conflict. Future paths are explicitly hypothetical."
+}

@@ -1,9 +1,10 @@
 # Reviewed real-world case graphs
 
-Five starter investigations share the v0.1 schema. They contain **historical, source-backed facts and separately marked causal hypotheses**, not live streams or system-level numerical forecasts.
+Six starter investigations share the v0.1 schema. They contain **historical, source-backed facts and separately marked causal hypotheses**, not live streams or system-level numerical forecasts.
 
 | Case | Scope | Verified observations | What remains hypothetical |
 |---|---|---|---|
+| [Poland economic/policy bridge (GUS/NBP evidence)](poland-policy-economy-2026-10.json) | Poland | Foreign workers March 2025/26, vacancies Q1/2 2026, enterprise investments H1 2026, historical FDI 2023/24 | Oct institutional conflict effects not yet observed; only future hypotheses |
 | [Poland Constitutional Tribunal and leadership conflict](poland-institutional-crisis-2026-10.json) | Poland, Oct 2026 | Reuters/AP reports, PKW vote, scheduled civil hearing | Legal authority contested; no inferred link from Onet case to TK |
 | [Poland immigration law and citizenship proposal](poland-migration-policy-2025-2026.json) | Poland, 2025–2026 | 800+ policy dates, visa totals, EU Pact, annual exception | Policy effect on workforce and residents by status not measured |
 | [Binance incident October 2026](binance-incident-2026-10.json) | Global crypto and U.S. listed equity context | Official ~$6.3B impact estimate, corporate and independent frozen-asset observations, dated market snapshot | Technical attribution, causal market effect, market recovery and liquidity stress |

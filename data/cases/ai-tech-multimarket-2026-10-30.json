@@ -1,0 +1,715 @@
+{
+  "schema_version": "0.1.0",
+  "synthetic": false,
+  "case_id": "ai-tech-multimarket-2026-10-30",
+  "case_title": "ИИ-инвестиции: глобальная переоценка технологического сектора, 30 октября 2026",
+  "description": "Кейс разборки эмоционального сообщения на события, измерения, контрфакты и гипотезы; Китай и Гонконг не приравниваются друг к другу, криптовалютный шок имеет независимую причину.",
+  "sources": [
+    {
+      "id": "source-intel-earnings-20261029",
+      "url": "https://www.intc.com/news-events/press-releases/detail/1786/intel-reports-third-quarter-2026-financial-results",
+      "publisher": "Intel Investor Relations / Q3 2026 statement",
+      "published_at": "2026-10-29T21:00:00Z",
+      "retrieved_at": "2026-10-30T22:30:00Z",
+      "rights": "Cite and link original document/report; do not republish full text. Fact extraction only, user must validate historical revision."
+    },
+    {
+      "id": "source-ap-us-close-20261030",
+      "url": "https://apnews.com/article/a01d3551e794fed1a0c317c20bc3f0a2",
+      "publisher": "Associated Press / US close 2026-10-30",
+      "published_at": "2026-10-30T21:00:00Z",
+      "retrieved_at": "2026-10-30T22:30:00Z",
+      "rights": "Cite and link original document/report; do not republish full text. Fact extraction only, user must validate historical revision."
+    },
+    {
+      "id": "source-rthk-asia-20261030",
+      "url": "https://news.rthk.hk/rthk/en/component/k2/1875967-20261030.htm",
+      "publisher": "RTHK / Asia market closes 2026-10-30",
+      "published_at": "2026-10-30T09:06:00Z",
+      "retrieved_at": "2026-10-30T22:30:00Z",
+      "rights": "Cite and link original document/report; do not republish full text. Fact extraction only, user must validate historical revision."
+    },
+    {
+      "id": "source-reuters-ai-tech-20261030",
+      "url": "https://live.euronext.com/en/financial-news/october-ends-thud-intel-reddit-ai-stalwarts",
+      "publisher": "Reuters / US 2026-10-30 equity close",
+      "published_at": "2026-10-30T20:34:00Z",
+      "retrieved_at": "2026-10-30T22:30:00Z",
+      "rights": "Cite and link original document/report; do not republish full text. Fact extraction only, user must validate historical revision."
+    },
+    {
+      "id": "source-reuters-nasdaq-month-20261030",
+      "url": "https://www.investing.com/news/stock-market-news/nasdaq-faces-2-trillion-wipeout-in-october-as-ai-spending-fears-deepen-4988211",
+      "publisher": "Reuters / Nasdaq 100 capitalization estimates, 2026-10-30",
+      "published_at": "2026-10-30T15:12:00Z",
+      "retrieved_at": "2026-10-30T22:30:00Z",
+      "rights": "Cite and link original document/report; do not republish full text. Fact extraction only, user must validate historical revision."
+    },
+    {
+      "id": "source-reuters-binance-20261030",
+      "url": "https://www.reuters.com/technology/bitcoin-cryptocurrency-prices-fall-after-binance-reports-security-issue-2026-10-30/",
+      "publisher": "Reuters / crypto market contemporaneous with Binance 2026-10-30",
+      "published_at": "2026-10-30T04:00:00Z",
+      "retrieved_at": "2026-10-30T22:30:00Z",
+      "rights": "Cite and link original document/report; do not republish full text. Fact extraction only, user must validate historical revision."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "event-intel-q3-2026",
+      "type": "event",
+      "label": "Intel: отчёт Q3 и прогноз Q4",
+      "layer": "events",
+      "category": "finance",
+      "subcategories": [
+        "finance.equities.earnings"
+      ],
+      "countries": [
+        "US"
+      ],
+      "global_scope": false,
+      "at": "2026-10-29T21:00:00Z",
+      "description": "29 октября Intel раскрыла результаты: Q3 revenue 16.5B USD, +21% YoY; Q4 guidance 15–16B USD и EPS ниже ожиданий. Негативная реакция не отменяет положительный фактический Q3.",
+      "layout": {
+        "x": 25,
+        "y": 65
+      }
+    },
+    {
+      "id": "event-bigtech-earnings",
+      "type": "event",
+      "label": "Отчёты техсектора и CAPEX",
+      "layer": "events",
+      "category": "finance",
+      "subcategories": [
+        "finance.equities.earnings"
+      ],
+      "countries": [
+        "US"
+      ],
+      "global_scope": false,
+      "at": "2026-10-29T21:00:00Z",
+      "description": "Результаты и планы инвестиций крупных ИТ-компаний стали предметом переоценки по сообщениям Reuters; смешение всех компаний в одну убыточную группу неверно.",
+      "layout": {
+        "x": 25,
+        "y": 225
+      }
+    },
+    {
+      "id": "event-binance-security",
+      "type": "event",
+      "label": "Binance: инцидент безопасности",
+      "layer": "events",
+      "category": "security",
+      "subcategories": [
+        "security.cyber.exchange"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-29T22:00:00Z",
+      "description": "Конкурирующий драйвер падения цифровых активов — отдельный крупный инцидент биржи. Временные оценки и детали требуют ревизий.",
+      "layout": {
+        "x": 25,
+        "y": 390
+      }
+    },
+    {
+      "id": "factor-ai-investment",
+      "type": "factor",
+      "label": "Сомнения в окупаемости AI CAPEX",
+      "layer": "factors",
+      "category": "economy",
+      "subcategories": [
+        "economy.technology.investments"
+      ],
+      "countries": [
+        "US",
+        "CN"
+      ],
+      "global_scope": false,
+      "at": "2026-10-30T12:00:00Z",
+      "description": "Изменение ожиданий инвесторов относительно сроков и прибыли от капитальных затрат на ИИ; объяснение рыночной переоценки, не доказательство отсутствия прибыли.",
+      "layout": {
+        "x": 300,
+        "y": 35
+      }
+    },
+    {
+      "id": "factor-pc-memory",
+      "type": "factor",
+      "label": "Спрос ПК и стоимость памяти",
+      "layer": "factors",
+      "category": "economy",
+      "subcategories": [
+        "economy.technology.pc_market"
+      ],
+      "countries": [
+        "US",
+        "CN"
+      ],
+      "global_scope": false,
+      "at": "2026-10-30T12:00:00Z",
+      "description": "Альтернативный конкретный драйвер прогноза Intel: слабость PC и дорожающие компоненты памяти.",
+      "layout": {
+        "x": 300,
+        "y": 195
+      }
+    },
+    {
+      "id": "factor-china-specific",
+      "type": "factor",
+      "label": "Факторы экономики Китая",
+      "layer": "factors",
+      "category": "economy",
+      "subcategories": [
+        "economy.market.domestic_factors"
+      ],
+      "countries": [
+        "CN"
+      ],
+      "global_scope": false,
+      "at": "2026-10-30T10:00:00Z",
+      "description": "Отдельные местные причины и структурные особенности рынка также могут влиять на китайские акции; их доля ещё не измерена.",
+      "layout": {
+        "x": 300,
+        "y": 350
+      }
+    },
+    {
+      "id": "indicator-intel-price",
+      "type": "indicator",
+      "label": "Intel: −28,6% за сессию",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.equities.daily_return"
+      ],
+      "countries": [
+        "US"
+      ],
+      "global_scope": false,
+      "at": "2026-10-30T20:00:00Z",
+      "description": "По Reuters: −28,6% по итогам 30 октября; -30% было округлением либо внутридневным состоянием.",
+      "layout": {
+        "x": 570,
+        "y": 40
+      },
+      "indicator": {
+        "metric": "INTC regular session close-to-close return",
+        "unit": "percent",
+        "period": "2026-10-30 regular session",
+        "value": -28.6,
+        "source_id": "source-reuters-ai-tech-20261030",
+        "population_scope": "INTC common stock US",
+        "method": "Reported approximate close, source is secondary wire; replace with licensed official EOD price when available."
+      }
+    },
+    {
+      "id": "indicator-intel-revenue",
+      "type": "indicator",
+      "label": "Intel: выручка +21% г/г",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.company.revenue"
+      ],
+      "countries": [
+        "US"
+      ],
+      "global_scope": false,
+      "at": "2026-10-29T21:00:00Z",
+      "description": "Q3 Intel: выручка 16.5 млрд долларов, +21% год к году. Противоречит тезису о всеобщем падении выручки.",
+      "layout": {
+        "x": 570,
+        "y": 185
+      },
+      "indicator": {
+        "metric": "Q3 2026 revenue YoY change",
+        "unit": "percent",
+        "period": "Q3 2026",
+        "value": 21,
+        "source_id": "source-intel-earnings-20261029",
+        "population_scope": "Intel consolidated GAAP Q3 results",
+        "method": "Source Intel Investor Relations; actual revenue $16.5B."
+      }
+    },
+    {
+      "id": "indicator-intel-margin",
+      "type": "indicator",
+      "label": "Intel: операц. маржа 15,3%",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.company.operating_margin"
+      ],
+      "countries": [
+        "US"
+      ],
+      "global_scope": false,
+      "at": "2026-10-29T21:00:00Z",
+      "description": "GAAP операционная маржа 15.3%, годом ранее 5.0%. Это не доказательство окупаемости конкретных инвестиций в ИИ.",
+      "layout": {
+        "x": 570,
+        "y": 335
+      },
+      "indicator": {
+        "metric": "Intel GAAP operating margin",
+        "unit": "percent",
+        "period": "Q3 2026",
+        "value": 15.3,
+        "source_id": "source-intel-earnings-20261029",
+        "population_scope": "Intel consolidated GAAP",
+        "method": "Comparator Q3 2025: 5.0%; Q4 guidance weaker."
+      }
+    },
+    {
+      "id": "indicator-nasdaq",
+      "type": "indicator",
+      "label": "Nasdaq Composite: −2,9%",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.indices.daily_return"
+      ],
+      "countries": [
+        "US"
+      ],
+      "global_scope": false,
+      "at": "2026-10-30T20:00:00Z",
+      "description": "По AP закрытие Nasdaq Composite −2.9%; индексы не тождественны рыночной капитализации всех бирж.",
+      "layout": {
+        "x": 835,
+        "y": 60
+      },
+      "indicator": {
+        "metric": "Nasdaq Composite daily close-to-close change",
+        "unit": "percent",
+        "period": "2026-10-30",
+        "value": -2.9,
+        "source_id": "source-ap-us-close-20261030",
+        "population_scope": "US Nasdaq Composite Index",
+        "method": "AP session closing recap."
+      }
+    },
+    {
+      "id": "indicator-nasdaq-cap",
+      "type": "indicator",
+      "label": "Nasdaq-100: более $2 трлн",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.indices.market_capitalization"
+      ],
+      "countries": [
+        "US"
+      ],
+      "global_scope": false,
+      "at": "2026-10-30T20:00:00Z",
+      "description": "По Reuters оценка потенциального месячного снижения капитализации компонентов Nasdaq-100 более $2 трлн; это mark-to-market изменение, не фактический отток наличных.",
+      "layout": {
+        "x": 835,
+        "y": 205
+      },
+      "indicator": {
+        "metric": "Expected monthly value loss of Nasdaq-100 components",
+        "unit": "USD trillion approx, above threshold",
+        "period": "2026-10",
+        "value": 2,
+        "source_id": "source-reuters-nasdaq-month-20261030",
+        "population_scope": "Nasdaq-100 constituent market capitalization",
+        "method": "Source uses >$2T, reported as approximate lower bound; not actual withdrawn funds."
+      }
+    },
+    {
+      "id": "indicator-china-shanghai",
+      "type": "indicator",
+      "label": "Shanghai Composite: −1,44%",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.indices.daily_return"
+      ],
+      "countries": [
+        "CN"
+      ],
+      "global_scope": false,
+      "at": "2026-10-30T07:00:00Z",
+      "description": "Основной фондовый индекс Шанхая упал на 1.44%, что не равнозначно обвалу всей китайской финансовой системы.",
+      "layout": {
+        "x": 835,
+        "y": 350
+      },
+      "indicator": {
+        "metric": "Shanghai Composite daily change",
+        "unit": "percent",
+        "period": "2026-10-30",
+        "value": -1.44,
+        "source_id": "source-rthk-asia-20261030",
+        "population_scope": "Mainland China Shanghai Composite",
+        "method": "Market close, local time UTC+8."
+      }
+    },
+    {
+      "id": "indicator-china-chinext",
+      "type": "indicator",
+      "label": "ChiNext: −4,13%",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.indices.daily_return"
+      ],
+      "countries": [
+        "CN"
+      ],
+      "global_scope": false,
+      "at": "2026-10-30T07:00:00Z",
+      "description": "Китайский индекс роста ChiNext снизился на 4.13%, сильнее широкого индекса.",
+      "layout": {
+        "x": 835,
+        "y": 490
+      },
+      "indicator": {
+        "metric": "ChiNext daily change",
+        "unit": "percent",
+        "period": "2026-10-30",
+        "value": -4.13,
+        "source_id": "source-rthk-asia-20261030",
+        "population_scope": "Mainland China ChiNext",
+        "method": "Market close, local time UTC+8."
+      }
+    },
+    {
+      "id": "indicator-hk-hsi",
+      "type": "indicator",
+      "label": "Hang Seng: +1,5%",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.indices.daily_return"
+      ],
+      "countries": [
+        "HK"
+      ],
+      "global_scope": false,
+      "at": "2026-10-30T08:10:00Z",
+      "description": "Противоположный знак: Hang Seng вырос на ~1.5% 30 октября, что опровергает утверждение о повсеместном одновременном падении всех китайских рынков.",
+      "layout": {
+        "x": 1080,
+        "y": 350
+      },
+      "indicator": {
+        "metric": "Hang Seng daily change",
+        "unit": "percent",
+        "period": "2026-10-30",
+        "value": 1.5,
+        "source_id": "source-rthk-asia-20261030",
+        "population_scope": "Hong Kong Hang Seng Index",
+        "method": "Rounded RTHK close +1.5%, HK distinct market."
+      }
+    },
+    {
+      "id": "impact-crypto",
+      "type": "impact",
+      "label": "BTC: шестинедельный минимум",
+      "layer": "impacts",
+      "category": "finance",
+      "subcategories": [
+        "finance.crypto.bitcoin_market"
+      ],
+      "countries": [],
+      "global_scope": true,
+      "at": "2026-10-30T04:00:00Z",
+      "description": "Reuters сообщал о снижении BTC до шестинедельного минимума примерно $77,646 после новостей о Binance; это не автоматически эффект AI распродажи.",
+      "layout": {
+        "x": 1080,
+        "y": 200
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-intel-guidance",
+      "statement": "Слабый прогноз Intel мог быть непосредственным триггером распродажи её акций",
+      "mechanism": "Сюрприз прогнозной выручки/EPS относительно ожиданий → переоценка будущих денежных потоков",
+      "alternatives": [
+        "Общерыночный risk-off",
+        "Слабый спрос на ПК и рост цен на память"
+      ],
+      "falsification": "Сопоставить точный timestamp публикации, after-hours доходность INTC, новости и сопоставимые технологические акции.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "source-intel-earnings-20261029",
+        "source-reuters-ai-tech-20261030"
+      ],
+      "author": "World Information initial review"
+    },
+    {
+      "id": "claim-ai-valuation",
+      "statement": "Вопросы по отдаче от AI CAPEX могли усилить распродажу техсектора",
+      "mechanism": "Сдвиг ожиданий FCF/ROI → снижение мультипликаторов технологических акций",
+      "alternatives": [
+        "Процентные ставки",
+        "Макроэкономические новости",
+        "Коррекция после сильного роста"
+      ],
+      "falsification": "Сопоставить движение AI-exposed vs matched-control компаний и фактические CapEx/FCF прогнозы.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "source-reuters-ai-tech-20261030",
+        "source-reuters-nasdaq-month-20261030"
+      ],
+      "author": "World Information initial review"
+    },
+    {
+      "id": "claim-china-contagion",
+      "statement": "Негативные ожидания относительно ИИ в США могли передаваться на часть китайских технологических компаний",
+      "mechanism": "Переоценка аналогичных AI hardware активов и изменение глобального отношения к риску",
+      "alternatives": [
+        "Внутренний спрос Китая",
+        "Секторная и валютная структура",
+        "Местные регуляторные новости"
+      ],
+      "falsification": "Выполнить event study по подгруппам AI vs не-AI; учитывать несинхронные часы бирж.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "source-rthk-asia-20261030"
+      ],
+      "author": "World Information initial review"
+    },
+    {
+      "id": "claim-crypto-ai",
+      "statement": "Снижение криптовалют не следует приписывать только кризису AI-капиталовложений",
+      "mechanism": "Общий риск-офф конкурирует с биржевым контрагентским событием",
+      "alternatives": [
+        "Отдельный взлом Binance",
+        "Ликвидации деривативов",
+        "Денежная политика"
+      ],
+      "falsification": "Сопоставить BTC/BNB, сообщения Binance и NASDAQ во времени, выделить отдельные окна.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "source-reuters-binance-20261030"
+      ],
+      "author": "World Information initial review"
+    },
+    {
+      "id": "claim-everyone-unprofitable",
+      "statement": "Все крупные технологические компании уже убыточны из-за AI",
+      "mechanism": "Не подтверждено; требуется отдельная проверка компаний, прибыли и окупаемости проектов",
+      "alternatives": [
+        "У Intel есть положительный GAAP operating income и прибыль Q3",
+        "Технологические компании имеют разные бизнес-модели"
+      ],
+      "falsification": "Проверить GAAP net income, operating profit, FCF и AI сегменты отдельно по эмитентам.",
+      "review_status": "rejected",
+      "evidence_source_ids": [
+        "source-intel-earnings-20261029"
+      ],
+      "author": "World Information initial review"
+    }
+  ],
+  "relations": [
+    {
+      "id": "ret-earnings-intel",
+      "from": "event-intel-q3-2026",
+      "to": "indicator-intel-price",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Отрицательный сюрприз прогноза — возможная причина реакции INTC, не доказанная численная атрибуция.",
+      "evidence_source_ids": [
+        "source-intel-earnings-20261029",
+        "source-reuters-ai-tech-20261030"
+      ],
+      "claim_ids": [
+        "claim-intel-guidance"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    },
+    {
+      "id": "ret-pc-intel",
+      "from": "factor-pc-memory",
+      "to": "event-intel-q3-2026",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Intel отдельно описывает ограничения рынка ПК, влияющие на прогноз.",
+      "evidence_source_ids": [
+        "source-intel-earnings-20261029",
+        "source-reuters-ai-tech-20261030"
+      ],
+      "claim_ids": [
+        "claim-intel-guidance"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    },
+    {
+      "id": "ret-ai-tech",
+      "from": "event-bigtech-earnings",
+      "to": "factor-ai-investment",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "В публикациях обсуждается рост CapEx и сроки AI окупаемости, но это мнение инвесторов, не установленная нерентабельность всех проектов.",
+      "evidence_source_ids": [
+        "source-reuters-ai-tech-20261030"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    },
+    {
+      "id": "ret-ai-nasdaq",
+      "from": "factor-ai-investment",
+      "to": "indicator-nasdaq",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Возможная переоценка технологических эмитентов через ожидания свободного денежного потока.",
+      "evidence_source_ids": [
+        "source-reuters-ai-tech-20261030",
+        "source-reuters-nasdaq-month-20261030"
+      ],
+      "claim_ids": [
+        "claim-ai-valuation"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    },
+    {
+      "id": "ret-intel-nasdaq",
+      "from": "indicator-intel-price",
+      "to": "indicator-nasdaq",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Совпадение падения отдельной акции и индекса, не оценённое как каузальный вклад.",
+      "evidence_source_ids": [
+        "source-ap-us-close-20261030",
+        "source-reuters-ai-tech-20261030"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    },
+    {
+      "id": "ret-nasdaq-cap",
+      "from": "indicator-nasdaq",
+      "to": "indicator-nasdaq-cap",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Падение индекса и потери рыночной капитализации относятся к связанному, но не тождественному набору компаний.",
+      "evidence_source_ids": [
+        "source-reuters-nasdaq-month-20261030",
+        "source-ap-us-close-20261030"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    },
+    {
+      "id": "ret-ai-china",
+      "from": "factor-ai-investment",
+      "to": "indicator-china-chinext",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Глобальные ожидания AI способны передаваться на китайские акции роста; доля внутреннего риска не определена.",
+      "evidence_source_ids": [
+        "source-rthk-asia-20261030"
+      ],
+      "claim_ids": [
+        "claim-china-contagion"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    },
+    {
+      "id": "ret-china-domestic",
+      "from": "factor-china-specific",
+      "to": "indicator-china-shanghai",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Локальные китайские факторы — альтернативное объяснение состояния рынка.",
+      "evidence_source_ids": [],
+      "claim_ids": [
+        "claim-china-contagion"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    },
+    {
+      "id": "ret-china-divergence",
+      "from": "indicator-china-chinext",
+      "to": "indicator-hk-hsi",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Сопоставление направлений двух разных сегментов региона 30 октября: ChiNext минус, Hang Seng плюс; **не причинная связь**.",
+      "evidence_source_ids": [
+        "source-rthk-asia-20261030"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    },
+    {
+      "id": "ret-binance-crypto",
+      "from": "event-binance-security",
+      "to": "impact-crypto",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Отдельный непосредственный шок доверия к централизованной бирже, совпал с общим падением рискованных активов.",
+      "evidence_source_ids": [
+        "source-reuters-binance-20261030"
+      ],
+      "claim_ids": [
+        "claim-crypto-ai"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    },
+    {
+      "id": "ret-ai-crypto",
+      "from": "factor-ai-investment",
+      "to": "impact-crypto",
+      "relation": "hypothesized_to_affect",
+      "status": "disputed",
+      "mechanism": "Глобальный уход от риска мог усилить просадку, но вклад относительно Binance не оценён.",
+      "evidence_source_ids": [
+        "source-reuters-binance-20261030",
+        "source-reuters-ai-tech-20261030"
+      ],
+      "claim_ids": [
+        "claim-crypto-ai"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    },
+    {
+      "id": "ret-intel-earnings-growth",
+      "from": "event-intel-q3-2026",
+      "to": "indicator-intel-revenue",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Показатель Intel Q3 +21% год к году согласно первичному отчёту.",
+      "evidence_source_ids": [
+        "source-intel-earnings-20261029"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    },
+    {
+      "id": "ret-intel-margin",
+      "from": "event-intel-q3-2026",
+      "to": "indicator-intel-margin",
+      "relation": "associated_with",
+      "status": "supported",
+      "mechanism": "Положительная операционная маржа Intel Q3 согласно отчёту.",
+      "evidence_source_ids": [
+        "source-intel-earnings-20261029"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": "2026-10-30T20:00:00Z"
+    }
+  ],
+  "scenarios": [],
+  "forecasts": []
+}

@@ -1,42 +1,43 @@
-name: Graph integrity
+name: Graph integrity and local-first demo
 on:
   push:
-    paths:
-      - "data/**"
-      - "schemas/**"
-      - "tools/validate_graph.py"
-      - "tools/validate_poland.mjs"
-      - "tools/build_poland_economy.mjs"
-      - "tests/poland-economic-links.test.mjs"
-      - "prototype/poland-economic-3d/**"
-      - ".github/workflows/validate-graph.yml"
   pull_request:
-    paths:
-      - "data/**"
-      - "schemas/**"
-      - "tools/validate_graph.py"
-      - "tools/validate_poland.mjs"
-      - "tools/build_poland_economy.mjs"
-      - "tests/poland-economic-links.test.mjs"
-      - "prototype/poland-economic-3d/**"
-      - ".github/workflows/validate-graph.yml"
-
+permissions:
+  contents: read
 jobs:
-  semantic-fixture-check:
+  verify:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python tools/validate_graph.py
-      - run: python tools/validate_research.py
-      - run: python -m unittest discover -s tests -p 'test_open_apis.py'
-      - run: node tools/check_board.mjs
-      - run: node tools/check_research_board.mjs
-      - run: node tools/validate_poland.mjs
-      - run: node --check prototype/poland-economic-3d/main.mjs
-      - run: node tools/build_poland_economy.mjs --check
-      - run: node --test tests/poland-economic-links.test.mjs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate graph and reviewed research
+        run: |
+          python tools/validate_graph.py
+          python tools/validate_research.py
+          python -m unittest discover -s tests -p 'test_open_apis.py'
+          node tools/check_board.mjs
+          node tools/sync_research_board.mjs --check
+          node tools/check_research_board.mjs
+          node tools/validate_poland.mjs
+          node tools/build_poland_economy.mjs --check
+      - name: Validate model, anomaly detector, and 3D syntax
+        run: |
+          node --test tests/*.test.mjs
+          node --check prototype/economy-lab/core.mjs
+          node --check prototype/economy-lab/fixtures.mjs
+          node --check prototype/economy-lab/main.mjs
+          node --check prototype/poland-economic-3d/main.mjs
+          node --check tools/detect_market_events.mjs
+          node --check tools/build_site.mjs
+          node --check tools/sync_research_board.mjs
+          bash -n run-local.command
+      - name: Smoke check static publication artifact
+        run: |
+          node tools/check_public_demo.mjs
+          node tools/build_site.mjs
+          node tools/check_public_demo.mjs dist

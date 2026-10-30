@@ -2,3 +2,5 @@
 data/incoming/
 __pycache__/
 *.pyc
+# Generated allow-listed GitHub Pages bundle
+dist/

@@ -2,7 +2,28 @@
 
 **Open research laboratory for world events, country environments and traceable causal analysis.**
 
-Status: **concept + working synthetic HTML prototype**. No live country data, forecasts or prediction markets are connected. Dementor Tab is an existing separate game and is **not** the name of this platform.
+Status: **local-first research demos with source-linked historical records and a separate synthetic model**. No live ingest, account system, financial forecasts or prediction markets are connected. Dementor Tab is an existing separate game and is **not** the name of this platform.
+
+## Local-first launch · one entry point
+
+- **[Open application home](index.html)** (run through a local HTTP server) — entry to all three workspaces.
+- **[2D evidence board](prototype/research-board.html)** — **7** curated cases, filters, directed edges, primary references and alternative claims.
+- **[Three.js Poland evidence viewer](prototype/poland-economic-3d/)** — source-backed 3D graph; observation and hypothesis are not the same.
+- **[Three.js Economy Lab](prototype/economy-lab/)** — separate deterministic and **synthetic** energy/trade/treasury scenario model (NOT a national economic forecast).
+- **[Local startup, CI and GitHub Pages release instructions](docs/LOCAL_FIRST_RELEASE.md)**.
+
+On macOS: double-click `run-local.command` after cloning, or open Terminal in the repository root and run:
+
+```sh
+python3 -m http.server 8000 --bind 127.0.0.1
+# http://127.0.0.1:8000/
+```
+
+All static files are served locally without logins, server database, npm install, payments or live API keys. The Three.js 3D canvases load **pinned three@0.186.1 from jsDelivr**, and need internet connectivity + WebGL; the 2D board and simulation tables remain inspectable without 3D.
+
+Validation: `node tools/sync_research_board.mjs --check && node tools/check_research_board.mjs && node --test tests/*.test.mjs && node tools/build_site.mjs && node tools/check_public_demo.mjs dist`.
+
+**Release boundary:** a public repository is not the same as a published site. The Pages workflow is manual and gated to `main` after review. No automatic web deployment from feature branches.
 
 ## Poland: linked political and economic graph (GUS / MSWiA / NBP)
 
@@ -35,8 +56,9 @@ python3 -m http.server 8000
 
 ## Первые реальные графы — исторические исследования
 
-- **[Открыть исследовательский борд](prototype/research-board.html)** — пять исследовательских историй; для взаимодействия скачайте HTML и откройте локально.
+- **[Открыть исследовательский борд](prototype/research-board.html)** — семь исследовательских историй; для взаимодействия скачайте HTML и откройте локально.
 - [Binance 29–30 октября 2026: расследование и реакция рынков](stories/2026/binance-incident-2026-10.md) · [JSON graph](data/cases/binance-incident-2026-10.json)
+- [Технологические рынки и конкурирующие причины падения, октябрь 2026](stories/2026/ai-tech-selloff-2026-10-30.md) · [JSON graph](data/cases/ai-tech-multimarket-2026-10-30.json)
 - [Газовая перестройка ЕС, 2021–2026](stories/2026/eu-gas-transition-2021-2026.md) · [JSON graph](data/cases/eu-gas-transition-2021-2026.json)
 - [Красное море / Суэц / Панама, 2023–2024](stories/2026/maritime-corridors-2023-2024.md) · [JSON graph](data/cases/maritime-corridors-2023-2024.json)
 - [Проверенный каталог бесплатных API](docs/API_CATALOG_2026.md) — доступ, квоты, ограничения и порядок интеграции.

@@ -166,7 +166,17 @@ function update(){
   if(!research||!registry)return;
   const a=$("country-a").value,b=$("country-b").value,category=$("domain").value,until=$("until").value;
   const relationType=$("relation-category").value;
-  if(a===b){status("Выберите две разные страны. Сравнение страны с самой собой недоступно.");return;}
+  if(a===b){
+    selected=null;
+    for(const id of ["metric-facts","metric-cases","metric-topics","metric-cross","metric-disputes"])$(id).textContent="—";
+    $("relation-graph").replaceChildren();
+    $("focus-list").replaceChildren();
+    $("detail").replaceChildren();
+    mk("p",$("detail"),"Выберите две разные страны, чтобы не смешивать двусторонние записи и внутренние исследования.","muted");
+    $("graph-caption").textContent="Пара из одинаковых стран недопустима.";
+    status("Выберите две разные страны. Сравнение страны с самой собой недоступно.");
+    return;
+  }
   try{
     result=summarizeCountryPair(research,a,b,{category,until});
     bilateral=selectBilateralFacts(registry,a,b,{domain:category,category:mode==="facts"?relationType:"all",until});
@@ -192,7 +202,8 @@ function update(){
   for(const [k,v] of Object.entries({a,b,domain:category,type:relationType,until,view:mode}))url.searchParams.set(k,v);
   history.replaceState(null,"",url);
   status("Срез до "+until+": "+bilateral.count+" двусторонних фактов ("+
-    (bilateral.pending_review?"есть записи, ожидающие редакционной проверки":"редакционная проверка отражена в записях")+"); "+
+    (bilateral.count===0?"для этой пары записей нет":
+      bilateral.pending_review?"есть записи, ожидающие редакционной проверки":"все видимые записи имеют редакционный статус approved")+"); "+
     result.counts.cases+" общих исследований, "+
     result.counts.topics+" тем, "+result.counts.crossRegionEdges+" межстрановых рёбер. "+
     "Это не полный реестр отношений.");

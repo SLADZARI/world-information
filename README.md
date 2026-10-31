@@ -4,7 +4,7 @@
 
 Status: **local-first research demos with source-linked historical records and a separate synthetic model**. No live ingest, account system, financial forecasts or prediction markets are connected. Dementor Tab is an existing separate game and is **not** the name of this platform.
 
-## Local-first launch · one entry point (8 PRs, one candidate)
+## Local-first launch · one entry point (stacked integration candidates)
 
 - **[Open application home](index.html)** (run through a local HTTP server) — entry to six workspaces.
 - **[Country Relations Explorer](prototype/country-relations/)** — choose any two of 249 country/area codes and explore **separately sourced bilateral facts** (treaties, trade, investment, sanctions, border settlements, migration, science, society) alongside *indirect common graph topics*. Pilot: 9 DE–PL + 1 US–RU source-attributed records, all **review_required**; no alliance/conflict score or inferred dispute. [Registry contract](docs/BILATERAL_REGISTRY.md) · [Comparison methodology](docs/COUNTRY_RELATIONS_MVP.md).

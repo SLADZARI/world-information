@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Validate graph and reviewed research
+      - name: Verify historical research, policy time and canonical graph
         run: |
           python tools/validate_graph.py
           python tools/validate_research.py
@@ -25,18 +25,29 @@ jobs:
           node tools/check_research_board.mjs
           node tools/validate_poland.mjs
           node tools/build_poland_economy.mjs --check
-      - name: Validate model, anomaly detector, and 3D syntax
+      - name: Verify market and digital ecosystem evidence without claiming causality
+        run: |
+          node tools/market_registry.mjs > /dev/null
+          python tools/validate_digital_ecosystem.py
+          python tools/build_digital_country_catalog.py --check
+          node tools/check_country_catalog.mjs
+          python -m unittest discover -s tests -p 'test_digital_ecosystem.py'
+          python -m unittest discover -s tests -p 'test_digital_country_catalog.py'
+      - name: Verify model conservation, scripts and the local startup command
         run: |
           node --test tests/*.test.mjs
           node --check prototype/economy-lab/core.mjs
           node --check prototype/economy-lab/fixtures.mjs
           node --check prototype/economy-lab/main.mjs
           node --check prototype/poland-economic-3d/main.mjs
+          node --check prototype/markets/main.mjs
           node --check tools/detect_market_events.mjs
+          node --check tools/market_registry.mjs
           node --check tools/build_site.mjs
+          node --check tools/check_public_demo.mjs
           node --check tools/sync_research_board.mjs
           bash -n run-local.command
-      - name: Smoke check static publication artifact
+      - name: Verify all five views and build exactly the public Pages artifact
         run: |
           node tools/check_public_demo.mjs
           node tools/build_site.mjs

@@ -7,6 +7,9 @@
 - **2D viewer**: `prototype/research-board.html` embeds an exact, deterministic, **offline** snapshot of the 7 reviewed cases. Update snapshots with `node tools/sync_research_board.mjs`.
 - **3D evidence viewer**: `prototype/poland-economic-3d/` reads one checked Poland graph from the local same-origin JSON. Three.js is a *projection*, not a data authority.
 - **3D Economy Lab**: `prototype/economy-lab/` computes a deterministic but **fictional** PL–DE–NO economic scenario. It does **not** calibrate itself from current country indicators. Never imply that policy news caused historical investments.
+- **Country catalog (PR #8 stacked on PR #7)**: `prototype/digital-country-catalog.html` is a self-contained read-only 249-country/area directory. Only 4 preliminary research profiles have measurements, 3 are queued, 242 are explicitly unresearched. Its canonical baseline and profiles remain research staging under `data/research/` and `data/catalog/`. Those source files are NOT part of the public site bundle; only the clearly labelled browser preview is staged. ISO and other upstream data rights require owner review.
+- **Market archive (PR #3)**: `prototype/markets/` reads one dated batch of secondary market observations; quote-report timestamps and session-close calculations stay distinct. Not a live quote feed or causal trading engine.
+- **Contributor instructions (PR #6)**: root `AGENTS.md`, ChatGPT project prompt and research charter carry review and traceability gates.
 - **Event detector**: `tools/detect_market_events.mjs` flags candidate anomalies; no automatic causal identification or licensed live market feed.
 
 ## G4: local startup (macOS, Windows, Linux)
@@ -27,10 +30,16 @@ A direct double-click of the HTML file is not sufficient for the 3D modules/JSON
 ```sh
 python3 tools/validate_graph.py
 python3 tools/validate_research.py
+python3 tools/validate_digital_ecosystem.py
+python3 tools/build_digital_country_catalog.py --check
+python3 -m unittest discover -s tests -p 'test_digital_ecosystem.py'
+python3 -m unittest discover -s tests -p 'test_digital_country_catalog.py'
 python3 -m unittest discover -s tests -p 'test_open_apis.py'
 node tools/check_board.mjs
 node tools/sync_research_board.mjs --check
 node tools/check_research_board.mjs
+node tools/market_registry.mjs
+node tools/check_country_catalog.mjs
 node tools/validate_poland.mjs
 node tools/build_poland_economy.mjs --check
 node --test tests/*.test.mjs
@@ -39,13 +48,13 @@ node tools/build_site.mjs
 node tools/check_public_demo.mjs dist
 ```
 
-One CI workflow executes all gates for push/PR. The page bundle uses an explicit allow-list: entry page, browser prototypes, research case JSON and reviewed stories. No staging/API raw dumps or repository internals are published. `dist/` is excluded from Git.
+The integrated CI workflow executes all gates on push/PR; the two domain-specific workflows provide additional focused checks for catalog and ecosystem changes. The Pages artifact uses an explicit allow-list: homepage, browser prototypes, seven reviewed case JSON files, dated market archive, preliminary self-contained country catalog and referenced documents/stories. The public demo is **not** a release of the staging research baseline or country profile source JSON. No staging/API raw dumps or repository internals are published. `dist/` is excluded from Git.
 
-**Manual browser QA still required:** Chrome/Firefox/Safari desktop and mobile; open all three workspaces; change a case, country, time and status filter; inspect a relation's source and alternatives; check keyboard list fallback; in 3D drag/zoom/select nodes; in Economy Lab change shock, policy and quarter, verify baseline and visible conservation ledger. Verify zero JS console errors and fallback with WebGL/CDN blocked. Capture browser, OS, exact SHA and failed cases in the PR.
+**Manual browser QA still required:** Chrome/Firefox/Safari desktop and mobile; open all five workspaces; change a case, country, time and status filter; inspect a relation's source and alternatives; check keyboard list fallback; in 3D drag/zoom/select nodes; in Economy Lab change shock, policy and quarter, verify baseline and visible conservation ledger. Verify the 249-country search/filter counts (4 partial, 3 queued, 242 unresearched), the market viewer's secondary-vs-intraday distinction, zero JS console errors and fallback with WebGL/CDN blocked. Capture browser, OS, exact SHA and failed cases in the PR.
 
 ## G6–G8: public demonstration through GitHub Pages
 
-1. Review and merge the integration PR and its foundation into `main` after passing CI and an independent browser check. Do not force/auto-merge.
+1. Review PR #1 foundation, then the integration PR #5 (which imports the exact head snapshots from PR #3, #6, #7 and #8), after passing CI and independent browser QA. Avoid separately merging duplicate code paths without conflict review; retain PR authorship/provenance and close superseded lanes only after accepted consolidation. Do not force/auto-merge.
 2. Repository owner: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 3. In **Actions → Publish approved static demo (manual)** choose `main` and **Run workflow**. Feature branches cannot deploy by this workflow.
 4. Confirm the deployed URL shown in the workflow's `github-pages` environment. Standard project site address is expected to be `https://sladzari.github.io/world-information/`, but it is **not confirmed active** until Pages reports deployment.
@@ -53,4 +62,4 @@ One CI workflow executes all gates for push/PR. The page bundle uses an explicit
 
 GitHub Pages hosts **public static HTML/JS/JSON**; it does NOT provide a private dataset, authentication, server databases, persistent user edits, live Python, real-time ingestion or API proxy. All published cases are accessible to every visitor. The absence of a `LICENSE` means public visibility does not grant reuse rights automatically; owner must separately choose code/data/content licenses and validate source redistribution before an open-source release.
 
-**Current gate:** code under review, local HTTP/browser test pending. GitHub Pages settings, deployment and external browser QA are not yet verified.
+**Current gate:** integrated code under review; 4 partial catalog profiles remain review_required, local HTTP/browser test pending. GitHub Pages settings, deployment and external browser QA are not yet verified.

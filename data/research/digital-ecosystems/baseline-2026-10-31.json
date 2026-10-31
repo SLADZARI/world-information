@@ -1,0 +1,559 @@
+{
+  "dataset_id": "digital-ecosystems-baseline-2026-10-31",
+  "schema_version": "0.1.0",
+  "as_of": "2026-10-31",
+  "record_status": "review_required",
+  "purpose": "Source-linked staging sample for digital environments and social dynamics, not a verified causal influence percentage.",
+  "sources": [
+    {
+      "id": "itu2025",
+      "publisher": "ITU",
+      "kind": "official_statistics",
+      "url": "https://www.itu.int/en/ITU-D/Statistics/Pages/stat/default.aspx",
+      "published_on": null,
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "ITU global annual estimates; national population and method may differ.",
+      "status": "review_required"
+    },
+    {
+      "id": "reuters2026",
+      "publisher": "Reuters Institute / YouGov",
+      "kind": "survey",
+      "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary",
+      "published_on": "2026-06-16",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "48-market average of online survey respondents, not weighted global population average.",
+      "status": "review_required"
+    },
+    {
+      "id": "reutersmethod2026",
+      "publisher": "Reuters Institute / YouGov",
+      "kind": "methodology",
+      "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/methodology",
+      "published_on": "2026-06-16",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "Nonprobability online quota samples; 2026 March repoll of platform questions; offline users underrepresented.",
+      "status": "review_required"
+    },
+    {
+      "id": "reuterspoland2026",
+      "publisher": "Reuters Institute / YouGov",
+      "kind": "survey",
+      "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/poland",
+      "published_on": "2026-06-16",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "Polish online news survey; not a causal design.",
+      "status": "review_required"
+    },
+    {
+      "id": "uke2025",
+      "publisher": "UKE Poland",
+      "kind": "regulator",
+      "url": "https://uke.gov.pl/akt/raport-o-stanie-rynku-komunikacji-elektronicznej-w-2025-roku%2C670.html",
+      "published_on": "2026-06-30",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "2025 telecom market, administrative/regulatory market indicators; scope differs between households and enterprises.",
+      "status": "review_required"
+    },
+    {
+      "id": "ofcom2025",
+      "publisher": "Ofcom",
+      "kind": "regulator",
+      "url": "https://www.ofcom.org.uk/media-use-and-attitudes/online-habits/from-apps-to-ai-search-how-the-uk-goes-online-in-2025",
+      "published_on": "2025-12-10",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "UK adults online usage; time online not causal media impact.",
+      "status": "review_required"
+    },
+    {
+      "id": "pew2025",
+      "publisher": "Pew Research Center",
+      "kind": "survey",
+      "url": "https://www.pewresearch.org/journalism/fact-sheet/social-media-and-news-fact-sheet/",
+      "published_on": "2025-09-25",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "US adults surveyed in August 2025; self-report not platform analytics.",
+      "status": "review_required"
+    },
+    {
+      "id": "miit2025",
+      "publisher": "China MIIT",
+      "kind": "regulator",
+      "url": "https://www.miit.gov.cn/gxsj/tjfx/txy/art/2026/art_5c99d65350f7452f999e8efcb1ee2d6a.html",
+      "published_on": "2026-01-28",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "Subscription counts can exceed population; official industry operator reporting.",
+      "status": "review_required"
+    },
+    {
+      "id": "cnnic2025",
+      "publisher": "CNNIC",
+      "kind": "official_statistics",
+      "url": "https://www3.cnnic.cn/n4/2026/0304/c88-11549.html",
+      "published_on": "2026-02-05",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "Statistical estimate of Chinese internet users end-2025, not SIM subscriptions.",
+      "status": "review_required"
+    },
+    {
+      "id": "accessnow2025",
+      "publisher": "Access Now / KeepItOn",
+      "kind": "civil_society_monitoring",
+      "url": "https://www.accessnow.org/press-release/rising-and-resisting-in-the-darkness-internet-shutdowns-in-2025/",
+      "published_on": "2026-03-31",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "Documented minimum shutdown cases; definitions and ascertainment distinct from network traffic monitoring.",
+      "status": "review_required"
+    },
+    {
+      "id": "guess2023",
+      "publisher": "Guess et al. / Science (Stanford GSB abstract)",
+      "kind": "randomized_experiment",
+      "url": "https://www.gsb.stanford.edu/faculty-research/publications/how-do-social-media-feed-algorithms-affect-attitudes-behavior",
+      "published_on": "2023-07-27",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "Chronological versus algorithmic feeds, consenting US users in 2020, 3-month timeframe; non-detection of some outcomes not no effect everywhere.",
+      "status": "review_required"
+    },
+    {
+      "id": "nyhan2023",
+      "publisher": "Nyhan et al. / Nature",
+      "kind": "randomized_experiment",
+      "url": "https://www.nature.com/articles/s41586-023-06297-w",
+      "published_on": "2023-07-27",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "US Facebook 2020, intervention reduces like-minded content; eight preregistered attitudes had no measurable response.",
+      "status": "review_required"
+    },
+    {
+      "id": "gus2025",
+      "publisher": "Statistics Poland (GUS)",
+      "kind": "official_statistics",
+      "url": "https://stat.gov.pl/obszary-tematyczne/nauka-i-technika-spoleczenstwo-informacyjne/spoleczenstwo-informacyjne/spoleczenstwo-informacyjne-w-polsce-w-2025-r-%2C2%2C15.html",
+      "published_on": "2025-10-21",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "Household internet access is not the same as fibre network availability; age 16-74 purchasing rate uses individuals.",
+      "status": "review_required"
+    }
+  ],
+  "measurements": [
+    {
+      "id": "global-internet-2025",
+      "source_id": "itu2025",
+      "geography": "GLOBAL",
+      "metric": "internet_users_share",
+      "measurement_type": "coverage",
+      "value": 74,
+      "unit": "percent_of_population",
+      "population_scope": "all individuals",
+      "denominator": "all people worldwide",
+      "period": "2025",
+      "method": "ITU estimates internet usage from national ICT statistics",
+      "limitations": "Estimated share; not digital persuasion and not a platform share",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "dnews-social-2026",
+      "source_id": "reuters2026",
+      "geography": "MARKETS_48",
+      "metric": "social_video_news_weekly",
+      "measurement_type": "self_report_news_reach",
+      "value": 54,
+      "unit": "percent_of_respondents",
+      "population_scope": "survey respondents across 48 online markets",
+      "denominator": "respondents in 48 sampled markets; average of country-market responses",
+      "period": "2026",
+      "method": "Online quota survey (YouGov); average across markets",
+      "limitations": "Overlaps news websites and apps; 48-market average not population-weighted world rate",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "dnews-sites-2026",
+      "source_id": "reuters2026",
+      "geography": "MARKETS_48",
+      "metric": "publisher_sites_news_weekly",
+      "measurement_type": "self_report_news_reach",
+      "value": 51,
+      "unit": "percent_of_respondents",
+      "population_scope": "survey respondents across 48 online markets",
+      "denominator": "respondents in 48 sampled markets; average of country-market responses",
+      "period": "2026",
+      "method": "Online quota survey (YouGov); average across markets",
+      "limitations": "Not complementary to 54%; multiple sources possible",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "pl-fiber-coverage-2025",
+      "source_id": "uke2025",
+      "geography": "PL",
+      "metric": "fiber_household_coverage",
+      "measurement_type": "infrastructure_coverage",
+      "value": 80.1,
+      "unit": "percent_of_households",
+      "population_scope": "all households in Poland",
+      "denominator": "households within reach of fibre network; not active connections",
+      "period": "2025",
+      "method": "Regulator coverage report",
+      "limitations": "Coverage not adoption; local gaps exist",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "pl-telecom-companies-2025",
+      "source_id": "uke2025",
+      "geography": "PL",
+      "metric": "telecom_business_count",
+      "measurement_type": "market_structure",
+      "value": 2600,
+      "unit": "companies",
+      "population_scope": "registered/active telecommunications entrepreneurs per UKE report",
+      "denominator": "telecommunications entrepreneurs, not necessarily distinct retail ISP",
+      "period": "2025",
+      "method": "Regulator industry reporting",
+      "limitations": "Reported as >2,600, represented as a lower bound",
+      "comparison": ">",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "pl-news-trust-2026",
+      "source_id": "reuterspoland2026",
+      "geography": "PL",
+      "metric": "trust_in_news_overall",
+      "measurement_type": "attitude_survey",
+      "value": 39,
+      "unit": "percent_of_respondents",
+      "population_scope": "Polish online news survey participants",
+      "denominator": "survey respondents asked about overall trust in news",
+      "period": "2026",
+      "method": "Reuters Institute YouGov online survey",
+      "limitations": "Perception, not verified quality and not effect of platform usage",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "gb-time-online-2025",
+      "source_id": "ofcom2025",
+      "geography": "GB",
+      "metric": "daily_time_online_adults",
+      "measurement_type": "time_use",
+      "value": 4.5,
+      "unit": "hours_per_day",
+      "population_scope": "adults in United Kingdom",
+      "denominator": "UK adults in measurement population",
+      "period": "2025",
+      "method": "Ofcom Online Nation cross-service research",
+      "limitations": "Average; method and device scope must be checked before comparisons",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "us-news-social-2025",
+      "source_id": "pew2025",
+      "geography": "US",
+      "metric": "social_media_news_at_least_sometimes",
+      "measurement_type": "self_report_news_reach",
+      "value": 53,
+      "unit": "percent_of_adults",
+      "population_scope": "US adults",
+      "denominator": "all US adults, including non-users in never/not reported",
+      "period": "2025-08",
+      "method": "Pew American Trends Panel: self-reported news use",
+      "limitations": "Not measured exposure or persuasive effect",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "cn-mobile-subs-2025",
+      "source_id": "miit2025",
+      "geography": "CN",
+      "metric": "mobile_telephone_subscriptions",
+      "measurement_type": "network_subscription_count",
+      "value": 1827,
+      "unit": "million_subscriptions",
+      "population_scope": "China mobile phone network accounts",
+      "denominator": "mobile phone subscriptions, including multiple per person",
+      "period": "2025",
+      "method": "MIIT operator statistics",
+      "limitations": "Subscriptions are NOT unique people; >100 subscriptions per 100 people possible",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "cn-fixed-broadband-2025",
+      "source_id": "miit2025",
+      "geography": "CN",
+      "metric": "fixed_broadband_accounts_three_operators",
+      "measurement_type": "network_subscription_count",
+      "value": 691,
+      "unit": "million_subscriptions",
+      "population_scope": "accounts of three baseline China operators",
+      "denominator": "fixed-broadband subscriptions of China Telecom, China Mobile, China Unicom",
+      "period": "2025",
+      "method": "MIIT operator statistics",
+      "limitations": "Households and multiple connections not people",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "cn-internet-people-2025",
+      "source_id": "cnnic2025",
+      "geography": "CN",
+      "metric": "internet_users",
+      "measurement_type": "user_count",
+      "value": 1125,
+      "unit": "million_people",
+      "population_scope": "individual internet users",
+      "denominator": "China individuals using internet estimated at end 2025",
+      "period": "2025-12",
+      "method": "CNNIC survey/statistical estimate",
+      "limitations": "Do not compare directly to subscriptions without reconciliation",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "global-shutdowns-2025",
+      "source_id": "accessnow2025",
+      "geography": "GLOBAL",
+      "metric": "documented_internet_shutdowns",
+      "measurement_type": "incident_count",
+      "value": 313,
+      "unit": "incidents",
+      "population_scope": "documented events",
+      "denominator": "shutdowns documented in 52 countries by coalition",
+      "period": "2025",
+      "method": "KeepItOn monitoring and case documentation",
+      "limitations": "At least 313; ascertainment and definitions matter",
+      "comparison": ">=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "global-shutdown-countries-2025",
+      "source_id": "accessnow2025",
+      "geography": "GLOBAL",
+      "metric": "countries_with_documented_shutdowns",
+      "measurement_type": "incident_territory_count",
+      "value": 52,
+      "unit": "countries",
+      "population_scope": "countries documented",
+      "denominator": "countries with >=1 recorded internet shutdown",
+      "period": "2025",
+      "method": "KeepItOn monitoring and case documentation",
+      "limitations": "Does not count affected population, severity or duration",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "pl-households-internet-2025",
+      "source_id": "gus2025",
+      "geography": "PL",
+      "metric": "households_with_internet_access",
+      "measurement_type": "household_internet_adoption",
+      "value": 96.2,
+      "unit": "percent_of_households",
+      "population_scope": "Polish households",
+      "denominator": "households reporting an internet connection",
+      "period": "2025",
+      "method": "Statistics Poland ICT household survey",
+      "limitations": "Internet of any technology; not fibre network coverage",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "pl-households-fixed-2025",
+      "source_id": "gus2025",
+      "geography": "PL",
+      "metric": "households_with_fixed_broadband",
+      "measurement_type": "household_internet_adoption",
+      "value": 70.3,
+      "unit": "percent_of_households",
+      "population_scope": "Polish households",
+      "denominator": "households with fixed broadband; overlap with mobile broadband",
+      "period": "2025",
+      "method": "Statistics Poland ICT household survey",
+      "limitations": "Not exclusive of mobile service; should not be added to mobile percentage",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "pl-households-mobile-2025",
+      "source_id": "gus2025",
+      "geography": "PL",
+      "metric": "households_with_mobile_broadband",
+      "measurement_type": "household_internet_adoption",
+      "value": 78.2,
+      "unit": "percent_of_households",
+      "population_scope": "Polish households",
+      "denominator": "households with mobile broadband; overlap with fixed broadband",
+      "period": "2025",
+      "method": "Statistics Poland ICT household survey",
+      "limitations": "Not exclusive of fixed service; should not be added to fixed percentage",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "pl-online-purchases-2025",
+      "source_id": "gus2025",
+      "geography": "PL",
+      "metric": "online_purchase_last_12_months",
+      "measurement_type": "consumer_ecommerce_reach",
+      "value": 69.7,
+      "unit": "percent_of_individuals_16_74",
+      "population_scope": "people aged 16–74 resident in Poland",
+      "denominator": "people ages 16–74 with internet purchase in last 12 months",
+      "period": "2025",
+      "method": "Statistics Poland ICT survey",
+      "limitations": "Purchasing is an observed/reportable use case, not influence coefficient",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h-channel-substitution",
+      "statement": "После существенного ограничения доступности цифровой платформы аудитория может перераспределиться по альтернативным каналам в зависимости от языка, доступа, возраста и резервной инфраструктуры.",
+      "mechanism": "Изменение доступного набора коммуникационных альтернатив; неоднородные издержки переключения.",
+      "evidence_source_ids": [
+        "accessnow2025",
+        "reutersmethod2026"
+      ],
+      "contradicting_source_ids": [],
+      "alternatives": [
+        "Уже существующий тренд миграции между платформами",
+        "Временный общий инфраструктурный сбой без устойчивой миграции"
+      ],
+      "falsification": "Сопоставить доли уникальных пользователей и поведение в регионах до и после инцидента с контрольными регионами, включая офлайн источники; отсутствие перераспределения опровергает механизм в этом окне.",
+      "status": "review_required",
+      "causal_effect_estimate": null
+    },
+    {
+      "id": "h-content-attitudes",
+      "statement": "Изменение алгоритмической выдачи может изменить наблюдаемую информационную экспозицию, но не обязательно приводит к обнаружимому изменению политических установок в кратком окне.",
+      "mechanism": "Ранжирование ленты меняет контент и вовлечённость; формирование установок зависит также от офлайн влияния и предшествующих взглядов.",
+      "evidence_source_ids": [
+        "guess2023",
+        "nyhan2023"
+      ],
+      "contradicting_source_ids": [],
+      "alternatives": [
+        "Эксперимент был недостаточно продолжительным для части эффектов",
+        "Внешняя валидность ограничена США/платформами/участниками 2020 года"
+      ],
+      "falsification": "Новые реплицированные рандомизированные исследования с заранее заявленными исходами покажут устойчивые изменения установок при сопоставимых вмешательствах.",
+      "status": "review_required",
+      "causal_effect_estimate": null
+    },
+    {
+      "id": "h-news-trust",
+      "statement": "Доверие к новостям и распространённость цифрового потребления могут статистически сосуществовать, но направление причинности не установлено.",
+      "mechanism": "Предполагаемые каналы: выбор каналов, доверие к источникам, общее институциональное доверие и социальная селекция.",
+      "evidence_source_ids": [
+        "reuterspoland2026",
+        "reuters2026"
+      ],
+      "contradicting_source_ids": [
+        "guess2023"
+      ],
+      "alternatives": [
+        "Наблюдаемое доверие формируется офлайн/политическими событиями",
+        "Недостоверное межгодовое сопоставление из-за состава выборок"
+      ],
+      "falsification": "Панельные данные и контроль по прежним установкам и другим информационным источникам не покажут самостоятельного эффекта каналов.",
+      "status": "review_required",
+      "causal_effect_estimate": null
+    }
+  ],
+  "country_context": [
+    {
+      "country": "PL",
+      "available_evidence": [
+        "uke2025",
+        "reuterspoland2026",
+        "gus2025"
+      ],
+      "operator_evidence": "More than 2,600 telecom enterprises nationwide; no provider-by-provider shares claimed.",
+      "platform_preferences_status": "not_yet_validated",
+      "open_gaps": [
+        "provider market share by service and region",
+        "age/language news channels",
+        "migrant and non-citizen access and rights"
+      ]
+    },
+    {
+      "country": "GB",
+      "available_evidence": [
+        "ofcom2025"
+      ],
+      "operator_evidence": "Operator-specific shares not imported.",
+      "platform_preferences_status": "not_yet_validated",
+      "open_gaps": [
+        "platform distribution by demographic group",
+        "operator fixed/mobile concentration",
+        "offline alternatives"
+      ]
+    },
+    {
+      "country": "US",
+      "available_evidence": [
+        "pew2025",
+        "guess2023",
+        "nyhan2023"
+      ],
+      "operator_evidence": "No regulated ISP market shares imported.",
+      "platform_preferences_status": "partially_surveyed",
+      "open_gaps": [
+        "local ISP availability",
+        "platform-news reach by jurisdiction and social group",
+        "causal transfer to other countries"
+      ]
+    },
+    {
+      "country": "CN",
+      "available_evidence": [
+        "miit2025",
+        "cnnic2025"
+      ],
+      "operator_evidence": "MIIT identifies three basic carriers in fixed broadband accounting; subscriptions not users.",
+      "platform_preferences_status": "not_yet_validated",
+      "open_gaps": [
+        "platform preferences with representative samples",
+        "regional and language segmentation",
+        "differentiation of operator and application control"
+      ]
+    }
+  ],
+  "causal_effect_policy": "No single country digital influence percentage. Experiment and counterfactual with confidence bounds required for any causal coefficient.",
+  "republication_policy": "Store public metadata and original brief summaries only; source licenses must be reviewed prior to reproducing datasets."
+}

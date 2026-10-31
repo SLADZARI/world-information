@@ -1,0 +1,19 @@
+{
+  "country_code": "RU",
+  "as_of": "2026-10-31",
+  "status": "queued",
+  "review_status": "review_required",
+  "measurement_ids": [],
+  "source_ids": [],
+  "operators": [],
+  "platforms": [],
+  "social_groups": [],
+  "digital_rights": [],
+  "research_gaps": [
+    "Telecom providers and regional connectivity",
+    "Platforms and messaging by demographic group",
+    "Regulatory access restrictions and observed outages",
+    "Before/after behavioural outcomes with controls"
+  ],
+  "notes": "Research requested. No empirically validated metrics imported."
+}

@@ -39,8 +39,12 @@ export function validateObservations(doc) {
     assert(source.id && !sources.has(source.id), "Duplicate/missing source id");
     sources.add(source.id);
     assert(/^https:\/\//.test(source.url), "Sources must be HTTPS");
-    const published=ms(source.published_at);
-    assert(published<=asOf, "Future source relative to as_of");
+    // Continuously updated market snapshots may have no reliable publication time.
+    // Null is an unknown value, NEVER a surrogate for retrieval time.
+    if(source.published_at!==null){
+      const published=ms(source.published_at);
+      assert(published<=asOf, "Future source relative to as_of");
+    }
   }
   const ids=new Set();
   for(const obs of doc.observations) {

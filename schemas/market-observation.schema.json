@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "World Information Market Observation Archive v0.1",
+  "description": "Separate raw market claims, timed prices, verified exchange observations and editorial event hypotheses. Records are never causal relations on their own.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kind",
+    "batch_id",
+    "market_id",
+    "as_of",
+    "session_date",
+    "market_timezone",
+    "market_session",
+    "synthetic",
+    "description",
+    "connected_case_id",
+    "method",
+    "sources",
+    "instruments",
+    "observations",
+    "narrative_assessments"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "kind": {
+      "const": "market_observation_batch"
+    },
+    "batch_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "market_id": {
+      "type": "string",
+      "minLength": 2
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "session_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "market_timezone": {
+      "type": "string",
+      "minLength": 4
+    },
+    "market_session": {
+      "enum": [
+        "regular",
+        "pre_market",
+        "post_market",
+        "24h"
+      ]
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20
+    },
+    "connected_case_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "method": {
+      "type": "string",
+      "minLength": 20
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "url",
+          "publisher",
+          "published_at",
+          "kind",
+          "rights"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "kind": {
+            "enum": [
+              "user_claim",
+              "independent_news",
+              "third_party_market_snapshot",
+              "market_commentary",
+              "exchange_official",
+              "company_official"
+            ]
+          },
+          "rights": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "instruments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "label",
+          "market_id",
+          "asset_class",
+          "sector",
+          "country_of_listing",
+          "currency",
+          "exchange_timezone"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "market_id": {
+            "type": "string"
+          },
+          "asset_class": {
+            "enum": [
+              "equity",
+              "broad_index",
+              "sector_index",
+              "crypto",
+              "bond",
+              "commodity",
+              "fx"
+            ]
+          },
+          "sector": {
+            "type": "string"
+          },
+          "country_of_listing": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "exchange_timezone": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "instrument_id",
+          "session_date",
+          "window",
+          "metric",
+          "value",
+          "unit",
+          "price_basis",
+          "measurement_at",
+          "reported_at",
+          "source_id",
+          "verification_status",
+          "note"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "instrument_id": {
+            "type": "string"
+          },
+          "session_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "window": {
+            "enum": [
+              "regular_session_intraday",
+              "regular_close_to_close",
+              "pre_market",
+              "after_hours",
+              "rolling_24h"
+            ]
+          },
+          "metric": {
+            "enum": [
+              "price_change_percent",
+              "close_price",
+              "volume",
+              "realized_volatility"
+            ]
+          },
+          "value": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "price_basis": {
+            "type": "string"
+          },
+          "measurement_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "reported_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "verification_status": {
+            "enum": [
+              "report_only_time_unverified",
+              "secondary_closing_snapshot",
+              "exchange_verified",
+              "pending_review"
+            ]
+          },
+          "note": {
+            "type": "string",
+            "minLength": 10
+          }
+        }
+      }
+    },
+    "narrative_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "claim",
+          "status",
+          "caution"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "claim": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "caution": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

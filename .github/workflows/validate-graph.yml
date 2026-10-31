@@ -52,3 +52,5 @@ jobs:
           node tools/check_public_demo.mjs
           node tools/build_site.mjs
           node tools/check_public_demo.mjs dist
+      - name: Headless Chromium smoke for actual browser DOM (3D may use fallback)
+        run: node tools/browser_smoke.mjs

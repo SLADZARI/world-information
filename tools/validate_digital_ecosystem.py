@@ -94,7 +94,8 @@ def errors(dataset: dict) -> list[str]:
             problems.append(f"{name}: invalid comparison bound")
         if m.get("measurement_type") in REACH_TYPES:
             if m.get("unit") not in ("percent_of_population", "percent_of_households",
-                                     "percent_of_respondents", "percent_of_adults",\n                                     "percent_of_individuals_16_74"):
+                                     "percent_of_respondents", "percent_of_adults",
+                                     "percent_of_individuals_16_74"):
                 problems.append(f"{name}: percentage metric has incompatible denominator/unit")
             if isinstance(val, (int, float)) and not 0 <= val <= 100:
                 problems.append(f"{name}: percentage outside [0,100]")

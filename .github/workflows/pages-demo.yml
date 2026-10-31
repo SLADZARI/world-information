@@ -25,6 +25,7 @@ jobs:
           python tools/validate_digital_ecosystem.py
           python tools/build_digital_country_catalog.py --check
           node tools/build_country_pair_options.mjs --check
+          node tools/validate_bilateral_registry.mjs --require-approved
           node tools/market_registry.mjs > /dev/null
           node tools/build_poland_economy.mjs --check
           node tools/sync_research_board.mjs --check

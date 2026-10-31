@@ -18,6 +18,13 @@ const countryOptions=JSON.parse(read("prototype/country-relations/country-option
 assert.equal(countryOptions.country_count,249,"Country pair dropdown count mismatch");
 assert.equal(countryOptions.countries.length,249,"Country pair option count mismatch");
 assert.equal(new Set(countryOptions.countries.map(c=>c.code)).size,249,"Duplicate pair selector ISO codes");
+const bilateral=JSON.parse(read("data/bilateral/registry.v1.json"));
+assert.equal(bilateral.schema_version,"1.0.0","Bilateral registry version mismatch");
+assert.equal(bilateral.publication_status,"research_staging_review_required","Unreviewed claims must remain visibly labeled as preliminary");
+assert.equal(bilateral.records.length,10,"Missing or additional bilateral pilot records");
+assert.equal(bilateral.categories.length,8,"Required bilateral research categories missing");
+assert.equal(new Set(bilateral.records.map(x=>x.id)).size,bilateral.records.length,"Duplicate bilateral fact ID");
+assert(bilateral.records.every(x=>x.review_status==="review_required"&&x.source_ids.length),"Unattributed or silently approved bilateral claim");
 const board=read("prototype/research-board.html");
 const embedded=board.match(/<script type="application\/json" id="cases-data">([\s\S]*?)<\/script>/);
 assert(embedded,"Missing embedded board data");
@@ -59,6 +66,7 @@ for(const relative of htmlPaths){
 }
 assert(fs.existsSync(path.join(site,"prototype/country-relations/main.mjs")),"Missing country pair UI module");
 assert(fs.existsSync(path.join(site,"prototype/country-relations/core.mjs")),"Missing pure pairing engine");
+assert(fs.existsSync(path.join(site,"prototype/country-relations/bilateral.mjs")),"Missing bilateral registry projection");
 const home=read("index.html");
 assert(home.includes('href="./prototype/country-relations/?a=PL&amp;b=DE"'),"Country pair explorer missing from landing");
 
@@ -68,7 +76,7 @@ for(const page of ["prototype/economy-lab/index.html","prototype/poland-economic
   assert(read(page).includes("three@0.186.1"),"Three.js version not pinned: "+page);
 if(staged){
   assert(fs.existsSync(path.join(site,".nojekyll")),"Missing .nojekyll");
-  for(const excluded of ["data/research","data/catalog","tools",".github","AGENTS.md","schemas","data/incoming","docs/PROJECT_INSTRUCTIONS.ru.md"])
+  for(const excluded of ["data/research","data/catalog","data/bilateral/staging","tools",".github","AGENTS.md","schemas","data/incoming","docs/PROJECT_INSTRUCTIONS.ru.md"])
     assert(!fs.existsSync(path.join(site,excluded)),"Private/review staging or development file leaked: "+excluded);
   assert.equal(fs.readdirSync(path.join(site,"data/cases")).filter(x=>x.endsWith(".json")).length,ids.length,
     "Unreviewed case JSON included in public artifact");

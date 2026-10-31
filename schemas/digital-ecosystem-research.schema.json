@@ -180,7 +180,9 @@
             "network_subscription_count",
             "user_count",
             "incident_count",
-            "incident_territory_count"
+            "incident_territory_count",
+            "household_internet_adoption",
+            "consumer_ecommerce_reach"
           ]
         },
         "value": {

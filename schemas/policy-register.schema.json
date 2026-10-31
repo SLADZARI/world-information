@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Country policy register v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "country",
+    "as_of",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "country": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "description": {
+      "type": "string"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "domain",
+          "status",
+          "status_checked_from",
+          "announced_at",
+          "effective_from",
+          "expires_at",
+          "applies_to",
+          "does_not_automatically_apply_to",
+          "exceptions_and_transition",
+          "source_ids",
+          "source_urls",
+          "graph_node_id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]+$"
+          },
+          "title": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "enacted",
+              "time_limited",
+              "annual_exemption",
+              "disputed",
+              "repealed"
+            ]
+          },
+          "status_checked_from": {
+            "type": "string"
+          },
+          "announced_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "effective_from": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "expires_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "applies_to": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "does_not_automatically_apply_to": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "exceptions_and_transition": {
+            "type": "string"
+          },
+          "source_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_urls": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "graph_node_id": {
+            "type": "string"
+          },
+          "verification_required": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

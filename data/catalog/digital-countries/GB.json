@@ -1,0 +1,23 @@
+{
+  "country_code": "GB",
+  "as_of": "2026-10-31",
+  "status": "partial",
+  "review_status": "review_required",
+  "measurement_ids": [
+    "gb-time-online-2025"
+  ],
+  "source_ids": [
+    "ofcom2025"
+  ],
+  "operators": [],
+  "platforms": [],
+  "social_groups": [],
+  "digital_rights": [],
+  "research_gaps": [
+    "ISP market shares and service-by-region comparison",
+    "Platform popularity by age and migration group",
+    "News consumption and trust with compatible denominators",
+    "Evidence of downstream behavioural effects"
+  ],
+  "notes": "Ofcom time online is a descriptive metric, not evidence of persuasion."
+}

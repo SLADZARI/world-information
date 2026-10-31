@@ -1,0 +1,30 @@
+name: Digital ecosystem research integrity
+
+on:
+  push:
+    paths:
+      - "data/research/digital-ecosystems/**"
+      - "schemas/digital-ecosystem-research.schema.json"
+      - "tools/validate_digital_ecosystem.py"
+      - "tests/test_digital_ecosystem.py"
+      - ".github/workflows/validate-digital-ecosystem.yml"
+  pull_request:
+    paths:
+      - "data/research/digital-ecosystems/**"
+      - "schemas/digital-ecosystem-research.schema.json"
+      - "tools/validate_digital_ecosystem.py"
+      - "tests/test_digital_ecosystem.py"
+      - ".github/workflows/validate-digital-ecosystem.yml"
+
+jobs:
+  staging-evidence-checks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python tools/validate_digital_ecosystem.py
+      - run: python -m unittest discover -s tests -p 'test_digital_ecosystem.py'

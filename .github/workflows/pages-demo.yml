@@ -1,0 +1,52 @@
+name: Publish approved static demo (manual)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Recheck research and exact public artifact before release
+        run: |
+          python tools/validate_graph.py
+          python tools/validate_research.py
+          python tools/validate_digital_ecosystem.py
+          python tools/build_digital_country_catalog.py --check
+          node tools/build_country_pair_options.mjs --check
+          node tools/market_registry.mjs > /dev/null
+          node tools/build_poland_economy.mjs --check
+          node tools/sync_research_board.mjs --check
+          node tools/check_research_board.mjs
+          node tools/check_country_catalog.mjs
+          node --test tests/*.test.mjs
+          node tools/build_site.mjs
+          node tools/check_public_demo.mjs dist
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish owner-approved artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

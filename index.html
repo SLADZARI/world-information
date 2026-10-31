@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="World Information: воспроизводимые графы событий, доказательства и отдельные экономические сценарии">
+  <title>World Information — лаборатория причин и следствий</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080e18;--panel:#101d2f;--line:#29435c;--text:#eef4fa;--muted:#b5c5d7;--cyan:#75deef;--green:#91e1bf;--orange:#eecb92}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse 75% 50% at 80% 0%,#183449 0%,transparent 65%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:var(--cyan)}a:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+    .wrap{max-width:1160px;margin:auto;padding:0 24px}
+    header{border-bottom:1px solid #284159;background:#0a1524d9}
+    header .wrap{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:.07em;font-size:13px}.logo{width:31px;height:31px;border:1px solid var(--cyan);border-radius:10px;display:grid;place-items:center;color:var(--cyan);font-size:21px}
+    header nav{display:flex;gap:18px;flex-wrap:wrap;font-size:13px}
+    header nav a{text-decoration:none;color:#d5e9f3}
+    .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);align-items:center;gap:32px;padding:80px 0 55px}
+    .eyebrow{text-transform:uppercase;color:var(--green);letter-spacing:.15em;font-size:12px;font-weight:800}
+    h1{font-size:clamp(35px,5.3vw,62px);line-height:1.12;letter-spacing:-.045em;margin:16px 0 20px}
+    .intro{max-width:650px;color:var(--muted);font-size:18px;margin:0 0 28px}
+    .cta{display:flex;flex-wrap:wrap;gap:12px}.cta a{border-radius:10px;padding:12px 18px;text-decoration:none;font-weight:700;font-size:14px;border:1px solid #47778c}
+    .primary{background:#a5e4eb;color:#071825!important;border-color:#a5e4eb!important}.secondary{background:#17293b}
+    .diagram{padding:22px;border:1px solid #32516b;border-radius:22px;background:linear-gradient(160deg,#182b42,#0a1525);box-shadow:0 24px 68px #0005}
+    .diagram svg{display:block;width:100%;height:auto}.legend{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:var(--muted);margin-top:12px}
+    .legend b{color:var(--green)}.legend em{font-style:normal;color:var(--orange)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin:14px 0 21px}
+    h2{font-size:25px;letter-spacing:-.02em;margin:0}h3{font-size:20px;margin:14px 0 8px}.dim{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+    article{border:1px solid var(--line);background:#101d2ddc;padding:24px;border-radius:17px;min-width:0;display:flex;flex-direction:column}
+    article .tag{font-size:11px;font-weight:700;letter-spacing:.09em;color:var(--green)}article p{color:var(--muted);font-size:14px;flex:1;margin:0 0 18px}
+    article a{font-size:14px;font-weight:700;align-self:flex-start}
+    .rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:42px 0 28px}
+    .step{border-top:1px solid #406179;padding-top:17px}.step b{color:var(--cyan);font-size:12px;letter-spacing:.07em}
+    .step p{font-size:14px;color:var(--muted)}
+    .cases{margin:8px 0 74px;border:1px solid var(--line);background:#101b2b;border-radius:17px;padding:24px}
+    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.links a{display:inline-block;padding:8px 11px;border:1px solid #3b536b;border-radius:8px;text-decoration:none;font-size:13px}
+    footer{border-top:1px solid #233a50;padding:21px 0 35px;color:var(--muted);font-size:12px}
+    footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;padding:44px 0}.grid,.rail{grid-template-columns:1fr}.diagram{max-width:620px}}
+    @media(prefers-reduced-motion:no-preference){article{transition:transform .15s,border-color .15s}article:hover{transform:translateY(-3px);border-color:#729cae}}
+  </style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand"><span class="logo" aria-hidden="true">◎</span> WORLD INFORMATION</div><nav aria-label="Навигация"><a href="#views">Инструменты</a><a href="#cases">Исследования</a><a href="https://github.com/SLADZARI/world-information">GitHub и исходники</a></nav></div></header>
+<main class="wrap">
+<section class="hero" aria-labelledby="page-title">
+  <div><div class="eyebrow">Исследовательская лаборатория · локальный кандидат · без live-данных</div>
+    <h1 id="page-title">Причины. Следствия.<br>И доказательства.</h1>
+    <p class="intro">Исследуйте реальные события как направленные графы, проверяйте источники и альтернативные объяснения. Отдельно испытывайте условные экономические сценарии — без подмены измерений прогнозом.</p>
+    <div class="cta"><a class="primary" href="./prototype/country-relations/?a=PL&amp;b=DE">Сравнить две страны</a><a class="secondary" href="./prototype/digital-country-catalog.html">Каталог стран · 249</a></div>
+  </div>
+  <div class="diagram" aria-label="Иллюстрация: от источников через факт и гипотезу к проверяемому эффекту">
+    <svg viewBox="0 0 490 275" role="img" aria-labelledby="diagram-title">
+      <title id="diagram-title">Сеть: источники подтверждают факты, гипотезы ведут к проверяемым измерениям</title>
+      <defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#88dccc" stroke-width="1.5"/></marker><marker id="b" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#ebc68b" stroke-width="1.5"/></marker></defs>
+      <path d="M103 88 C145 88 150 65 195 65" stroke="#88dccc" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+      <path d="M103 188 C145 188 150 90 195 90" stroke="#88dccc" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+      <path d="M292 83 C330 82 332 128 373 128" stroke="#ebc68b" stroke-dasharray="7 6" stroke-width="2.5" fill="none" marker-end="url(#b)"/>
+      <path d="M293 84 C333 85 332 218 371 218" stroke="#7597b0" stroke-width="2" stroke-dasharray="2 6" fill="none"/>
+      <rect x="4" y="61" width="101" height="54" rx="12" fill="#23374b" stroke="#6eb5c9"/><text x="54" y="83" fill="#fff" text-anchor="middle" font-size="13">Источник</text><text x="54" y="102" fill="#9dbcd0" text-anchor="middle" font-size="10">Документ</text>
+      <rect x="4" y="161" width="101" height="54" rx="12" fill="#23374b" stroke="#6eb5c9"/><text x="54" y="183" fill="#fff" text-anchor="middle" font-size="13">Наблюдение</text><text x="54" y="201" fill="#9dbcd0" text-anchor="middle" font-size="10">Показатель</text>
+      <rect x="195" y="48" width="99" height="70" rx="13" fill="#1e3c3d" stroke="#88dccc"/><text x="245" y="77" fill="#fff" text-anchor="middle" font-size="14">Событие</text><text x="245" y="98" fill="#a0e5ce" text-anchor="middle" font-size="11">Проверено</text>
+      <rect x="369" y="109" width="118" height="64" rx="13" fill="#433726" stroke="#ebc68b"/><text x="428" y="134" fill="#fff" text-anchor="middle" font-size="14">Влияние?</text><text x="428" y="155" fill="#f4d4a2" text-anchor="middle" font-size="11">Гипотеза</text>
+      <rect x="371" y="192" width="116" height="55" rx="12" fill="#22354a" stroke="#88b3d1"/><text x="429" y="214" fill="#fff" text-anchor="middle" font-size="13">Проверка</text><text x="429" y="231" fill="#b8d2e1" text-anchor="middle" font-size="10">Будущие данные</text>
+    </svg>
+    <div class="legend"><span><b>━</b> Источники/факты</span><span><em>┄</em> Гипотезы</span><span>⋯ Нужна проверка</span></div>
+  </div>
+</section>
+<section id="views" aria-labelledby="views-title">
+  <div class="section-head"><div><h2 id="views-title">Шесть исследовательских пространств</h2><div class="dim">Общий принцип — видимый источник и отдельный статус каждого утверждения</div></div><span class="dim">Локальный кандидат · не live-данные</span></div>
+  <div class="grid">
+  <article><div class="tag">01 / КАТАЛОГ · 249 СТРАН/ТЕРРИТОРИЙ</div><h3>Цифровая среда стран</h3><p>Поиск стран и статусов: 4 предварительных профиля с измерениями, 3 в очереди и 242 без исследования. Метрики требуют редакционной проверки; отсутствие данных не означает нулевые значения.</p><a href="./prototype/digital-country-catalog.html">Открыть каталог стран →</a></article>
+  <article><div class="tag">02 / СРАВНЕНИЕ · ДВЕ СТРАНЫ</div><h3>Country Relations Explorer</h3><p>Выберите любые две страны из 249: общие темы, международные контексты, межстрановые рёбра и только явно подтверждённые споры. Источники, время и границы интерпретации.</p><a href="./prototype/country-relations/?a=PL&amp;b=DE">Сравнить Польшу и Германию →</a></article>
+  <article><div class="tag">03 / 2D · ЭМПИРИЧЕСКИЙ ГРАФ</div><h3>Карта расследований</h3><p>7 наборов исследований: события, страны, категории, время, статусы связей, альтернативные причины и первоисточники. Работает без Three.js.</p><a href="./prototype/research-board.html">Открыть исследовательский борд →</a></article>
+  <article><div class="tag">04 / РЫНКИ · АРХИВ 30.10.2026</div><h3>Market Observatory</h3><p>Отдельный архив заявленных внутридневных движений и вторичных данных закрытия американских рынков. Не live-котировки и не доказанная причинность.</p><a href="./prototype/markets/">Сравнить рыночные наблюдения →</a></article>
+  <article><div class="tag">05 / THREE.JS · ЭМПИРИЧЕСКИЙ ГРАФ</div><h3>Польша: граф влияний</h3><p>Интерактивный 3D-граф политики, миграции, труда и инвестиций. Исторические измерения отделены от будущих механизмов и гипотез.</p><a href="./prototype/poland-economic-3d/">Открыть 3D-проверку связей →</a></article>
+  <article><div class="tag">06 / THREE.JS · СИНТЕТИЧЕСКАЯ МОДЕЛЬ</div><h3>Экономическая лаборатория</h3><p>Польша, Германия, Норвегия: условные энергетические шоки, торговые потоки и бюджет на восемь кварталов. Числа иллюстративные, не прогноз.</p><a href="./prototype/economy-lab/">Запустить сценарную модель →</a></article>
+  </div>
+</section>
+<section class="rail" aria-label="Как использовать"><div class="step"><b>ШАГ 01</b><h3>Выбрать страну</h3><p>Исследуйте каталог по ISO-коду, статусу исследования и источникам. Числа без подтверждения не подставляются.</p></div><div class="step"><b>ШАГ 02</b><h3>Нажать на стрелку</h3><p>Проверьте её тип, источник, конкурирующие объяснения и условия опровержения.</p></div><div class="step"><b>ШАГ 03</b><h3>Сравнить сценарии</h3><p>В экономической лаборатории измените шок или политику и сравните расчёт с базой — это отдельный эксперимент.</p></div></section>
+<section class="cases" id="cases"><h2>Быстрый переход к исследованиям</h2><p class="dim">Наборы датированы 2023–2026 годами. Дата исследования не равна дате события.</p>
+<div class="links"><a href="./prototype/research-board.html?case=poland-policy-economy-2026-10">Польша: политика и экономика</a><a href="./prototype/research-board.html?case=poland-institutional-crisis-2026-10">Польша: институты</a><a href="./prototype/research-board.html?case=poland-migration-policy-2025-2026">Польша: миграция</a><a href="./prototype/research-board.html?case=ai-tech-multimarket-2026-10-30">Технологические рынки</a><a href="./prototype/research-board.html?case=eu-gas-transition-2021-2026">Газ ЕС</a><a href="./prototype/research-board.html?case=maritime-corridors-2023-2024">Морские маршруты</a><a href="./prototype/research-board.html?case=binance-incident-2026-10">Крипторынок</a></div>
+</section>
+</main>
+<footer><div class="wrap"><span>World Information · Git-native evidence · человек утверждает каждую причинную связь</span><span>Без входа, трекеров, API-ключей и серверного хранения · <a href="https://github.com/SLADZARI/world-information">Код и исследования</a></span></div></footer>
+</body></html>

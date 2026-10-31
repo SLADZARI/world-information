@@ -1,0 +1,1253 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-31",
+  "source": "data/catalog/country-index.generated.json",
+  "country_count": 249,
+  "countries": [
+    {
+      "code": "AF",
+      "name": "Afghanistan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AL",
+      "name": "Albania",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "DZ",
+      "name": "Algeria",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AS",
+      "name": "American Samoa",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AD",
+      "name": "Andorra",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AO",
+      "name": "Angola",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AI",
+      "name": "Anguilla",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AQ",
+      "name": "Antarctica",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AG",
+      "name": "Antigua and Barbuda",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AR",
+      "name": "Argentina",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AM",
+      "name": "Armenia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AW",
+      "name": "Aruba",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AT",
+      "name": "Austria",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AZ",
+      "name": "Azerbaijan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BS",
+      "name": "Bahamas",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BH",
+      "name": "Bahrain",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BD",
+      "name": "Bangladesh",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BB",
+      "name": "Barbados",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BY",
+      "name": "Belarus",
+      "research_status": "queued"
+    },
+    {
+      "code": "BE",
+      "name": "Belgium",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BZ",
+      "name": "Belize",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BJ",
+      "name": "Benin",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BM",
+      "name": "Bermuda",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BT",
+      "name": "Bhutan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BO",
+      "name": "Bolivia, Plurinational State of",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BQ",
+      "name": "Bonaire, Sint Eustatius and Saba",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BA",
+      "name": "Bosnia and Herzegovina",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BW",
+      "name": "Botswana",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BV",
+      "name": "Bouvet Island",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BR",
+      "name": "Brazil",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "IO",
+      "name": "British Indian Ocean Territory",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BN",
+      "name": "Brunei Darussalam",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BG",
+      "name": "Bulgaria",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BF",
+      "name": "Burkina Faso",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BI",
+      "name": "Burundi",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CV",
+      "name": "Cabo Verde",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "KH",
+      "name": "Cambodia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CM",
+      "name": "Cameroon",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "KY",
+      "name": "Cayman Islands",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CF",
+      "name": "Central African Republic",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TD",
+      "name": "Chad",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CL",
+      "name": "Chile",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CN",
+      "name": "China",
+      "research_status": "partial"
+    },
+    {
+      "code": "CX",
+      "name": "Christmas Island",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CC",
+      "name": "Cocos (Keeling) Islands",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CO",
+      "name": "Colombia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "KM",
+      "name": "Comoros",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CG",
+      "name": "Congo",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CD",
+      "name": "Congo, The Democratic Republic of the",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CK",
+      "name": "Cook Islands",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CR",
+      "name": "Costa Rica",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "HR",
+      "name": "Croatia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CU",
+      "name": "Cuba",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CW",
+      "name": "Curaçao",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CY",
+      "name": "Cyprus",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CZ",
+      "name": "Czechia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CI",
+      "name": "Côte d'Ivoire",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "DK",
+      "name": "Denmark",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "DJ",
+      "name": "Djibouti",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "DM",
+      "name": "Dominica",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "DO",
+      "name": "Dominican Republic",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "EC",
+      "name": "Ecuador",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "EG",
+      "name": "Egypt",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SV",
+      "name": "El Salvador",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GQ",
+      "name": "Equatorial Guinea",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "ER",
+      "name": "Eritrea",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "EE",
+      "name": "Estonia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SZ",
+      "name": "Eswatini",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "ET",
+      "name": "Ethiopia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "FK",
+      "name": "Falkland Islands (Malvinas)",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "FO",
+      "name": "Faroe Islands",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "FJ",
+      "name": "Fiji",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "FI",
+      "name": "Finland",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GF",
+      "name": "French Guiana",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PF",
+      "name": "French Polynesia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TF",
+      "name": "French Southern Territories",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GA",
+      "name": "Gabon",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GM",
+      "name": "Gambia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GE",
+      "name": "Georgia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GH",
+      "name": "Ghana",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GI",
+      "name": "Gibraltar",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GR",
+      "name": "Greece",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GL",
+      "name": "Greenland",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GD",
+      "name": "Grenada",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GP",
+      "name": "Guadeloupe",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GU",
+      "name": "Guam",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GT",
+      "name": "Guatemala",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GG",
+      "name": "Guernsey",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GN",
+      "name": "Guinea",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GW",
+      "name": "Guinea-Bissau",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GY",
+      "name": "Guyana",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "HT",
+      "name": "Haiti",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "HM",
+      "name": "Heard Island and McDonald Islands",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "VA",
+      "name": "Holy See (Vatican City State)",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "HN",
+      "name": "Honduras",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "HK",
+      "name": "Hong Kong",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "HU",
+      "name": "Hungary",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "IS",
+      "name": "Iceland",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "ID",
+      "name": "Indonesia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "IR",
+      "name": "Iran, Islamic Republic of",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "IQ",
+      "name": "Iraq",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "IE",
+      "name": "Ireland",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "IM",
+      "name": "Isle of Man",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "IL",
+      "name": "Israel",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "IT",
+      "name": "Italy",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "JM",
+      "name": "Jamaica",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "JE",
+      "name": "Jersey",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "JO",
+      "name": "Jordan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "KZ",
+      "name": "Kazakhstan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "KE",
+      "name": "Kenya",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "KI",
+      "name": "Kiribati",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "KP",
+      "name": "Korea, Democratic People's Republic of",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "KR",
+      "name": "Korea, Republic of",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "KW",
+      "name": "Kuwait",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "KG",
+      "name": "Kyrgyzstan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "LA",
+      "name": "Lao People's Democratic Republic",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "LV",
+      "name": "Latvia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "LB",
+      "name": "Lebanon",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "LS",
+      "name": "Lesotho",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "LR",
+      "name": "Liberia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "LY",
+      "name": "Libya",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "LI",
+      "name": "Liechtenstein",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "LT",
+      "name": "Lithuania",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "LU",
+      "name": "Luxembourg",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MO",
+      "name": "Macao",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MG",
+      "name": "Madagascar",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MW",
+      "name": "Malawi",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MY",
+      "name": "Malaysia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MV",
+      "name": "Maldives",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "ML",
+      "name": "Mali",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MT",
+      "name": "Malta",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MH",
+      "name": "Marshall Islands",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MQ",
+      "name": "Martinique",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MR",
+      "name": "Mauritania",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MU",
+      "name": "Mauritius",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "YT",
+      "name": "Mayotte",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MX",
+      "name": "Mexico",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "FM",
+      "name": "Micronesia, Federated States of",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MD",
+      "name": "Moldova, Republic of",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MC",
+      "name": "Monaco",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MN",
+      "name": "Mongolia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "ME",
+      "name": "Montenegro",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MS",
+      "name": "Montserrat",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MA",
+      "name": "Morocco",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MZ",
+      "name": "Mozambique",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MM",
+      "name": "Myanmar",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "NA",
+      "name": "Namibia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "NR",
+      "name": "Nauru",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "NP",
+      "name": "Nepal",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "NL",
+      "name": "Netherlands",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "NC",
+      "name": "New Caledonia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "NZ",
+      "name": "New Zealand",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "NI",
+      "name": "Nicaragua",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "NE",
+      "name": "Niger",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "NG",
+      "name": "Nigeria",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "NU",
+      "name": "Niue",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "NF",
+      "name": "Norfolk Island",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MK",
+      "name": "North Macedonia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MP",
+      "name": "Northern Mariana Islands",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "NO",
+      "name": "Norway",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "OM",
+      "name": "Oman",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PK",
+      "name": "Pakistan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PW",
+      "name": "Palau",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PS",
+      "name": "Palestine, State of",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PA",
+      "name": "Panama",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PG",
+      "name": "Papua New Guinea",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PY",
+      "name": "Paraguay",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PE",
+      "name": "Peru",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PH",
+      "name": "Philippines",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PN",
+      "name": "Pitcairn",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PL",
+      "name": "Poland",
+      "research_status": "partial"
+    },
+    {
+      "code": "PT",
+      "name": "Portugal",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PR",
+      "name": "Puerto Rico",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "QA",
+      "name": "Qatar",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "RO",
+      "name": "Romania",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "RU",
+      "name": "Russian Federation",
+      "research_status": "queued"
+    },
+    {
+      "code": "RW",
+      "name": "Rwanda",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "RE",
+      "name": "Réunion",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "BL",
+      "name": "Saint Barthélemy",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SH",
+      "name": "Saint Helena, Ascension and Tristan da Cunha",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "KN",
+      "name": "Saint Kitts and Nevis",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "LC",
+      "name": "Saint Lucia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "MF",
+      "name": "Saint Martin (French part)",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "PM",
+      "name": "Saint Pierre and Miquelon",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "VC",
+      "name": "Saint Vincent and the Grenadines",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "WS",
+      "name": "Samoa",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SM",
+      "name": "San Marino",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "ST",
+      "name": "Sao Tome and Principe",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SA",
+      "name": "Saudi Arabia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SN",
+      "name": "Senegal",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "RS",
+      "name": "Serbia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SC",
+      "name": "Seychelles",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SL",
+      "name": "Sierra Leone",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SG",
+      "name": "Singapore",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SX",
+      "name": "Sint Maarten (Dutch part)",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SK",
+      "name": "Slovakia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SI",
+      "name": "Slovenia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SB",
+      "name": "Solomon Islands",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SO",
+      "name": "Somalia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "ZA",
+      "name": "South Africa",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GS",
+      "name": "South Georgia and the South Sandwich Islands",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SS",
+      "name": "South Sudan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "ES",
+      "name": "Spain",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "LK",
+      "name": "Sri Lanka",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SD",
+      "name": "Sudan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SR",
+      "name": "Suriname",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SJ",
+      "name": "Svalbard and Jan Mayen",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SE",
+      "name": "Sweden",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "CH",
+      "name": "Switzerland",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "SY",
+      "name": "Syrian Arab Republic",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TW",
+      "name": "Taiwan, Province of China",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TJ",
+      "name": "Tajikistan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TZ",
+      "name": "Tanzania, United Republic of",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TH",
+      "name": "Thailand",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TL",
+      "name": "Timor-Leste",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TG",
+      "name": "Togo",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TK",
+      "name": "Tokelau",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TO",
+      "name": "Tonga",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TT",
+      "name": "Trinidad and Tobago",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TN",
+      "name": "Tunisia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TM",
+      "name": "Turkmenistan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TC",
+      "name": "Turks and Caicos Islands",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TV",
+      "name": "Tuvalu",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "TR",
+      "name": "Türkiye",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "UG",
+      "name": "Uganda",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "UA",
+      "name": "Ukraine",
+      "research_status": "queued"
+    },
+    {
+      "code": "AE",
+      "name": "United Arab Emirates",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "research_status": "partial"
+    },
+    {
+      "code": "US",
+      "name": "United States",
+      "research_status": "partial"
+    },
+    {
+      "code": "UM",
+      "name": "United States Minor Outlying Islands",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "UY",
+      "name": "Uruguay",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "UZ",
+      "name": "Uzbekistan",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "VU",
+      "name": "Vanuatu",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "VE",
+      "name": "Venezuela, Bolivarian Republic of",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "VN",
+      "name": "Viet Nam",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "VG",
+      "name": "Virgin Islands, British",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "VI",
+      "name": "Virgin Islands, U.S.",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "WF",
+      "name": "Wallis and Futuna",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "EH",
+      "name": "Western Sahara",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "YE",
+      "name": "Yemen",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "ZM",
+      "name": "Zambia",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "ZW",
+      "name": "Zimbabwe",
+      "research_status": "unresearched"
+    },
+    {
+      "code": "AX",
+      "name": "Åland Islands",
+      "research_status": "unresearched"
+    }
+  ]
+}

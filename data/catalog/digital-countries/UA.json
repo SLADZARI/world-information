@@ -1,0 +1,19 @@
+{
+  "country_code": "UA",
+  "as_of": "2026-10-31",
+  "status": "queued",
+  "review_status": "review_required",
+  "measurement_ids": [],
+  "source_ids": [],
+  "operators": [],
+  "platforms": [],
+  "social_groups": [],
+  "digital_rights": [],
+  "research_gaps": [
+    "Operators, infrastructure resilience and local coverage",
+    "Platform and messenger use in different regions and groups",
+    "Displaced/non-citizen respondents and sampling limitations",
+    "War-related infrastructure disruption vs platform behaviour"
+  ],
+  "notes": "Research requested. No empirically validated metrics imported."
+}

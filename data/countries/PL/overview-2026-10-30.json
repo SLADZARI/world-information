@@ -1,0 +1,187 @@
+{
+  "id": "country-PL-observatory-2026-10-30",
+  "country_code": "PL",
+  "name": "Польша",
+  "as_of": "2026-10-30T22:30:00Z",
+  "scope_note": "A country dashboard combines independent evidence streams; the dashboard itself asserts no causality between separate judicial cases and migration laws.",
+  "topic_clusters": [
+    {
+      "topic": "institutions",
+      "priority": "high",
+      "event_graph_id": "poland-institutional-crisis-2026-10",
+      "file": "data/cases/poland-institutional-crisis-2026-10.json",
+      "state": "developing_legality_disputed",
+      "observed_signals": [
+        "Reported TK leadership suspension 2026-10-30",
+        "Presidential trip interrupted",
+        "Public police/protest episodes"
+      ],
+      "not_inferred": [
+        "That the suspension is a settled and valid ruling",
+        "That opposition allegations of a coup are judicial facts"
+      ],
+      "affected_users": [
+        "residents",
+        "business_operators",
+        "analysts"
+      ]
+    },
+    {
+      "topic": "court_proceedings",
+      "priority": "medium",
+      "event_graph_id": "poland-institutional-crisis-2026-10",
+      "state": "open_civil_case",
+      "observed_signals": [
+        "Onet-related civil hearing 2026-10-27",
+        "Next scheduled court date 2027-01-18"
+      ],
+      "not_inferred": [
+        "Truth of disputed personal allegations",
+        "Coordinated timing with TK crisis"
+      ],
+      "affected_users": [
+        "analysts",
+        "local_residents"
+      ]
+    },
+    {
+      "topic": "migration_rights",
+      "priority": "high",
+      "event_graph_id": "poland-migration-policy-2025-2026",
+      "file": "data/cases/poland-migration-policy-2025-2026.json",
+      "state": "mix_of_enacted_and_proposed",
+      "observed_signals": [
+        "2026 work visa administrative counts",
+        "EU Pact application and annual exemption",
+        "800+ date-by-residence-status",
+        "Presidential citizenship bill still tracked as proposal"
+      ],
+      "not_inferred": [
+        "All foreigners have identical rights",
+        "Every proposal is current law",
+        "Labour market impact is already measured"
+      ],
+      "affected_users": [
+        "foreign_workers",
+        "temporary_protection",
+        "long_term_residents",
+        "employers"
+      ]
+    },
+    {
+      "topic": "economic_conditions",
+      "priority": "high",
+      "event_graph_id": "poland-policy-economy-2026-10",
+      "file": "data/cases/poland-policy-economy-2026-10.json",
+      "state": "measured_baselines_with_prospective_hypotheses",
+      "observed_signals": [
+        "GUS foreign nationals performing work: 1,067.0k (2025-03) and 1,152.7k (2026-03)",
+        "GUS labour vacancies: 100.2k (2026-Q1) and 98.7k (2026-Q2)",
+        "GUS enterprise investment H1 2026: PLN 100.2bn, +13.7% real YoY",
+        "NBP annual FDI: PLN 125.7bn 2023, PLN 56.5bn 2024, historical lag",
+        "MSWiA Q1 2026 work visas 16k, not the number working foreigners"
+      ],
+      "not_inferred": [
+        "Oct 30 political crisis caused any observed indicator measured before Oct 30",
+        "A fall in new work visas implies fewer foreigners already working",
+        "Investment expenditures from GUS are equivalent to FDI from NBP",
+        "The size or sign of future economic consequences is quantitatively established"
+      ],
+      "affected_users": [
+        "investors",
+        "business_operators",
+        "foreign_workers",
+        "local_residents",
+        "relocators",
+        "analysts"
+      ],
+      "indicator_node_refs": [
+        "pl-foreign-workers-2025-03",
+        "pl-foreign-workers-2026-03",
+        "pl-job-vacancies-2026-q1",
+        "pl-job-vacancies-2026-q2",
+        "pl-enterprise-investment-h1-2026",
+        "pl-enterprise-investment-growth-h1-2026",
+        "pl-fdi-inflow-2024"
+      ]
+    }
+  ],
+  "lenses": {
+    "local_resident": [
+      "institutional uncertainty",
+      "access to legal protection",
+      "public policy",
+      "verified debate",
+      "verified foreign worker counts versus headline visa figures",
+      "latest GUS vacancy counts"
+    ],
+    "relocator": [
+      "residence-specific requirements",
+      "work permits",
+      "benefits and exceptions",
+      "legal status of proposed citizenship changes",
+      "observed workers versus newly issued work visas",
+      "sector vacancy supply with date and coverage"
+    ],
+    "investor": [
+      "policy/presidential veto uncertainty",
+      "labour supply exposure",
+      "EU regulatory compliance",
+      "different sector and nationality effects",
+      "GUS H1 2026 investment outlays, separate from NBP annual FDI",
+      "prospective institutional uncertainty with no quantified impact"
+    ],
+    "analyst": [
+      "source provenance",
+      "contradicting official and opposition statements",
+      "event timestamps",
+      "missing causal evidence",
+      "economic indicator provenance, different universes and time windows",
+      "test for causality only after observed event and suitable control group"
+    ]
+  },
+  "watchpoints": [
+    {
+      "date": "2027-01-18",
+      "event": "scheduled civil-case hearing with President Nawrocki",
+      "verification": "court/PAP/TVP; date may be rescheduled",
+      "kind": "scheduled_event_not_forecast"
+    },
+    {
+      "date": "2026-12-31",
+      "event": "end of documented 2026 EU solidarity pool period",
+      "verification": "Council/EU cycle for 2027",
+      "kind": "rule_review"
+    },
+    {
+      "date": "2027-03-04",
+      "event": "end date of current temporary-protection window",
+      "verification": "EU/Polish legal extension or amendment",
+      "kind": "rule_review"
+    },
+    {
+      "date": null,
+      "event": "future Sejm vote and official publication of citizenship amendment, if any",
+      "verification": "Sejm bill page and Dziennik Ustaw",
+      "kind": "conditional_trigger"
+    },
+    {
+      "date": null,
+      "event": "Next GUS quarterly vacancy figures and monthly foreign-worker report",
+      "verification": "GUS publication calendar and updated statistical series",
+      "kind": "data_freshness"
+    },
+    {
+      "date": null,
+      "event": "Next NBP annual directional FDI release; maintain publication vintage",
+      "verification": "NBP report and balance of payments vintage",
+      "kind": "data_freshness"
+    }
+  ],
+  "related_work": [
+    "stories/2026/poland-institutions-2026-10.md",
+    "stories/2026/poland-migration-2026-10.md",
+    "stories/2026/poland-economy-causal-links-2026-10.md"
+  ],
+  "source_labels": "First-party government and EU institutions, international newswires, and human-rights critiques. Distinguish statements from legal facts and from causal hypotheses."
+}

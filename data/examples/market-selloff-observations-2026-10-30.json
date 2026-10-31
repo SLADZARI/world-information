@@ -1,0 +1,134 @@
+{
+  "schema_version": "0.1.0",
+  "description": "Historically reported close-to-close movements on 2026-10-30, secondary wire sources. These are manually curated observations, not an automatic feed or official exchange quote.",
+  "as_of": "2026-10-30T22:30:00Z",
+  "sources": [
+    {
+      "id": "reuters-us-close",
+      "url": "https://live.euronext.com/en/financial-news/october-ends-thud-intel-reddit-ai-stalwarts",
+      "publisher": "Reuters",
+      "published_at": "2026-10-30T20:34:00Z",
+      "rights": "Factual observation only; retain source attribution"
+    },
+    {
+      "id": "ap-us-close",
+      "url": "https://apnews.com/article/a01d3551e794fed1a0c317c20bc3f0a2",
+      "publisher": "Associated Press",
+      "published_at": "2026-10-30T21:00:00Z",
+      "rights": "Factual observation only; retain source attribution"
+    },
+    {
+      "id": "rthk-china",
+      "url": "https://news.rthk.hk/rthk/en/component/k2/1875967-20261030.htm",
+      "publisher": "RTHK",
+      "published_at": "2026-10-30T09:06:00Z",
+      "rights": "Factual observation only; retain source attribution"
+    }
+  ],
+  "observations": [
+    {
+      "instrument_id": "NASDAQ:INTC",
+      "label": "Intel",
+      "asset_type": "equity",
+      "region": "US",
+      "sector": "semiconductors",
+      "return_pct": -28.6,
+      "window": "regular_close_to_close",
+      "observed_at": "2026-10-30T20:00:00Z",
+      "source_id": "reuters-us-close",
+      "provenance": "reported_close_approx"
+    },
+    {
+      "instrument_id": "US:NASDAQ-COMP",
+      "label": "Nasdaq Composite",
+      "asset_type": "broad_index",
+      "region": "US",
+      "sector": "technology-heavy",
+      "return_pct": -2.9,
+      "window": "regular_close_to_close",
+      "observed_at": "2026-10-30T20:00:00Z",
+      "source_id": "ap-us-close",
+      "provenance": "reported_close_approx"
+    },
+    {
+      "instrument_id": "CN:SHCOMP",
+      "label": "Shanghai Composite",
+      "asset_type": "broad_index",
+      "region": "CN",
+      "sector": "broad",
+      "return_pct": -1.44,
+      "window": "regular_close_to_close",
+      "observed_at": "2026-10-30T07:00:00Z",
+      "source_id": "rthk-china",
+      "provenance": "reported_close_approx"
+    },
+    {
+      "instrument_id": "CN:CHINEXT",
+      "label": "ChiNext",
+      "asset_type": "sector_index",
+      "region": "CN",
+      "sector": "growth",
+      "return_pct": -4.13,
+      "window": "regular_close_to_close",
+      "observed_at": "2026-10-30T07:00:00Z",
+      "source_id": "rthk-china",
+      "provenance": "reported_close_approx"
+    },
+    {
+      "instrument_id": "CN:SZCOMP",
+      "label": "Shenzhen Component",
+      "asset_type": "broad_index",
+      "region": "CN",
+      "sector": "broad",
+      "return_pct": -2.73,
+      "window": "regular_close_to_close",
+      "observed_at": "2026-10-30T07:00:00Z",
+      "source_id": "rthk-china",
+      "provenance": "reported_close_approx"
+    },
+    {
+      "instrument_id": "HK:HSI",
+      "label": "Hang Seng",
+      "asset_type": "broad_index",
+      "region": "HK",
+      "sector": "broad",
+      "return_pct": 1.5,
+      "window": "regular_close_to_close",
+      "observed_at": "2026-10-30T08:10:00Z",
+      "source_id": "rthk-china",
+      "provenance": "reported_close_approx"
+    }
+  ],
+  "narratives": [
+    {
+      "id": "narrative-ai-bubble",
+      "text": "Инвесторы больше не верят в прибыльность ИИ-пузыря",
+      "status": "hypothesis",
+      "note": "Investor expectations are heterogeneous; require evidence of sector valuation and cash-flow revision."
+    },
+    {
+      "id": "narrative-intel-30",
+      "text": "Intel за сутки потерял 30%",
+      "status": "rounded_intraday_claim",
+      "note": "Closing loss Reuters ~28.6%. Disambiguate intraday vs close."
+    },
+    {
+      "id": "narrative-all-no-profit",
+      "text": "У всех огромные проблемы с прибылью",
+      "status": "contradicted_by_specific_company",
+      "note": "Intel official Q3 operating margin 15.3%, revenue +21%. Cannot infer all issuers without comprehensive sample."
+    },
+    {
+      "id": "narrative-china-collapse",
+      "text": "Все биржи в Китае обвалились",
+      "status": "overgeneralized",
+      "note": "Shanghai -1.44%, ChiNext -4.13%; Hang Seng +1.5% same session."
+    },
+    {
+      "id": "narrative-crypto-ai",
+      "text": "Вся крипта падает из-за неокупаемого ИИ",
+      "status": "competing_cause",
+      "note": "Binance incident is independent competing proximate driver; crypto quote windows must be aligned."
+    }
+  ]
+}

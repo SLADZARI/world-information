@@ -1,30 +1,60 @@
-name: Graph integrity
+name: Graph integrity and local-first demo
 on:
   push:
-    paths:
-      - "data/**"
-      - "schemas/**"
-      - "tools/validate_graph.py"
-      - ".github/workflows/validate-graph.yml"
   pull_request:
-    paths:
-      - "data/**"
-      - "schemas/**"
-      - "tools/validate_graph.py"
-      - ".github/workflows/validate-graph.yml"
-
+permissions:
+  contents: read
 jobs:
-  semantic-fixture-check:
+  verify:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python tools/validate_graph.py
-      - run: python tools/validate_research.py
-      - run: python -m unittest discover -s tests -p 'test_open_apis.py'
-      - run: node tools/check_board.mjs
-      - run: node tools/check_research_board.mjs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify historical research, policy time and canonical graph
+        run: |
+          python tools/validate_graph.py
+          python tools/validate_research.py
+          python -m unittest discover -s tests -p 'test_open_apis.py'
+          node tools/check_board.mjs
+          node tools/sync_research_board.mjs --check
+          node tools/check_research_board.mjs
+          node tools/validate_poland.mjs
+          node tools/build_poland_economy.mjs --check
+      - name: Verify market and digital ecosystem evidence without claiming causality
+        run: |
+          node tools/market_registry.mjs > /dev/null
+          python tools/validate_digital_ecosystem.py
+          python tools/build_digital_country_catalog.py --check
+          node tools/build_country_pair_options.mjs --check
+          node tools/check_country_catalog.mjs
+          python -m unittest discover -s tests -p 'test_digital_ecosystem.py'
+          python -m unittest discover -s tests -p 'test_digital_country_catalog.py'
+      - name: Verify model conservation, scripts and the local startup command
+        run: |
+          node --test tests/*.test.mjs
+          node --check prototype/economy-lab/core.mjs
+          node --check prototype/economy-lab/fixtures.mjs
+          node --check prototype/economy-lab/main.mjs
+          node --check prototype/poland-economic-3d/main.mjs
+          node --check prototype/markets/main.mjs
+          node --check prototype/country-relations/main.mjs
+          node --check prototype/country-relations/core.mjs
+          node --check tools/build_country_pair_options.mjs
+          node --check tools/detect_market_events.mjs
+          node --check tools/market_registry.mjs
+          node --check tools/build_site.mjs
+          node --check tools/check_public_demo.mjs
+          node --check tools/sync_research_board.mjs
+          bash -n run-local.command
+      - name: Verify all six views and build exactly the public Pages artifact
+        run: |
+          node tools/check_public_demo.mjs
+          node tools/build_site.mjs
+          node tools/check_public_demo.mjs dist
+      - name: Headless Chromium smoke for all six browser views (3D may use fallback)
+        run: node tools/browser_smoke.mjs

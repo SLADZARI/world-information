@@ -1,0 +1,48 @@
+{
+  "country_code": "CN",
+  "as_of": "2026-10-31",
+  "status": "partial",
+  "review_status": "review_required",
+  "measurement_ids": [
+    "cn-mobile-subs-2025",
+    "cn-fixed-broadband-2025",
+    "cn-internet-people-2025"
+  ],
+  "source_ids": [
+    "miit2025",
+    "cnnic2025"
+  ],
+  "operators": [
+    {
+      "name": "China Mobile",
+      "service": "fixed_broadband_reported_three_operators",
+      "share_percent": null,
+      "source_id": "miit2025",
+      "verification_status": "review_required"
+    },
+    {
+      "name": "China Telecom",
+      "service": "fixed_broadband_reported_three_operators",
+      "share_percent": null,
+      "source_id": "miit2025",
+      "verification_status": "review_required"
+    },
+    {
+      "name": "China Unicom",
+      "service": "fixed_broadband_reported_three_operators",
+      "share_percent": null,
+      "source_id": "miit2025",
+      "verification_status": "review_required"
+    }
+  ],
+  "platforms": [],
+  "social_groups": [],
+  "digital_rights": [],
+  "research_gaps": [
+    "Platform preference with country-representative methodology",
+    "Telecom market shares by separately defined service",
+    "Age, language and urban/rural breakdown",
+    "Evidence on information access and substitution"
+  ],
+  "notes": "Mobile and broadband subscriptions are not unique users."
+}

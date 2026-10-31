@@ -1,0 +1,49 @@
+<!doctype html><html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Польша: политико-экономический граф — World Information</title>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script>
+<style>
+:root{color-scheme:dark;--bg:#0b111c;--panel:#142236;--line:#334a60;--txt:#eaf2ff;--sub:#aabed3;--cyan:#70d5e8;--green:#79dab6;--orange:#efb274;--red:#ee8f84}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--txt)}
+a{color:#97dbfa}header{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+h1{font-size:20px;line-height:1.3;margin:1px 0}h2{font-size:15px;margin:0 0 10px}.sub{font-size:12px;color:var(--sub)}.badge{font-size:12px;color:#f6ddb0;border:1px solid #986e46;padding:6px 10px;border-radius:9px}
+main{display:grid;grid-template-columns:235px minmax(450px,1fr) 335px;gap:10px;margin:10px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+label{display:block;font-size:12px;color:var(--sub);margin:10px 0}select,button,input{font:inherit;color:var(--txt)}select,button{background:#233850;border:1px solid #58738b;border-radius:7px;padding:7px 9px;cursor:pointer}select{width:100%}
+button:hover{border-color:#99e5f2}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.check{display:flex;align-items:center;gap:9px;padding:3px 0}.check input{accent-color:#69dfbd}.check label{margin:0;color:var(--txt);font-size:13px}
+#canvasContainer{height:640px;position:relative;background:radial-gradient(circle at 45% 35%,#1e3048,#0b1422);overflow:hidden}
+#canvasContainer canvas{width:100%;height:100%;display:block;touch-action:none}
+#canvasMessage{position:absolute;inset:18px;padding:18px;display:none;place-items:center;border:1px dashed var(--line);background:#142236e8;text-align:center;color:var(--sub);font-size:13px}
+#viewportLabel{position:absolute;bottom:10px;left:10px;background:#142437dd;padding:7px;border-radius:7px;font-size:11px;color:#c3d7e6}
+.canvasPanel{padding:0;overflow:hidden}.toolbar{padding:10px 12px;border-bottom:1px solid var(--line);display:flex;gap:10px;justify-content:space-between}
+.item{display:block;background:#1e3044;border:1px solid #375772;padding:9px;border-radius:8px;margin:7px 0;width:100%;text-align:left}
+.item small{display:block;color:var(--sub);font-size:11px}.meta{background:#233850;border-radius:7px;margin:8px 0;padding:8px;overflow-wrap:anywhere}.record{border:1px solid #3d5267;border-radius:9px;padding:10px;margin:10px 0;background:#182a40}
+.number{font-size:24px;font-weight:700;color:#83e5cc}#details{max-height:740px;overflow:auto;font-size:12px}#details p{margin:7px 0}
+.sources a{display:block;overflow-wrap:anywhere;margin:5px 0}.legend{color:var(--sub);font-size:12px;background:#1a2a3e;border-radius:8px;padding:10px;margin:12px 0}
+.leg{display:inline-block;width:28px;border-top:2px solid var(--green);margin-right:6px;vertical-align:middle}.leg.dash{border-top:2px dashed var(--orange)}.leg.neutral{border-top:2px dotted #91a5ba}
+footer{padding:8px 20px;color:var(--sub);font-size:12px}#edgeList{max-height:320px;overflow:auto}
+@media(max-width:1200px){main{grid-template-columns:210px minmax(380px,1fr)}.detailPane{grid-column:1/-1}#details{max-height:none}}
+@media(max-width:700px){main{display:block;margin:7px}main>.panel{margin-bottom:9px}#canvasContainer{height:520px}header{padding:10px}}
+</style></head><body>
+<header><div><div class="sub">WORLD INFORMATION · ПОЛЬША · ИССЛЕДОВАТЕЛЬСКИЙ ГРАФ</div><h1>Государство → миграция → труд → инвестиции</h1><div class="sub">Состояние знаний на 30 октября 2026 года · официальные данные GUS, MSWiA и NBP</div></div>
+<div class="badge">Факты ≠ сценарные гипотезы · НЕ прогноз</div></header>
+<main>
+<aside class="panel">
+<h2>Исследовательская линза</h2><label for="category">Категории</label>
+<select id="category"><option value="all">Все сферы</option><option value="economy">Экономика</option><option value="finance">Финансы и инвестиции</option><option value="politics">Политика</option><option value="society">Общество и права</option></select>
+<h2>Слои</h2><div id="layers"></div>
+<h2>Тип связей</h2><div id="statusToggles"></div>
+<div class="legend"><div><i class="leg"></i>Документированное измерение/отношение</div><div><i class="leg dash"></i>Гипотеза о влиянии</div><div><i class="leg neutral"></i>Связь для контекста</div><p>Ни одна связь не доказывает количественное влияние конфликта 30 октября на уже опубликованные данные.</p></div>
+<button id="reset" type="button">Сбросить фильтры</button>
+<p class="sub">Нажмите на сферу или узел. Для управления без 3D используйте текстовый список связей внизу.</p>
+</aside>
+<section class="panel canvasPanel"><div class="toolbar"><strong>3D граф доказательств</strong><span id="counts" class="sub">Загрузка…</span></div>
+<div id="canvasContainer"><div id="canvasMessage" role="status">3D недоступен: проверьте WebGL/CDN. Текстовые связи и источники по-прежнему доступны.</div><div id="viewportLabel">Перемещение: левая кнопка · масштаб: колесо · выбрать: нажать узел</div></div>
+<div class="toolbar"><strong>Список проверяемых связей</strong><span class="sub">Альтернатива 3D</span></div><div id="edgeList" style="padding:10px 15px"></div>
+</section>
+<aside class="panel detailPane"><h2>Доказательства и механизм</h2><div id="details" aria-live="polite"><p>Нажмите на узел или связь.</p></div>
+<div class="record"><strong>Граница интерпретации</strong><p>Показатели 2023–2026 годов используются как исторический фон. Это не «последствия» политического события 30.10.2026. Его будущий эффект пока не измерен.</p></div>
+</aside>
+</main><footer><a href="../../stories/2026/poland-economy-causal-links-2026-10.md">Методология и первичные ссылки</a> · <a href="../../data/cases/poland-policy-economy-2026-10.json">JSON графа</a> · <a href="../research-board.html?case=poland-policy-economy-2026-10">2D борд</a> · Нужен HTTP-сервер и доступ к Three.js CDN. Ключи API не требуются.</footer>
+<script type="module" src="./main.mjs"></script>
+</body></html>

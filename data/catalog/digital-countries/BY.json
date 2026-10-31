@@ -1,0 +1,19 @@
+{
+  "country_code": "BY",
+  "as_of": "2026-10-31",
+  "status": "queued",
+  "review_status": "review_required",
+  "measurement_ids": [],
+  "source_ids": [],
+  "operators": [],
+  "platforms": [],
+  "social_groups": [],
+  "digital_rights": [],
+  "research_gaps": [
+    "National fixed/mobile carrier shares and access quality",
+    "Platform and messaging reach by population subgroups",
+    "Media consumption, restrictions and alternative channels",
+    "Evidence for change since 2019"
+  ],
+  "notes": "Research requested. No empirically validated metrics imported."
+}

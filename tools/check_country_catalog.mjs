@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // Offline smoke-check of generated HTML wiring and JavaScript syntax.
-const fs = require("node:fs");
-const vm = require("node:vm");
-const assert = require("node:assert/strict");
+import fs from "node:fs";
+import vm from "node:vm";
+import assert from "node:assert/strict";
 const html = fs.readFileSync("prototype/digital-country-catalog.html", "utf8");
 assert(!html.includes("__COUNTRY_CATALOG_JSON__"), "unrendered JSON placeholder");
 const match = html.match(/<script type="application\/json" id="catalog-data">([\s\S]*?)<\/script>/);

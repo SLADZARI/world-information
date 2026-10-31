@@ -21,7 +21,7 @@ ALLOWED_GEOGRAPHIES = re.compile(r"^(GLOBAL|MARKETS_[0-9]+|[A-Z]{2})$")
 KINDS = {"official_statistics", "regulator", "survey", "methodology",
          "civil_society_monitoring", "randomized_experiment"}
 REACH_TYPES = {"coverage", "infrastructure_coverage", "self_report_news_reach",
-               "attitude_survey"}
+               "attitude_survey", "household_internet_adoption", "consumer_ecommerce_reach"}
 
 
 def errors(dataset: dict) -> list[str]:
@@ -94,7 +94,7 @@ def errors(dataset: dict) -> list[str]:
             problems.append(f"{name}: invalid comparison bound")
         if m.get("measurement_type") in REACH_TYPES:
             if m.get("unit") not in ("percent_of_population", "percent_of_households",
-                                     "percent_of_respondents", "percent_of_adults"):
+                                     "percent_of_respondents", "percent_of_adults",\n                                     "percent_of_individuals_16_74"):
                 problems.append(f"{name}: percentage metric has incompatible denominator/unit")
             if isinstance(val, (int, float)) and not 0 <= val <= 100:
                 problems.append(f"{name}: percentage outside [0,100]")

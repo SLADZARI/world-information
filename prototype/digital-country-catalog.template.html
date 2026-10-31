@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>World Information — Digital Country Catalog</title>
+<style>
+:root{color-scheme:dark;--bg:#08111c;--panel:#111f30;--panel2:#17293c;--line:#314358;--text:#eaf1f9;--muted:#a9bdcf;--accent:#59d8c7;--warn:#f0c674}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#08111c 0%,#0c1f2d 100%);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:#81dff0}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+header{padding:30px max(18px,4vw) 18px;border-bottom:1px solid var(--line);background:rgba(8,17,28,.85)}
+h1{font-size:clamp(1.55rem,3vw,2.3rem);line-height:1.15;margin:.25em 0}.kicker{text-transform:uppercase;letter-spacing:.18em;font-size:.8rem;font-weight:700;color:var(--accent)}
+header p,.muted{color:var(--muted)}.pill{display:inline-block;padding:3px 9px;border:1px solid var(--line);border-radius:50px;margin:2px 4px 2px 0;font-size:.83rem}
+main{display:grid;grid-template-columns:minmax(290px,350px) minmax(0,1fr);gap:18px;max-width:1500px;margin:0 auto;padding:20px max(18px,3vw) 60px}
+.panel{border:1px solid var(--line);border-radius:15px;background:var(--panel);overflow:hidden}.controls{padding:18px;border-bottom:1px solid var(--line)}
+label{display:block;font-size:.86rem;color:var(--muted);margin-bottom:5px}input,select{width:100%;border:1px solid var(--line);background:#0a1724;color:var(--text);border-radius:8px;padding:10px;margin-bottom:10px;font-size:1rem}
+#list{overflow-y:auto;max-height:70vh;min-height:230px}.item{display:flex;align-items:center;gap:10px;text-align:left;width:100%;padding:12px 16px;background:transparent;color:var(--text);border:0;border-bottom:1px solid #233749;cursor:pointer}
+.item:hover,.item[aria-current=true]{background:var(--panel2)}.code{background:#102a36;color:var(--accent);font:700 .83rem ui-monospace,monospace;display:inline-grid;place-items:center;min-width:39px;padding:5px;border-radius:6px}
+.tag{margin-left:auto;color:var(--muted);font-size:.76rem;white-space:nowrap}#detail{padding:24px;min-height:520px}h2{font-size:1.6rem;margin:0 0 5px}h3{font-size:1.05rem;color:var(--accent);margin:24px 0 8px}
+small{color:var(--muted)}.callout{padding:14px 18px;border:1px solid #4f5742;border-radius:10px;background:#1d2930;color:#f6deb6;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:.9rem}td,th{padding:9px;border:1px solid var(--line);vertical-align:top;text-align:left}th{color:var(--accent);background:#12283a}
+.metric{padding:14px;margin:10px 0;border:1px solid var(--line);border-radius:9px;background:#102435}
+.value{color:var(--accent);font-size:1.45rem;font-weight:750}.metric p{margin:5px 0}.desc{font-size:.85rem;color:var(--muted)}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;word-break:break-word}
+ul{padding-left:20px}li{margin:6px 0}.foot{font-size:.8rem;color:var(--muted);margin-top:22px}
+@media(max-width:850px){main{grid-template-columns:1fr}.panel{min-width:0}#list{max-height:260px}#detail{padding:16px;min-height:360px}table{display:block;overflow-x:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="kicker">World Information / Social Dynamics</div>
+<h1>Цифровая среда стран и территорий</h1>
+<p>Операторы связи, интернет, медиа и платформы, социальные группы, фактические измерения. Предварительные данные не означают установленное причинное влияние.</p>
+<div><span class="pill" id="count-all"></span><span class="pill" id="count-partial"></span><span class="pill" id="count-queued"></span><span class="pill" id="asof"></span></div>
+</header>
+<main>
+<section class="panel" aria-label="Список стран и территорий">
+<div class="controls">
+<label for="search">Название или ISO-код</label><input id="search" placeholder="Poland, Беларусь, PL..." autocomplete="off">
+<label for="filter">Состояние исследования</label><select id="filter"><option value="all">Все</option><option value="partial">Есть данные (на проверке)</option><option value="queued">В очереди</option><option value="unresearched">Не исследовано</option></select>
+<small id="found" aria-live="polite"></small>
+</div>
+<div id="list" role="listbox" aria-label="Страны"></div>
+</section>
+<article class="panel" id="detail" aria-live="polite"></article>
+</main>
+<script type="application/json" id="catalog-data">__COUNTRY_CATALOG_JSON__</script>
+<script>
+(() => {
+"use strict";
+const d=JSON.parse(document.getElementById("catalog-data").textContent);
+const list=document.getElementById("list"), detail=document.getElementById("detail");
+const search=document.getElementById("search"), filter=document.getElementById("filter");
+const labels={partial:"Предварительно",queued:"В очереди",unresearched:"Нет данных"};
+const aliases={PL:"Польша",BY:"Беларусь",UA:"Украина",RU:"Россия",GB:"Великобритания",US:"США",CN:"Китай"};
+const el=(tag,text,cls)=>{const node=document.createElement(tag);if(text!==undefined&&text!==null)node.textContent=String(text);if(cls)node.className=cls;return node};
+const add=(parent,tag,text,cls)=>{const node=el(tag,text,cls);parent.appendChild(node);return node};
+const link=(parent,label,url)=>{if(!/^https:\/\//.test(url))return;const a=add(parent,"a",label);a.href=url;a.target="_blank";a.rel="noopener noreferrer"};
+const format=(m)=>String(m.comparison==="="?"":m.comparison+" ")+new Intl.NumberFormat("ru-RU",{maximumFractionDigits:2}).format(m.value)+" "+m.unit;
+document.getElementById("count-all").textContent=d.countries.length+" стран и территорий";
+document.getElementById("count-partial").textContent=d.counts.partial+" с измерениями";
+document.getElementById("count-queued").textContent=d.counts.queued+" в очереди";
+document.getElementById("asof").textContent="Срез "+d.as_of;
+let selected="PL";
+function renderDetails(country){
+detail.replaceChildren();
+const title=add(detail,"h2",country.name+" · "+country.code);
+if(aliases[country.code])add(detail,"small",aliases[country.code]);
+add(detail,"p","Статус: "+labels[country.status]+" · "+(country.profile?.review_status||"нет исследовательского профиля"));
+add(detail,"div","Охват, активность и доли платформ не равны проценту причинного влияния цифровой среды.","callout");
+const p=country.profile;
+if(!p){add(detail,"h3","Нет проверенных измерений");add(detail,"p","Страна присутствует в справочнике, но данные цифровой среды ещё не загружены. Это не нулевое значение и не оценка цифровой отсталости.");return;}
+add(detail,"p",p.notes,"muted");
+if(p.metrics.length){add(detail,"h3","Предварительные измерения · "+p.metrics.length);
+for(const m of p.metrics){
+const box=add(detail,"section",null,"metric");
+add(box,"div",format(m),"value");
+add(box,"strong",m.metric);
+add(box,"p","Период: "+m.period+" · "+m.population_scope);
+add(box,"p","Знаменатель: "+m.denominator,"desc");
+add(box,"p","Метод: "+m.method+" · Ограничение: "+m.limitations,"desc");
+const sid=p.sources.find(s=>s.id===m.source_id);if(sid)link(box,"Источник: "+sid.publisher,sid.url);
+}}else add(detail,"p","Измерений пока нет.","muted");
+add(detail,"h3","Телеком-операторы");
+if(p.operators.length){const table=add(detail,"table");const head=add(table,"thead");const row=add(head,"tr");["Название","Роль","Доля"].forEach(t=>add(row,"th",t));
+for(const op of p.operators){const tr=add(table,"tr");add(tr,"td",op.name);add(tr,"td",op.service);add(tr,"td",op.share_percent===null?"Нет подтверждённой доли":op.share_percent);}}
+else add(detail,"p","Структура операторов поимённо ещё не установлена.","muted");
+add(detail,"h3","Социальные сети и мессенджеры");
+add(detail,"p",p.platforms.length?"Платформы по исследуемой группе: "+p.platforms.length:"Подтверждённых страновых долей по площадкам пока нет; данные нельзя подменять общими впечатлениями.","muted");
+add(detail,"h3","Исследовательские пробелы");
+const ul=add(detail,"ul");p.research_gaps.forEach(g=>add(ul,"li",g));
+add(detail,"h3","Источники");
+const su=add(detail,"ul");
+if(!p.sources.length)add(su,"li","Пока не добавлены");
+for(const s of p.sources){const li=add(su,"li");link(li,s.publisher,s.url);add(li,"small"," · публикация "+(s.published_on||"не указана"));}
+const foot=add(detail,"div",null,"foot");foot.textContent="Фактические данные из исследовательского staging; версия на "+p.as_of+". Статус review_required. Показатели могут относиться к разным совокупностям и периодам.";
+}
+function renderList(){
+const term=search.value.trim().toLocaleLowerCase("ru-RU"), wanted=filter.value;
+const matching=d.countries.filter(c=>(wanted==="all"||c.status===wanted)&&(!term||(c.name+" "+c.code+" "+(aliases[c.code]||"")).toLocaleLowerCase("ru-RU").includes(term)));
+list.replaceChildren();
+document.getElementById("found").textContent="Найдено: "+matching.length;
+for(const c of matching){
+const b=add(list,"button",null,"item");b.type="button";b.setAttribute("role","option");b.setAttribute("aria-selected",String(c.code===selected));b.setAttribute("aria-current",String(c.code===selected));
+add(b,"span",c.code,"code");add(b,"span",c.name);add(b,"span",labels[c.status],"tag");
+b.addEventListener("click",()=>{selected=c.code;renderDetails(c);renderList();});
+}
+}
+search.addEventListener("input",renderList);filter.addEventListener("change",renderList);
+const initial=new URL(location.href).searchParams.get("country");
+if(initial&&d.countries.some(c=>c.code===initial.toUpperCase()))selected=initial.toUpperCase();
+renderList();renderDetails(d.countries.find(c=>c.code===selected)||d.countries[0]);
+})();
+</script>
+</body>
+</html>

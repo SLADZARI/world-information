@@ -1,0 +1,25 @@
+{
+  "country_code": "US",
+  "as_of": "2026-10-31",
+  "status": "partial",
+  "review_status": "review_required",
+  "measurement_ids": [
+    "us-news-social-2025"
+  ],
+  "source_ids": [
+    "pew2025",
+    "guess2023",
+    "nyhan2023"
+  ],
+  "operators": [],
+  "platforms": [],
+  "social_groups": [],
+  "digital_rights": [],
+  "research_gaps": [
+    "Fixed and mobile ISP coverage by state",
+    "Platform reach by subgroup, unit and question wording",
+    "Substitution between news platforms and offline outlets",
+    "Replications of short-term feed experiments"
+  ],
+  "notes": "Facebook-feed experiments on US participants in 2020 cannot be generalized to all platforms or current views."
+}

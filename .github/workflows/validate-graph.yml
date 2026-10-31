@@ -6,6 +6,8 @@ on:
       - "schemas/**"
       - "tools/validate_graph.py"
       - "tools/detect_market_events.mjs"
+      - "tools/market_registry.mjs"
+      - "tests/market-registry.test.mjs"
       - "tests/detect-market-events.test.mjs"
       - ".github/workflows/validate-graph.yml"
   pull_request:
@@ -14,6 +16,8 @@ on:
       - "schemas/**"
       - "tools/validate_graph.py"
       - "tools/detect_market_events.mjs"
+      - "tools/market_registry.mjs"
+      - "tests/market-registry.test.mjs"
       - "tests/detect-market-events.test.mjs"
       - ".github/workflows/validate-graph.yml"
 
@@ -34,3 +38,5 @@ jobs:
       - run: node tools/check_research_board.mjs
       - run: node --check tools/detect_market_events.mjs
       - run: node --test tests/detect-market-events.test.mjs
+      - run: node --check tools/market_registry.mjs
+      - run: node --test tests/market-registry.test.mjs

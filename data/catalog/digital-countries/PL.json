@@ -1,0 +1,31 @@
+{
+  "country_code": "PL",
+  "as_of": "2026-10-31",
+  "status": "partial",
+  "review_status": "review_required",
+  "measurement_ids": [
+    "pl-fiber-coverage-2025",
+    "pl-telecom-companies-2025",
+    "pl-news-trust-2026",
+    "pl-households-internet-2025",
+    "pl-households-fixed-2025",
+    "pl-households-mobile-2025",
+    "pl-online-purchases-2025"
+  ],
+  "source_ids": [
+    "uke2025",
+    "reuterspoland2026",
+    "gus2025"
+  ],
+  "operators": [],
+  "platforms": [],
+  "social_groups": [],
+  "digital_rights": [],
+  "research_gaps": [
+    "Regional market share of mobile/fixed ISPs",
+    "Actual platform usage by age, language, nationality and residence status",
+    "News sources by group; paid and offline alternatives",
+    "Causal studies of digital exposure and outcomes"
+  ],
+  "notes": "Household internet access is not fibre coverage; platform preferences not yet researched."
+}

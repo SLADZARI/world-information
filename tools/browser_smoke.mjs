@@ -60,6 +60,16 @@ try{
   assert(country.includes("Срез 2026-10-31"),"Catalog as-of date not rendered");
   console.log("PASS browser: 249 country cards and as-of label");
 
+  const pair=render("prototype/country-relations/?a=PL&b=DE&domain=energy");
+  const first=section(pair,'id="country-a"','</select>',45000);
+  const second=section(pair,'id="country-b"','</select>',45000);
+  assert((first.match(/<option\b/g)||[]).length===249,"First country selector did not render 249 ISO choices");
+  assert((second.match(/<option\b/g)||[]).length===249,"Second country selector did not render 249 ISO choices");
+  const pairList=section(pair,'id="focus-list"','</div>',25000);
+  assert(pairList.includes("<button"),"Country comparison did not show source-linked common topics");
+  const pairMetric=section(pair,'id="metric-topics"','</strong>',400);
+  assert(!pairMetric.includes("—"),"Country comparison did not compute a real topic count");
+  console.log("PASS browser: pair explorer, 249 country options, Poland-Germany shared energy topics");
   const markets=render("prototype/markets/");
   const tbody=section(markets,'id="rows"','</tbody>',32000);
   assert((tbody.match(/<tr\b/g)||[]).length>=7,"Market observer table missing its equity rows");

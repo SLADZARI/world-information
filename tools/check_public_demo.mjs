@@ -12,6 +12,12 @@ const site=staged?path.join(root,"dist"):root;
 const read=relative=>fs.readFileSync(path.join(site,relative),"utf8");
 const ids=JSON.parse(fs.readFileSync(path.join(root,"data/case-registry.json"),"utf8")).cases;
 assert.equal(ids.length,7,"Unexpected reviewed case count");
+const stagedRegistry=JSON.parse(read("data/case-registry.json")).cases;
+assert.deepEqual(stagedRegistry,ids,"Published case registry mismatch");
+const countryOptions=JSON.parse(read("prototype/country-relations/country-options.json"));
+assert.equal(countryOptions.country_count,249,"Country pair dropdown count mismatch");
+assert.equal(countryOptions.countries.length,249,"Country pair option count mismatch");
+assert.equal(new Set(countryOptions.countries.map(c=>c.code)).size,249,"Duplicate pair selector ISO codes");
 const board=read("prototype/research-board.html");
 const embedded=board.match(/<script type="application\/json" id="cases-data">([\s\S]*?)<\/script>/);
 assert(embedded,"Missing embedded board data");
@@ -31,6 +37,7 @@ const htmlPaths=[
   "prototype/board.html",
   "prototype/research-board.html",
   "prototype/digital-country-catalog.html",
+  "prototype/country-relations/index.html",
   "prototype/economy-lab/index.html",
   "prototype/poland-economic-3d/index.html",
   "prototype/markets/index.html"
@@ -50,7 +57,11 @@ for(const relative of htmlPaths){
     internalLinks++;
   }
 }
+assert(fs.existsSync(path.join(site,"prototype/country-relations/main.mjs")),"Missing country pair UI module");
+assert(fs.existsSync(path.join(site,"prototype/country-relations/core.mjs")),"Missing pure pairing engine");
 const home=read("index.html");
+assert(home.includes('href="./prototype/country-relations/?a=PL&amp;b=DE"'),"Country pair explorer missing from landing");
+
 for(const pathName of ["./prototype/research-board.html","./prototype/digital-country-catalog.html","./prototype/markets/","./prototype/poland-economic-3d/","./prototype/economy-lab/"])
   assert(home.includes('href="'+pathName+'"'),"Workspace not listed on homepage: "+pathName);
 for(const page of ["prototype/economy-lab/index.html","prototype/poland-economic-3d/index.html"])
@@ -62,4 +73,4 @@ if(staged){
   assert.equal(fs.readdirSync(path.join(site,"data/cases")).filter(x=>x.endsWith(".json")).length,ids.length,
     "Unreviewed case JSON included in public artifact");
 }
-console.log("PASS: 5 workspaces, 7 research graphs, 249 ISO entries (4/3/242), 18 market observations, "+internalLinks+" local links, two pinned Three.js canvases"+(staged?", static bundle has no staging":""));
+console.log("PASS: 6 workspaces, 7 research graphs, 249 ISO entries (4/3/242), 18 market observations, "+internalLinks+" local links, two pinned Three.js canvases"+(staged?", static bundle has no staging":""));

@@ -7,6 +7,7 @@ Status: **local-first research demos with source-linked historical records and a
 ## Local-first launch · one entry point (8 PRs, one candidate)
 
 - **[Open application home](index.html)** (run through a local HTTP server) — entry to all three workspaces.
+- **[Country Relations Explorer](prototype/country-relations/)** — choose any two of the 249 country/area codes, filter by subject and date, inspect common research topics and directly evidenced cross-geography graph edges; bilateral disputes are only shown if explicitly sourced. It does **not** invent trade, alliances or confrontation when data is absent. [Methodology](docs/COUNTRY_RELATIONS_MVP.md).
 - **[Digital country directory](prototype/digital-country-catalog.html)** — 249 ISO country/area entries: 4 preliminary profiles, 3 queued, 242 unresearched. The source-linked observations are **review_required**, not scientifically approved causal effects.
 - **[Archived Market Observatory](prototype/markets/)** — separate timestamped intraday reports and secondary session-close snapshots, not real-time or exchange-certified.
 - **[2D evidence board](prototype/research-board.html)** — **7** curated cases, filters, directed edges, primary references and alternative claims.
@@ -22,7 +23,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 # http://127.0.0.1:8000/
 ```
 
-All five views are served locally without logins, server database, npm install, payments or live API keys. The Three.js 3D canvases load **pinned three@0.186.1 from jsDelivr**, and need internet connectivity + WebGL; the 2D board, country catalog, market archive, and simulation tables remain inspectable without 3D.
+All six views are served locally without logins, server database, npm install, payments or live API keys. The Three.js 3D canvases load **pinned three@0.186.1 from jsDelivr**, and need internet connectivity + WebGL; the 2D board, country comparison, country catalog, market archive and simulation tables remain inspectable without 3D.
 
 Validation: `node tools/sync_research_board.mjs --check && node tools/check_research_board.mjs && node --test tests/*.test.mjs && node tools/build_site.mjs && node tools/check_public_demo.mjs dist`.
 

@@ -15,6 +15,7 @@ const casePaths=registry.cases.map(id=>{
 });
 const publicFiles=[
   "index.html",
+  "data/case-registry.json",
   "prototype/board.html",
   "prototype/research-board.html",
   "prototype/digital-country-catalog.html",
@@ -29,7 +30,7 @@ const publicFiles=[
   "stories/2026/poland-migration-2026-10.md",
   ...casePaths,
 ];
-const publicDirs=["prototype/poland-economic-3d","prototype/economy-lab","prototype/markets"];
+const publicDirs=["prototype/poland-economic-3d","prototype/economy-lab","prototype/markets","prototype/country-relations"];
 
 fs.rmSync(output,{recursive:true,force:true});
 fs.mkdirSync(output,{recursive:true});

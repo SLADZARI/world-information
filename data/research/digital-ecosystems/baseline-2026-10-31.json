@@ -136,6 +136,17 @@
       "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
       "limitations": "US Facebook 2020, intervention reduces like-minded content; eight preregistered attitudes had no measurable response.",
       "status": "review_required"
+    },
+    {
+      "id": "gus2025",
+      "publisher": "Statistics Poland (GUS)",
+      "kind": "official_statistics",
+      "url": "https://stat.gov.pl/obszary-tematyczne/nauka-i-technika-spoleczenstwo-informacyjne/spoleczenstwo-informacyjne/spoleczenstwo-informacyjne-w-polsce-w-2025-r-%2C2%2C15.html",
+      "published_on": "2025-10-21",
+      "retrieved_on": "2026-10-31",
+      "rights": "metadata_and_short_original_summary_only; verify publisher license before bulk reuse",
+      "limitations": "Household internet access is not the same as fibre network availability; age 16-74 purchasing rate uses individuals.",
+      "status": "review_required"
     }
   ],
   "measurements": [
@@ -359,6 +370,74 @@
       "comparison": "=",
       "status": "review_required",
       "causal_effect": false
+    },
+    {
+      "id": "pl-households-internet-2025",
+      "source_id": "gus2025",
+      "geography": "PL",
+      "metric": "households_with_internet_access",
+      "measurement_type": "household_internet_adoption",
+      "value": 96.2,
+      "unit": "percent_of_households",
+      "population_scope": "Polish households",
+      "denominator": "households reporting an internet connection",
+      "period": "2025",
+      "method": "Statistics Poland ICT household survey",
+      "limitations": "Internet of any technology; not fibre network coverage",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "pl-households-fixed-2025",
+      "source_id": "gus2025",
+      "geography": "PL",
+      "metric": "households_with_fixed_broadband",
+      "measurement_type": "household_internet_adoption",
+      "value": 70.3,
+      "unit": "percent_of_households",
+      "population_scope": "Polish households",
+      "denominator": "households with fixed broadband; overlap with mobile broadband",
+      "period": "2025",
+      "method": "Statistics Poland ICT household survey",
+      "limitations": "Not exclusive of mobile service; should not be added to mobile percentage",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "pl-households-mobile-2025",
+      "source_id": "gus2025",
+      "geography": "PL",
+      "metric": "households_with_mobile_broadband",
+      "measurement_type": "household_internet_adoption",
+      "value": 78.2,
+      "unit": "percent_of_households",
+      "population_scope": "Polish households",
+      "denominator": "households with mobile broadband; overlap with fixed broadband",
+      "period": "2025",
+      "method": "Statistics Poland ICT household survey",
+      "limitations": "Not exclusive of fixed service; should not be added to fixed percentage",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
+    },
+    {
+      "id": "pl-online-purchases-2025",
+      "source_id": "gus2025",
+      "geography": "PL",
+      "metric": "online_purchase_last_12_months",
+      "measurement_type": "consumer_ecommerce_reach",
+      "value": 69.7,
+      "unit": "percent_of_individuals_16_74",
+      "population_scope": "people aged 16–74 resident in Poland",
+      "denominator": "people ages 16–74 with internet purchase in last 12 months",
+      "period": "2025",
+      "method": "Statistics Poland ICT survey",
+      "limitations": "Purchasing is an observed/reportable use case, not influence coefficient",
+      "comparison": "=",
+      "status": "review_required",
+      "causal_effect": false
     }
   ],
   "hypotheses": [
@@ -421,7 +500,8 @@
       "country": "PL",
       "available_evidence": [
         "uke2025",
-        "reuterspoland2026"
+        "reuterspoland2026",
+        "gus2025"
       ],
       "operator_evidence": "More than 2,600 telecom enterprises nationwide; no provider-by-provider shares claimed.",
       "platform_preferences_status": "not_yet_validated",

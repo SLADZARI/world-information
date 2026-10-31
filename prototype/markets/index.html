@@ -1,0 +1,47 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>World Information · Market Observatory · 30 октября 2026</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1420;--panel:#142235;--line:#31465a;--light:#ebf5ff;--muted:#9cb3c9;--orange:#f3b17a;--red:#ef9387;--green:#65d4ac}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--light);font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:20px 24px;border-bottom:1px solid var(--line);background:linear-gradient(105deg,#15263b,#0b1420)}
+h1{margin:2px 0;font-size:25px}h2{font-size:17px;margin:0 0 13px}h3{font-size:14px;margin:15px 0 7px}
+p{margin:9px 0}small,.muted{color:var(--muted)}
+a{color:#8ddafa}a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid #7ee3e9;outline-offset:2px}
+.badge{display:inline-block;font-size:12px;padding:4px 9px;border:1px solid #996d40;background:#30271f;color:#ffdbab;border-radius:10px}
+main{max-width:1450px;margin:auto;padding:16px;display:grid;grid-template-columns:minmax(550px,1fr) 350px;gap:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:15px;min-width:0}
+.controls{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:12px 0}
+select,button{border:1px solid #4c6985;background:#20334b;color:var(--light);padding:8px;border-radius:8px;cursor:pointer;font:inherit}
+table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:11px 8px;border-bottom:1px solid #2c4056;text-align:left;vertical-align:middle}
+th{color:var(--muted);font-weight:600;white-space:nowrap}td strong{white-space:nowrap}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}td.negative{color:#ffaaa1;font-weight:700}.struck{text-decoration:line-through;color:#899aab}
+.chart{height:12px;border-radius:6px;background:#26374b;width:min(100%,180px);overflow:hidden;margin-top:4px}.chart span{display:block;background:#df8c7f;height:100%;min-width:1px}
+.note{background:#1c2c40;border:1px solid #334c66;padding:10px;border-radius:9px;font-size:12px;margin:12px 0}
+.info{border:1px solid #344c63;border-radius:9px;padding:11px;background:#1a2b40;margin:11px 0}
+#detail{font-size:13px;max-height:550px;overflow:auto}#detail a{display:block;margin:7px 0;overflow-wrap:anywhere}
+.sources{margin:10px 0;display:flex;flex-wrap:wrap;gap:8px}.sources a{padding:5px 7px;background:#1d3349;border-radius:8px}
+.mono{font-family:ui-monospace,monospace;font-size:12px}
+tfoot{font-size:12px;color:var(--muted)}
+footer{padding:18px;text-align:center;color:var(--muted);font-size:12px}
+@media(max-width:950px){main{display:block}.panel{margin-bottom:12px}}
+@media(max-width:590px){main{padding:8px}table{font-size:11px}td,th{padding:8px 4px}header{padding:14px}h1{font-size:21px}.chart{display:none}}
+</style></head>
+<body>
+<header><span class="badge">АРХИВ · НЕ LIVE-РЫНОК · ДАННЫЕ ТРЕТЬИХ СТОРОН</span>
+<h1>Рыночный монитор · США · 30 октября 2026</h1>
+<p class="muted">Снимок одной торговой сессии · распространённые котировки во время торгов и результаты закрытия сохранены отдельно</p></header>
+<main><section class="panel"><h2>Акции и рыночные индексы</h2>
+<div class="controls"><label for="view">Показать <select id="view"><option value="equity">Акции</option><option value="index">Индексы и сектора</option><option value="all">Всё</option></select></label>
+<label for="sort">Сортировка <select id="sort"><option value="loss">По глубине падения</option><option value="name">По названию</option></select></label></div>
+<div style="overflow-x:auto"><table><thead><tr><th>Актив</th><th>Из сообщения</th><th>По закрытию</th><th>Источник</th></tr></thead><tbody id="rows"><tr><td colspan="4">Загрузка данных…</td></tr></tbody></table></div>
+<div class="note">Числа из сообщения опубликованы до закрытия рынка и не имеют проверенной метки времени котировки. Проценты по закрытию — данные сторонних источников, <strong>не официальная сертифицированная биржевая лента</strong>. Значения разных поставщиков могут расходиться.</div>
+<div class="info"><strong>Индикатор рынка ≠ диагноз кризиса</strong><p>Большие однодневные колебания — кандидаты на исследование. Для системного вывода нужны изменения всей рыночной ширины, ликвидности, волатильности, финансовых показателей компаний и альтернативные объяснения.</p></div>
+</section>
+<aside class="panel"><h2>Контекст и первоисточники</h2>
+<div id="detail" aria-live="polite">Выберите строку с активом, чтобы посмотреть время котировки и источник.</div>
+<h3>Как фиксировать в World Information</h3><p class="muted">Тикер → площадка → торговая сессия → котировка / изменение → источник → аномалия → отдельная гипотеза связи с событием.</p>
+<div class="sources"><a href="../../docs/MARKET_OBSERVATORY.md">Модель и методика</a><a href="../../data/markets/US/2026-10-30-tech-selloff.json">Архив JSON</a><a href="../research-board.html?case=ai-tech-multimarket-2026-10-30">Граф событий</a></div>
+</aside></main>
+<footer>Запуск: python3 -m http.server 8000 из корня репозитория, затем /prototype/markets/. Не использовать как инвестиционную рекомендацию.</footer>
+<script type="module" src="./main.mjs"></script>
+</body></html>

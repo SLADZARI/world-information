@@ -4,6 +4,13 @@
 
 Status: **concept + working synthetic HTML prototype**. No live country data, forecasts or prediction markets are connected. Dementor Tab is an existing separate game and is **not** the name of this platform.
 
+## Market Observatory — market prices separate from news and causes
+
+- **[US market snapshot board, 30 October 2026](prototype/markets/index.html)** — 7 individual equities + 4 market indexes/sectors; original circulated intraday figures preserved next to secondary closing estimates. Run `python3 -m http.server 8000` from repository root, open `/prototype/markets/`.
+- [Canonical market batch](data/markets/US/2026-10-30-tech-selloff.json) · [market observation schema](schemas/market-observation.schema.json) · [source and time-series specification](docs/MARKET_OBSERVATORY.md).
+- [Market registry adapter](tools/market_registry.mjs): validates market session, timing, listings and provenance; feeds **only closing snapshots** into the existing anomaly detector. `node tools/market_registry.mjs`; [tests](tests/market-registry.test.mjs).
+- **This is archived third-party reporting, not a live licensed exchange feed.** One session of market losses is not an established single-cause AI crisis. The related [AI-tech news graph](stories/2026/ai-tech-selloff-2026-10-30.md) remains a separate editorial object.
+
 ## Automated *candidate* market signal detection (experimental)
 
 - [Source-based event detection specification](docs/EVENT_DETECTION.md) — news and disclosures are split into observations, unverified claims, competing explanations and falsification tests.

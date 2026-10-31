@@ -4,10 +4,10 @@
 
 Status: **local-first research demos with source-linked historical records and a separate synthetic model**. No live ingest, account system, financial forecasts or prediction markets are connected. Dementor Tab is an existing separate game and is **not** the name of this platform.
 
-## Local-first launch · one entry point (8 PRs, one candidate)
+## Local-first launch · one entry point (stacked integration candidates)
 
-- **[Open application home](index.html)** (run through a local HTTP server) — entry to all three workspaces.
-- **[Country Relations Explorer](prototype/country-relations/)** — choose any two of the 249 country/area codes, filter by subject and date, inspect common research topics and directly evidenced cross-geography graph edges; bilateral disputes are only shown if explicitly sourced. It does **not** invent trade, alliances or confrontation when data is absent. [Methodology](docs/COUNTRY_RELATIONS_MVP.md).
+- **[Open application home](index.html)** (run through a local HTTP server) — entry to six workspaces.
+- **[Country Relations Explorer](prototype/country-relations/)** — choose any two of 249 country/area codes and explore **separately sourced bilateral facts** (treaties, trade, investment, sanctions, border settlements, migration, science, society) alongside *indirect common graph topics*. Pilot: 9 DE–PL + 1 US–RU source-attributed records, all **review_required**; no alliance/conflict score or inferred dispute. [Registry contract](docs/BILATERAL_REGISTRY.md) · [Comparison methodology](docs/COUNTRY_RELATIONS_MVP.md).
 - **[Digital country directory](prototype/digital-country-catalog.html)** — 249 ISO country/area entries: 4 preliminary profiles, 3 queued, 242 unresearched. The source-linked observations are **review_required**, not scientifically approved causal effects.
 - **[Archived Market Observatory](prototype/markets/)** — separate timestamped intraday reports and secondary session-close snapshots, not real-time or exchange-certified.
 - **[2D evidence board](prototype/research-board.html)** — **7** curated cases, filters, directed edges, primary references and alternative claims.
@@ -16,7 +16,7 @@ Status: **local-first research demos with source-linked historical records and a
 - **[Local startup, CI and GitHub Pages release instructions](docs/LOCAL_FIRST_RELEASE.md)**.
 - **[Contributor and AI standards](AGENTS.md)** · [Research charter](docs/PROJECT_INSTRUCTIONS.ru.md) · [ChatGPT Project prompt](docs/CHATGPT_PROJECT_PROMPT.ru.md) · [Digital ecosystem methodology](docs/SOCIAL_DYNAMICS_DIGITAL_ECOSYSTEM.ru.md) · [Market model](docs/MARKET_OBSERVATORY.md).
 
-On macOS: double-click `run-local.command` after cloning, or open Terminal in the repository root and run:
+For this unmerged bilateral-registry PR, first checkout `feat/bilateral-evidence-registry-v1` after cloning. On macOS: double-click `run-local.command` from that checkout, or open Terminal in the repository root and run:
 
 ```sh
 python3 -m http.server 8000 --bind 127.0.0.1
@@ -25,9 +25,9 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 All six views are served locally without logins, server database, npm install, payments or live API keys. The Three.js 3D canvases load **pinned three@0.186.1 from jsDelivr**, and need internet connectivity + WebGL; the 2D board, country comparison, country catalog, market archive and simulation tables remain inspectable without 3D.
 
-Validation: `node tools/sync_research_board.mjs --check && node tools/check_research_board.mjs && node --test tests/*.test.mjs && node tools/build_site.mjs && node tools/check_public_demo.mjs dist`.
+Validation: `node tools/validate_bilateral_registry.mjs && node tools/sync_research_board.mjs --check && node tools/check_research_board.mjs && node --test tests/*.test.mjs && node tools/build_site.mjs && node tools/check_public_demo.mjs dist`.
 
-**Release boundary:** market observations are secondary reports, digital country profiles are staging/review-required and the ISO-3166 registry has unresolved commercial-rights caveats; do not treat this integration as publication approval. A public repository is not the same as a published site. The Pages workflow is manual and gated to `main` after review. No automatic web deployment from feature branches.
+**Release boundary:** bilateral records are `review_required`; the manual Pages workflow refuses them until independently approved and source reuse is reviewed. Market observations are secondary reports, digital country profiles are staging/review-required and the ISO-3166 registry has unresolved commercial-rights caveats; do not treat this integration as publication approval. A public repository is not the same as a published site. The Pages workflow is manual and gated to `main` after review. No automatic web deployment from feature branches.
 
 ## Poland: linked political and economic graph (GUS / MSWiA / NBP)
 

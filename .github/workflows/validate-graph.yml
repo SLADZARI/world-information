@@ -32,6 +32,7 @@ jobs:
           python tools/build_digital_country_catalog.py --check
           node tools/build_country_pair_options.mjs --check
           node tools/check_country_catalog.mjs
+          node tools/validate_bilateral_registry.mjs
           python -m unittest discover -s tests -p 'test_digital_ecosystem.py'
           python -m unittest discover -s tests -p 'test_digital_country_catalog.py'
       - name: Verify model conservation, scripts and the local startup command
@@ -44,6 +45,8 @@ jobs:
           node --check prototype/markets/main.mjs
           node --check prototype/country-relations/main.mjs
           node --check prototype/country-relations/core.mjs
+          node --check prototype/country-relations/bilateral.mjs
+          node --check tools/validate_bilateral_registry.mjs
           node --check tools/build_country_pair_options.mjs
           node --check tools/detect_market_events.mjs
           node --check tools/market_registry.mjs

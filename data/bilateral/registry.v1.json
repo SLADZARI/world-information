@@ -1,0 +1,526 @@
+{
+  "schema_version": "1.0.0",
+  "as_of": "2026-10-31",
+  "registry_id": "world-information.bilateral.v1",
+  "publication_status": "research_staging_review_required",
+  "summary": "10 curated claim records from linked official sources; reviewed for source attribution but not independently editorially approved. No relationship strength or causal effect estimated.",
+  "categories": [
+    "treaties",
+    "trade",
+    "investment",
+    "sanctions",
+    "territorial",
+    "migration",
+    "science",
+    "society"
+  ],
+  "source_policy": "Links and original short factual paraphrases only; source redistribution and rights are not cleared",
+  "sources": [
+    {
+      "id": "eli-plde-good-neighbour-1991",
+      "publisher": "Internetowy System Aktów Prawnych / ELI (Poland)",
+      "kind": "primary_legal_record",
+      "url": "https://eli.gov.pl/eli/DU/1992/56/ogl",
+      "title": "Договор о добрососедстве Польши и Германии, 1991",
+      "published_on": "1992-02-17",
+      "retrieved_on": "2026-10-31",
+      "rights": "link_and_original_short_paraphrase_only; redistribution_not_cleared"
+    },
+    {
+      "id": "eli-plde-border-1990",
+      "publisher": "Internetowy System Aktów Prawnych / ELI (Poland)",
+      "kind": "primary_legal_record",
+      "url": "https://eli.gov.pl/eli/DU/1992/54/ogl",
+      "title": "Договор о подтверждении польско-германской границы, 1990",
+      "published_on": "1992-02-17",
+      "retrieved_on": "2026-10-31",
+      "rights": "link_and_original_short_paraphrase_only; redistribution_not_cleared"
+    },
+    {
+      "id": "eli-plde-youth-1991",
+      "publisher": "Internetowy System Aktów Prawnych / ELI (Poland)",
+      "kind": "primary_legal_record",
+      "url": "https://eli.gov.pl/eli/DU/1994/12/ogl",
+      "title": "Польско-германское соглашение о молодёжном сотрудничестве",
+      "published_on": null,
+      "retrieved_on": "2026-10-31",
+      "rights": "link_and_original_short_paraphrase_only; redistribution_not_cleared"
+    },
+    {
+      "id": "mfa-de-pl-bilateral-2026",
+      "publisher": "Federal Foreign Office (Germany)",
+      "kind": "official_government_overview",
+      "url": "https://www.auswaertiges-amt.de/de/service/laender/polen-node/bilateral-199110",
+      "title": "Deutschland und Polen: Bilaterale Beziehungen, 22.10.2026",
+      "published_on": "2026-10-22",
+      "retrieved_on": "2026-10-31",
+      "rights": "link_and_original_short_paraphrase_only; redistribution_not_cleared"
+    },
+    {
+      "id": "mfa-de-pl-cooperation-2026",
+      "publisher": "Federal Foreign Office (Germany)",
+      "kind": "official_government_overview",
+      "url": "https://www.auswaertiges-amt.de/de/aussenpolitik/europa/zusammenarbeit-staaten/polen",
+      "title": "Die deutsch-polnische Zusammenarbeit, 30.04.2026",
+      "published_on": "2026-04-30",
+      "retrieved_on": "2026-10-31",
+      "rights": "link_and_original_short_paraphrase_only; redistribution_not_cleared"
+    },
+    {
+      "id": "mfa-pl-de-economic",
+      "publisher": "Polish Embassy in Germany / Gov.pl",
+      "kind": "official_secondary_statistics",
+      "url": "https://www.gov.pl/web/niemcy/informator-ekonomiczny",
+      "title": "Informator ekonomiczny: dwustronne relacje handlowe i inwestycyjne",
+      "published_on": null,
+      "retrieved_on": "2026-10-31",
+      "rights": "link_and_original_short_paraphrase_only; redistribution_not_cleared"
+    },
+    {
+      "id": "mfa-pl-de-research",
+      "publisher": "Polish Embassy in Germany / Gov.pl",
+      "kind": "official_government_overview",
+      "url": "https://www.gov.pl/web/niemcy/relacje-dwustronne",
+      "title": "Relacje dwustronne: współpraca naukowa i kulturalna",
+      "published_on": null,
+      "retrieved_on": "2026-10-31",
+      "rights": "link_and_original_short_paraphrase_only; redistribution_not_cleared"
+    },
+    {
+      "id": "education-pl-de-youth-2025",
+      "publisher": "Ministry of National Education (Poland)",
+      "kind": "official_government_event",
+      "url": "https://www.gov.pl/web/edukacja/xxxiv-posiedzenie-rady-polsko-niemieckiej-wspolpracy-mlodziezy",
+      "title": "XXXIV Polsko-Niemiecka Rada Współpracy Młodzieży (2025)",
+      "published_on": "2025-02-21",
+      "retrieved_on": "2026-10-31",
+      "rights": "link_and_original_short_paraphrase_only; redistribution_not_cleared"
+    },
+    {
+      "id": "ofac-us-ru-2025-10-22",
+      "publisher": "U.S. Treasury / OFAC",
+      "kind": "primary_regulatory_notice",
+      "url": "https://ofac.treasury.gov/recent-actions/20251022",
+      "title": "Russia-related Designations, 22 October 2025",
+      "published_on": "2025-10-22",
+      "retrieved_on": "2026-10-31",
+      "rights": "link_and_original_short_paraphrase_only; redistribution_not_cleared"
+    },
+    {
+      "id": "bpb-de-pl-border",
+      "publisher": "Bundeszentrale für politische Bildung (Germany)",
+      "kind": "official_public_historical_context",
+      "url": "https://www.bpb.de/kurz-knapp/hintergrund-aktuell/215326/vor-30-jahren-deutsch-polnischer-grenzvertrag/",
+      "title": "Deutsch-polnischer Grenzvertrag — historischer Kontext",
+      "published_on": "2020-11-11",
+      "retrieved_on": "2026-10-31",
+      "rights": "link_and_original_short_paraphrase_only; redistribution_not_cleared"
+    }
+  ],
+  "records": [
+    {
+      "id": "pl-de-neighbour-treaty-1991",
+      "version": 1,
+      "pair": [
+        "DE",
+        "PL"
+      ],
+      "from": null,
+      "to": null,
+      "direction": "bilateral",
+      "category": "treaties",
+      "domain_tags": [
+        "politics",
+        "society"
+      ],
+      "type": "bilateral_treaty",
+      "title_ru": "Договор о добрососедстве (1991)",
+      "claim_ru": "Польша и Германия подписали в Бонне 17 июня 1991 года договор о добрососедстве и дружественном сотрудничестве; польский правовой реестр указывает вступление в силу 16 января 1992 года.",
+      "occurred_on": "1991-06-17",
+      "as_of": "2026-10-31",
+      "temporal_status": "historical_agreement",
+      "evidence_status": "primary_official_document",
+      "review_status": "review_required",
+      "reviewer": null,
+      "approved_on": null,
+      "dispute_status": "none",
+      "legal_status": "in_force_as_listed",
+      "source_ids": [
+        "eli-plde-good-neighbour-1991",
+        "mfa-de-pl-bilateral-2026"
+      ],
+      "measurement": null,
+      "limitations": "Документ описывает договорные рамки, но не доказывает выполнение каждого обязательства или уровень взаимного доверия.",
+      "alternatives": [],
+      "supersedes": []
+    },
+    {
+      "id": "pl-de-border-settlement-1990",
+      "version": 1,
+      "pair": [
+        "DE",
+        "PL"
+      ],
+      "from": null,
+      "to": null,
+      "direction": "bilateral",
+      "category": "territorial",
+      "domain_tags": [
+        "politics",
+        "security"
+      ],
+      "type": "border_settlement",
+      "title_ru": "Подтверждение границы (1990)",
+      "claim_ru": "14 ноября 1990 года Польша и Германия подписали договор о подтверждении существующей государственной границы; польский ELI показывает его действующий статус. Это историческое урегулирование, не свидетельство текущего территориального спора.",
+      "occurred_on": "1990-11-14",
+      "as_of": "2026-10-31",
+      "temporal_status": "historical_agreement",
+      "evidence_status": "primary_official_document",
+      "review_status": "review_required",
+      "reviewer": null,
+      "approved_on": null,
+      "dispute_status": "historically_settled",
+      "legal_status": "in_force_as_listed",
+      "source_ids": [
+        "eli-plde-border-1990",
+        "bpb-de-pl-border"
+      ],
+      "measurement": null,
+      "limitations": "Исторический вопрос и действующий пограничный спор — разные утверждения; не рисовать действующий конфликт.",
+      "alternatives": [],
+      "supersedes": []
+    },
+    {
+      "id": "pl-de-youth-agreement-1991",
+      "version": 1,
+      "pair": [
+        "DE",
+        "PL"
+      ],
+      "from": null,
+      "to": null,
+      "direction": "bilateral",
+      "category": "treaties",
+      "domain_tags": [
+        "society",
+        "politics"
+      ],
+      "type": "bilateral_treaty",
+      "title_ru": "Соглашение о молодёжном сотрудничестве",
+      "claim_ru": "17 июня 1991 года правительства Польши и Германии подписали межправительственное соглашение о молодёжном сотрудничестве. Правовой реестр указывает дату вступления в силу 21 сентября 1992 года.",
+      "occurred_on": "1991-06-17",
+      "as_of": "2026-10-31",
+      "temporal_status": "historical_agreement",
+      "evidence_status": "primary_official_document",
+      "review_status": "review_required",
+      "reviewer": null,
+      "approved_on": null,
+      "dispute_status": "none",
+      "legal_status": "in_force_as_listed",
+      "source_ids": [
+        "eli-plde-youth-1991",
+        "education-pl-de-youth-2025"
+      ],
+      "measurement": null,
+      "limitations": "Наличие соглашения само по себе не означает определённое количество участников или достигнутых результатов.",
+      "alternatives": [],
+      "supersedes": []
+    },
+    {
+      "id": "de-pl-trade-exports-h1-2025",
+      "version": 1,
+      "pair": [
+        "DE",
+        "PL"
+      ],
+      "from": "DE",
+      "to": "PL",
+      "direction": "directed",
+      "category": "trade",
+      "domain_tags": [
+        "economy"
+      ],
+      "type": "goods_exports",
+      "title_ru": "Экспорт Германии в Польшу · I пол. 2025",
+      "claim_ru": "По опубликованной польским правительственным порталом сводке немецкий экспорт товаров в Польшу за первое полугодие 2025 года составил 49,4 млрд евро (немецкая перспектива учёта).",
+      "occurred_on": null,
+      "as_of": "2025-06-30",
+      "temporal_status": "dated_measurement",
+      "evidence_status": "official_secondary_measurement",
+      "review_status": "review_required",
+      "reviewer": null,
+      "approved_on": null,
+      "dispute_status": "none",
+      "legal_status": "not_applicable",
+      "source_ids": [
+        "mfa-pl-de-economic"
+      ],
+      "measurement": {
+        "kind": "goods_export_value",
+        "value": 49.4,
+        "unit": "EUR",
+        "scale": "billion",
+        "qualifier": "reported",
+        "period_start": "2025-01-01",
+        "period_end": "2025-06-30",
+        "population_scope": "German merchandise exports to Poland",
+        "geography_from": "DE",
+        "geography_to": "PL",
+        "methodology": "German trade statistical perspective, as republished by Polish Ministry/Embassy; original series reconciliation pending",
+        "source_id": "mfa-pl-de-economic"
+      },
+      "limitations": "Отчёт ссылается на немецкую статистику; методика отличается от GUS. Это поток товаров за полугодие, не оборот за год.",
+      "alternatives": [],
+      "supersedes": []
+    },
+    {
+      "id": "pl-de-trade-exports-h1-2025",
+      "version": 1,
+      "pair": [
+        "DE",
+        "PL"
+      ],
+      "from": "PL",
+      "to": "DE",
+      "direction": "directed",
+      "category": "trade",
+      "domain_tags": [
+        "economy"
+      ],
+      "type": "goods_exports",
+      "title_ru": "Экспорт Польши в Германию · I пол. 2025",
+      "claim_ru": "По той же сводке немецкий импорт из Польши в первом полугодии 2025 года оценён в 40,6 млрд евро. Показатель представляет поток из Польши в Германию по немецкой методике.",
+      "occurred_on": null,
+      "as_of": "2025-06-30",
+      "temporal_status": "dated_measurement",
+      "evidence_status": "official_secondary_measurement",
+      "review_status": "review_required",
+      "reviewer": null,
+      "approved_on": null,
+      "dispute_status": "none",
+      "legal_status": "not_applicable",
+      "source_ids": [
+        "mfa-pl-de-economic"
+      ],
+      "measurement": {
+        "kind": "goods_export_value",
+        "value": 40.6,
+        "unit": "EUR",
+        "scale": "billion",
+        "qualifier": "reported",
+        "period_start": "2025-01-01",
+        "period_end": "2025-06-30",
+        "population_scope": "German recorded merchandise imports originating in Poland",
+        "geography_from": "PL",
+        "geography_to": "DE",
+        "methodology": "German import statistics, reported by Polish embassy; methodological differences vs GUS",
+        "source_id": "mfa-pl-de-economic"
+      },
+      "limitations": "Не складывать с экспортом Германии без ясного определения двустороннего товарооборота и метода сравнения.",
+      "alternatives": [],
+      "supersedes": []
+    },
+    {
+      "id": "de-pl-fdi-stock-2022",
+      "version": 1,
+      "pair": [
+        "DE",
+        "PL"
+      ],
+      "from": "DE",
+      "to": "PL",
+      "direction": "directed",
+      "category": "investment",
+      "domain_tags": [
+        "economy",
+        "finance"
+      ],
+      "type": "direct_investment_stock",
+      "title_ru": "Германские ПИИ в Польше · конец 2022",
+      "claim_ru": "Польский государственный экономический справочник сообщает со ссылкой на NBP о прямых инвестициях немецких инвесторов в Польше порядка 42,6 млрд евро на конец 2022 года.",
+      "occurred_on": null,
+      "as_of": "2022-12-31",
+      "temporal_status": "dated_measurement",
+      "evidence_status": "official_secondary_measurement",
+      "review_status": "review_required",
+      "reviewer": null,
+      "approved_on": null,
+      "dispute_status": "none",
+      "legal_status": "not_applicable",
+      "source_ids": [
+        "mfa-pl-de-economic"
+      ],
+      "measurement": {
+        "kind": "direct_investment_position",
+        "value": 42.6,
+        "unit": "EUR",
+        "scale": "billion",
+        "qualifier": "reported",
+        "period_start": null,
+        "period_end": "2022-12-31",
+        "population_scope": "German foreign direct investment position in Poland, NBP-attributed",
+        "geography_from": "DE",
+        "geography_to": "PL",
+        "methodology": "NBP stock estimate reproduced in Polish government economic bulletin; original series and vintage require independent reconciliation",
+        "source_id": "mfa-pl-de-economic"
+      },
+      "limitations": "Это накопленная позиция прямых инвестиций (stock), не годовой приток (flow), не оценка новых проектов и не текущий показатель 2026 года.",
+      "alternatives": [],
+      "supersedes": []
+    },
+    {
+      "id": "pl-de-resident-citizens-apr-2026",
+      "version": 1,
+      "pair": [
+        "DE",
+        "PL"
+      ],
+      "from": "PL",
+      "to": "DE",
+      "direction": "directed",
+      "category": "migration",
+      "domain_tags": [
+        "society",
+        "economy"
+      ],
+      "type": "resident_citizens_stock",
+      "title_ru": "Граждане Польши, проживающие в Германии · 2026",
+      "claim_ru": "МИД Германии на странице от 30 апреля 2026 года сообщает, что в Германии проживает около 840 тысяч польских граждан; эта величина не тождественна числу людей польского происхождения.",
+      "occurred_on": null,
+      "as_of": "2026-04-30",
+      "temporal_status": "source_reported_snapshot",
+      "evidence_status": "official_reported_estimate",
+      "review_status": "review_required",
+      "reviewer": null,
+      "approved_on": null,
+      "dispute_status": "none",
+      "legal_status": "not_applicable",
+      "source_ids": [
+        "mfa-de-pl-cooperation-2026"
+      ],
+      "measurement": {
+        "kind": "resident_citizens_stock",
+        "value": 840000,
+        "unit": "persons",
+        "scale": "units",
+        "qualifier": "approximately",
+        "period_start": null,
+        "period_end": "2026-04-30",
+        "population_scope": "People with Polish citizenship living in Germany; excludes claims about all of Polish descent",
+        "geography_from": "PL",
+        "geography_to": "DE",
+        "methodology": "Approximate snapshot from Germany Federal Foreign Office dated 2026-04-30; statistical underlying vintage unspecified",
+        "source_id": "mfa-de-pl-cooperation-2026"
+      },
+      "limitations": "Число приблизительное; исходная методика, дата первичного статистического ряда и знаменатель на странице не указаны. Не смешивать с лицами польского происхождения.",
+      "alternatives": [],
+      "supersedes": []
+    },
+    {
+      "id": "pl-de-academic-exchange",
+      "version": 1,
+      "pair": [
+        "DE",
+        "PL"
+      ],
+      "from": null,
+      "to": null,
+      "direction": "bilateral",
+      "category": "science",
+      "domain_tags": [
+        "science",
+        "society"
+      ],
+      "type": "research_exchange_framework",
+      "title_ru": "Научный и академический обмен",
+      "claim_ru": "Польское представительство в Германии описывает сотрудничество в сфере науки и варианты академической мобильности, включая программы DAAD для граждан Польши и программы NAWA для немецких студентов.",
+      "occurred_on": null,
+      "as_of": "2026-10-31",
+      "temporal_status": "undated_source_overview",
+      "evidence_status": "official_government_description",
+      "review_status": "review_required",
+      "reviewer": null,
+      "approved_on": null,
+      "dispute_status": "none",
+      "legal_status": "not_applicable",
+      "source_ids": [
+        "mfa-pl-de-research"
+      ],
+      "measurement": null,
+      "limitations": "Официальный обзор подтверждает наличие перечисленных возможностей, но не устанавливает конкретную дату их начала, число стипендий или фактическую интенсивность сотрудничества.",
+      "alternatives": [],
+      "supersedes": []
+    },
+    {
+      "id": "pl-de-youth-council-feb-2025",
+      "version": 1,
+      "pair": [
+        "DE",
+        "PL"
+      ],
+      "from": null,
+      "to": null,
+      "direction": "bilateral",
+      "category": "society",
+      "domain_tags": [
+        "society"
+      ],
+      "type": "bilateral_civic_program",
+      "title_ru": "Совет польско-германского молодёжного сотрудничества · 2025",
+      "claim_ru": "Министерство образования Польши сообщило о заседании двустороннего совета молодёжного сотрудничества 20–21 февраля 2025 года в Берлине.",
+      "occurred_on": "2025-02-20",
+      "as_of": "2025-02-21",
+      "temporal_status": "historical_event",
+      "evidence_status": "official_government_description",
+      "review_status": "review_required",
+      "reviewer": null,
+      "approved_on": null,
+      "dispute_status": "none",
+      "legal_status": "not_applicable",
+      "source_ids": [
+        "education-pl-de-youth-2025",
+        "eli-plde-youth-1991"
+      ],
+      "measurement": null,
+      "limitations": "Факт проведения заседания не является измерением общественного отношения, охвата обменов или результата программ.",
+      "alternatives": [],
+      "supersedes": []
+    },
+    {
+      "id": "us-ru-ofac-oil-designations-2025",
+      "version": 1,
+      "pair": [
+        "RU",
+        "US"
+      ],
+      "from": "US",
+      "to": "RU",
+      "direction": "directed",
+      "category": "sanctions",
+      "domain_tags": [
+        "security",
+        "economy",
+        "energy"
+      ],
+      "type": "targeted_sanctions_action",
+      "title_ru": "OFAC: российские нефтяные компании · 22.10.2025",
+      "claim_ru": "22 октября 2025 года OFAC сообщил о новых санкционных обозначениях в отношении российских нефтяных компаний, включая Rosneft и Lukoil. Это конкретное американское регуляторное действие, а не универсальное эмбарго всех стран.",
+      "occurred_on": "2025-10-22",
+      "as_of": "2025-10-22",
+      "temporal_status": "historical_policy_action",
+      "evidence_status": "primary_official_document",
+      "review_status": "review_required",
+      "reviewer": null,
+      "approved_on": null,
+      "dispute_status": "none",
+      "legal_status": "action_recorded",
+      "source_ids": [
+        "ofac-us-ru-2025-10-22"
+      ],
+      "measurement": null,
+      "limitations": "Не делать вывод о непрерывной текущей юридической силе для каждой компании без проверки последующих изменений, общих лицензий, исключений и SDN на дату использования.",
+      "alternatives": [],
+      "supersedes": []
+    }
+  ]
+}

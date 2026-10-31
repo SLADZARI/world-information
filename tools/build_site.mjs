@@ -16,6 +16,7 @@ const casePaths=registry.cases.map(id=>{
 const publicFiles=[
   "index.html",
   "data/case-registry.json",
+  "data/bilateral/registry.v1.json",
   "prototype/board.html",
   "prototype/research-board.html",
   "prototype/digital-country-catalog.html",
@@ -48,4 +49,4 @@ function copy(relative){
 }
 for(const entry of [...publicFiles,...publicDirs])copy(entry);
 fs.writeFileSync(path.join(output,".nojekyll"),"");
-console.log("PASS: generated static bundle. Canonical graph IDs="+registry.cases.length+"; research staging, code tooling and non-public material excluded.");
+console.log("PASS: generated static bundle with labeled preliminary bilateral records. Canonical graph IDs="+registry.cases.length+"; research staging, code tooling and non-public material excluded.");

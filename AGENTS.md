@@ -12,6 +12,8 @@ Read [project research charter](docs/PROJECT_INSTRUCTIONS.ru.md) and [ChatGPT pr
 
 ## Mandatory research/data invariants
 - Data chain: **original source → raw signal → normalized observation/event → attributed claim → typed relation → story → conditional scenario/forecast → later resolution**.
+- **Bilateral evidence is its own canonical registry:** `data/bilateral/registry.v1.json`, `schemas/bilateral-relations.schema.json`, `docs/BILATERAL_REGISTRY.md`. Never infer a treaty, direct trade, legal dispute, sanction, migration count or alliance from common country tags in world-graph stories. Preserve directed from/to, time, specific source, scope, legal status and reviewer.
+- Eight bilateral categories: treaties, trade, investment, sanctions, territorial, migration, science, society. A documented historical border settlement is not an active dispute. All preview entries are `review_required`; independent promotion requires a real reviewer and source rights decision.
 - Retain object IDs, exact provenance URLs, publisher, as-of, publication, occurrence and legal effective timestamps. Do not fabricate or silently backdate evidence.
 - Distinguish **measured observation**, **documented statement**, **causal hypothesis**, **statistically supported causal effect**, **disputed legal interpretation**, **rejected claim**. A cited article alone never establishes a quantified causal effect.
 - No backwards-time effects. October 2026 political actions cannot explain an indicator for March or H1 2026; historical values are baselines, not outcomes.
@@ -31,7 +33,7 @@ Read [project research charter](docs/PROJECT_INSTRUCTIONS.ru.md) and [ChatGPT pr
 - Use structured JSON and Markdown narratives in established paths, preserve schemas, stable IDs and case-source cross-references.
 - Run applicable local checks when available, for example:
   `python tools/validate_graph.py`, `python tools/validate_research.py`, `node tools/check_board.mjs`, `node tools/check_research_board.mjs`.
-  Also run tests and validators added by the relevant branch; verify GitHub Actions and report failures.
+  For bilateral work run `node tools/validate_bilateral_registry.mjs` and `node --test tests/bilateral-registry.test.mjs`. The Pages manual workflow must run `--require-approved`, and cannot pass while sample data still need editorial approval. Also run tests and validators added by the relevant branch; verify GitHub Actions and report failures.
 - A JS syntax check is **not** browser QA. Confirm rendering and usability before claiming visual testing. Distinguish implementation from deployment and historical fixture from live data.
 - The repository is public but publishing source files **does not grant third-party copying/redistribution rights**. Verify licenses before reuse.
 - Summarize work with changed files, evidence/source status, test results, PR URL, unresolved assumptions and precise next steps.

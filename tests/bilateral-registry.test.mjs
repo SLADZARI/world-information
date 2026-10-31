@@ -59,9 +59,17 @@ test("only source-backed categories are displayed, with no invented sanctions fo
   assert.equal(pl.records[0].dispute_status,"historically_settled");
   assert(!pl.records.some(x=>x.category==="sanctions"));
 });
+test("approved publication state is technically reachable only after explicit reviewer signatures",()=>{
+  const r=clone();
+  r.publication_status="approved_for_public_reuse";
+  for(const item of r.records){item.review_status="approved";item.reviewer="test-only-independent-reviewer";item.approved_on="2026-10-31";}
+  const verdict=validateBilateralRegistry(r,{allowedCountries:countryCodes});
+  assert.equal(verdict.needs_review,0);
+});
 test("invalid duplicate/source/ISO/date/measurement/signoff/fake active dispute fail closed",()=>{
   const tamper=(f)=>{const x=clone();f(x);assert.throws(()=>validateBilateralRegistry(x,{allowedCountries:countryCodes}));};
   tamper(x=>x.records.push(structuredClone(x.records[0])));
+  tamper(x=>x.records[0].unexpected_field="must fail JSON Schema");
   tamper(x=>x.records[0].source_ids=["missing"]);
   tamper(x=>x.records[0].pair=["DE","ZZ"]);
   tamper(x=>x.records[0].occurred_on="2026-02-31");

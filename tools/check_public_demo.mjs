@@ -20,11 +20,16 @@ assert.equal(countryOptions.countries.length,249,"Country pair option count mism
 assert.equal(new Set(countryOptions.countries.map(c=>c.code)).size,249,"Duplicate pair selector ISO codes");
 const bilateral=JSON.parse(read("data/bilateral/registry.v1.json"));
 assert.equal(bilateral.schema_version,"1.0.0","Bilateral registry version mismatch");
-assert.equal(bilateral.publication_status,"research_staging_review_required","Unreviewed claims must remain visibly labeled as preliminary");
+assert(["research_staging_review_required","approved_for_public_reuse"].includes(bilateral.publication_status),
+  "Unknown bilateral registry release state");
 assert.equal(bilateral.records.length,10,"Missing or additional bilateral pilot records");
 assert.equal(bilateral.categories.length,8,"Required bilateral research categories missing");
 assert.equal(new Set(bilateral.records.map(x=>x.id)).size,bilateral.records.length,"Duplicate bilateral fact ID");
-assert(bilateral.records.every(x=>x.review_status==="review_required"&&x.source_ids.length),"Unattributed or silently approved bilateral claim");
+assert(bilateral.records.every(x=>x.source_ids.length&&["review_required","approved"].includes(x.review_status)),
+  "Unattributed or silently rejected bilateral claim");
+if(bilateral.publication_status==="approved_for_public_reuse")
+  assert(bilateral.records.every(x=>x.review_status==="approved"&&x.reviewer&&x.approved_on),
+    "A publicly approved registry cannot contain unreviewed or unsigned records");
 const board=read("prototype/research-board.html");
 const embedded=board.match(/<script type="application\/json" id="cases-data">([\s\S]*?)<\/script>/);
 assert(embedded,"Missing embedded board data");

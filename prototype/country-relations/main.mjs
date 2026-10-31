@@ -14,7 +14,8 @@ const sv=(tag,attrs,parent,text)=>{
 let options=new Map(),research=null,result=null,registry=null,bilateral=null,mode="facts",selected=null;
 const name=code=>options.get(code)?.name||code;
 const status=s=>$("app-status").textContent=s;
-const visible=()=>mode==="facts"?bilateral.records:mode==="common"?result.topics:mode==="cross"?result.crossRegionEdges:result.explicitDisputes;
+const visible=()=>mode==="facts"?bilateral.records:mode==="common"?result.topics:mode==="cross"?result.crossRegionEdges:
+  [...bilateral.records.filter(r=>r.dispute_status==="documented_active"&&r.review_status==="approved"),...result.explicitDisputes];
 function link(parent,url,label){
   if(!/^https:\/\//.test(url))return;
   const a=mk("a",parent,label);a.href=url;a.target="_blank";a.rel="noopener noreferrer";
@@ -27,7 +28,7 @@ function caseLink(parent,id){
 function details(){
   const root=$("detail");root.replaceChildren();
   const chosen=visible().find(x=>x.id===selected);
-  if(mode==="facts"){
+  if(mode==="facts"||(mode==="disputes"&&chosen?.dispute_status==="documented_active")){
     if(!chosen){
       mk("h3",root,"Двусторонние факты");
       mk("p",root,"Нет записей для этой пары, типа фактов, сферы или даты. Это пробел реестра, а не доказательство отсутствия отношений.");
@@ -111,7 +112,7 @@ function textList(){
   for(const t of visible()){
     const btn=mk("button",root,t.title_ru||t.label||(t.from+" → "+t.to));
     btn.type="button";btn.setAttribute("aria-pressed",String(selected===t.id));
-    const label=mode==="facts"?(BILATERAL_CATEGORIES[t.category]||t.category)+" · "+t.party_label+
+    const label=t.title_ru?(BILATERAL_CATEGORIES[t.category]||t.category)+" · "+t.party_label+
       " · "+(REVIEW_LABELS[t.review_status]||t.review_status):
       mode==="common"?(CATEGORIES[t.category]||t.category)+" · "+t.case_title:
       (LABELS[t.status]||t.status)+" · "+t.case_title;
@@ -151,7 +152,7 @@ function graph(){
     const text=t.title_ru||t.label||(t.from+" → "+t.to);
     sv("text",{x:x+13,y:y+20,fill:"#edf5fb","font-size":13},g,text.length>32?text.slice(0,31)+"…":text);
     sv("text",{x:x+13,y:y+36,fill:"#98c1d1","font-size":10},g,
-      mode==="facts"?(BILATERAL_CATEGORIES[t.category]||t.category)+" · "+t.party_label:
+      t.title_ru?(BILATERAL_CATEGORIES[t.category]||t.category)+" · "+t.party_label:
       mode==="common"?(CATEGORIES[t.category]||t.category):LABELS[t.status]||t.status);
     g.addEventListener("click",()=>choose(t.id));
     g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();choose(t.id);}});
@@ -168,7 +169,7 @@ function update(){
   if(a===b){status("Выберите две разные страны. Сравнение страны с самой собой недоступно.");return;}
   try{
     result=summarizeCountryPair(research,a,b,{category,until});
-    bilateral=selectBilateralFacts(registry,a,b,{domain:category,category:relationType,until});
+    bilateral=selectBilateralFacts(registry,a,b,{domain:category,category:mode==="facts"?relationType:"all",until});
   }catch(e){status(e.message);return;}
   if(!visible().some(t=>t.id===selected))selected=visible()[0]?.id||null;
   for(const [id,v] of Object.entries({"metric-facts":bilateral.count,
@@ -177,6 +178,7 @@ function update(){
     $(id).textContent=v;
   for(const btn of document.querySelectorAll("[data-mode]"))
     btn.setAttribute("aria-pressed",String(btn.dataset.mode===mode));
+  $("relation-category").disabled=mode!=="facts";
   $("country-context").textContent="Статус цифрового каталога: "+a+" — "+options.get(a)?.research_status+
     "; "+b+" — "+options.get(b)?.research_status+". Это не рейтинг внешних отношений.";
   $("graph-caption").textContent=mode==="facts"?
@@ -189,7 +191,8 @@ function update(){
   const url=new URL(location.href);
   for(const [k,v] of Object.entries({a,b,domain:category,type:relationType,until,view:mode}))url.searchParams.set(k,v);
   history.replaceState(null,"",url);
-  status("Срез до "+until+": "+bilateral.count+" двусторонних фактов (редакционная проверка требуется); "+
+  status("Срез до "+until+": "+bilateral.count+" двусторонних фактов ("+
+    (bilateral.pending_review?"есть записи, ожидающие редакционной проверки":"редакционная проверка отражена в записях")+"); "+
     result.counts.cases+" общих исследований, "+
     result.counts.topics+" тем, "+result.counts.crossRegionEdges+" межстрановых рёбер. "+
     "Это не полный реестр отношений.");
@@ -236,7 +239,8 @@ async function init(){
     catch{status("Не удалось скопировать автоматически. Скопируйте URL из адресной строки.");}
   });
   registry=await getJson("../../data/bilateral/registry.v1.json");
-  if(registry.schema_version!=="1.0.0"||registry.publication_status!=="research_staging_review_required")
+  if(registry.schema_version!=="1.0.0"||
+    !["research_staging_review_required","approved_for_public_reuse"].includes(registry.publication_status))
     throw Error("Неподходящая версия двустороннего реестра");
   const caseRegistry=await getJson("../../data/case-registry.json");
   if(caseRegistry.cases?.length!==7)throw Error("Неподтверждённый состав графов");

@@ -67,7 +67,8 @@ try{
   assert((second.match(/<option\b/g)||[]).length===249,"Second country selector did not render 249 ISO choices");
   const pairList=section(pair,'id="focus-list"','</div>',42000);
   assert((pairList.match(/<button\b/g)||[]).length===9,"Bilateral register did not display 9 PL-DE source-backed records");
-  assert(pair.includes("Требуется независимая редакционная проверка"),"Pending editorial verification is not visible");
+  assert(pair.includes("Требуется независимая редакционная проверка")||
+    pair.includes("Одобрено с указанием проверяющего"),"Editorial verification state is not visible");
   const typeSelect=section(pair,'id="relation-category"','</select>',7500);
   assert((typeSelect.match(/<option\b/g)||[]).length===9,"Bilateral filter must have all eight categories and all option");
   const factsMetric=section(pair,'id="metric-facts"','</strong>',400);

@@ -4,6 +4,14 @@
 
 Status: **concept + working synthetic HTML prototype**. No live country data, forecasts or prediction markets are connected. Dementor Tab is an existing separate game and is **not** the name of this platform.
 
+## Project instructions and AI contributors
+
+- [**ChatGPT project instructions — paste-ready (RU)**](docs/CHATGPT_PROJECT_PROMPT.ru.md).
+- [**Full research and product operating charter (RU)**](docs/PROJECT_INSTRUCTIONS.ru.md).
+- [**AI / contributor instructions**](AGENTS.md) — source and causal evidence requirements, data safety, model boundaries, tests and GitHub workflow.
+
+These documents describe the **World Information project**, not the private Dementor Live game. Research claims, historical fixtures, conditional forecasts and live services must remain explicitly distinguished.
+
 ## Первые реальные графы — исторические исследования
 
 - **[Открыть исследовательский борд](prototype/research-board.html)** — три исследовательских истории; для взаимодействия скачайте HTML и откройте локально.

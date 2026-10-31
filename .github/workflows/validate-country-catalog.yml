@@ -8,6 +8,7 @@ on:
       - "tools/build_digital_country_catalog.py"
       - "prototype/digital-country-catalog*"
       - "tests/test_digital_country_catalog.py"
+      - "tools/check_country_catalog.mjs"
       - ".github/workflows/validate-country-catalog.yml"
   push:
     paths:
@@ -34,3 +35,5 @@ jobs:
         run: python tools/build_digital_country_catalog.py --check
       - name: Country catalog regression tests
         run: python -m unittest discover -s tests -p 'test_digital_country_catalog.py'
+      - name: Check browser script syntax and embedded data
+        run: node tools/check_country_catalog.mjs

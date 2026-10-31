@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "World Information country digital environment research profile, staging v0.1",
+  "description": "One research profile per ISO country/area; no country-level causal influence score.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "country_code",
+    "as_of",
+    "status",
+    "review_status",
+    "measurement_ids",
+    "source_ids",
+    "operators",
+    "platforms",
+    "social_groups",
+    "digital_rights",
+    "research_gaps",
+    "notes"
+  ],
+  "properties": {
+    "country_code": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "enum": [
+        "partial",
+        "queued"
+      ]
+    },
+    "review_status": {
+      "const": "review_required"
+    },
+    "measurement_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_-]{2,}$"
+      }
+    },
+    "source_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_-]{2,}$"
+      }
+    },
+    "operators": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/operator"
+      }
+    },
+    "platforms": {
+      "type": "array",
+      "maxItems": 0,
+      "description": "Future release must define evidence and metric references before accepting this field."
+    },
+    "social_groups": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "digital_rights": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "research_gaps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 6
+      }
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 6
+    }
+  },
+  "$defs": {
+    "operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "service",
+        "share_percent",
+        "source_id",
+        "verification_status"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 2
+        },
+        "service": {
+          "type": "string",
+          "minLength": 5
+        },
+        "share_percent": {
+          "type": "null"
+        },
+        "source_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]{2,}$"
+        },
+        "verification_status": {
+          "const": "review_required"
+        }
+      }
+    }
+  }
+}

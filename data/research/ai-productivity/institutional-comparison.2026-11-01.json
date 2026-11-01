@@ -1,0 +1,356 @@
+{
+  "record_id": "ai-productivity-institutional-comparison-2026-11-01",
+  "as_of": "2026-11-01",
+  "status": "review_required",
+  "source_retrieval_date": "2026-11-01",
+  "source_retrieval_precision": "day-only",
+  "links_to": "data/research/ai-productivity/ai-productivity-paradox-1987-2026.graph.json",
+  "objective": "Compare latest institutional positions on AI task productivity, deep firm adoption, aggregate TFP/GDP, distribution, and financing. Not a meta-analysis or probability estimate.",
+  "dimensions": [
+    "task_efficiency",
+    "product_delivery",
+    "deep_organization_integration",
+    "reported_work_time_savings",
+    "firm_profitability",
+    "macro_TFP_GDP",
+    "distribution_and_demand",
+    "financial_sustainability"
+  ],
+  "comparability_notes": [
+    "MIT FutureTech 11% deeply integrated S&P 500 and NBER 78% any-use cross-country are not contradictory: population and adoption-stage definitions differ.",
+    "MIT task coding +180% and shipped software +30% show throughput bottlenecks, not necessarily revenue or GDP impacts.",
+    "Acemoglu <0.53% ten-year cumulative TFP-level estimate, IMF +0.5pp/year global growth potential, NBER 3.6% GDP level implied by equity markets and BIS 5.5% conditional long-run growth are different units/models/horizons.",
+    "ECB saved time is survey-reported opportunity, not verified real output; self-report estimates cannot be substituted for national accounts.",
+    "2025/2026 studies include present and prospective expectations; all should be tied to their measurement windows.",
+    "Informal institutional blog summaries and official speeches do not equal original paper methodological review."
+  ],
+  "institutions": [
+    {
+      "institution": "MIT FutureTech / Initiative on the Digital Economy",
+      "publication": "AI Adoption in S&P 500 Firms",
+      "published": "2026-07-09",
+      "url": "https://arxiv.org/abs/2607.08920",
+      "method": "LLM-coded self-disclosure in annual SEC Form 10-K filings; firms in S&P 500; 2016–2025",
+      "finding": "11% deeply integrated AI at 2025 year-end, further 10% AI in production of goods/services; no measured difference in output per employee versus non-adopters; exploratory correlations and company reporting do not identify treatment effects",
+      "metrics": [
+        {
+          "value": 11,
+          "unit": "percent of S&P 500 firms",
+          "period": "2025",
+          "name": "deep enterprise AI integration"
+        },
+        {
+          "value": 10,
+          "unit": "percent of S&P 500 firms",
+          "period": "2025",
+          "name": "AI used in products/services (additional)"
+        }
+      ],
+      "evidence_type": "observational_text_classification",
+      "caveat": "SEC disclosure is not independent operational audit. Only large US listed firms; lag between filings and deployment."
+    },
+    {
+      "institution": "MIT Sloan (Demirer, Musolff, Yang)",
+      "publication": "Writing Code vs. Shipping Code — Productivity Effects Across Generations of Coding Tools",
+      "published": "2026-09-02",
+      "url": "https://mitsloan.mit.edu/ideas-made-to-matter/ai-boosts-worker-productivity-does-translate-to-final-outputs",
+      "method": "Reported MIT Sloan summary of observational GitHub data for >100,000 developers across coding-to-release stages",
+      "finding": "Up to 180% more coding activity under combined coding-tool usage; 50% more projects and 30% more releases; no corresponding app-download/review gains. These are different units and not a controlled GDP effect.",
+      "metrics": [
+        {
+          "value": 180,
+          "unit": "percent relative increase, maximum cumulative coding activity",
+          "period": "study summarized 2026-09-02",
+          "name": "coding activity"
+        },
+        {
+          "value": 30,
+          "unit": "percent relative increase",
+          "period": "study summarized 2026-09-02",
+          "name": "releases"
+        }
+      ],
+      "evidence_type": "research_summary_of_observational_study",
+      "caveat": "Original full working paper not independently audited in this pass; matching/selection and quality of shipped code need checking."
+    },
+    {
+      "institution": "MIT / Daron Acemoglu",
+      "publication": "The Simple Macroeconomics of AI",
+      "published": "2025-01-01",
+      "url": "https://dspace.mit.edu/entities/publication/0fcf7575-a092-4728-a0c5-077beda38427",
+      "method": "Task-based general-equilibrium model, assumptions on automatable tasks and task savings",
+      "finding": "Published model estimates a total factor productivity level gain below 0.53% over ten years (upper bound 0.66% before hard-task adjustment); NOT +0.53 percentage points of annual growth.",
+      "metrics": [
+        {
+          "value": 0.53,
+          "unit": "percent cumulative TFP level gain (upper bound)",
+          "period": "next ten years from model baseline",
+          "name": "adjusted TFP projection"
+        }
+      ],
+      "evidence_type": "structural_model_projection",
+      "caveat": "2024 MIT landing page still shows superseded 0.55%/0.71% draft estimates. Use 2025 accepted manuscript for version-consistent comparison."
+    },
+    {
+      "institution": "MIT / Acemoglu, Autor, Johnson",
+      "publication": "Building Pro-Worker Artificial Intelligence",
+      "published": "2026-02-01",
+      "url": "https://www.nber.org/papers/w34854",
+      "method": "Conceptual task taxonomy and examples, not empirical country-level effect estimate",
+      "finding": "Automation/capital augmentation may raise productivity without boosting worker income; new human-task creation is classified as unambiguously pro-worker.",
+      "metrics": [],
+      "evidence_type": "normative_analytic_framework",
+      "caveat": "Normative claim about direction of technology; not a measured distributional response."
+    },
+    {
+      "institution": "NBER / Blumenfeld, Hazell, Lian, Schaab",
+      "publication": "The Macroeconomic Effect of AI: Sizing the Software Engineering Channel",
+      "published": "2026-09-01",
+      "url": "https://www.nber.org/papers/w35793",
+      "method": "Infer AI software-engineering productivity gains from firm equity return sensitivity to AI factor and software engineer payroll share, then pass through structural macro model",
+      "finding": "Market-implied software engineering productivity equivalent +32.6% permanent (Nov 2022–Dec 2025), model translates to +3.6% level of GDP baseline or +6.5% with R&D channel; these are investor-expectation/model outputs, not observed 2026 GDP.",
+      "metrics": [
+        {
+          "value": 32.6,
+          "unit": "percent expected permanent productivity equivalent",
+          "period": "2022-11 to 2025-12",
+          "name": "software engineering productivity"
+        },
+        {
+          "value": 3.6,
+          "unit": "percent GDP level model-equivalent",
+          "period": "model from expected software-engineering channel",
+          "name": "baseline GDP model effect"
+        }
+      ],
+      "evidence_type": "market_implied_structural_model",
+      "caveat": "Forward-looking asset-pricing assumptions, identification of AI factor and valuation changes could bias inferred effect; not directly comparable with Acemoglu TFP."
+    },
+    {
+      "institution": "NBER / Babina, He, Jiang",
+      "publication": "Canaries in the Gold Mine: Early Productivity Gains from Artificial Intelligence Creating Organization Capital",
+      "published": "2026-08-01",
+      "url": "https://www.nber.org/papers/w35684",
+      "method": "Firm AI-skilled employment and job-description proxy for organizational capital; firm-level associations",
+      "finding": "Recent AI-skilled hiring is associated with productivity growth through organizational capital in recent years, not in earlier decade; mechanism is hypothesis based on firm data.",
+      "metrics": [],
+      "evidence_type": "firm_observational_analysis",
+      "caveat": "AI-skilled employment is a proxy for AI investment; unobserved management quality or selection could explain correlations."
+    },
+    {
+      "institution": "NBER / multi-country executive surveys",
+      "publication": "Firm Data on AI (October 2026 revision)",
+      "published": "2026-10",
+      "url": "https://www.nber.org/papers/w34836",
+      "method": "Summer 2026 responses from nearly 9,000 senior executives in 7 countries",
+      "finding": "78% of sampled firms use AI; average past self-attributed productivity-growth increment 0.2% per year; expected 0.6% per year in next 3 years. These are executive retrospective and forward-looking reports.",
+      "metrics": [
+        {
+          "value": 78,
+          "unit": "percent surveyed firms",
+          "period": "2026 summer",
+          "name": "any AI adoption"
+        },
+        {
+          "value": 0.2,
+          "unit": "percent per year additional labor productivity growth (self-attributed)",
+          "period": "past three years as recalled 2026",
+          "name": "subjective retrospective effect"
+        },
+        {
+          "value": 0.6,
+          "unit": "percent per year expected additional labor productivity growth",
+          "period": "next three years from 2026",
+          "name": "subjective expectation"
+        }
+      ],
+      "evidence_type": "multi-country_executive_survey",
+      "caveat": "Not equivalent to 11% deep integration in S&P 500; any use versus organizational integration, different frames, biased self-reports."
+    },
+    {
+      "institution": "OECD",
+      "publication": "Compendium of Productivity Indicators 2026",
+      "published": "2026-06-23",
+      "url": "https://www.oecd.org/en/publications/oecd-compendium-of-productivity-indicators-2026_734a5e68-en/full-report/productivity-growth-in-a-challenging-global-environment_d888e417.html",
+      "method": "Official cross-national productivity compilation and literature synthesis",
+      "finding": "Task gains have not been cleanly detected as broad AI-caused aggregate productivity yet; organizational adaptation/J-curve is a candidate explanation, not a guarantee.",
+      "metrics": [],
+      "evidence_type": "official_statistics_and_literature_review",
+      "caveat": "Current national data are affected by macroeconomic and measurement confounders; descriptive macro series do not identify AI-only effects."
+    },
+    {
+      "institution": "McKinsey",
+      "publication": "The State of AI 2026: On the Road to ROI",
+      "published": "2026-08-25",
+      "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+      "method": "Online survey of 1,719 respondents across 97 nations, fielded 2026-05-04 to 2026-06-08; country-GDP response-weighted",
+      "finding": "80% respondents report own productivity gains; 37% attribute any enterprise EBIT impact to AI; ~6% meet self-reported high-performer definition. Nearly 75% high performers report workflow redesign vs 25% of other respondents.",
+      "metrics": [
+        {
+          "value": 80,
+          "unit": "percent surveyed respondents",
+          "period": "May–June 2026",
+          "name": "own productivity increase reported"
+        },
+        {
+          "value": 37,
+          "unit": "percent surveyed respondents",
+          "period": "May–June 2026",
+          "name": "any enterprise EBIT impact reported"
+        }
+      ],
+      "evidence_type": "consultancy_cross_sectional_survey",
+      "caveat": "Self-reported impact; highly selective high performers and endogenous redesign; not a causal experiment."
+    },
+    {
+      "institution": "European Central Bank",
+      "publication": "AI adoption in Europe, speech",
+      "published": "2026-10-30",
+      "url": "https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp261030~08d9d540f0.mt.html",
+      "method": "Euro area ECB SAFE/CTS/CES and EU Commission survey comparisons",
+      "finding": "Among European midcaps/SMEs in EU Commission Q1 2026 survey, 42% use AI/automation: 30% limited/experimental and 12% extensive. In ECB SAFE Q4 2025, only 7% report significant AI use. European workers surveyed: 52% any job use in 2026.",
+      "metrics": [
+        {
+          "value": 42,
+          "unit": "percent EU midcap/SME respondents",
+          "period": "2026-Q1",
+          "name": "AI or automated systems used"
+        },
+        {
+          "value": 7,
+          "unit": "percent ECB SAFE respondent firms",
+          "period": "2025-Q4",
+          "name": "significant AI use"
+        }
+      ],
+      "evidence_type": "official_speech_with_primary_survey_sources",
+      "caveat": "Different samples and questions; 42%, 7% and 52% are not comparable as a homogeneous time series."
+    },
+    {
+      "institution": "ECB Consumer Expectations Survey",
+      "publication": "AI adoption and the productivity promise: what workers report",
+      "published": "2026-08-26",
+      "url": "https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20260826~e1c1a89999.ga.html",
+      "method": "ECB monthly CES about 20k adults from 11 euro-area countries; self-reported AI use/time saved",
+      "finding": "Work AI use 52% of respondent workers in 2026 versus 26% in 2024, implied aggregate work-time savings ~3.8% per ECB computation; this is not measured realized GDP or TFP.",
+      "metrics": [
+        {
+          "value": 3.8,
+          "unit": "percent total working time saved (perceived, aggregate)",
+          "period": "2026 CES",
+          "name": "reported time savings"
+        }
+      ],
+      "evidence_type": "representative_survey_self_report",
+      "caveat": "Saved time can be idle/reallocated; no proof extra output. Several comparisons of weekly hours saved involve different denominators."
+    },
+    {
+      "institution": "IMF",
+      "publication": "The World Can't Afford to Get AI Wrong",
+      "published": "2026-10-15",
+      "url": "https://www.imf.org/en/blogs/articles/2026/10/15/the-world-cant-afford-to-get-ai-wrong",
+      "method": "Policy article explaining scenarios, IMF research and external investment inputs",
+      "finding": "Potential growth boost around 0.5 percentage points per year worldwide over the next decade (conditional); current investment/demand shock comes before verified economy-wide productivity/supply shock.",
+      "metrics": [
+        {
+          "value": 0.5,
+          "unit": "percentage points additional annual global growth, approximate scenario",
+          "period": "next decade after 2026",
+          "name": "potential annual growth effect"
+        }
+      ],
+      "evidence_type": "policy_scenario_projection",
+      "caveat": "Not a measured realized productivity gain; distinguish GDP growth from TFP or level GDP."
+    },
+    {
+      "institution": "BIS",
+      "publication": "Transformative AI and Demand Bottlenecks",
+      "published": "2026-10-12",
+      "url": "https://www.bis.org/publications/working-paper-1381-transformative-ai-and-demand-bottlenecks",
+      "method": "Endogenous growth calibrated model with innovation tied to rents from consumer goods",
+      "finding": "Automation may depress consumption share/demand and innovation incentives; calibrated demand-bottleneck scenario can slow growth below assumed pre-AI 2% after temporary lift; transformative scenario reaches 5.5% after two decades.",
+      "metrics": [],
+      "evidence_type": "conditional_calibrated_model",
+      "caveat": "Scenario output not a historical observation or BIS central forecast; conditional assumptions produce radically different paths."
+    },
+    {
+      "institution": "Bank of England / FCA",
+      "publication": "Artificial Intelligence in UK Financial Services 2026",
+      "published": "2026-10-26",
+      "url": "https://www.bankofengland.co.uk/report/2026/artificial-intelligence-in-uk-financial-services-2026",
+      "method": "Regulatory survey, 196 UK financial firms (105 full surveys); cross-survey comparability guarded",
+      "finding": "86% respondent firms use AI; only 2% of firms report AI agents with broad autonomy; integration 23% and legacy systems 22% are large non-regulatory adoption constraints among question respondents.",
+      "metrics": [
+        {
+          "value": 86,
+          "unit": "percent responding UK financial firms",
+          "period": "2026",
+          "name": "any AI use"
+        },
+        {
+          "value": 2,
+          "unit": "percent full-survey firm respondents",
+          "period": "2026",
+          "name": "broad-autonomy AI agents deployed"
+        }
+      ],
+      "evidence_type": "official_sector_survey",
+      "caveat": "Sector respondents are not all UK firms; figures based on differing full/short question groups; 2024 sample/question scope differs."
+    },
+    {
+      "institution": "J.P. Morgan Asset Management",
+      "publication": "A brighter productivity outlook for the AI era",
+      "published": "2026-10-19",
+      "url": "https://am.jpmorgan.com/us/en/asset-management/institutional/insights/portfolio-insights/ltcma/a-brighter-productivity-outlook-for-the-ai-era/",
+      "method": "Long-term capital markets structural Cobb–Douglas scenario; task exposure, assumed adoption, per-task gain, labor share, capital deepening, estimated AI-related crowding-out",
+      "finding": "In conditional 10–15-year base case, AI adds +0.40 percentage points per year to US TFP growth and +0.50 pp per year to US labor-productivity growth relative to pre-AI baseline, with major impacts anticipated in 2030s. Not empirical identified effect.",
+      "metrics": [
+        {
+          "value": 0.4,
+          "unit": "percentage points additional annual US TFP growth, model scenario",
+          "period": "10–15-year horizon from 2026",
+          "name": "TFP trend contribution"
+        },
+        {
+          "value": 0.5,
+          "unit": "percentage points additional annual US labor-productivity growth, model scenario",
+          "period": "10–15-year horizon from 2026",
+          "name": "labor productivity trend contribution"
+        }
+      ],
+      "evidence_type": "financial_institution_scenario_forecast",
+      "caveat": "Model assumes ~40% task penetration by 2040 and explicit 50% AI investment crowd-out haircut, neither measured future fact. Not comparable to Acemoglu cumulative TFP-level estimate."
+    },
+    {
+      "institution": "Federal Reserve Economic Data (FRED) Blog",
+      "publication": "Early signs of AI-driven productivity growth in the information sector?",
+      "published": "2026-10-22",
+      "url": "https://fred.stlouisfed.org/blog/2026/10/early-signs-of-ai-driven-productivity-growth-in-information-sector",
+      "method": "Real industry value added divided by employment (output per employed person) from FRED sector and aggregate series, Q2 2025 to Q2 2026",
+      "finding": "US information sector output per employed person increased 13.70% versus 2.17% in aggregate over Q2 2025–Q2 2026. This temporal/sector correlation does not identify AI contribution.",
+      "metrics": [
+        {
+          "value": 13.7,
+          "unit": "percent year-over-year change real value added per employee, US information sector",
+          "period": "2025-Q2 to 2026-Q2",
+          "name": "output per worker"
+        },
+        {
+          "value": 2.17,
+          "unit": "percent year-over-year change real GDP per employed person, US all economy",
+          "period": "2025-Q2 to 2026-Q2",
+          "name": "output per worker aggregate comparison"
+        }
+      ],
+      "evidence_type": "descriptive_official_series_secondary_calculation",
+      "caveat": "Different measure from BLS real output per hour; information sector includes data-center investment and several non-GenAI industries; cannot claim AI-caused productivity."
+    }
+  ],
+  "editorial_blocks": [
+    "Check underlying MIT Demirer/Musolff/Yang original paper, causal identification and release definition.",
+    "Check NBER 2026 market-implied growth model assumptions before aggregating scenarios.",
+    "Confirm ECB speech exact financial data definitions and NBER full revision metadata.",
+    "Source licensing and re-use review; data stored as source links and independent short paraphrases.",
+    "No release to public case registry or HTML before human review."
+  ]
+}

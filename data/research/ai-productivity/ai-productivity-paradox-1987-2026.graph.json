@@ -1,0 +1,728 @@
+{
+  "schema_version": "0.1.0",
+  "synthetic": false,
+  "case_id": "ai-productivity-paradox-1987-2026",
+  "case_title": "Парадокс производительности: электричество, IT и AI (исследование на 01.11.2026)",
+  "description": "RESEARCH STAGING / REVIEW_REQUIRED; graph constructed from independently linked research, published statistics and study-specific causal estimates. No aggregate AI causal contribution or calibrated forecasts. Sources retrieved 2026-11-01 (date precision). Not included in publication manifest.",
+  "sources": [
+    {
+      "id": "src-solow-citation",
+      "url": "https://www.reed.edu/economics/parker/201/cases/it_productivity.html",
+      "publisher": "Reed College, secondary citation of Robert Solow (NYT Book Review, 1987-07-12)",
+      "published_at": null,
+      "retrieved_at": "2026-11-01T00:00:00Z",
+      "rights": "Reference link, metadata and independently paraphrased numeric findings only; licensing and source version require editorial review. Retrieval timestamp is day-precision, encoded as 00:00Z."
+    },
+    {
+      "id": "src-david-1990",
+      "url": "https://gwern.net/doc/economics/automation/1990-david.pdf",
+      "publisher": "Paul A. David, American Economic Review 80(2), 1990",
+      "published_at": "1990-05-01T00:00:00Z",
+      "retrieved_at": "2026-11-01T00:00:00Z",
+      "rights": "Reference link, metadata and independently paraphrased numeric findings only; licensing and source version require editorial review. Retrieval timestamp is day-precision, encoded as 00:00Z."
+    },
+    {
+      "id": "src-oliner-sichel-2000",
+      "url": "https://www.federalreserve.gov/econres/feds/the-resurgence-of-growth-in-the-late-1990s-is-information-technology-the-story.htm",
+      "publisher": "Oliner and Sichel, Federal Reserve research paper, April 2000",
+      "published_at": "2000-04-01T00:00:00Z",
+      "retrieved_at": "2026-11-01T00:00:00Z",
+      "rights": "Reference link, metadata and independently paraphrased numeric findings only; licensing and source version require editorial review. Retrieval timestamp is day-precision, encoded as 00:00Z."
+    },
+    {
+      "id": "src-stlouis-2026",
+      "url": "https://www.stlouisfed.org/on-the-economy/2026/jan/tracking-ai-contribution-gdp-growth",
+      "publisher": "Federal Reserve Bank of St. Louis, Rubinton and Patro",
+      "published_at": "2026-01-12T00:00:00Z",
+      "retrieved_at": "2026-11-01T00:00:00Z",
+      "rights": "Reference link, metadata and independently paraphrased numeric findings only; licensing and source version require editorial review. Retrieval timestamp is day-precision, encoded as 00:00Z."
+    },
+    {
+      "id": "src-bls-2026",
+      "url": "https://www.bls.gov/news.release/archives/prod2_09032026.htm",
+      "publisher": "US Bureau of Labor Statistics, Productivity and Costs Q2 2026 revised",
+      "published_at": "2026-09-03T00:00:00Z",
+      "retrieved_at": "2026-11-01T00:00:00Z",
+      "rights": "Reference link, metadata and independently paraphrased numeric findings only; licensing and source version require editorial review. Retrieval timestamp is day-precision, encoded as 00:00Z."
+    },
+    {
+      "id": "src-fed-buildout-2026",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-ai-buildout-and-the-economy-publicly-available-data-to-assess-ais-impact-20260717.html",
+      "publisher": "Federal Reserve Board, FEDS Notes",
+      "published_at": "2026-07-17T00:00:00Z",
+      "retrieved_at": "2026-11-01T00:00:00Z",
+      "rights": "Reference link, metadata and independently paraphrased numeric findings only; licensing and source version require editorial review. Retrieval timestamp is day-precision, encoded as 00:00Z."
+    },
+    {
+      "id": "src-nber-firm-data-2026",
+      "url": "https://www.nber.org/papers/w34836",
+      "publisher": "NBER WP 34836; first issue Feb 2026, revised Oct 2026 (exact revision day unknown)",
+      "published_at": null,
+      "retrieved_at": "2026-11-01T00:00:00Z",
+      "rights": "Reference link, metadata and independently paraphrased numeric findings only; licensing and source version require editorial review. Retrieval timestamp is day-precision, encoded as 00:00Z."
+    },
+    {
+      "id": "src-qje-support-2025",
+      "url": "https://doi.org/10.1093/qje/qjae044",
+      "publisher": "Brynjolfsson, Li and Raymond, Quarterly Journal of Economics",
+      "published_at": "2025-02-04T00:00:00Z",
+      "retrieved_at": "2026-11-01T00:00:00Z",
+      "rights": "Reference link, metadata and independently paraphrased numeric findings only; licensing and source version require editorial review. Retrieval timestamp is day-precision, encoded as 00:00Z."
+    },
+    {
+      "id": "src-metr-dev-2025",
+      "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+      "publisher": "METR, randomized developer productivity study",
+      "published_at": "2025-07-10T00:00:00Z",
+      "retrieved_at": "2026-11-01T00:00:00Z",
+      "rights": "Reference link, metadata and independently paraphrased numeric findings only; licensing and source version require editorial review. Retrieval timestamp is day-precision, encoded as 00:00Z."
+    },
+    {
+      "id": "src-metr-update-2026",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+      "publisher": "METR, 2026 follow-up limitations",
+      "published_at": "2026-02-24T00:00:00Z",
+      "retrieved_at": "2026-11-01T00:00:00Z",
+      "rights": "Reference link, metadata and independently paraphrased numeric findings only; licensing and source version require editorial review. Retrieval timestamp is day-precision, encoded as 00:00Z."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "event-factory-electrification",
+      "type": "event",
+      "label": "Электрификация американских фабрик",
+      "layer": "events",
+      "category": "science",
+      "subcategories": [
+        "science.energy.electrification"
+      ],
+      "countries": [
+        "US"
+      ],
+      "at": "1899-12-31T00:00:00Z",
+      "description": "В 1899 электрические двигатели составляли менее 5% мощности фабричных механических приводов в США; это верхняя граница, не точное наблюдение.",
+      "layout": {
+        "x": 25,
+        "y": 75
+      }
+    },
+    {
+      "id": "event-electrical-redesign",
+      "type": "event",
+      "label": "Организационный переход к unit drive",
+      "layer": "events",
+      "category": "science",
+      "subcategories": [
+        "science.technology.production"
+      ],
+      "countries": [
+        "US"
+      ],
+      "at": "1920-01-01T00:00:00Z",
+      "description": "Начало 1920-х: заметное влияние электрификации на производительность по историческому анализу П. Дэвида; 1920-01-01 — метка десятилетия, не дата события.",
+      "layout": {
+        "x": 285,
+        "y": 80
+      }
+    },
+    {
+      "id": "event-us-it-productivity",
+      "type": "event",
+      "label": "Ускорение IT-производительности после 1995",
+      "layer": "events",
+      "category": "economy",
+      "subcategories": [
+        "economy.productivity.history"
+      ],
+      "countries": [
+        "US"
+      ],
+      "at": "1995-01-01T00:00:00Z",
+      "description": "Исследование ФРС связывает значительную часть ускорения конца 1990-х с использованием и производством IT; дата — начало периода, не отдельный шок.",
+      "layout": {
+        "x": 550,
+        "y": 70
+      }
+    },
+    {
+      "id": "event-ai-buildout",
+      "type": "event",
+      "label": "Расширение AI-инвестиций после 2022",
+      "layer": "events",
+      "category": "science",
+      "subcategories": [
+        "science.technology.ai"
+      ],
+      "countries": [
+        "US"
+      ],
+      "at": "2022-11-30T00:00:00Z",
+      "description": "Собирательное описание периода внедрения и инвестиций, а не точечное событие.",
+      "layout": {
+        "x": 25,
+        "y": 260
+      }
+    },
+    {
+      "id": "factor-ai-organization",
+      "type": "factor",
+      "label": "Дополняющие инвестиции и реорганизация",
+      "layer": "factors",
+      "category": "economy",
+      "subcategories": [
+        "economy.firms.organization"
+      ],
+      "countries": [
+        "US"
+      ],
+      "at": "2026-11-01T00:00:00Z",
+      "description": "Гипотетический посредник между использованием AI и агрегированной производительностью: изменение процессов, обучение, управление качеством, совместимые данные.",
+      "layout": {
+        "x": 285,
+        "y": 250
+      }
+    },
+    {
+      "id": "indicator-ai-related-gdp",
+      "type": "indicator",
+      "label": "AI-связанные категории: вклад в рост ВВП 2025",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.gdp.investment"
+      ],
+      "countries": [
+        "US"
+      ],
+      "at": "2025-09-30T00:00:00Z",
+      "description": "Сумма вкладов четырех широких категорий капиталовложений; НЕ чистый вклад AI. Q3 использует оценку строительства ЦОД с импутацией сентября.",
+      "layout": {
+        "x": 550,
+        "y": 235
+      },
+      "indicator": {
+        "metric": "Combined contribution of information processing equipment, software, R&D and data-center construction to real GDP growth (NOT AI-only effect)",
+        "unit": "percentage points of annualized real GDP growth",
+        "period": "2025-Q3",
+        "value": 0.48,
+        "comparison_value": 1.3,
+        "comparison_period": "2025-Q1",
+        "comparison_basis": "Same St Louis Fed contribution calculation; Q2=1.16 pp",
+        "source_id": "src-stlouis-2026",
+        "population_scope": "United States, national accounts investment components, aggregate real GDP",
+        "method": "St Louis Fed calculations from BEA IPE/software/R&D and Census data-center construction; September 2025 data-center expenditure imputed.",
+        "series": [
+          {
+            "period": "2025-Q1",
+            "value": 1.3
+          },
+          {
+            "period": "2025-Q2",
+            "value": 1.16
+          },
+          {
+            "period": "2025-Q3",
+            "value": 0.48
+          }
+        ]
+      }
+    },
+    {
+      "id": "indicator-bls-2026-q2-qoq",
+      "type": "indicator",
+      "label": "Производительность труда: +1,4% SAAR",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.productivity.labor"
+      ],
+      "countries": [
+        "US"
+      ],
+      "at": "2026-06-30T00:00:00Z",
+      "description": "Рост 2026-Q2 к 2026-Q1, пересчитан в годовой темп; самостоятельное наблюдение, НЕ измеренный эффект AI.",
+      "layout": {
+        "x": 810,
+        "y": 80
+      },
+      "indicator": {
+        "metric": "Nonfarm business labor productivity, quarter-over-quarter seasonally adjusted annualized change",
+        "unit": "percent SAAR",
+        "period": "2026-Q2",
+        "value": 1.4,
+        "source_id": "src-bls-2026",
+        "population_scope": "United States, nonfarm business sector output per worker-hour",
+        "method": "BLS productivity-and-costs, Q2 revised Sept 3 2026; output +1.7%, hours +0.3% at annualized rates."
+      }
+    },
+    {
+      "id": "indicator-bls-2026-q2-yoy",
+      "type": "indicator",
+      "label": "Производительность труда: +2,2% год к году",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.productivity.labor"
+      ],
+      "countries": [
+        "US"
+      ],
+      "at": "2026-06-30T00:00:00Z",
+      "description": "Отдельный темп к 2025-Q2; нельзя складывать или напрямую сравнивать с 1,4% SAAR как одинаковый период.",
+      "layout": {
+        "x": 1070,
+        "y": 80
+      },
+      "indicator": {
+        "metric": "Nonfarm business labor productivity, year-over-year change",
+        "unit": "percent year-over-year",
+        "period": "2026-Q2 versus 2025-Q2",
+        "value": 2.2,
+        "source_id": "src-bls-2026",
+        "population_scope": "United States, nonfarm business output per worker-hour",
+        "method": "BLS Sept 3 2026 revision, same-quarter-year-ago comparison."
+      }
+    },
+    {
+      "id": "indicator-firm-ai-adoption",
+      "type": "indicator",
+      "label": "AI используют 78% опрошенных фирм",
+      "layer": "impacts",
+      "category": "science",
+      "subcategories": [
+        "science.technology.adoption"
+      ],
+      "countries": [
+        "US",
+        "GB",
+        "DE",
+        "AU",
+        "CA",
+        "MX",
+        "ZA"
+      ],
+      "at": "2026-10-01T00:00:00Z",
+      "description": "Опрос ~9 000 руководителей компаний в 7 странах летом 2026; дата узла — месяц октябрьской редакции статьи, не дата каждой анкеты. Не глобальная доля компаний.",
+      "layout": {
+        "x": 550,
+        "y": 435
+      },
+      "indicator": {
+        "metric": "Share of sampled firms reporting some AI usage",
+        "unit": "percent of sampled firms",
+        "period": "survey summer 2026; revised October 2026",
+        "value": 78,
+        "source_id": "src-nber-firm-data-2026",
+        "population_scope": "Nearly 9,000 executives/firms sampled across US, UK, Germany, Australia, Canada, Mexico and South Africa; sampling/weighting per NBER paper",
+        "method": "Multi-country executive survey; self-report; not a census and not a causal productivity estimate."
+      }
+    },
+    {
+      "id": "indicator-selfreport-productivity",
+      "type": "indicator",
+      "label": "+0,2 п.п./год: самооценка руководителей",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.productivity.survey"
+      ],
+      "countries": [
+        "US",
+        "GB",
+        "DE",
+        "AU",
+        "CA",
+        "MX",
+        "ZA"
+      ],
+      "at": "2026-10-01T00:00:00Z",
+      "description": "По данным опроса NBER, руководители приписали внедрению AI прибавку 0,2 к годовому росту производительности труда за прошлые 3 года; субъективная оценка, не установленная причинность.",
+      "layout": {
+        "x": 810,
+        "y": 435
+      },
+      "indicator": {
+        "metric": "Executives' self-reported AI contribution to annual labor-productivity growth, retrospectively",
+        "unit": "percentage points per year (self-reported)",
+        "period": "previous 3 years, recalled in summer 2026 survey",
+        "value": 0.2,
+        "source_id": "src-nber-firm-data-2026",
+        "population_scope": "Sample of firms/executives across 7 countries; respondent estimate, not national accounts",
+        "method": "Executive survey attribution; recall, selection and expectation bias possible."
+      }
+    },
+    {
+      "id": "event-customer-support-ai",
+      "type": "event",
+      "label": "AI-подсказки в клиентской поддержке",
+      "layer": "events",
+      "category": "science",
+      "subcategories": [
+        "science.technology.assistance"
+      ],
+      "countries": [],
+      "at": "2025-02-04T00:00:00Z",
+      "description": "Публикация исследования 5 172 операторов поддержки в многоцентровой компании; точный период внедрения не кодируется этой датой.",
+      "layout": {
+        "x": 25,
+        "y": 605
+      }
+    },
+    {
+      "id": "indicator-customer-support-15",
+      "type": "indicator",
+      "label": "Поддержка клиентов: +15% обращений/час",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.productivity.task"
+      ],
+      "countries": [],
+      "at": "2025-02-04T00:00:00Z",
+      "description": "Квазиэксперимент с поэтапным внедрением в конкретной компании, неоднородный эффект; не макроэкономическая прибавка.",
+      "layout": {
+        "x": 285,
+        "y": 615
+      },
+      "indicator": {
+        "metric": "AI tool access effect on successfully resolved customer support cases per hour",
+        "unit": "percent relative change in resolved cases per hour",
+        "period": "study published 2025-02-04; staggered workplace deployment (exact study period see paper)",
+        "value": 15,
+        "source_id": "src-qje-support-2025",
+        "population_scope": "5,172 support workers in one company across multiple sites; not national labor productivity",
+        "method": "Staggered observational/quasi-experimental deployment; heterogeneity by experience, potential generalizability limits."
+      }
+    },
+    {
+      "id": "event-metr-ai-dev",
+      "type": "event",
+      "label": "AI-инструменты разработчикам (эксперимент METR)",
+      "layer": "events",
+      "category": "science",
+      "subcategories": [
+        "science.technology.coding"
+      ],
+      "countries": [],
+      "at": "2025-07-10T00:00:00Z",
+      "description": "Эксперимент: 16 опытных OSS-разработчиков, 246 реальных задач, рандомизация AI allowed / disallowed; дата публикации.",
+      "layout": {
+        "x": 550,
+        "y": 615
+      }
+    },
+    {
+      "id": "indicator-metr-time-19",
+      "type": "indicator",
+      "label": "Разработка OSS: +19% времени на задачу",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.productivity.task"
+      ],
+      "countries": [],
+      "at": "2025-07-10T00:00:00Z",
+      "description": "В эксперименте 2025 ранние AI-инструменты замедлили выполнение задач; не универсальная оценка влияния AI на программирование в 2026.",
+      "layout": {
+        "x": 810,
+        "y": 615
+      },
+      "indicator": {
+        "metric": "Change in open-source issue completion time when early-2025 AI tools were allowed",
+        "unit": "percent change in task completion time (positive = slower)",
+        "period": "tasks February-June 2025; report July 2025",
+        "value": 19,
+        "source_id": "src-metr-dev-2025",
+        "population_scope": "16 experienced open-source developers, 246 real tasks in mature repositories",
+        "method": "Within-study randomized assignment of issues; early-2025 tools; limited developer/task representativeness."
+      }
+    },
+    {
+      "id": "impact-future-sector-productivity",
+      "type": "impact",
+      "label": "Устойчивый отраслевой прирост?",
+      "layer": "impacts",
+      "category": "economy",
+      "subcategories": [
+        "economy.productivity.sector"
+      ],
+      "countries": [
+        "US"
+      ],
+      "at": "2027-01-01T00:00:00Z",
+      "description": "Возможный будущий эффект; НЕ измерен и не включается в исторические ряды.",
+      "layout": {
+        "x": 1070,
+        "y": 275
+      }
+    },
+    {
+      "id": "impact-distribution-welfare",
+      "type": "impact",
+      "label": "Заработная плата и распределение выгод?",
+      "layer": "impacts",
+      "category": "society",
+      "subcategories": [
+        "society.income.distribution"
+      ],
+      "countries": [
+        "US"
+      ],
+      "at": "2027-01-01T00:00:00Z",
+      "description": "Отдельная гипотеза: даже при росте выпуска распределение между трудом, капиталом и потребителями неоднозначно; эффект не оценён.",
+      "layout": {
+        "x": 1340,
+        "y": 275
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-complements",
+      "statement": "AI может дать устойчивый макроэкономический эффект после дополняющих организационных инвестиций; задержка не гарантирует будущий рост.",
+      "mechanism": "Перестройка рабочих процессов, интеграция данных, обучение персонала, масштабирование эффективных сценариев.",
+      "alternatives": [
+        "AI повышает эффективность локальных задач, но не критического ограничивающего этапа производства.",
+        "Изменение производительности вызвано капиталовооруженностью, спросом или структурой отраслей.",
+        "Эффект нивелируется расходами на качество, проверку и инфраструктуру."
+      ],
+      "falsification": "По фирмам и отраслям: сравнить интенсивность реального использования AI и независимые показатели выпуска/час с контрольными фирмами, до и после организационных изменений; учесть качество и стоимость внедрения.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-david-1990",
+        "src-oliner-sichel-2000",
+        "src-fed-buildout-2026",
+        "src-nber-firm-data-2026"
+      ],
+      "author": "World Information research staging"
+    },
+    {
+      "id": "claim-investment-proxy",
+      "statement": "Вклад четырех AI-связанных инвестиционных категорий в рост реального ВВП не является измеренным чистым вкладом AI.",
+      "mechanism": "Национальные счета фиксируют инвестиции в оборудование, ПО, НИОКР и ЦОД, содержащие и не-AI расходы.",
+      "alternatives": [
+        "Часть инвестиций связана с традиционным IT, облаками и не-AI НИОКР.",
+        "Переоценки и импутация расходов ЦОД в Q3 влияют на точность."
+      ],
+      "falsification": "Получить классифицированные по фактическому назначению проекты и отдельно измерить долю AI в каждой категории; сравнить с BEA/Census и повторить оценки.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-stlouis-2026"
+      ],
+      "author": "World Information research staging"
+    },
+    {
+      "id": "claim-task-heterogeneity",
+      "statement": "Эффекты AI на результаты отдельных задач неоднородны: +15% решений/час у поддержки в одном исследовании и +19% времени у опытных OSS-разработчиков в другом не противоречат друг другу.",
+      "mechanism": "Различие профессий, опыта, требований к качеству, интеграции и поколения AI инструментов.",
+      "alternatives": [
+        "В разных исследованиях используются разные зависимые переменные и способы идентификации.",
+        "Улучшения моделей и изменения выборки после 2025 могут поменять знак эффекта."
+      ],
+      "falsification": "Повторить эксперименты с сопоставимыми инструментами, периодами, навыками и качеством результата, затем проверить воспроизводимость и внешнюю валидность.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-qje-support-2025",
+        "src-metr-dev-2025",
+        "src-metr-update-2026"
+      ],
+      "author": "World Information research staging"
+    },
+    {
+      "id": "claim-welfare-gap",
+      "statement": "Рост выпуска на рабочий час не доказывает автоматически рост медианной реальной зарплаты и доступного дохода населения.",
+      "mechanism": "Эффект может распределяться через цены, доход капитала, зарплаты, налоги и рыночную власть; задержки и различия между группами.",
+      "alternatives": [
+        "Цены для потребителей снижаются и выгода растёт без увеличения зарплаты.",
+        "Рост зарплат связан с институциональными изменениями или рынком труда, а не с AI.",
+        "Переходные потери занятости и новые профессии могут взаимно компенсироваться."
+      ],
+      "falsification": "Сравнить по странам/группам реальные медианные зарплаты, долю труда в добавленной стоимости, занятость, потребительские цены и трансферты с внедрением AI и контрольными группами.",
+      "review_status": "under_review",
+      "evidence_source_ids": [
+        "src-fed-buildout-2026"
+      ],
+      "author": "World Information research staging"
+    }
+  ],
+  "relations": [
+    {
+      "id": "edge-electric-precedes",
+      "from": "event-factory-electrification",
+      "to": "event-electrical-redesign",
+      "relation": "precedes",
+      "status": "supported",
+      "mechanism": "Переход от медленной диффузии к новой планировке фабрик документирован исторически, но не сводится к одной причине.",
+      "evidence_source_ids": [
+        "src-david-1990"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": null
+    },
+    {
+      "id": "edge-history-it",
+      "from": "event-electrical-redesign",
+      "to": "event-us-it-productivity",
+      "relation": "precedes",
+      "status": "supported",
+      "mechanism": "Историческая последовательность разных технологических эпох, не причинное влияние электричества на IT-ускорение.",
+      "evidence_source_ids": [
+        "src-david-1990",
+        "src-oliner-sichel-2000"
+      ],
+      "claim_ids": [],
+      "alternative_claim_ids": [],
+      "reviewed_at": null
+    },
+    {
+      "id": "edge-ai-investment",
+      "from": "event-ai-buildout",
+      "to": "indicator-ai-related-gdp",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "Источник называет категории AI-related, а не AI-only; нельзя приписать 1,3/1,16/0,48 п.п. только AI.",
+      "evidence_source_ids": [
+        "src-stlouis-2026"
+      ],
+      "claim_ids": [
+        "claim-investment-proxy"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": null
+    },
+    {
+      "id": "edge-ai-organization",
+      "from": "indicator-firm-ai-adoption",
+      "to": "factor-ai-organization",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Распространённость AI может стимулировать реорганизацию; анкета о внедрении сама по себе этого не измеряет.",
+      "evidence_source_ids": [
+        "src-nber-firm-data-2026"
+      ],
+      "claim_ids": [
+        "claim-complements"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": null
+    },
+    {
+      "id": "edge-organization-productivity",
+      "from": "factor-ai-organization",
+      "to": "impact-future-sector-productivity",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Комплементарные организационные изменения могут повышать выпуск на час работы в 2027+; проверка требуется.",
+      "evidence_source_ids": [
+        "src-fed-buildout-2026",
+        "src-david-1990"
+      ],
+      "claim_ids": [
+        "claim-complements"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": null
+    },
+    {
+      "id": "edge-productivity-welfare",
+      "from": "impact-future-sector-productivity",
+      "to": "impact-distribution-welfare",
+      "relation": "hypothesized_to_affect",
+      "status": "hypothesized",
+      "mechanism": "Возможная трансляция отраслевой эффективности в зарплаты, цены и доходы не автоматическая.",
+      "evidence_source_ids": [
+        "src-fed-buildout-2026"
+      ],
+      "claim_ids": [
+        "claim-welfare-gap"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": null
+    },
+    {
+      "id": "edge-support-task-effect",
+      "from": "event-customer-support-ai",
+      "to": "indicator-customer-support-15",
+      "relation": "supported_causal_effect",
+      "status": "supported",
+      "mechanism": "Оценённый авторами эффект доступа к AI-помощнику для заданной выборки операторов; не переносить на экономику в целом.",
+      "evidence_source_ids": [
+        "src-qje-support-2025"
+      ],
+      "claim_ids": [
+        "claim-task-heterogeneity"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": null
+    },
+    {
+      "id": "edge-metr-task-effect",
+      "from": "event-metr-ai-dev",
+      "to": "indicator-metr-time-19",
+      "relation": "supported_causal_effect",
+      "status": "supported",
+      "mechanism": "Рандомизированный эффект допущения AI при выполнении задач опытными OSS-разработчиками с инструментами начала 2025 года.",
+      "evidence_source_ids": [
+        "src-metr-dev-2025"
+      ],
+      "claim_ids": [
+        "claim-task-heterogeneity"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": null
+    },
+    {
+      "id": "edge-adoption-selfreport",
+      "from": "indicator-firm-ai-adoption",
+      "to": "indicator-selfreport-productivity",
+      "relation": "associated_with",
+      "status": "associated",
+      "mechanism": "В одном опросе зафиксированы внедрение и субъективная оценка отдачи; причинное влияние не установлено.",
+      "evidence_source_ids": [
+        "src-nber-firm-data-2026"
+      ],
+      "claim_ids": [
+        "claim-complements"
+      ],
+      "alternative_claim_ids": [],
+      "reviewed_at": null
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario-complementary-payoff",
+      "label": "Организационная перестройка и устойчивый рост производительности",
+      "base_as_of": "2026-11-01T00:00:00Z",
+      "assumptions": [
+        "Растет фактическое применение AI в рабочих процессах, а не только наличие подписки.",
+        "Производительность по независимым отраслевым данным растет относительно контрольных групп с учетом качества и капзатрат."
+      ],
+      "time_horizon": "2027-2030",
+      "is_forecast": false
+    },
+    {
+      "id": "scenario-capex-without-yield",
+      "label": "Инвестиционная волна без сопоставимого общеэкономического эффекта",
+      "base_as_of": "2026-11-01T00:00:00Z",
+      "assumptions": [
+        "Расходы на модели/ЦОД опережают измеримый рост выпуска и коммерческую отдачу.",
+        "Вклад инвестиционных категорий в рост ВВП не доказывает рост TFP."
+      ],
+      "time_horizon": "2027-2030",
+      "is_forecast": false
+    },
+    {
+      "id": "scenario-uneven-capture",
+      "label": "Преимущества концентрируются по профессиям, фирмам и капиталу",
+      "base_as_of": "2026-11-01T00:00:00Z",
+      "assumptions": [
+        "В некоторых задачах AI дает улучшения, в других нет или увеличивает затраты.",
+        "Распределение дохода и снижение цен отличаются между странами, группами и отраслями."
+      ],
+      "time_horizon": "2027-2030",
+      "is_forecast": false
+    }
+  ],
+  "forecasts": []
+}

@@ -1,0 +1,93 @@
+{
+  "record_id": "signal-ai-productivity-solow-paradox-2026-11-01",
+  "record_type": "research_case_staging",
+  "review_status": "review_required",
+  "as_of_date": "2026-11-01",
+  "first_detected_date": "2026-11-01",
+  "signal": {
+    "kind": "user_submitted_social_post_excerpt",
+    "external_original_url": null,
+    "original_author": null,
+    "external_posting_date": null,
+    "claim_summary": "Historical Solow/David analogies suggest AI productivity may lag broad diffusion. Original post text not republished.",
+    "verification_status": "lead_checked_against_independent_primary_research"
+  },
+  "canonical_graph": "data/research/ai-productivity/ai-productivity-paradox-1987-2026.graph.json",
+  "narrative": "stories/2026/ai-productivity-paradox-1987-2026.md",
+  "territories": [
+    "US",
+    "GB",
+    "DE",
+    "AU",
+    "CA",
+    "MX",
+    "ZA"
+  ],
+  "domains": [
+    "economy",
+    "science",
+    "society",
+    "finance"
+  ],
+  "sources_retrieved_date": "2026-11-01",
+  "retrieval_precision": "day_only; graph source retrieved_at = T00:00:00Z as day-precision placeholder, not actual clock time",
+  "validation_status": "automated_syntax_and_cross_reference_checks_required",
+  "publication_approved": false,
+  "license_review": "pending; only attribution URLs, short paraphrases and independent numeric observations stored",
+  "source_boundaries": [
+    "Solow 1987 quotation checked through secondary college citation; New York Times original full text not independently opened.",
+    "David 1990 paper examined; motor diffusion and organizational transition are historical evidence, not AI effect.",
+    "St Louis Fed investment categories include significant non-AI spending; not an AI-only causal estimate.",
+    "BLS measured US nonfarm labor productivity, not causal AI attribution; Q/Q SAAR and YoY differ.",
+    "NBER multi-country self-report is not population census or independent causal productivity estimate; Oct 2026 revision has unknown exact day.",
+    "METR initial 2025 slowdown is specific to 16 experienced OSS developers and 246 tasks; 2026 follow-up cannot provide unbiased update."
+  ],
+  "blocking_review_items": [
+    "Independent editor source-checks exact NBER revision and any later corrections.",
+    "Verify original Solow quote against newspaper scan if licensing permits; preserve secondary attribution otherwise.",
+    "Review sample scope, deflators, quality adjustments and temporal precision for all metrics.",
+    "Review content/data rights before displaying this record in offline board or Pages.",
+    "Run graph schema + semantic checks, tests and CI; follow up on external validity."
+  ],
+  "integration": {
+    "based_on": "feat/local-first-demo-integration",
+    "depends_on_open_pr": 5,
+    "rendered_on_board": false,
+    "case_registry_updated": false,
+    "reason": "Unreviewed data remain research staging and must not silently appear as published/approved case."
+  },
+  "traceability": [
+    {
+      "jtbd": "Distinguish AI capex from productivity",
+      "requirement": "AI-PROD-001",
+      "data_fields": [
+        "nodes.indicator.metric",
+        "nodes.indicator.method",
+        "claims.alternatives"
+      ],
+      "ui_target": "Future board evidence inspector",
+      "test": "tests/ai_productivity.test.mjs"
+    },
+    {
+      "jtbd": "Explain heterogeneous work outcomes",
+      "requirement": "AI-PROD-002",
+      "data_fields": [
+        "relations.relation",
+        "claims.falsification",
+        "sources"
+      ],
+      "ui_target": "Future task/sector comparison",
+      "test": "tests/ai_productivity.test.mjs"
+    },
+    {
+      "jtbd": "Explore conditional scenarios without claiming probabilities",
+      "requirement": "AI-PROD-003",
+      "data_fields": [
+        "scenarios.is_forecast",
+        "scenarios.assumptions"
+      ],
+      "ui_target": "Future scenario panel",
+      "test": "tests/ai_productivity.test.mjs"
+    }
+  ]
+}

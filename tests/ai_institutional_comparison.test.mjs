@@ -23,7 +23,7 @@ test("2026 institutional AI review remains non-public, bounded and sourced",()=>
    }
  }
  assert.ok(r.institutions.some(x=>/MIT/.test(x.institution)&&/SEC/.test(x.method)));
- assert.ok(r.institutions.some(x=>/BIS/.test(x.institution)&&/demand bottleneck/i.test(x.finding)));
+ assert.ok(r.institutions.some(x=>/BIS/.test(x.institution)&&/demand[- ]bottleneck/i.test(x.finding)));
  assert.ok(r.institutions.some(x=>/McKinsey/.test(x.institution)&&/EBIT/.test(x.finding)));
 });
 test("Different adoption and macro denominators cannot be silently collapsed",()=>{

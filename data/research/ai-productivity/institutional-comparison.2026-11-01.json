@@ -296,6 +296,54 @@
       ],
       "evidence_type": "official_sector_survey",
       "caveat": "Sector respondents are not all UK firms; figures based on differing full/short question groups; 2024 sample/question scope differs."
+    },
+    {
+      "institution": "J.P. Morgan Asset Management",
+      "publication": "A brighter productivity outlook for the AI era",
+      "published": "2026-10-19",
+      "url": "https://am.jpmorgan.com/us/en/asset-management/institutional/insights/portfolio-insights/ltcma/a-brighter-productivity-outlook-for-the-ai-era/",
+      "method": "Long-term capital markets structural Cobb–Douglas scenario; task exposure, assumed adoption, per-task gain, labor share, capital deepening, estimated AI-related crowding-out",
+      "finding": "In conditional 10–15-year base case, AI adds +0.40 percentage points per year to US TFP growth and +0.50 pp per year to US labor-productivity growth relative to pre-AI baseline, with major impacts anticipated in 2030s. Not empirical identified effect.",
+      "metrics": [
+        {
+          "value": 0.4,
+          "unit": "percentage points additional annual US TFP growth, model scenario",
+          "period": "10–15-year horizon from 2026",
+          "name": "TFP trend contribution"
+        },
+        {
+          "value": 0.5,
+          "unit": "percentage points additional annual US labor-productivity growth, model scenario",
+          "period": "10–15-year horizon from 2026",
+          "name": "labor productivity trend contribution"
+        }
+      ],
+      "evidence_type": "financial_institution_scenario_forecast",
+      "caveat": "Model assumes ~40% task penetration by 2040 and explicit 50% AI investment crowd-out haircut, neither measured future fact. Not comparable to Acemoglu cumulative TFP-level estimate."
+    },
+    {
+      "institution": "Federal Reserve Economic Data (FRED) Blog",
+      "publication": "Early signs of AI-driven productivity growth in the information sector?",
+      "published": "2026-10-22",
+      "url": "https://fred.stlouisfed.org/blog/2026/10/early-signs-of-ai-driven-productivity-growth-in-information-sector",
+      "method": "Real industry value added divided by employment (output per employed person) from FRED sector and aggregate series, Q2 2025 to Q2 2026",
+      "finding": "US information sector output per employed person increased 13.70% versus 2.17% in aggregate over Q2 2025–Q2 2026. This temporal/sector correlation does not identify AI contribution.",
+      "metrics": [
+        {
+          "value": 13.7,
+          "unit": "percent year-over-year change real value added per employee, US information sector",
+          "period": "2025-Q2 to 2026-Q2",
+          "name": "output per worker"
+        },
+        {
+          "value": 2.17,
+          "unit": "percent year-over-year change real GDP per employed person, US all economy",
+          "period": "2025-Q2 to 2026-Q2",
+          "name": "output per worker aggregate comparison"
+        }
+      ],
+      "evidence_type": "descriptive_official_series_secondary_calculation",
+      "caveat": "Different measure from BLS real output per hour; information sector includes data-center investment and several non-GenAI industries; cannot claim AI-caused productivity."
     }
   ],
   "editorial_blocks": [

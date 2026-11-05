@@ -27,7 +27,8 @@ test('within-period series compare matched windows and sources',()=>{
  assert.deepEqual(d.first_half_total.map(r=>r.period),['2025-H1','2026-H1']);
  assert.equal(d.first_half_total[0].foreign_suspects-d.first_half_total[1].foreign_suspects,882);
  for(const r of d.jan_aug_2024_2025){
-  assert.equal(r.period_2024.slice(5),r.period_2025.slice(5));
+  assert.equal(r.period_2024.slice(5,10),r.period_2025.slice(5,10));
+  assert.equal(r.period_2024.slice(16),r.period_2025.slice(16));
   assert.ok(validSources.has(r.source_id));
  }
 });

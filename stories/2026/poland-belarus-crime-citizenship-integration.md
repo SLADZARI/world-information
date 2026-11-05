@@ -77,3 +77,9 @@ Hypotheses to test: (H1) demographic size change explains absolute increases; (H
 **Sources status:** Polish Sejm original indexed search excerpts but direct browsing human challenge; GUS PDFs text-extracted, screenshot service cache missed for 2025 yearbook; 2024 marital summary PDF screenshot succeeded; archived documents linked, not copied. **Publication gate: `review_required`**.
 
 **JTBD → requirement → data → UI → tests:** compare risks and integration without nationality stereotyping → independent persons/offenses/convictions, age adjustment and matched periods → `source_id`, `counting_unit`, `citizenship`, `age_band`, `denominator_kind`, `legal_status` → time series and evidence drill-down with explicit NA values → automated provenance, year and denominator gates. No board/Three.js change or CI pass implied.
+
+## 2026-11-05 source follow-up: 2023 mixed marriage partial and official revisions
+
+GUS Demographic Yearbook 2024 (table 24(48), p225) confirms **59 Belarusian male citizens married Polish women in Poland during 2023**; the 2024 corresponding value is **70**. The 2023 BY-female/PL-male count was not reliably extracted from this specific table rendering, therefore **2023 total remains unknown**, and year-on-year change in *all* mixed marriages is not reported. Source: https://isws.ms.gov.pl/pl/english-version/download%2C3886%2C9.html .
+
+Naturalization source releases vary: the RRL/MSWiA series recorded above gives **2,017 (2020) and 4,456 (2023)**, while the GUS Demographic Yearbook 2024 gives **2,012 (2020) and 4,466 (2023)**. Another published 2022 value is **2,994** versus RRL **3,001**. Year 2024 is also disputed (**5,830 vs 5,666**) due to not-yet-reconciled publication scopes. Do not interpret single-unit differences as population signals. Source: https://isws.ms.gov.pl/pl/english-version/download%2C3886%2C9.html ; https://rrl.stat.gov.pl/Files/raporty/sytuacja_demograficzna_polski_20222023_internet_2.pdf .

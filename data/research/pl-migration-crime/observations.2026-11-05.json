@@ -1,0 +1,264 @@
+{
+  "schema_version": "0.1-research-staging",
+  "id": "pl-migration-crime-counterfactual-2026-11-05",
+  "created_at": "2026-11-05",
+  "known_as_of": "2026-11-05",
+  "review_status": "review_required",
+  "country": "PL",
+  "license_note": "Source-linked aggregate facts; no personal data; copyright and dataset licensing review required.",
+  "sources": [
+    {
+      "id": "sejm_citizenship",
+      "url": "https://sejm.gov.pl/Sejm10.nsf/InterpelacjaTresc.xsp?key=DFQJ6A",
+      "publisher": "MSWiA/KGP/SG",
+      "retrieved_at": "2026-11-05",
+      "status": "source_excerpt_verified_page_full_access_blocked"
+    },
+    {
+      "id": "police_h1_2026",
+      "url": "https://policja.pl/pol/aktualnosci/280366,Pierwsze-polrocze-2026-roku-skuteczne-dzialania-pionu-kryminalnego-Policji.html",
+      "publisher": "Policja",
+      "retrieved_at": "2026-11-05",
+      "status": "source_excerpt_verified"
+    },
+    {
+      "id": "sejm_h1_2025",
+      "url": "https://sejm.gov.pl/sejm10.nsf/InterpelacjaTresc.xsp?key=DLZHYJ",
+      "publisher": "MSWiA",
+      "retrieved_at": "2026-11-05",
+      "status": "source_excerpt_verified_page_full_access_blocked"
+    },
+    {
+      "id": "mswia_2024",
+      "url": "https://www.gov.pl/web/mswia/szef-mswia-nie-ma-zgody-by-zorganizowane-grupy-przestepcze-obcokrajowcow-burzyly-porzadek-publiczny",
+      "publisher": "MSWiA",
+      "retrieved_at": "2026-11-05",
+      "status": "source_excerpt_verified"
+    },
+    {
+      "id": "sejm_discrepancy",
+      "url": "https://www.sejm.gov.pl/sejm10.nsf/InterpelacjaTresc.xsp?key=DJGHTR",
+      "publisher": "MSWiA",
+      "retrieved_at": "2026-11-05",
+      "status": "source_excerpt_verified_page_full_access_blocked"
+    }
+  ],
+  "metric_definition": {
+    "id": "persons_suspected",
+    "unit": "persons",
+    "case_status": "suspect_not_convicted",
+    "geography": "PL",
+    "counts_not_rates": true,
+    "denominator_status": "missing_comparable_resident_population_by_citizenship_age_sex_and_year",
+    "do_not_compare_directly_to": "ZUS insured or PESEL UKR only",
+    "methodology": "Counts from official written parliamentary answers; completeness/coverage may differ by source"
+  },
+  "annual_by_citizenship": [
+    {
+      "citizenship": "UA",
+      "values": [
+        7899,
+        10887,
+        10267,
+        10802,
+        10729
+      ],
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "source_id": "sejm_citizenship",
+      "metric": "persons_suspected"
+    },
+    {
+      "citizenship": "BY",
+      "values": [
+        682,
+        958,
+        1214,
+        1230,
+        1341
+      ],
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "source_id": "sejm_citizenship",
+      "metric": "persons_suspected"
+    },
+    {
+      "citizenship": "GE",
+      "values": [
+        997,
+        1732,
+        2945,
+        3015,
+        1935
+      ],
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "source_id": "sejm_citizenship",
+      "metric": "persons_suspected"
+    },
+    {
+      "citizenship": "MD",
+      "values": [
+        412,
+        733,
+        696,
+        783,
+        646
+      ],
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "source_id": "sejm_citizenship",
+      "metric": "persons_suspected"
+    },
+    {
+      "citizenship": "RU",
+      "values": [
+        366,
+        407,
+        329,
+        303,
+        277
+      ],
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "source_id": "sejm_citizenship",
+      "metric": "persons_suspected"
+    }
+  ],
+  "first_half_total": [
+    {
+      "period": "2025-H1",
+      "foreign_suspects": 9333,
+      "share_of_all_suspects_percent": 6.18,
+      "source_id": "police_h1_2026"
+    },
+    {
+      "period": "2026-H1",
+      "foreign_suspects": 8451,
+      "share_of_all_suspects_percent": 5.95,
+      "source_id": "police_h1_2026"
+    }
+  ],
+  "first_half_2026_by_citizenship": [
+    {
+      "citizenship": "UA",
+      "persons": 4990,
+      "period": "2026-H1",
+      "metric": "persons_suspected",
+      "source_id": "police_h1_2026"
+    },
+    {
+      "citizenship": "GE",
+      "persons": 616,
+      "period": "2026-H1",
+      "metric": "persons_suspected",
+      "source_id": "police_h1_2026"
+    },
+    {
+      "citizenship": "BY",
+      "persons": 494,
+      "period": "2026-H1",
+      "metric": "persons_suspected",
+      "source_id": "police_h1_2026"
+    },
+    {
+      "citizenship": "CO",
+      "persons": 237,
+      "period": "2026-H1",
+      "metric": "persons_suspected",
+      "source_id": "police_h1_2026"
+    },
+    {
+      "citizenship": "MD",
+      "persons": 209,
+      "period": "2026-H1",
+      "metric": "persons_suspected",
+      "source_id": "police_h1_2026"
+    }
+  ],
+  "jan_aug_2024_2025": [
+    {
+      "citizenship": "UA",
+      "period_2024": "2024-01-01/2024-08-31",
+      "period_2025": "2025-01-01/2025-08-31",
+      "v2024": 6424,
+      "v2025": 6604,
+      "source_id": "sejm_h1_2025"
+    },
+    {
+      "citizenship": "BY",
+      "period_2024": "2024-01-01/2024-08-31",
+      "period_2025": "2025-01-01/2025-08-31",
+      "v2024": 816,
+      "v2025": 667,
+      "source_id": "sejm_h1_2025"
+    },
+    {
+      "citizenship": "GE",
+      "period_2024": "2024-01-01/2024-08-31",
+      "period_2025": "2025-01-01/2025-08-31",
+      "v2024": 1266,
+      "v2025": 1046,
+      "source_id": "sejm_h1_2025"
+    }
+  ],
+  "disputed_2024_foreign_share": [
+    {
+      "source_id": "mswia_2024",
+      "suspects_foreign": 16437,
+      "share_percent": 5.74
+    },
+    {
+      "source_id": "sejm_discrepancy",
+      "share_percent": 6.5
+    }
+  ],
+  "crime_types_status": {
+    "nationality_by_offense_verified": false,
+    "aggregated_foreign_suspects_most_cited": [
+      "driving_under_influence",
+      "drug_possession",
+      "theft"
+    ],
+    "source_id": "police_h1_2026"
+  },
+  "analysis": {
+    "design": "district-quarter event study/DID",
+    "execution_status": "design_and_source_inventory_only_no_regional_estimate",
+    "causal_effect_estimated": false,
+    "comparison_data_missing": true,
+    "uncertainties": [
+      "resident denominators by citizenship, sex, age and geography",
+      "offense×citizenship tables",
+      "data consistency across KGP/SG/KSIP",
+      "conviction records vs suspected persons",
+      "police detection/intensity"
+    ],
+    "guardrail": "Do not infer group propensity from raw counts"
+  }
+}

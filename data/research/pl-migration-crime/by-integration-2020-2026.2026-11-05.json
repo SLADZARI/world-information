@@ -96,6 +96,12 @@
       "publisher": "IWS national suspects age 2023",
       "url": "https://iws.gov.pl/wp-content/uploads/2025/07/Atlas-7-PL-WERSJA-ELEKTRONICZNA.pdf",
       "status": "official_research_indexed"
+    },
+    {
+      "id": "mixed_marriage_2023",
+      "publisher": "GUS Rocznik Demograficzny 2024, Table 24(48), p225",
+      "url": "https://isws.ms.gov.pl/pl/english-version/download%2C3886%2C9.html",
+      "status": "official_pdf_text_table_reviewed_screenshot_cache_miss"
     }
   ],
   "selected_offense_articles_2022_2024": {
@@ -336,5 +342,43 @@
       "2024 numerator definitions conflict",
       "naturalization via card cannot be separated from Polish origin"
     ]
-  }
+  },
+  "mixed_marriages_2023_partial": {
+    "period": "2023",
+    "male_citizenship_BY_female_citizenship_PL": 59,
+    "female_citizenship_BY_male_citizenship_PL": null,
+    "total": null,
+    "source_id": "mixed_marriage_2023",
+    "reason": "Female-BY column not reliably extracted from published table; do not compute total"
+  },
+  "naturalization_source_conflicts": [
+    {
+      "year": 2020,
+      "main_series": 2017,
+      "alternative": 2012,
+      "source": "GUS Rocznik Demograficzny 2024, nationality table",
+      "status": "not_reconciled"
+    },
+    {
+      "year": 2022,
+      "main_series": 3001,
+      "alternative": 2994,
+      "source": "other official/statistical edition",
+      "status": "not_reconciled"
+    },
+    {
+      "year": 2023,
+      "main_series": 4456,
+      "alternative": 4466,
+      "source": "GUS Rocznik Demograficzny 2024",
+      "status": "not_reconciled"
+    },
+    {
+      "year": 2024,
+      "main_series": 5830,
+      "alternative": 5666,
+      "source": "Notes from Poland reports differing administrative total",
+      "status": "not_reconciled"
+    }
+  ]
 }

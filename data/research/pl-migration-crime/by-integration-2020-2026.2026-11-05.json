@@ -1,0 +1,384 @@
+{
+  "schema_version": "0.1-research-staging",
+  "id": "pl-by-crime-integration-2020-2026",
+  "as_of": "2026-11-05",
+  "territory": "PL",
+  "focus_citizenship": "BY",
+  "review_status": "review_required",
+  "definitions": {
+    "police_selected_offenses": "Offense article counts excerpted from Sejm answer 1117; unique persons vs events not confirmed",
+    "suspected_person": "Person with procedural suspect status, not convicted",
+    "valid_residence_document": "Stocks of documented residence holders at reference date, excludes some visa holders, excludes naturalized former Belarus citizens",
+    "naturalization": "Acquisition of Polish citizenship, not Pole's Card award, not number of voting-age persons",
+    "marriage": "Marriages registered in Poland in given year; one spouse Polish citizen, other Belarusian citizen"
+  },
+  "sources": [
+    {
+      "id": "crime_five_art",
+      "publisher": "MSWiA, answer to parliamentary query 1117",
+      "url": "https://www.sejm.gov.pl/sejm10.nsf/InterpelacjaTresc.xsp?key=DBCKGW&view=2",
+      "status": "search_index_excerpt_verified_full_page_access_challenged"
+    },
+    {
+      "id": "crime_all",
+      "publisher": "MSWiA/KGP/SG, parliamentary answer",
+      "url": "https://www.sejm.gov.pl/sejm10.nsf/InterpelacjaTresc.xsp?key=DFQJ6A",
+      "status": "search_index_excerpt_verified_full_page_access_challenged"
+    },
+    {
+      "id": "crime_police_only_secondary",
+      "publisher": "Migralert, citing KGP (secondary redistribution)",
+      "url": "https://migralert.pl/podejrzani.php",
+      "status": "secondary_not_primary_raw_verified"
+    },
+    {
+      "id": "crime_offenses_secondary",
+      "publisher": "Migralert, citing KGP (secondary redistribution)",
+      "url": "https://migralert.pl/stwierdzone.php",
+      "status": "secondary_not_primary_raw_verified"
+    },
+    {
+      "id": "residence_stock_2024",
+      "publisher": "UdSC, Annual EMN overview",
+      "url": "https://www.gov.pl/attachment/4ab216a5-4ad8-40b1-98d2-bf94399b0482",
+      "status": "indexed_official_excerpt"
+    },
+    {
+      "id": "naturalized_2020_23",
+      "publisher": "Rządowa Rada Ludnościowa / MSWiA 2024, Table 6.17",
+      "url": "https://rrl.stat.gov.pl/Files/raporty/sytuacja_demograficzna_polski_20222023_internet_2.pdf",
+      "status": "official_pdf_indexed_screenshot_unavailable"
+    },
+    {
+      "id": "naturalized_2024",
+      "publisher": "UdSC / European Migration Network annual report Poland 2024, Table 1",
+      "url": "https://www.gov.pl/attachment/e296ba4d-4fb6-41f5-8297-a9cb3eef9a4b",
+      "status": "official_pdf_indexed_screenshot_unavailable"
+    },
+    {
+      "id": "naturalized_2025",
+      "publisher": "European Commission / Polish Ministry of Interior, 2026-07-31",
+      "url": "https://home-affairs.ec.europa.eu/news/new-migrant-integration-measures-and-statistics-poland-2026-07-31_en",
+      "status": "verified_official"
+    },
+    {
+      "id": "mixed_marriage_2024",
+      "publisher": "GUS Rocznik Demograficzny 2025, Table 24(48), p225",
+      "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5515/3/19/1/rocznik_demograficzny_2025_pl.pdf",
+      "status": "official_pdf_extracted_screenshot_unavailable"
+    },
+    {
+      "id": "karta_grants_gus",
+      "publisher": "GUS Rocznik Demograficzny 2025 Table 60(211) p474, place of issue",
+      "url": "https://stat.gov.pl/files/gfx/portalinformacyjny/pl/defaultaktualnosci/5515/3/19/1/rocznik_demograficzny_2025_pl.pdf",
+      "status": "official_pdf_extracted_screenshot_unavailable"
+    },
+    {
+      "id": "karta_grants_rrl",
+      "publisher": "Rządowa Rada Ludnościowa, Table 6.4",
+      "url": "https://bip.stat.gov.pl/download/gfx/bip/pl/defaultstronaopisowa/805/1/1/sytuacja_demograficzna_polski_20222023_internet.pdf",
+      "status": "official_pdf_indexed_screenshot_not_verified"
+    },
+    {
+      "id": "legal_naturalization",
+      "publisher": "MSWiA, Art 30 (1) (7), Polish citizenship by recognition",
+      "url": "https://www.gov.pl/web/mswia/popros-o-uznanie-za-polskiego-obywatela",
+      "status": "verified_official"
+    },
+    {
+      "id": "nbp_sample",
+      "publisher": "NBP, Belarusian migration survey 2025",
+      "url": "https://nbp.pl/wp-content/uploads/2026/02/Sytuacja_uchodzcow_z_Bialorusi-ANG-2025-WWW.pdf",
+      "status": "official_research_indexed"
+    },
+    {
+      "id": "age_poland_not_BY",
+      "publisher": "IWS national suspects age 2023",
+      "url": "https://iws.gov.pl/wp-content/uploads/2025/07/Atlas-7-PL-WERSJA-ELEKTRONICZNA.pdf",
+      "status": "official_research_indexed"
+    },
+    {
+      "id": "mixed_marriage_2023",
+      "publisher": "GUS Rocznik Demograficzny 2024, Table 24(48), p225",
+      "url": "https://isws.ms.gov.pl/pl/english-version/download%2C3886%2C9.html",
+      "status": "official_pdf_text_table_reviewed_screenshot_cache_miss"
+    }
+  ],
+  "selected_offense_articles_2022_2024": {
+    "coverage": "Jan 1–Aug 31 each year",
+    "unit": "source_not_explicit_about_distinct_persons_vs_incidents",
+    "source_id": "crime_five_art",
+    "rows": [
+      {
+        "article": "278",
+        "category": "theft",
+        "values": {
+          "2022": 143,
+          "2023": 184,
+          "2024": 136
+        }
+      },
+      {
+        "article": "280",
+        "category": "robbery",
+        "values": {
+          "2022": 5,
+          "2023": 2,
+          "2024": 6
+        }
+      },
+      {
+        "article": "197",
+        "category": "rape",
+        "values": {
+          "2022": 1,
+          "2023": 2,
+          "2024": 0
+        }
+      },
+      {
+        "article": "148",
+        "category": "homicide",
+        "values": {
+          "2022": 2,
+          "2023": 0,
+          "2024": 0
+        }
+      },
+      {
+        "article": "204",
+        "category": "pimping",
+        "values": {
+          "2022": 0,
+          "2023": 0,
+          "2024": 0
+        }
+      }
+    ]
+  },
+  "suspected_persons_2024": [
+    {
+      "value": 1341,
+      "source_id": "crime_all",
+      "coverage": "KGP+Straż Graniczna (reported); confirm dedup and period"
+    },
+    {
+      "value": 1122,
+      "source_id": "crime_police_only_secondary",
+      "coverage": "KGP-only as reproduced by NGO; independently verify underlying extracted file"
+    }
+  ],
+  "confirmed_offenses_2024_secondary": {
+    "value": 1610,
+    "source_id": "crime_offenses_secondary",
+    "coverage": "KGP sourced by intermediary; not same as suspected persons"
+  },
+  "residence_stock_end_2024": {
+    "approx_value": 141000,
+    "unit": "persons_holding_valid_residence_documents",
+    "source_id": "residence_stock_2024",
+    "exclusions": [
+      "visa-only residents",
+      "persons already naturalized",
+      "undocumented residents"
+    ]
+  },
+  "crude_indicators_2024": [
+    {
+      "numerator": 1341,
+      "denominator": 141000,
+      "per_1000": 9.5106,
+      "source_numerator": "crime_all",
+      "source_denominator": "residence_stock_2024",
+      "status": "arithmetic_indicator_NOT_incidence_or_individual_probability",
+      "comparability": "numerator_includes_nonresidents;denominator_omits_visa_holders;year-end_stock_not_person_years;different_police_coverage"
+    },
+    {
+      "numerator": 1122,
+      "denominator": 141000,
+      "per_1000": 7.9574,
+      "source_numerator": "crime_police_only_secondary",
+      "source_denominator": "residence_stock_2024",
+      "status": "arithmetic_indicator_NOT_incidence_or_individual_probability",
+      "comparability": "numerator_includes_nonresidents;denominator_omits_visa_holders;year-end_stock_not_person_years;different_police_coverage"
+    }
+  ],
+  "suspect_age_by_citizenship": {
+    "value": null,
+    "source_status": "not_obtained",
+    "required_columns": [
+      "year",
+      "age_band",
+      "sex",
+      "crime_article",
+      "citizenship",
+      "residency_status",
+      "person_count"
+    ]
+  },
+  "naturalization_by_previous_citizenship": [
+    {
+      "year": 2020,
+      "persons": 2017,
+      "source_id": "naturalized_2020_23"
+    },
+    {
+      "year": 2021,
+      "persons": 2211,
+      "source_id": "naturalized_2020_23"
+    },
+    {
+      "year": 2022,
+      "persons": 3001,
+      "source_id": "naturalized_2020_23"
+    },
+    {
+      "year": 2023,
+      "persons": 4456,
+      "source_id": "naturalized_2020_23"
+    },
+    {
+      "year": 2024,
+      "persons": 5830,
+      "administrative": 5664,
+      "presidential": 166,
+      "source_id": "naturalized_2024"
+    },
+    {
+      "year": 2025,
+      "persons": 6506,
+      "source_id": "naturalized_2025"
+    }
+  ],
+  "naturalization_source_conflict": {
+    "year": 2024,
+    "alternative_total": 5666,
+    "alternative_source": "https://notesfrompoland.com/2025/08/29/record-number-of-foreigners-granted-polish-citizenship-in-2024/",
+    "status": "unreconciled_release_differing_scope_or_revision"
+  },
+  "pole_card_grants_by_place": [
+    {
+      "series": "GUS_2025",
+      "issue_country": "Belarus",
+      "year": 2020,
+      "cards": 10636,
+      "source_id": "karta_grants_gus"
+    },
+    {
+      "series": "GUS_2025",
+      "issue_country": "Belarus",
+      "year": 2023,
+      "cards": 6020,
+      "source_id": "karta_grants_gus"
+    },
+    {
+      "series": "GUS_2025",
+      "issue_country": "Belarus",
+      "year": 2024,
+      "cards": 163,
+      "source_id": "karta_grants_gus"
+    },
+    {
+      "series": "RRL_2022_23",
+      "issue_country": "Belarus",
+      "year": 2020,
+      "cards": 11467,
+      "source_id": "karta_grants_rrl"
+    },
+    {
+      "series": "RRL_2022_23",
+      "issue_country": "Belarus",
+      "year": 2021,
+      "cards": 8522,
+      "source_id": "karta_grants_rrl"
+    },
+    {
+      "series": "RRL_2022_23",
+      "issue_country": "Belarus",
+      "year": 2022,
+      "cards": 9168,
+      "source_id": "karta_grants_rrl"
+    }
+  ],
+  "pole_card_grants_poland_2024_all_citizenships": {
+    "year": 2024,
+    "issue_country": "Poland",
+    "cards": 7796,
+    "source_id": "karta_grants_gus",
+    "note": "MUST NOT attribute these to Belarus nationality"
+  },
+  "poles_card_to_citizenship": {
+    "citizenship_direct": false,
+    "path": "Pole's Card / Polish origin -> permanent residence -> at least one year continuous residence -> Art 30(1)(7) recognition (subject to other statutory requirements)",
+    "count_naturalized_via_card_by_year_and_BY": null,
+    "why": "Art 30(1)(7) groups Polish-origin and Pole's Card together; published annual previous-citizenship totals aggregate all routes",
+    "source_id": "legal_naturalization"
+  },
+  "mixed_marriages_2024": {
+    "period": "2024",
+    "male_citizenship_BY_female_citizenship_PL": 70,
+    "female_citizenship_BY_male_citizenship_PL": 216,
+    "total": 286,
+    "source_id": "mixed_marriage_2024",
+    "coverage": "registered in Poland, all residences including spouses living abroad"
+  },
+  "mixed_marriages_2020_2023": {
+    "status": "pending_GUS_historical_yearbooks",
+    "yearwise_values": null
+  },
+  "age_population_note": "NBP sample age/education is NOT police suspect age; need KGP aggregation",
+  "research_design": {
+    "status": "infrastructure_extended_no_estimated_effect",
+    "hypotheses": [
+      "population stock and age composition",
+      "registration and enforcement effects",
+      "economic integration and social contact",
+      "naturalization changes citizenship classification without changing ancestry"
+    ],
+    "identification": "powiat-year event study DID, 2018–2026; link census/GUS, PESEL/UDSC, KGP offense and person categories; age-sex adjust; pretrend/event-time, spillovers, selection checks",
+    "blockers": [
+      "BY suspect age×offense×county not public in verified official material",
+      "comparable resident person-years by age×sex×status missing",
+      "2024 numerator definitions conflict",
+      "naturalization via card cannot be separated from Polish origin"
+    ]
+  },
+  "mixed_marriages_2023_partial": {
+    "period": "2023",
+    "male_citizenship_BY_female_citizenship_PL": 59,
+    "female_citizenship_BY_male_citizenship_PL": null,
+    "total": null,
+    "source_id": "mixed_marriage_2023",
+    "reason": "Female-BY column not reliably extracted from published table; do not compute total"
+  },
+  "naturalization_source_conflicts": [
+    {
+      "year": 2020,
+      "main_series": 2017,
+      "alternative": 2012,
+      "source": "GUS Rocznik Demograficzny 2024, nationality table",
+      "status": "not_reconciled"
+    },
+    {
+      "year": 2022,
+      "main_series": 3001,
+      "alternative": 2994,
+      "source": "other official/statistical edition",
+      "status": "not_reconciled"
+    },
+    {
+      "year": 2023,
+      "main_series": 4456,
+      "alternative": 4466,
+      "source": "GUS Rocznik Demograficzny 2024",
+      "status": "not_reconciled"
+    },
+    {
+      "year": 2024,
+      "main_series": 5830,
+      "alternative": 5666,
+      "source": "Notes from Poland reports differing administrative total",
+      "status": "not_reconciled"
+    }
+  ]
+}

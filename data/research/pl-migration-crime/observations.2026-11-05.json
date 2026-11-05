@@ -41,6 +41,13 @@
       "publisher": "MSWiA",
       "retrieved_at": "2026-11-05",
       "status": "source_excerpt_verified_page_full_access_blocked"
+    },
+    {
+      "id": "sejm_offense",
+      "url": "https://www.sejm.gov.pl/sejm10.nsf/InterpelacjaTresc.xsp?key=DFQJ66",
+      "publisher": "MSWiA",
+      "retrieved_at": "2026-11-05",
+      "status": "source_excerpt_verified_page_full_access_blocked"
     }
   ],
   "metric_definition": {
@@ -260,5 +267,49 @@
       "police detection/intensity"
     ],
     "guardrail": "Do not infer group propensity from raw counts"
-  }
+  },
+  "polish_vs_foreign_suspects_one_series": [
+    {
+      "year": 2023,
+      "all_suspects": 305756,
+      "foreign_suspects": 17294,
+      "polish_suspects_derived": 288462,
+      "foreign_share_percent": 5.65,
+      "source_id": "mswia_2024"
+    },
+    {
+      "year": 2024,
+      "all_suspects": 286250,
+      "foreign_suspects": 16437,
+      "polish_suspects_derived": 269813,
+      "foreign_share_percent": 5.74,
+      "source_id": "mswia_2024"
+    }
+  ],
+  "offense_specific_foreign_suspect_share_not_nationality": [
+    {
+      "year": 2023,
+      "offense": "homicide_art_148",
+      "share_foreign_percent": 8.1,
+      "source_id": "sejm_offense"
+    },
+    {
+      "year": 2024,
+      "offense": "homicide_art_148",
+      "share_foreign_percent": 7.08,
+      "source_id": "sejm_offense"
+    },
+    {
+      "year": 2023,
+      "offense": "sexual_crimes_art_197_204",
+      "share_foreign_percent": 3.85,
+      "source_id": "sejm_offense"
+    },
+    {
+      "year": 2024,
+      "offense": "sexual_crimes_art_197_204",
+      "share_foreign_percent": 3.74,
+      "source_id": "sejm_offense"
+    }
+  ]
 }

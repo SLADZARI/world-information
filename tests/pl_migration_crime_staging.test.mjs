@@ -36,3 +36,14 @@ test('conflicting shares remain separate observations',()=>{
  assert.equal(d.disputed_2024_foreign_share.length,2);
  assert.notEqual(d.disputed_2024_foreign_share[0].share_percent,d.disputed_2024_foreign_share[1].share_percent);
 });
+
+test('Polish totals derive within one defined source series',()=>{
+ for(const r of d.polish_vs_foreign_suspects_one_series){
+   assert.equal(r.all_suspects-r.foreign_suspects,r.polish_suspects_derived);
+   assert.equal(r.source_id,'mswia_2024');
+ }
+});
+test('offense-level shares do not masquerade as citizenship-specific counts',()=>{
+ assert.ok(d.offense_specific_foreign_suspect_share_not_nationality.length>0);
+ assert.ok(d.offense_specific_foreign_suspect_share_not_nationality.every(r=>r.share_foreign_percent>=0&&r.share_foreign_percent<=100&&!('citizenship' in r)));
+});

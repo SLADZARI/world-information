@@ -44,3 +44,17 @@ test('mixed marriages have one PL spouse and two disjoint sexes',()=>{
  assert.equal(m.total,286);
  assert.equal(d.mixed_marriages_2020_2023.yearwise_values,null);
 });
+
+test('2023 marriage partial never invents unavailable totals',()=>{
+ const m=d.mixed_marriages_2023_partial;
+ assert.equal(m.male_citizenship_BY_female_citizenship_PL,59);
+ assert.equal(m.female_citizenship_BY_male_citizenship_PL,null);
+ assert.equal(m.total,null);
+});
+test('all documented naturalization-source disagreements remain explicitly unresolved',()=>{
+ assert.deepEqual(d.naturalization_source_conflicts.map(x=>x.year),[2020,2022,2023,2024]);
+ for(const conflict of d.naturalization_source_conflicts) {
+  assert.notEqual(conflict.main_series,conflict.alternative);
+  assert.equal(conflict.status,'not_reconciled');
+ }
+});
